@@ -1,3 +1,8 @@
+*.mp3 filter=lfs diff=lfs merge=lfs -text
+*.pdf filter=lfs diff=lfs merge=lfs -text
+*.ppt filter=lfs diff=lfs merge=lfs -text
+*.docm filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
 /Programas[[:space:]]de[[:space:]]Radio/Copia[[:space:]]de[[:space:]]PGM[[:space:]]02[[:space:]]Economia[[:space:]]y[[:space:]]Turismo.mp3 filter=lfs diff=lfs merge=lfs -text
 /Programas[[:space:]]de[[:space:]]Radio/Copia[[:space:]]de[[:space:]]PGM[[:space:]]03[[:space:]]La[[:space:]][[:space:]]macroeconomia.mp3 filter=lfs diff=lfs merge=lfs -text
 /Programas[[:space:]]de[[:space:]]Radio/Copia[[:space:]]de[[:space:]]PGM[[:space:]]04[[:space:]]Economia[[:space:]]y[[:space:]]Deporte.mp3 filter=lfs diff=lfs merge=lfs -text
