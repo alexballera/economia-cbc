@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cuestionarios interactivos sobre falacias económicas para estudiantes de economía CBC - UBA">
+    <meta name="keywords" content="falacias económicas, post hoc, ceteris paribus, composición, división, economía CBC">
+    <meta name="author" content="Economía CBC - UBA">
+    <title>Cuestionarios de Falacias Económicas - Economía CBC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+      :root {
+        --primary-color: #4f46e5;
+        --primary-hover: #4338ca;
+        --secondary-color: #a78bfa;
+        --success-color: #10b981;
+        --error-color: #ef4444;
+        --text-primary: #1f2937;
+        --text-secondary: #6b7280;
+        --background: #f3f4f6;
+        --surface: #ffffff;
+        --border-radius: 1rem;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--background);
+        color: var(--text-primary);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      .card {
+        background-color: var(--surface);
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+
+      .gradient-bg {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      }
+
+      .quiz-button {
+        transition: all 0.2s ease-in-out;
+      }
+
+      .quiz-button:hover:not(:disabled) {
+        background-color: var(--primary-hover);
+        transform: translateY(-2px);
+      }
+
+      .quiz-button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .answer-button {
+        width: 100%;
+        background-color: #e5e7eb;
+        color: var(--text-primary);
+        text-align: left;
+        padding: 1rem 1.5rem;
+        border: 2px solid transparent;
+        border-radius: 0.75rem;
+        font-weight: 500;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+      }
+
+      .answer-button:hover:not(:disabled) {
+        background-color: #d1d5db;
+        border-color: var(--primary-color);
+      }
+
+      .answer-button.correct {
+        background-color: var(--success-color);
+        color: white;
+        border-color: var(--success-color);
+        animation: pulse-correct 0.8s ease-out;
+      }
+
+      .answer-button.incorrect {
+        background-color: var(--error-color);
+        color: white;
+        border-color: var(--error-color);
+        animation: shake 0.5s ease-out;
+      }
+
+      .explanation {
+        background-color: #f0f4f8;
+        border-left: 4px solid var(--primary-color);
+        padding: 1rem;
+        margin-top: 1rem;
+        border-radius: 0.5rem;
+      }
+
+      @keyframes pulse-correct {
+        0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+        70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+      }
+
+      @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-5px); }
+        50% { transform: translateX(5px); }
+        75% { transform: translateX(-5px); }
+      }
+
+      /* Accessibility improvements */
+      .answer-button:focus {
+        outline: 2px solid var(--primary-color);
+        outline-offset: 2px;
+      }
+
+      .quiz-button:focus {
+        outline: 2px solid var(--primary-color);
+        outline-offset: 2px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .card,
+        .quiz-button,
+        .answer-button {
+          transition: none;
+        }
+        
+        .answer-button.correct,
+        .answer-button.incorrect {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+<  <body class="bg-gray-100">
+    <main class="flex items-center justify-center min-h-screen">
+      <div id="app" class="container bg-white p-8 rounded-2xl shadow-xl w-full">
+        
+        <!-- Pantalla de selección de cuestionarios -->
+        <section id="quiz-selection-screen" class="quiz-section">
+          <header class="text-center mb-8">
+            <h1 class="text-3xl font-bold mb-4 text-indigo-700">
+              Cuestionarios de Falacias Económicas
+            </h1>
+            <p class="text-gray-600 leading-relaxed">
+              Selecciona un cuestionario para poner a prueba tu conocimiento sobre falacias económicas comunes. 
+              <strong>¡Mucha suerte!</strong>
+            </p>
+          </header>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6" role="group" aria-label="Selección de cuestionarios">
+            <button 
+              type="button"
+              onclick="startQuiz(0)" 
+              class="card p-6 text-center gradient-bg text-white font-bold text-xl rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none"
+              aria-describedby="quiz-1-desc"
+            >
+              <h3 class="text-lg mb-2">Cuestionario 1</h3>
+              <p id="quiz-1-desc" class="text-sm opacity-90">Falacia Post Hoc y Correlación</p>
+              <p class="text-xs mt-2">10 preguntas</p>
+            </button>
+            
+            <button 
+              type="button"
+              onclick="startQuiz(1)" 
+              class="card p-6 text-center gradient-bg text-white font-bold text-xl rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none"
+              aria-describedby="quiz-2-desc"
+            >
+              <h3 class="text-lg mb-2">Cuestionario 2</h3>
+              <p id="quiz-2-desc" class="text-sm opacity-90">Fallo en Mantener Ceteris Paribus</p>
+              <p class="text-xs mt-2">10 preguntas</p>
+            </button>
+            
+            <button 
+              type="button"
+              onclick="startQuiz(2)" 
+              class="card p-6 text-center gradient-bg text-white font-bold text-xl rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none"
+              aria-describedby="quiz-3-desc"
+            >
+              <h3 class="text-lg mb-2">Cuestionario 3</h3>
+              <p id="quiz-3-desc" class="text-sm opacity-90">Falacia de Composición y División</p>
+              <p class="text-xs mt-2">10 preguntas</p>
+            </button>
+            
+            <button 
+              type="button"
+              onclick="startQuiz(3)" 
+              class="card p-6 text-center gradient-bg text-white font-bold text-xl rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none"
+              aria-describedby="quiz-4-desc"
+            >
+              <h3 class="text-lg mb-2">Cuestionario 4</h3>
+              <p id="quiz-4-desc" class="text-sm opacity-90">Falacias Combinadas (Desafío)</p>
+              <p class="text-xs mt-2">10 preguntas</p>
+            </button>
+          </div>
+        </section>
+
+        <!-- Pantalla del cuestionario -->
+        <section id="quiz-screen" class="quiz-section hidden">
+          <nav class="flex justify-between items-center mb-6">
+            <button 
+              type="button"
+              onclick="backToQuizSelection()" 
+              class="flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-200"
+              aria-label="Volver a la selección de cuestionarios"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span>Volver a Cuestionarios</span>
+            </button>
+            <div class="text-lg font-semibold text-gray-700">
+              Pregunta <span id="current-question-number" aria-live="polite">1</span> de <span id="total-questions">10</span>
+            </div>
+          </nav>
+          
+          <article class="card p-6 mb-6">
+            <h2 id="question" class="text-xl font-semibold text-gray-900 mb-6"></h2>
+            <div id="options-container" class="space-y-4" role="radiogroup" aria-labelledby="question"></div>
+          </article>
+          
+          <aside id="feedback-message" class="explanation hidden" role="alert" aria-live="assertive">
+            <h4 class="font-bold text-gray-800 mb-2">Explicación:</h4>
+            <p id="explanation-text" class="text-gray-600"></p>
+          </aside>
+          
+          <div class="mt-6">
+            <button 
+              id="next-button" 
+              type="button"
+              class="quiz-button w-full py-4 gradient-bg text-white font-bold text-lg rounded-lg shadow-md focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed" 
+              onclick="nextQuestion()" 
+              disabled
+              aria-describedby="next-button-status"
+            >
+              <span id="next-button-text">Siguiente</span>
+            </button>
+            <div id="next-button-status" class="sr-only" aria-live="polite"></div>
+          </div>
+        </section>        <!-- Pantalla de resultados -->
+        <section id="results-screen" class="quiz-section hidden text-center">
+          <header class="mb-8">
+            <h1 class="text-3xl font-bold text-indigo-700 mb-4">¡Cuestionario Completo!</h1>
+            <p class="text-xl text-gray-700 mb-6">Has respondido todas las preguntas correctamente.</p>
+          </header>
+          
+          <div class="text-5xl font-extrabold text-white gradient-bg p-8 rounded-full inline-block shadow-lg mb-8">
+            <span class="block text-2xl font-normal">¡Excelente trabajo!</span>
+          </div>
+          
+          <footer class="space-y-4">
+            <p class="text-lg text-gray-600">¡Sigue practicando para dominar las falacias económicas!</p>
+            <button 
+              type="button"
+              class="quiz-button py-4 px-8 bg-indigo-600 text-white font-bold text-lg rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none" 
+              onclick="restartQuiz()"
+            >
+              Volver a la selección
+            </button>
+          </footer>
+        </section>
+        
+      </div>
+    </main>
+
+    <script>
+      'use strict';
+      
+      // Configuración y datos del cuestionario
+      const CONFIG = {
+        TOTAL_QUESTIONS_PER_QUIZ: 10,
+        ANIMATION_DURATION: 200
+      };
+      
+      const allQuizzes = [
+            // Cuestionario 1: Falacia Post Hoc y Correlación
+            {
+                title: "Cuestionario 1: Falacia Post Hoc y Correlación",
+                questions: [
+                    {
+                        question: "Después de que un país aumentó su gasto en defensa, su economía experimentó un fuerte crecimiento. Un analista concluye que el aumento del gasto militar fue la causa del crecimiento económico. ¿Qué falacia está cometiendo?",
+                        options: ["Falacia de Composición", "Fallo en Ceteris Paribus", "Falacia Post Hoc"],
+                        answer: 2,
+                        explanation: "La falacia post hoc asume que A causó B simplemente porque B ocurrió después de A. No se considera que el crecimiento pudo deberse a otros factores no relacionados con el gasto militar."
+                    },
+                    {
+                        question: "Un comerciante de helados nota que sus ventas suben dramáticamente en los días que más personas se ahogan en la playa. Él argumenta que la venta de helados provoca los ahogamientos. ¿Cuál es el error lógico en su razonamiento?",
+                        options: ["Confundir correlación con causalidad", "Falacia de la Ventana Rota", "Falacia de Composición"],
+                        answer: 0,
+                        explanation: "El comerciante confunde una correlación (ambos eventos ocurren en verano) con una relación de causa-efecto. La causa subyacente es el calor, que aumenta la venta de helados y el número de bañistas."
+                    },
+                    {
+                        question: "Un político afirma que, desde que asumió el cargo, el desempleo ha disminuido. 'Mi política económica es la única responsable', declara. ¿Qué falacia es más relevante en esta afirmación?",
+                        options: ["Falacia de Composición", "Falacia del Jugador", "Falacia Post Hoc"],
+                        answer: 2,
+                        explanation: "El político asume que su llegada al poder es la causa directa del cambio, sin considerar otros factores o tendencias preexistentes."
+                    },
+                    {
+                        question: "Un estudio muestra que los países con más televisores per cápita tienen una esperanza de vida más alta. Una persona concluye que comprar más televisores prolonga la vida. ¿Qué falacia está cometiendo?",
+                        options: ["Ignorar la causalidad inversa", "Falacia de la causa única", "Falacia de Correlación-Causalidad"],
+                        answer: 2,
+                        explanation: "Ambas variables (televisores y esperanza de vida) son síntomas de una tercera causa, como un mayor desarrollo económico y renta, que el estudio no está teniendo en cuenta."
+                    },
+                    {
+                        question: "Un agricultor cambia la marca de fertilizante y, al año siguiente, su cosecha es un 30% mayor. El agricultor jura que fue el nuevo fertilizante. ¿Por qué esto podría ser un ejemplo de Post Hoc?",
+                        options: ["La falacia solo aplica a eventos políticos.", "No se consideraron otras variables como el clima o las plagas.", "Es imposible que el fertilizante haya ayudado."],
+                        answer: 1,
+                        explanation: "La cosecha pudo haber sido mejor debido a condiciones climáticas favorables, menos plagas, o un mejor cuidado del cultivo, y no por el fertilizante."
+                    },
+                    {
+                        question: "Una ciudad con mayor número de bomberos tiene más incendios. Un economista ingenuo afirma que para reducir los incendios, se deben reducir los bomberos. ¿Qué falacia económica está cometiendo?",
+                        options: ["Falacia de Composición", "Falacia de Causalidad Inversa", "Fallo en Ceteris Paribus"],
+                        answer: 1,
+                        explanation: "El economista invierte la causalidad. No son los bomberos los que causan los incendios, sino los incendios los que requieren más bomberos en una ciudad."
+                    },
+                    {
+                        question: "Después de la introducción de una nueva medida de seguridad en una fábrica, los accidentes laborales disminuyeron. El gerente de la fábrica atribuye la reducción de accidentes exclusivamente a la nueva medida. ¿Qué falacia es probable que esté cometiendo?",
+                        options: ["Falacia de Composición", "Falacia del Costo Hundido", "Falacia Post Hoc"],
+                        answer: 2,
+                        explanation: "El gerente asume que la medida es la única causa del cambio sin considerar otros factores, como un mejor entrenamiento o una mayor conciencia de seguridad de los trabajadores, que pudieron haber ocurrido simultáneamente."
+                    },
+                    {
+                        question: "Un estudio encuentra una fuerte correlación entre el consumo de café y la productividad laboral. Se concluye que si quieres ser más productivo, debes beber más café. ¿Cuál es la principal debilidad de este argumento?",
+                        options: ["Ignora el efecto de bienes sustitutos.", "Confunde una correlación con una causalidad probada.", "No considera el efecto de la falacia de composición."],
+                        answer: 1,
+                        explanation: "El argumento principal ignora que podría ser una tercera variable, como la ética laboral o el tipo de trabajo, la que causa tanto el consumo de café como la productividad."
+                    },
+                    {
+                        question: "Una persona se pone un amuleto y, después, recibe una promoción en el trabajo. La persona afirma que el amuleto fue la causa de la promoción. Este es un claro ejemplo de:",
+                        options: ["Falacia del Jugador", "Falacia de Causalidad Inversa", "Falacia Post Hoc"],
+                        answer: 2,
+                        explanation: "Es un ejemplo clásico de la falacia post hoc, donde se asume causalidad debido a una secuencia de eventos."
+                    },
+                    {
+                        question: "Un informe muestra que el uso de computadoras en las escuelas de un país aumentó significativamente, y que el rendimiento académico de los estudiantes también mejoró. Un ministro de educación concluye que la tecnología es la única responsable del aumento en el rendimiento. ¿Cuál es el error lógico más evidente?",
+                        options: ["Fallo en Mantener Ceteris Paribus", "Falacia de la Pendiente Resbaladiza", "Falacia de Composición"],
+                        answer: 0,
+                        explanation: "El ministro ignora que la mejora del rendimiento puede deberse a otros factores como la calidad de los docentes, el plan de estudios, o la inversión en otros recursos educativos."
+                    }
+                ]
+            },
+            // Cuestionario 2: Fallo en Mantener Todo lo Demás Constante (Ceteris Paribus)
+            {
+                title: "Cuestionario 2: Fallo en Mantener Todo lo Demás Constante (Ceteris Paribus)",
+                questions: [
+                    {
+                        question: "Un economista afirma que una subida de la tasa de interés causará una reducción en la inversión, ignorando que el gobierno al mismo tiempo está implementando una fuerte reducción de impuestos a las empresas. ¿Qué falacia económica está cometiendo?",
+                        options: ["Falacia Post Hoc", "Fallo en Ceteris Paribus", "Falacia de Composición"],
+                        answer: 1,
+                        explanation: "La reducción de impuestos es una variable que podría contrarrestar el efecto de la subida de tasas de interés. El economista está violando el supuesto de ceteris paribus."
+                    },
+                    {
+                        question: "Un analista de mercado predice que la demanda de un nuevo teléfono inteligente caerá si su precio sube. Sin embargo, no considera que un competidor acaba de anunciar un producto mucho peor a un precio similar. ¿Qué falacia está cometiendo?",
+                        options: ["Falacia Post Hoc", "Fallo en Ceteris Paribus", "Falacia del Hombre de Paja"],
+                        answer: 1,
+                        explanation: "El analista no está manteniendo constante el efecto de los bienes sustitutos. La inferioridad del producto de la competencia podría hacer que la demanda del nuevo teléfono suba a pesar del aumento de precio."
+                    },
+                    {
+                        question: "Una persona argumenta que si se prohíbe el uso de una tecnología contaminante, el medio ambiente mejorará. Su análisis ignora los costos económicos y los posibles efectos negativos en el empleo. ¿Qué falacia es la más relevante en este caso?",
+                        options: ["Falacia de Composición", "Fallo en Ceteris Paribus", "Falacia Post Hoc"],
+                        answer: 1,
+                        explanation: "La persona no está considerando el impacto total. Para un análisis completo, se deberían considerar tanto los beneficios ambientales como los costos económicos y laborales, manteniendo todo lo demás constante."
+                    },
+                    {
+                        question: "Un economista del desarrollo argumenta que el aumento de las importaciones de un país siempre lleva a un déficit comercial. Su argumento no considera que al mismo tiempo, el país está experimentando un boom de exportaciones de un nuevo producto. ¿Qué falacia está cometiendo?",
+                        options: ["Falacia de la Pendiente Resbaladiza", "Fallo en Ceteris Paribus", "Falacia de Correlación-Causalidad"],
+                        answer: 1,
+                        explanation: "El economista ignora que el aumento de las exportaciones es una variable que puede compensar o incluso superar el aumento de las importaciones, violando el supuesto de que todas las demás cosas se mantienen constantes."
+                    },
+                    {
+                        question: "Un analista financiero predice que el precio de una acción caerá porque la empresa reportó ganancias menores a las esperadas. Sin embargo, ignora que un competidor importante de la misma industria acaba de quebrar. ¿Qué falacia está cometiendo?",
+                        options: ["Falacia Post Hoc", "Fallo en Ceteris Paribus", "Falacia de Composición"],
+                        answer: 1,
+                        explanation: "El analista no considera el impacto de la quiebra del competidor, que podría hacer que el precio de la acción suba a pesar de las ganancias decepcionantes. No mantiene el mercado constante."
+                    },
+                    {
+                        question: "Un economista argumenta que si el gobierno reduce los impuestos, la gente consumirá más. El argumento ignora que el país está en una recesión y la confianza del consumidor es extremadamente baja. ¿Qué falacia está cometiendo?",
+                        options: ["Falacia del Costo Hundido", "Fallo en Ceteris Paribus", "Falacia Post Hoc"],
+                        answer: 1,
+                        explanation: "El economista no mantiene constante la confianza del consumidor, una variable clave que puede hacer que la gente ahorre en lugar de gastar, incluso con impuestos más bajos."
+                    },
+                    {
+                        question: "Un empresario decide aumentar la producción de su fábrica para aumentar sus ganancias, pero ignora que el resto de la industria también está aumentando la producción, lo que podría bajar el precio de mercado. ¿Qué falacia es más evidente en su razonamiento?",
+                        options: ["Falacia de la Causa Única", "Fallo en Ceteris Paribus", "Falacia de Composición"],
+                        answer: 1,
+                        explanation: "El empresario no está manteniendo constante el comportamiento del resto del mercado, una variable que afectará su propia decisión."
+                    },
+                    {
+                        question: "Un estudio sobre la eficacia de un nuevo medicamento concluye que es muy efectivo. Sin embargo, el estudio se realizó con un grupo de control que, sin que los investigadores lo supieran, estaba recibiendo una terapia complementaria muy efectiva. ¿Qué falacia es más relevante en este caso?",
+                        options: ["Fallo en Ceteris Paribus", "Falacia de Composición", "Falacia Post Hoc"],
+                        answer: 0,
+                        explanation: "El estudio no mantuvo constante la variable del tratamiento en el grupo de control, lo que invalida sus conclusiones sobre la eficacia del medicamento."
+                    },
+                    {
+                        question: "Un analista de bienes raíces argumenta que si los precios de la vivienda suben, la gente comprará menos casas. Su análisis no considera que al mismo tiempo, las tasas de interés hipotecarias están bajando a mínimos históricos. ¿Qué falacia económica está cometiendo?",
+                        options: ["Fallo en Ceteris Paribus", "Falacia del Hombre de Paja", "Falacia de Composición"],
+                        answer: 0,
+                        explanation: "El analista no está manteniendo constante la variable de las tasas de interés. Las tasas bajas pueden hacer que las casas sean más asequibles, incluso si los precios suben, lo que podría anular su predicción."
+                    },
+                    {
+                        question: "Un economista predice que la reducción de impuestos a la clase media aumentará el consumo. Su modelo ignora el hecho de que en ese mismo periodo la inflación está proyectada para ser muy alta. ¿Cuál es el principal problema de su modelo?",
+                        options: ["Falacia de Composición", "Falacia de Causalidad Inversa", "Fallo en Ceteris Paribus"],
+                        answer: 2,
+                        explanation: "La alta inflación erosionaría el poder adquisitivo de los consumidores, lo que podría contrarrestar el efecto de la reducción de impuestos. El economista falló en mantener constante la variable de la inflación."
+                    }
+                ]
+            },
+            // Cuestionario 3: Falacia de Composición y División
+            {
+                title: "Cuestionario 3: Falacia de Composición y División",
+                questions: [
+                    {
+                        question: "Si una empresa petrolera descubre un nuevo yacimiento, su valor de mercado aumentará. Un analista concluye: 'Si todas las empresas petroleras descubrieran nuevos yacimientos, el valor de mercado de todas aumentaría'. ¿Qué falacia está cometiendo?",
+                        options: ["Falacia de División", "Falacia Post Hoc", "Falacia de Composición"],
+                        answer: 2,
+                        explanation: "Si todas las empresas descubrieran nuevos yacimientos, la oferta de petróleo aumentaría masivamente, lo que probablemente causaría una caída en el precio del crudo y, por ende, en el valor de las empresas."
+                    },
+                    {
+                        question: "Si un automovilista individual conduce más rápido, puede llegar antes a su destino. Un analista concluye: 'Si todos los automovilistas condujeran más rápido, todos llegarían antes a su destino'. ¿Qué falacia está presente?",
+                        options: ["Falacia Post Hoc", "Fallo en Ceteris Paribus", "Falacia de Composición"],
+                        answer: 2,
+                        explanation: "Si todos los automovilistas condujeran más rápido, se producirían atascos masivos, y nadie llegaría antes."
+                    },
+                    {
+                        question: "Un país es conocido por su alta productividad en la industria tecnológica. Un turista asume que cualquier persona que conozca en ese país debe ser un ingeniero de alta productividad. ¿Qué falacia está cometiendo?",
+                        options: ["Falacia de Composición", "Falacia de División", "Fallo en Ceteris Paribus"],
+                        answer: 1,
+                        explanation: "La falacia de división asume que lo que es cierto para un todo (la alta productividad de la industria del país) es cierto para sus partes (cualquier persona en ese país)."
+                    },
+                    {
+                        question: "Se cree que si un agricultor individual decide vender sus productos por debajo del precio de mercado, tendrá más ventas y ganará cuota de mercado. ¿Por qué este razonamiento podría no aplicarse a la totalidad del sector agrícola?",
+                        options: ["Porque se aplica la falacia de división.", "Porque se aplica la falacia de composición.", "Porque se aplica la falacia Post Hoc."],
+                        answer: 1,
+                        explanation: "Si todos los agricultores bajaran sus precios, el precio de mercado colapsaría y nadie ganaría cuota de mercado, ya que todos estarían compitiendo en una carrera hacia el fondo."
+                    },
+                    {
+                        question: "Un país tiene el mejor sistema educativo del mundo. Un padre de familia asume que, por lo tanto, su hijo, que vive en ese país, es un estudiante excepcional. ¿Qué falacia está cometiendo?",
+                        options: ["Falacia de Composición", "Falacia de División", "Fallo en Ceteris Paribus"],
+                        answer: 1,
+                        explanation: "Asumir que lo que es cierto para el todo (el sistema educativo) es cierto para la parte (el hijo) es la falacia de división."
+                    },
+                    {
+                        question: "Una persona ve que si un jugador de béisbol individual lanza la pelota al estadio, esta saldrá del campo. Afirma: 'Si todo el equipo lanza la pelota al estadio al mismo tiempo, el estadio se quedará sin pelotas'. ¿Qué falacia es esta?",
+                        options: ["Falacia de División", "Falacia de Composición", "Falacia del Hombre de Paja"],
+                        answer: 1,
+                        explanation: "Si todo el equipo lanza la pelota al mismo tiempo, solo se necesitará una pelota por lanzamiento, no una para cada jugador. La generalización del comportamiento individual al colectivo es falaz."
+                    },
+                    {
+                        question: "En un mercado de valores, si una persona vende todas sus acciones, el precio de las acciones no se verá afectado. Pero si todo el mercado vende al mismo tiempo, el precio colapsará. ¿Qué ilustra este ejemplo?",
+                        options: ["Falacia de División", "Falacia de Composición", "Fallo en Ceteris Paribus"],
+                        answer: 1,
+                        explanation: "Lo que es cierto para un individuo (una parte del mercado) no lo es para el todo. La acción colectiva tiene un impacto que la acción individual no tiene."
+                    },
+                    {
+                        question: "Un economista argumenta que si una persona se aísla de los mercados internacionales, sus finanzas personales mejorarán. Luego, extiende esta conclusión y dice que si un país se aísla de los mercados internacionales, su economía prosperará. ¿Qué falacia está presente?",
+                        options: ["Falacia Post Hoc", "Falacia de Composición", "Falacia del Costo Hundido"],
+                        answer: 1,
+                        explanation: "Lo que funciona para un individuo (parte) no necesariamente funciona para el país (todo). El aislamiento de un país de los mercados internacionales puede generar costos de oportunidad enormes."
+                    },
+                    {
+                        question: "Un equipo de fútbol está formado por los mejores jugadores del mundo. Un aficionado asume que, por lo tanto, el equipo ganará todos sus partidos. ¿Qué falacia es esta?",
+                        options: ["Falacia de División", "Falacia de Composición", "Fallo en Ceteris Paribus"],
+                        answer: 1,
+                        explanation: "La falacia de composición asume que la suma de las partes (jugadores estrella) es igual al todo (un equipo ganador). Sin embargo, el trabajo en equipo, la química y la estrategia también son cruciales."
+                    },
+                    {
+                        question: "Una persona observa que cada ladrillo de una casa es pequeño y, por lo tanto, concluye que la casa es pequeña. ¿Qué falacia está cometiendo?",
+                        options: ["Falacia Post Hoc", "Falacia de Composición", "Falacia de División"],
+                        answer: 1,
+                        explanation: "Asumir que lo que es cierto para las partes (los ladrillos) es cierto para el todo (la casa) es una falacia de composición. La casa es grande, aunque sus ladrillos individuales sean pequeños."
+                    }
+                ]
+            },
+            // Cuestionario 4: Falacias Combinadas (Desafío)
+            {
+                title: "Cuestionario 4: Falacias Combinadas (Desafío)",
+                questions: [
+                    {
+                        question: "Después de que un país experimentara una recesión, el gobierno aumentó el gasto público. Al año siguiente, la economía se recuperó. Un analista afirma: 'El aumento del gasto público fue la única causa de la recuperación económica'. ¿Qué falacias son las más probables?",
+                        options: ["Falacia de División", "Falacia Post Hoc y Fallo en Ceteris Paribus", "Falacia de Composición y División"],
+                        answer: 1,
+                        explanation: "Se comete la falacia post hoc (la recuperación vino después del gasto, por lo tanto, fue la causa). Y el analista falla en ceteris paribus al ignorar otras variables que pudieron influir en la recuperación, como la política monetaria o la mejora del comercio internacional."
+                    },
+                    {
+                        question: "Un agricultor individual que trabaja más duro puede aumentar su producción. Se concluye que si todos los agricultores trabajan más duro, la producción agrícola total del país aumentará. El economista no considera que un huracán destruyó la mitad de los cultivos. ¿Qué falacias están en juego?",
+                        options: ["Falacia Post Hoc y Falacia de División", "Fallo en Ceteris Paribus y Falacia de Composición", "Falacia del Costo Hundido y Falacia Post Hoc"],
+                        answer: 1,
+                        explanation: "Se comete la falacia de composición al generalizar el efecto de un agricultor al país entero. También se falla en ceteris paribus al no considerar el huracán como una variable que afecta el resultado."
+                    },
+                    {
+                        question: "En una economía, un aumento del salario mínimo lleva a que una empresa individual automatice sus procesos, lo que reduce sus costos. Un analista financiero concluye que 'si el salario mínimo aumenta en todo el país, todas las empresas reducirán sus costos a través de la automatización'. ¿Qué falacia es la más relevante?",
+                        options: ["Falacia de División", "Falacia de Composición", "Fallo en Ceteris Paribus"],
+                        answer: 1,
+                        explanation: "La automatización a gran escala podría llevar a un desempleo masivo, lo que reduciría el consumo y afectaría las ganancias de las empresas. El analista no considera el efecto macroeconómico de su premisa microeconómica."
+                    },
+                    {
+                        question: "Un individuo asume que, porque una empresa de tecnología local es líder mundial, todas las empresas de esa región deben ser igualmente innovadoras. Su conclusión se basa en una observación superficial. ¿Qué falacia está cometiendo?",
+                        options: ["Fallo en Ceteris Paribus", "Falacia de División", "Falacia Post Hoc"],
+                        answer: 1,
+                        explanation: "Asume que las características de una parte (una empresa innovadora) se aplican a las otras partes (todas las empresas de la región) o al todo (la región)."
+                    },
+                    {
+                        question: "Una persona observa que los precios de los bienes de lujo han aumentado después de un aumento en el PBI. El individuo concluye que el aumento del PBI siempre causa un aumento en los precios de los bienes de lujo. ¿Qué falacia está presente?",
+                        options: ["Falacia del Costo Hundido", "Falacia Post Hoc", "Falacia de Composición"],
+                        answer: 1,
+                        explanation: "Asume que la secuencia de eventos (aumento del PBI, luego aumento de precios) implica causalidad."
+                    },
+                    {
+                        question: "Un economista afirma que una política de libre comercio para un país pequeño es beneficiosa para su crecimiento. Luego concluye que si todos los países del mundo adoptaran el libre comercio, todos verían un crecimiento similar. ¿Cuál es el error en su lógica?",
+                        options: ["Falacia de Composición", "Fallo en Ceteris Paribus", "Falacia Post Hoc"],
+                        answer: 0,
+                        explanation: "Lo que es beneficioso para un país pequeño (una parte del sistema comercial global) podría no serlo para el sistema en su totalidad, ya que las economías de diferentes tamaños y niveles de desarrollo reaccionan de manera distinta."
+                    },
+                    {
+                        question: "Un estudio encuentra que los estudiantes que toman clases de arte tienen mejores calificaciones en matemáticas. Se concluye que las clases de arte causan una mejora en el rendimiento matemático, sin considerar que los estudiantes que toman clases de arte también tienen, en promedio, padres con mayores ingresos que invierten más en su educación. ¿Qué falacias están presentes?",
+                        options: ["Falacia Post Hoc y Falacia de División", "Fallo en Ceteris Paribus y Correlación-Causalidad", "Falacia de Composición y Falacia Post Hoc"],
+                        answer: 1,
+                        explanation: "Se confunde una correlación con una causalidad. Además, se falla en ceteris paribus al no considerar la variable del nivel de ingresos de los padres."
+                    },
+                    {
+                        question: "Un político observa que, después de subsidiar una industria específica, esta reportó un aumento en sus ganancias. El político afirma que 'todos los subsidios a cualquier industria resultarán en un aumento de ganancias'. ¿Qué falacia está cometiendo?",
+                        options: ["Falacia Post Hoc", "Falacia de División", "Falacia de Composición y Fallo en Ceteris Paribus"],
+                        answer: 2,
+                        explanation: "Se comete la falacia de composición al generalizar el éxito de una industria a todas. También se falla en ceteris paribus al no considerar que los subsidios a otras industrias podrían tener efectos muy diferentes."
+                    },
+                    {
+                        question: "Una persona lee en las noticias que la economía de un país creció un 5% y concluye que todos sus ciudadanos son 5% más ricos. ¿Qué falacia es esta?",
+                        options: ["Falacia de Composición", "Falacia de División", "Falacia Post Hoc"],
+                        answer: 1,
+                        explanation: "Se asume que una propiedad del todo (el crecimiento del 5% de la economía) es una propiedad de sus partes (el 5% de crecimiento para cada ciudadano), lo cual es falso, ya que el crecimiento puede no ser equitativo."
+                    },
+                    {
+                        question: "Un analista de mercado ve que el precio de una acción específica subió después de que el CEO de la empresa dio una entrevista. El analista concluye que 'la entrevista del CEO causó la subida de la acción'. Sin embargo, en el mismo día, se publicó un informe de ganancias muy positivo que el analista no vio. ¿Qué falacia(s) se cometió?",
+                        options: ["Fallo en Ceteris Paribus", "Falacia de Composición y División", "Falacia Post Hoc y Fallo en Ceteris Paribus"],
+                        answer: 2,
+                        explanation: "El analista comete la falacia post hoc al asumir la causalidad por la secuencia, y también falla en ceteris paribus al no considerar la otra variable clave, el informe de ganancias."
+                    }
+                ]
+            }
+        ];
+
+        // Variables globales
+        let currentQuiz = null;
+        let currentQuestionIndex = 0;
+        let questionsAnswered = 0;
+        let shuffledQuizzes = [];
+
+        // Referencias a elementos DOM
+        const elements = {
+          quizSelectionScreen: document.getElementById('quiz-selection-screen'),
+          quizScreen: document.getElementById('quiz-screen'),
+          resultsScreen: document.getElementById('results-screen'),
+          question: document.getElementById('question'),
+          optionsContainer: document.getElementById('options-container'),
+          currentQuestionNumber: document.getElementById('current-question-number'),
+          totalQuestions: document.getElementById('total-questions'),
+          nextButton: document.getElementById('next-button'),
+          feedbackMessage: document.getElementById('feedback-message'),
+          explanationText: document.getElementById('explanation-text')
+        };
+
+        // Función para mezclar un array de forma aleatoria (algoritmo Fisher-Yates)
+        function shuffleArray(array) {
+          const shuffled = [...array]; // Crear copia para no mutar el original
+          for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+          }
+          return shuffled;
+        }
+
+        // Función para generar cuestionarios con preguntas mezcladas
+        function generateShuffledQuizzes() {
+          shuffledQuizzes = allQuizzes.map(quiz => ({
+            ...quiz,
+            questions: shuffleArray(quiz.questions).map(question => ({
+              ...question,
+              // Crear versión mezclada de las opciones manteniendo la respuesta correcta
+              shuffledOptions: createShuffledOptions(question.options, question.answer)
+            }))
+          }));
+          console.log('Cuestionarios regenerados con preguntas y opciones mezcladas');
+        }
+
+        // Función para mezclar opciones manteniendo la referencia correcta
+        function createShuffledOptions(options, correctAnswer) {
+          const correctOption = options[correctAnswer];
+          const shuffledOptions = shuffleArray(options);
+          const newCorrectIndex = shuffledOptions.indexOf(correctOption);
+          
+          return {
+            options: shuffledOptions,
+            answer: newCorrectIndex
+          };
+        }
+
+        // Funciones principales
+        function startQuiz(quizIndex) {
+          if (quizIndex < 0 || quizIndex >= shuffledQuizzes.length) {
+            console.error('Índice de cuestionario inválido:', quizIndex);
+            return;
+          }
+
+          currentQuiz = shuffledQuizzes[quizIndex];
+          currentQuestionIndex = 0;
+          questionsAnswered = 0;
+          
+          hideAllScreens();
+          elements.quizScreen.classList.remove('hidden');
+          showQuestion();
+        }
+
+        function showQuestion() {
+          if (!currentQuiz || currentQuestionIndex >= currentQuiz.questions.length) {
+            console.error('No hay pregunta válida para mostrar');
+            return;
+          }
+
+          const currentQuestionData = currentQuiz.questions[currentQuestionIndex];
+          const shuffledData = currentQuestionData.shuffledOptions || {
+            options: currentQuestionData.options,
+            answer: currentQuestionData.answer
+          };
+
+          // Actualizar elementos de la interfaz
+          elements.currentQuestionNumber.textContent = currentQuestionIndex + 1;
+          elements.totalQuestions.textContent = currentQuiz.questions.length;
+          elements.question.textContent = currentQuestionData.question;
+          
+          // Limpiar contenedor de opciones
+          elements.optionsContainer.innerHTML = '';
+          elements.feedbackMessage.classList.add('hidden');
+          elements.nextButton.disabled = true;
+
+          // Crear botones de opciones con las opciones mezcladas
+          shuffledData.options.forEach((option, index) => {
+            const button = createAnswerButton(option, index);
+            elements.optionsContainer.appendChild(button);
+          });
+
+          // Guardar la respuesta correcta mezclada para checkAnswer
+          currentQuestionData._shuffledAnswer = shuffledData.answer;
+        }
+
+        function createAnswerButton(option, index) {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'answer-button';
+          button.textContent = option;
+          button.setAttribute('role', 'radio');
+          button.setAttribute('aria-checked', 'false');
+          button.onclick = () => checkAnswer(button, index);
+          return button;
+        }
+
+        function checkAnswer(selectedButton, selectedIndex) {
+          const currentQuestionData = currentQuiz.questions[currentQuestionIndex];
+          const correctIndex = currentQuestionData._shuffledAnswer !== undefined 
+            ? currentQuestionData._shuffledAnswer 
+            : currentQuestionData.answer;
+
+          // Deshabilitar todos los botones
+          const allButtons = elements.optionsContainer.querySelectorAll('.answer-button');
+          allButtons.forEach((button, index) => {
+            button.disabled = true;
+            button.setAttribute('aria-checked', 'false');
+            
+            if (index === correctIndex) {
+              button.classList.add('correct');
+              button.setAttribute('aria-label', `${button.textContent} - Respuesta correcta`);
+            } else if (index === selectedIndex && index !== correctIndex) {
+              button.classList.add('incorrect');
+              button.setAttribute('aria-label', `${button.textContent} - Respuesta incorrecta`);
+            } else {
+              button.style.opacity = '0.5';
+            }
+          });
+
+          // Mostrar explicación
+          elements.explanationText.textContent = currentQuestionData.explanation;
+          elements.feedbackMessage.classList.remove('hidden');
+          elements.nextButton.disabled = false;
+          elements.nextButton.focus();
+        }
+
+        function nextQuestion() {
+          currentQuestionIndex++;
+          if (currentQuestionIndex < currentQuiz.questions.length) {
+            showQuestion();
+          } else {
+            endQuiz();
+          }
+        }
+
+        function endQuiz() {
+          hideAllScreens();
+          elements.resultsScreen.classList.remove('hidden');
+        }
+
+        function backToQuizSelection() {
+          hideAllScreens();
+          elements.quizSelectionScreen.classList.remove('hidden');
+        }
+
+        function restartQuiz() {
+          generateShuffledQuizzes(); // Regenerar cuestionarios con preguntas mezcladas
+          backToQuizSelection();
+        }
+
+        function hideAllScreens() {
+          elements.quizSelectionScreen.classList.add('hidden');
+          elements.quizScreen.classList.add('hidden');
+          elements.resultsScreen.classList.add('hidden');
+        }
+
+        // Inicialización
+        function initializeApp() {
+          if (!elements.quizSelectionScreen) {
+            console.error('No se pudo inicializar la aplicación: elementos DOM no encontrados');
+            return;
+          }
+          
+          // Generar cuestionarios con preguntas mezcladas al iniciar
+          generateShuffledQuizzes();
+          
+          elements.quizSelectionScreen.classList.remove('hidden');
+          console.log('Aplicación de cuestionarios inicializada correctamente');
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', initializeApp);
+
+        // Manejo de teclado para accesibilidad
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && !elements.quizSelectionScreen.classList.contains('hidden')) {
+            // Ya estamos en la pantalla principal, no hacer nada
+          } else if (event.key === 'Escape') {
+            backToQuizSelection();
+          }
+        });
+    </script>
+  </body>
+</html>
