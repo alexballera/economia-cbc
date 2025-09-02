@@ -1,5 +1,5 @@
-# Instrucciones para GitHub Copilot
+# Economía CDB - UBAXXI - FCE - Instrucciones para Github Copilot
 
-**LEE Y SIGUE LAS INSTRUCCIONES COMPLETAS EN:** `INSTRUCCIONES-IA.md`
+> **📋 INSTRUCCIONES COMPLETAS**: Lee todas las instrucciones detalladas y unificadas en [`INSTRUCCIONES-IA.md`](../INSTRUCCIONES-IA.md)
 
-Este archivo contiene todas las directrices específicas para trabajar con este repositorio de materiales de estudio de Economía CBC-UBA.
+Todas las instrucciones específicas del proyecto, convenciones, flujos de trabajo y directrices están centralizadas en ese archivo.
