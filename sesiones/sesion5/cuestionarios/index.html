@@ -93,7 +93,7 @@
     <div id="app" class="container bg-white p-8 rounded-2xl shadow-xl w-full">
         <!-- Pantalla de selección de cuestionarios -->
         <div id="quiz-selection-screen">
-            <h1 class="text-3xl font-bold text-center mb-4 text-indigo-700">Selecciona un Examen de Práctica - Sesión 5</h1>
+            <h1 class="text-3xl font-bold text-center mb-4 text-indigo-700">Selecciona un Examen de Práctica</h1>
             <p class="text-center text-gray-600 mb-8">Cada examen contiene 20 preguntas aleatorias que abarcan el contenido de la Teoría del Consumidor, Producción y Costos. ¡Mucha suerte!</p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
                 <button onclick="startQuiz(0)" class="card p-6 text-center gradient-bg text-white font-bold text-xl rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none">Examen de Práctica 1</button>
@@ -1223,39 +1223,35 @@
             nextButton.disabled = true;
 
             const options = [...currentQuestionData.options];
-            shuffleArray(options); // Shuffle options for each question
             
             options.forEach((option, index) => {
                 const button = document.createElement('button');
                 button.textContent = option;
                 button.classList.add('answer-button');
-                // Find the original index of the option to check against the correct answer
-                const originalIndex = currentQuestionData.options.indexOf(option);
-                button.onclick = () => checkAnswer(button, originalIndex, currentQuestionData.answer);
+                button.onclick = () => checkAnswer(button, index);
                 optionsContainer.appendChild(button);
             });
         }
 
-        function checkAnswer(selectedButton, selectedOriginalIndex, correctAnswerOriginalIndex) {
+        function checkAnswer(selectedButton, selectedIndex) {
+            const currentQuestionData = currentQuiz.questions[currentQuestionIndex];
+            const correctIndex = currentQuestionData.answer;
+
             Array.from(optionsContainer.children).forEach((button, index) => {
                 button.disabled = true;
-                const optionText = button.textContent;
-                const originalIndex = allQuestions[0].options.indexOf(optionText); // This is a hack, need to fix
-                
-                // Re-evaluate correct/incorrect based on the original index of the option
-                if (originalIndex === correctAnswerOriginalIndex) {
+                if (index === correctIndex) {
                     button.classList.add('correct');
-                } else if (button === selectedButton) {
+                } else if (index === selectedIndex) {
                     button.classList.add('incorrect');
                 }
             });
 
-            if (selectedOriginalIndex === correctAnswerOriginalIndex) {
+            if (selectedIndex === correctIndex) {
                 score++;
-                feedbackMessage.innerHTML = `<div class="font-bold">¡Correcto!</div><div class="explanation mt-2">${currentQuiz.questions[currentQuestionIndex].explanation}</div>`;
+                feedbackMessage.innerHTML = `<div class="font-bold">¡Correcto!</div><div class="explanation mt-2">${currentQuestionData.explanation}</div>`;
                 feedbackMessage.className = 'text-left p-4 my-4 rounded-lg font-semibold bg-green-100 text-green-800';
             } else {
-                feedbackMessage.innerHTML = `<div class="font-bold">Incorrecto.</div><div class="explanation mt-2">${currentQuiz.questions[currentQuestionIndex].explanation}</div>`;
+                feedbackMessage.innerHTML = `<div class="font-bold">Incorrecto.</div><div class="explanation mt-2">${currentQuestionData.explanation}</div>`;
                 feedbackMessage.className = 'text-left p-4 my-4 rounded-lg font-semibold bg-red-100 text-red-800';
             }
 
