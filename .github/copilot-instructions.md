@@ -1,4 +1,4 @@
-# Economía CDB - UBAXXI - FCE - Instrucciones para Github Copilot
+# Economía (CBC-UBA) - Instrucciones para Github Copilot
 
 > **📋 INSTRUCCIONES COMPLETAS**: Lee todas las instrucciones detalladas y unificadas en [`AGENTS.md`](../AGENTS.md)
 

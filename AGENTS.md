@@ -1,6 +1,6 @@
-# Instrucciones para Agentes de IA - Economía CBC UBA
+# Instrucciones para Agentes de IA - Economía (CBC-UBA)
 
-## Idioma
+## Instrucción Principal
 **SIEMPRE responde en español latinoamericano.** Todos los contenidos, explicaciones, textos, presentaciones y materiales deben estar completamente en español.
 
 ## Descripción del Proyecto

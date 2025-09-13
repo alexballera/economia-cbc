@@ -1,4 +1,4 @@
-# Economía CBC - UBAXXI - FCE - Instrucciones para GEMINI
+# Economía (CBC-UBA) - Instrucciones para GEMINI
 
 > **📋 INSTRUCCIONES COMPLETAS**: Lee todas las instrucciones detalladas y unificadas en [`AGENTS.md`](../AGENTS.md)
 
