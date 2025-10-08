@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Exámenes de práctica sobre Teoría del Consumidor, Producción y Costos - Sesión 5 CBC UBA">
-    <meta name="keywords" content="utilidad, costos, producción, competencia perfecta, utilidad marginal, costo marginal, costo de oportunidad, microeconomía CBC">
+    <meta name="description" content="Cuestionario interactivo de Inflación y Desempleo para el CBC de la UBA. 80 preguntas sobre teorías de inflación, efectos, expectativas y Curva de Phillips.">
+    <meta name="keywords" content="economía, CBC, UBA, inflación, desempleo, teoría monetarista, keynesiana, estructuralista, costos, Curva de Phillips, expectativas, cuestionario">
     <meta name="author" content="Economía CBC - UBA">
-    <title>Exámenes de Práctica - Sesión 5 CBC</title>
+    <title>Cuestionario: Sesión 10 - Inflación y Desempleo | Economía CBC-UBA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,8 +93,8 @@
     <div id="app" class="container bg-white p-8 rounded-2xl shadow-xl w-full">
         <!-- Pantalla de selección de cuestionarios -->
         <div id="quiz-selection-screen">
-            <h1 class="text-3xl font-bold text-center mb-4 text-indigo-700">Selecciona un Examen de Práctica</h1>
-            <p class="text-center text-gray-600 mb-8">Cada examen contiene 20 preguntas aleatorias que abarcan el contenido de la Teoría del Consumidor, Producción y Costos. ¡Mucha suerte!</p>
+            <h1 class="text-3xl font-bold text-center mb-4 text-indigo-700">Sesión 10 - Inflación y Desempleo</h1>
+            <p class="text-center text-gray-600 mb-8">Cuestionario sobre teorías de inflación, efectos económicos, expectativas y relación inflación-desempleo</p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
                 <button onclick="startQuiz(0)" class="card p-6 text-center gradient-bg text-white font-bold text-xl rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none">Examen de Práctica 1</button>
                 <button onclick="startQuiz(1)" class="card p-6 text-center gradient-bg text-white font-bold text-xl rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none">Examen de Práctica 2</button>
@@ -138,1032 +138,902 @@
 
     <script>
         const allQuestions = [
-            // Teoría del Consumidor y Utilidad
+            // CONCEPTO Y MEDICIÓN DE INFLACIÓN
             {
-                question: "¿Qué concepto describe la satisfacción adicional que se obtiene al consumir una unidad más de un bien?",
-                options: ["Utilidad total", "Utilidad promedio", "Utilidad marginal", "Utilidad neta"],
-                answer: 2,
-                explanation: "La utilidad marginal es la satisfacción extra que se deriva de consumir una unidad adicional de un bien."
-            },
-            {
-                question: "Según la Ley de la Utilidad Marginal Decreciente, a medida que se consume más de un bien, la utilidad marginal tiende a:",
-                options: ["Aumentar", "Permanecer constante", "Reducirse", "Volverse infinita"],
-                answer: 2,
-                explanation: "La Ley de la Utilidad Marginal Decreciente establece que cada unidad adicional de un bien consumido aporta menos satisfacción que la anterior."
-            },
-            {
-                question: "Si la canasta A tiene mayor utilidad que la canasta B para un consumidor, esto significa que el consumidor:",
-                options: ["Prefiere B antes que A", "Es indiferente entre A y B", "Prefiere A antes que B", "No puede comparar A y B"],
-                answer: 2,
-                explanation: "La utilidad es una medida de satisfacción, por lo que mayor utilidad implica mayor preferencia."
-            },
-            {
-                question: "La restricción presupuestaria de un consumidor está determinada por:",
-                options: ["Sus preferencias y gustos", "Su ingreso y los precios de los bienes", "La utilidad marginal de los bienes", "La cantidad de bienes disponibles en el mercado"],
+                question: "¿Qué es la inflación?",
+                options: [
+                    "Una disminución temporal de precios",
+                    "El crecimiento continuo y generalizado de los precios de bienes y servicios",
+                    "Un aumento puntual en el precio de un bien específico",
+                    "La reducción del poder adquisitivo del dinero"
+                ],
                 answer: 1,
-                explanation: "La restricción presupuestaria define las combinaciones de bienes que un consumidor puede adquirir con su ingreso limitado y los precios de mercado."
+                explanation: "La inflación se define como el crecimiento continuo y generalizado de los precios de los bienes y servicios de una economía."
             },
             {
-                question: "El Principio Equimarginal establece que un consumidor maximiza su utilidad cuando la utilidad marginal del último dólar gastado en cada bien es:",
-                options: ["Cero", "Máxima", "La misma", "Decreciente"],
-                answer: 2,
-                explanation: "Para maximizar la satisfacción, el consumidor debe igualar la utilidad marginal por unidad monetaria gastada en todos los bienes."
+                question: "¿Qué mide el Índice de Precios al Consumidor (IPC)?",
+                options: [
+                    "El costo de una canasta fija de bienes y servicios a lo largo del tiempo",
+                    "Solo el precio de los alimentos",
+                    "Los salarios promedio de los trabajadores",
+                    "La producción total de la economía"
+                ],
+                answer: 0,
+                explanation: "El IPC mide el costo de una canasta fija de bienes y servicios representativa del consumo de las familias a lo largo del tiempo."
             },
             {
-                question: "Si (UM del Bien X / Precio del Bien X) es mayor que (UM del Bien Y / Precio del Bien Y), un consumidor racional debería:",
-                options: ["Consumir más del Bien Y", "Consumir menos del Bien X", "Consumir más del Bien X", "Ser indiferente entre ambos bienes"],
-                answer: 2,
-                explanation: "Si el Bien X ofrece más utilidad por dólar, el consumidor debe reasignar gasto hacia él para aumentar su satisfacción total."
-            },
-            {
-                question: "La pendiente negativa de la curva de demanda se explica por el hecho de que, si el precio de un bien aumenta, el consumidor tiende a:",
-                options: ["Aumentar su consumo para mantener la utilidad", "Reducir su consumo para restablecer el equilibrio de utilidad marginal por dólar", "Mantener su consumo constante", "Buscar bienes sustitutos más caros"],
+                question: "¿Cómo se calcula la tasa de inflación?",
+                options: [
+                    "Dividiendo el IPC actual entre el IPC anterior",
+                    "Variación porcentual del IPC entre dos períodos",
+                    "Sumando todos los precios de la economía",
+                    "Multiplicando el IPC por 100"
+                ],
                 answer: 1,
-                explanation: "Un aumento de precio reduce la UM/P, por lo que el consumidor reduce el consumo para aumentar la UM y restablecer el equilibrio."
+                explanation: "La tasa de inflación se calcula como la variación porcentual del IPC entre dos períodos: [(IPC_t - IPC_t-1) / IPC_t-1] × 100."
             },
             {
-                question: "El enfoque de utilidad ordinal en la teoría del consumidor permite:",
-                options: ["Medir la satisfacción con números exactos", "Ordenar las preferencias sin asignar valores numéricos", "Comparar la satisfacción entre diferentes personas", "Determinar la utilidad total de un bien"],
+                question: "¿Qué representa una inflación del 10% anual?",
+                options: [
+                    "Los precios se duplicaron",
+                    "El nivel general de precios aumentó un 10% en un año",
+                    "Solo algunos precios subieron 10%",
+                    "El salario aumentó 10%"
+                ],
                 answer: 1,
-                explanation: "La utilidad ordinal se centra en la capacidad de ordenar las preferencias (A es preferido a B) sin cuantificar la magnitud de esa preferencia."
+                explanation: "Una inflación del 10% anual significa que el nivel general de precios de la economía aumentó un 10% en un año."
             },
             {
-                question: "El punto de equilibrio del consumidor se encuentra donde la curva de indiferencia es _______ a la restricción presupuestaria.",
-                options: ["Paralela", "Perpendicular", "Tangente", "Secante"],
-                answer: 2,
-                explanation: "La tangencia indica el punto donde la pendiente de la curva de indiferencia (TMS) es igual a la pendiente de la restricción presupuestaria (relación de precios)."
-            },
-            {
-                question: "La Tasa Marginal de Sustitución (TMS) mide:",
-                options: ["La cantidad de un bien que se puede producir con una unidad de otro", "La cantidad de un bien que un consumidor está dispuesto a sacrificar por una unidad de otro, manteniendo la utilidad", "La relación de precios entre dos bienes", "La utilidad marginal de un bien"],
+                question: "¿Qué diferencia hay entre inflación y aumento de un precio individual?",
+                options: [
+                    "No hay diferencia",
+                    "La inflación es generalizada y continua, el aumento individual es puntual",
+                    "Solo la inflación afecta a los consumidores",
+                    "El aumento individual es más grave"
+                ],
                 answer: 1,
-                explanation: "La TMS refleja la disposición del consumidor a intercambiar un bien por otro sin cambiar su nivel de satisfacción."
+                explanation: "La inflación es un aumento generalizado y continuo de precios, mientras que un aumento individual afecta solo a un bien específico."
             },
 
-            // Teoría del Productor y Rendimientos
+            // EXPLICACIÓN MONETARISTA DE LA INFLACIÓN
             {
-                question: "¿Cuál de los siguientes NO es un factor de producción (insumo)?",
-                options: ["Capital", "Tierra", "Trabajo", "Utilidad"],
-                answer: 3,
-                explanation: "La utilidad es un concepto de satisfacción del consumidor, no un insumo productivo."
-            },
-            {
-                question: "La producción adicional que se obtiene al añadir una unidad más de un insumo, manteniendo los demás constantes, se denomina:",
-                options: ["Producto total", "Producto promedio", "Producto marginal", "Rendimiento de escala"],
-                answer: 2,
-                explanation: "El producto marginal mide el cambio en la producción total resultante de añadir una unidad de un insumo variable."
-            },
-            {
-                question: "Según la Ley de los Rendimientos Decrecientes, si se añade más trabajo a una cantidad fija de capital, el producto marginal del trabajo eventualmente:",
-                options: ["Aumentará", "Permanecerá constante", "Disminuirá", "Se volverá infinito"],
-                answer: 2,
-                explanation: "La ley establece que, a partir de cierto punto, cada unidad adicional de un insumo variable aportará menos a la producción total."
-            },
-            {
-                question: "En el corto plazo, ¿cuál de los siguientes factores de producción es típicamente fijo para una empresa?",
-                options: ["Mano de obra", "Materias primas", "Capital (planta y equipo)", "Energía"],
-                answer: 2,
-                explanation: "El capital (maquinaria, edificios) es el factor que no puede ajustarse fácilmente en el corto plazo."
-            },
-            {
-                question: "Si la producción aumenta en una proporción mayor que el aumento de todos los insumos, se dice que la empresa experimenta:",
-                options: ["Rendimientos constantes de escala", "Rendimientos decrecientes de escala", "Rendimientos crecientes de escala (economías de escala)", "Rendimientos marginales decrecientes"],
-                answer: 2,
-                explanation: "Los rendimientos crecientes de escala implican que la eficiencia aumenta a medida que la escala de producción se expande."
-            },
-            {
-                question: "El largo plazo en la teoría de la producción se define como el período en el que:",
-                options: ["Todos los factores de producción son fijos", "Al menos un factor de producción es fijo", "Todos los factores de producción son variables", "La empresa no puede ajustar su producción"],
-                answer: 2,
-                explanation: "En el largo plazo, la empresa tiene la flexibilidad de ajustar todos sus insumos, incluyendo el tamaño de la planta."
-            },
-            {
-                question: "Un ejemplo de rendimientos decrecientes de escala podría ser:",
-                options: ["Una fábrica que duplica su producción al duplicar sus insumos", "Una empresa de software que reduce sus costos unitarios al aumentar la producción", "Una empresa muy grande que enfrenta problemas de gestión y coordinación al expandirse", "Una panadería que produce el doble con el doble de insumos"],
-                answer: 2,
-                explanation: "Los problemas de gestión y coordinación en empresas muy grandes pueden llevar a ineficiencias y rendimientos decrecientes de escala."
-            },
-            {
-                question: "El Producto Medio del Trabajo se calcula como:",
-                options: ["Cambio en la producción total / Cambio en el trabajo", "Producción total / Cantidad de trabajo", "Costo total / Cantidad de trabajo", "Producto marginal / Cantidad de trabajo"],
+                question: "Según la perspectiva monetarista, ¿qué causa la inflación?",
+                options: [
+                    "Solo los sindicatos",
+                    "El aumento de la cantidad de dinero",
+                    "Únicamente el déficit fiscal",
+                    "La reducción de la productividad"
+                ],
                 answer: 1,
-                explanation: "El Producto Medio indica la producción por unidad de trabajo empleada."
+                explanation: "Los monetaristas sostienen que el aumento de la cantidad de dinero es condición suficiente para que aparezca inflación."
             },
             {
-                question: "La Ley de los Rendimientos Decrecientes se aplica a:",
-                options: ["El largo plazo, cuando todos los insumos son variables", "El corto plazo, cuando al menos un insumo es fijo", "Solo a la agricultura", "Solo a la industria de servicios"],
+                question: "Para los monetaristas, ¿para qué se demanda dinero principalmente?",
+                options: [
+                    "Para transacciones, precaución y especulación",
+                    "Solo para transacciones",
+                    "Únicamente para especular",
+                    "Para acumular riqueza"
+                ],
                 answer: 1,
-                explanation: "Esta ley es relevante en el corto plazo porque asume que hay al menos un factor fijo que limita la productividad de los factores variables."
+                explanation: "Para los monetaristas, el único motivo por el cual la gente demanda dinero es para realizar transacciones."
             },
             {
-                question: "El cambio tecnológico que mejora la productividad y permite producir más con los mismos insumos se conoce como:",
-                options: ["Innovación de producto", "Innovación de proceso", "Rendimientos constantes", "Economías de alcance"],
+                question: "Si aumenta la oferta monetaria y la economía está en pleno empleo, ¿qué sucede según los monetaristas?",
+                options: [
+                    "Aumenta la producción física",
+                    "Los precios suben porque la demanda aumenta pero la producción no puede crecer",
+                    "Baja el desempleo",
+                    "No pasa nada"
+                ],
                 answer: 1,
-                explanation: "La innovación de proceso se refiere a mejoras en las técnicas de producción que aumentan la eficiencia."
+                explanation: "Con pleno empleo, la producción no puede aumentar en el corto plazo, entonces la mayor demanda se traduce en aumento de precios."
+            },
+            {
+                question: "¿Qué evidencia respalda la teoría monetarista de la inflación?",
+                options: [
+                    "Estudios de casos aislados",
+                    "Estudios históricos de períodos inflacionarios donde siempre hubo un fenómeno monetario",
+                    "Solo teoría sin evidencia empírica",
+                    "Únicamente experimentos de laboratorio"
+                ],
+                answer: 1,
+                explanation: "Los monetaristas se basan en estudios históricos de períodos inflacionarios donde siempre la causa fue un fenómeno monetario."
+            },
+            {
+                question: "Según los monetaristas, ¿qué intentarán hacer los agentes con exceso de dinero?",
+                options: [
+                    "Ahorrarlo todo",
+                    "Gastar el exceso en la compra de bienes y servicios",
+                    "Destruirlo",
+                    "Convertirlo en oro"
+                ],
+                answer: 1,
+                explanation: "Si los agentes tienen más dinero del que pensaban gastar, intentarán gastar el exceso en la compra de bienes y servicios."
             },
 
-            // Análisis Económico de los Costos
+            // EXPLICACIÓN KEYNESIANA DE LA INFLACIÓN
             {
-                question: "¿Cuál de los siguientes es un costo fijo para una empresa?",
-                options: ["Salarios por hora de los trabajadores de producción", "Materias primas", "Alquiler de la fábrica", "Electricidad utilizada en la producción"],
-                answer: 2,
-                explanation: "El alquiler de la fábrica es un gasto que no varía con el nivel de producción en el corto plazo."
-            },
-            {
-                question: "El costo adicional en que se incurre al producir una unidad más de un bien se denomina:",
-                options: ["Costo total", "Costo promedio", "Costo variable", "Costo marginal"],
-                answer: 3,
-                explanation: "El costo marginal es el incremento en el costo total resultante de producir una unidad adicional."
-            },
-            {
-                question: "Si el Costo Marginal (CM) es menor que el Costo Promedio (CP), entonces el Costo Promedio:",
-                options: ["Aumenta", "Disminuye", "Permanece constante", "Se vuelve cero"],
+                question: "Según Keynes, ¿cuáles son los tres motivos para demandar dinero?",
+                options: [
+                    "Consumo, ahorro e inversión",
+                    "Transacción, precaución y especulación",
+                    "Solo transacción",
+                    "Compra, venta y ahorro"
+                ],
                 answer: 1,
-                explanation: "Cuando el costo de la última unidad producida es menor que el promedio, arrastra el promedio hacia abajo."
+                explanation: "Para Keynes, la gente demanda dinero por tres motivos: transacción, precaución y especulación."
             },
             {
-                question: "El valor del bien o servicio más valioso al que se renuncia al tomar una decisión se conoce como:",
-                options: ["Costo contable", "Costo explícito", "Costo de oportunidad", "Costo hundido"],
-                answer: 2,
-                explanation: "El costo de oportunidad es el valor de la mejor alternativa sacrificada."
-            },
-            {
-                question: "La suma de los costos fijos y los costos variables de una empresa es igual a su:",
-                options: ["Costo marginal", "Costo promedio", "Costo total", "Costo de oportunidad"],
-                answer: 2,
-                explanation: "El costo total es la suma de todos los costos incurridos en la producción."
-            },
-            {
-                question: "Si el Costo Marginal (CM) es igual al Costo Promedio (CP), entonces el Costo Promedio se encuentra en su punto:",
-                options: ["Máximo", "Mínimo", "Cero", "Creciente"],
+                question: "¿Qué es el motivo precaución en la demanda de dinero?",
+                options: [
+                    "Demanda para especular en bolsa",
+                    "Demanda para hacer frente a contingencias e imprevistos",
+                    "Demanda solo para transacciones",
+                    "Demanda para comprar bienes de lujo"
+                ],
                 answer: 1,
-                explanation: "La curva de CM siempre cruza la curva de CP en su punto mínimo."
+                explanation: "El motivo precaución es la demanda de dinero para hacer frente a contingencias e imprevistos."
             },
             {
-                question: "Los costos que varían directamente con el nivel de producción se conocen como:",
-                options: ["Costos fijos", "Costos hundidos", "Costos variables", "Costos de oportunidad"],
-                answer: 2,
-                explanation: "Los costos variables cambian a medida que la cantidad producida varía."
-            },
-            {
-                question: "El Costo Fijo Promedio (CFP) de una empresa siempre:",
-                options: ["Aumenta con la producción", "Disminuye con la producción", "Permanece constante", "Es igual al Costo Marginal"],
+                question: "¿Qué es el motivo especulación en la demanda de dinero?",
+                options: [
+                    "Demanda solo para compras diarias",
+                    "Demanda por incertidumbre sobre el valor monetario de otros activos",
+                    "Demanda para pagar salarios",
+                    "Demanda para exportaciones"
+                ],
                 answer: 1,
-                explanation: "A medida que la producción aumenta, el costo fijo se distribuye entre más unidades, reduciendo el CFP."
+                explanation: "El motivo especulación es la demanda de dinero que se debe a la incertidumbre sobre el valor monetario de otros activos."
             },
             {
-                question: "La regla del menor costo para la selección de insumos establece que una empresa debe igualar el producto marginal por dólar gastado en cada:",
-                options: ["Producto final", "Factor de producción", "Costo fijo", "Costo variable"],
+                question: "Según el enfoque keynesiano, ¿cuál es la variable clave que causa inflación?",
+                options: [
+                    "Solo la oferta monetaria",
+                    "La demanda agregada cuando excede al producto de pleno empleo",
+                    "Únicamente los impuestos",
+                    "Solo el tipo de cambio"
+                ],
                 answer: 1,
-                explanation: "Esta regla asegura la combinación de insumos más eficiente para un nivel de producción dado."
+                explanation: "Para Keynes, si la demanda total excede al producto de pleno empleo, tendrá lugar un aumento en el nivel general de precios."
             },
             {
-                question: "Un costo económico es más amplio que un costo contable porque incluye:",
-                options: ["Solo gastos monetarios", "Solo gastos explícitos", "Costos de oportunidad implícitos", "Solo impuestos"],
-                answer: 2,
-                explanation: "Los costos económicos consideran el valor de las alternativas sacrificadas, no solo las transacciones monetarias."
+                question: "¿Puede la demanda de dinero absorber aumentos en la oferta monetaria sin inflación según Keynes?",
+                options: [
+                    "No, nunca",
+                    "Sí, en determinadas circunstancias",
+                    "Solo con deflación",
+                    "Únicamente en economías cerradas"
+                ],
+                answer: 1,
+                explanation: "Según Keynes, en determinadas circunstancias la demanda de dinero puede absorber aumentos en la oferta monetaria sin alteraciones de precios."
+            },
+            {
+                question: "¿De qué depende el efecto de un aumento de demanda agregada sobre los precios según Keynes?",
+                options: [
+                    "Solo del banco central",
+                    "Del nivel de recursos desempleados en la economía",
+                    "Únicamente de las exportaciones",
+                    "Solo de los sindicatos"
+                ],
+                answer: 1,
+                explanation: "La incidencia del incremento de la demanda agregada sobre los precios depende del nivel de los recursos desempleados."
+            },
+            {
+                question: "¿Qué sucede si la demanda aumenta cuando el producto está por debajo del potencial?",
+                options: [
+                    "Siempre hay inflación alta",
+                    "La economía incrementa la producción sin alterar precios significativamente",
+                    "La producción no puede aumentar",
+                    "Los precios bajan"
+                ],
+                answer: 1,
+                explanation: "Cuando el producto es inferior al potencial, si la demanda aumenta, la economía incrementa la producción prácticamente sin cambiar precios."
+            },
+            {
+                question: "¿Qué ocurre cuando el producto se aproxima al nivel potencial y aumenta la demanda?",
+                options: [
+                    "La producción sigue aumentando sin límite",
+                    "El aumento de la demanda se traslada a los precios",
+                    "Baja el desempleo sin inflación",
+                    "No pasa nada"
+                ],
+                answer: 1,
+                explanation: "Cuando el producto se aproxima al nivel potencial, el aumento de la demanda se trasladará a los precios (inflación)."
+            },
+            {
+                question: "¿Cuál es la principal diferencia entre monetaristas y keynesianos sobre la inflación?",
+                options: [
+                    "No hay diferencia",
+                    "Los monetaristas enfatizan la oferta monetaria, los keynesianos la demanda agregada y recursos desempleados",
+                    "Solo difieren en métodos estadísticos",
+                    "Los keynesianos niegan que exista inflación"
+                ],
+                answer: 1,
+                explanation: "Los monetaristas enfatizan que la inflación es siempre un fenómeno monetario, mientras los keynesianos destacan la demanda agregada y el nivel de empleo."
+            },
+            {
+                question: "¿Qué es el producto potencial?",
+                options: [
+                    "El producto máximo teórico sin límites",
+                    "El nivel de producto que corresponde con pleno empleo de los recursos",
+                    "Solo la producción agrícola",
+                    "El producto del año anterior"
+                ],
+                answer: 1,
+                explanation: "El producto potencial es el nivel de producto que corresponde con pleno empleo de los recursos de la economía."
             },
 
-            // Maximización de Beneficios en Competencia Perfecta
+            // INFLACIÓN DE COSTOS
             {
-                question: "En un mercado de competencia perfecta, las empresas son consideradas 'precio-aceptantes' porque:",
-                options: ["Pueden fijar el precio que deseen", "Tienen un producto diferenciado", "Hay muchos compradores y vendedores pequeños", "El gobierno fija los precios"],
-                answer: 2,
-                explanation: "Ningún participante individual tiene suficiente poder para influir en el precio de mercado."
-            },
-            {
-                question: "Una empresa en competencia perfecta maximiza sus beneficios cuando produce a un nivel donde:",
-                options: ["El Ingreso Total es máximo", "El Costo Total es mínimo", "El Costo Marginal es igual al Precio", "El Costo Promedio es mínimo"],
-                answer: 2,
-                explanation: "En competencia perfecta, el precio es igual al ingreso marginal, por lo que CM=P es la condición de maximización."
-            },
-            {
-                question: "Si el precio de mercado cae por debajo del Costo Variable Promedio (CVP) mínimo, una empresa en competencia perfecta debería:",
-                options: ["Aumentar su producción", "Seguir produciendo para cubrir costos fijos", "Cerrar en el corto plazo", "Bajar aún más su precio"],
-                answer: 2,
-                explanation: "Si no se cubren los costos variables, cada unidad producida genera pérdidas adicionales, por lo que es mejor cerrar."
-            },
-            {
-                question: "La curva de oferta a corto plazo de una empresa en competencia perfecta es su curva de:",
-                options: ["Costo total", "Costo promedio", "Costo marginal por encima del CVP mínimo", "Costo fijo promedio"],
-                answer: 2,
-                explanation: "La empresa solo ofrecerá producción si el precio cubre al menos sus costos variables, y la cantidad ofrecida se determina por el CM."
-            },
-            {
-                question: "En competencia perfecta, el Ingreso Marginal (IMg) de una empresa es igual a:",
-                options: ["El Costo Marginal", "El Costo Promedio", "El Precio de mercado", "Cero"],
-                answer: 2,
-                explanation: "Dado que la empresa es precio-aceptante, cada unidad adicional vendida aporta el precio de mercado como ingreso."
-            },
-            {
-                question: "Una característica clave de la competencia perfecta es la libre entrada y salida de empresas, lo que asegura que a largo plazo los beneficios económicos sean:",
-                options: ["Muy altos", "Negativos", "Cero (normales)", "Iguales a los de un monopolio"],
-                answer: 2,
-                explanation: "La entrada de nuevas empresas reduce los beneficios hasta que solo se cubren los costos de oportunidad, y la salida ocurre si hay pérdidas."
-            },
-            {
-                question: "El punto de cero utilidad para una empresa en competencia perfecta ocurre cuando el precio es igual a su:",
-                options: ["Costo Marginal", "Costo Variable Promedio", "Costo Fijo Promedio", "Costo Promedio Total"],
-                answer: 3,
-                explanation: "En este punto, los ingresos cubren exactamente todos los costos, incluyendo el costo de oportunidad del capital."
-            },
-            {
-                question: "Si una empresa en competencia perfecta está produciendo donde CM > P, debería:",
-                options: ["Aumentar su producción", "Reducir su producción", "Mantener su producción constante", "Cerrar inmediatamente"],
+                question: "¿Qué explica la teoría de la inflación de costos de producción?",
+                options: [
+                    "Solo problemas monetarios",
+                    "Que grupos económicos concentrados elevan precios al aumentar costos",
+                    "Únicamente exceso de demanda",
+                    "Solo problemas estructurales"
+                ],
                 answer: 1,
-                explanation: "Si el costo de la última unidad es mayor que el precio, la empresa está perdiendo dinero en esa unidad y debe reducir la producción."
+                explanation: "La inflación de costos explica que grupos económicos concentrados (sindicatos, empresas) son culpables de que los precios se eleven."
             },
             {
-                question: "La curva de demanda que enfrenta una empresa individual en competencia perfecta es:",
-                options: ["Inelástica", "Perfectamente inelástica", "Perfectamente elástica", "Elástica"],
-                answer: 2,
-                explanation: "Al ser precio-aceptante, la empresa puede vender cualquier cantidad al precio de mercado, pero nada a un precio superior."
-            },
-            {
-                question: "El objetivo principal de una empresa en cualquier estructura de mercado es:",
-                options: ["Maximizar las ventas", "Minimizar los costos", "Maximizar los beneficios", "Maximizar la cuota de mercado"],
-                answer: 2,
-                explanation: "La maximización de beneficios es el motor fundamental de las decisiones empresariales."
-            },
-            {
-                question: "La principal diferencia entre utilidad cardinal y utilidad ordinal es que la primera:",
-                options: ["Permite ordenar preferencias", "Asigna valores numéricos a la satisfacción", "Es el enfoque moderno", "No se usa en economía"],
+                question: "¿Cuáles son los dos componentes importantes del costo de producción?",
+                options: [
+                    "Tierra y capital",
+                    "Costos laborales y no laborales",
+                    "Importaciones y exportaciones",
+                    "Solo salarios"
+                ],
                 answer: 1,
-                explanation: "La utilidad cardinal intentaba cuantificar la satisfacción, mientras que la ordinal solo la ordena."
+                explanation: "Un componente importante en la formación de precios es el costo de producción, dividido entre costos laborales y no laborales."
             },
             {
-                question: "Si un consumidor está en equilibrio, y el precio del Bien A aumenta, ¿qué sucederá con la cantidad demandada del Bien A?",
-                options: ["Aumentará", "Permanecerá constante", "Disminuirá", "Depende de la elasticidad"],
-                answer: 2,
-                explanation: "Para restablecer el equilibrio (UM/P igual para todos los bienes), el consumidor debe reducir el consumo del bien cuyo precio subió."
-            },
-            {
-                question: "La función de producción muestra la relación entre:",
-                options: ["Costos e ingresos", "Precios y cantidades demandadas", "Insumos y producción máxima", "Oferta y demanda"],
-                answer: 2,
-                explanation: "Define la cantidad máxima de producto que se puede obtener con una combinación dada de insumos."
-            },
-            {
-                question: "Si una empresa duplica todos sus insumos y su producción se triplica, experimenta:",
-                options: ["Rendimientos constantes de escala", "Rendimientos decrecientes de escala", "Rendimientos crecientes de escala", "Rendimientos marginales decrecientes"],
-                answer: 2,
-                explanation: "Un aumento más que proporcional en la producción indica rendimientos crecientes de escala."
-            },
-            {
-                question: "El costo de oportunidad de estudiar en la universidad incluye:",
-                options: ["Solo la matrícula", "Solo los libros", "Los ingresos que se dejan de percibir por no trabajar", "Solo los gastos explícitos"],
-                answer: 2,
-                explanation: "El costo de oportunidad considera el valor de la mejor alternativa sacrificada, como el salario que se podría haber ganado."
-            },
-            {
-                question: "En un mercado perfectamente competitivo, la curva de demanda que enfrenta una empresa individual es:",
-                options: ["Horizontal", "Vertical", "Con pendiente negativa", "Con pendiente positiva"],
-                answer: 0,
-                explanation: "La empresa es precio-aceptante y puede vender cualquier cantidad al precio de mercado, lo que se representa con una línea horizontal."
-            },
-            {
-                question: "Si el CM es mayor que el CP, ¿qué le sucede al CP?",
-                options: ["Disminuye", "Aumenta", "Permanece constante", "Se vuelve cero"],
+                question: "Según la teoría de costos, ¿a quién se atribuye frecuentemente la responsabilidad principal de la inflación?",
+                options: [
+                    "Solo al gobierno",
+                    "A los sindicatos, por imponer aumentos salariales mayores que la productividad",
+                    "Únicamente a los consumidores",
+                    "Solo a los bancos"
+                ],
                 answer: 1,
-                explanation: "Si el costo de la última unidad es mayor que el promedio, eleva el promedio."
+                explanation: "Frecuentemente se atribuye la responsabilidad a los sindicatos, que imponen aumentos de salarios en mayor proporción que el crecimiento de productividad."
             },
             {
-                question: "El problema del consumidor se refiere a cómo maximizar la utilidad sujeto a:",
-                options: ["La oferta de bienes", "La restricción presupuestaria", "La función de producción", "Los costos de la empresa"],
+                question: "¿De qué tres factores depende el precio de un bien según el modelo simplificado?",
+                options: [
+                    "Solo del salario",
+                    "Del salario monetario, productividad del trabajo y mark-up",
+                    "Únicamente de la demanda",
+                    "Solo de los impuestos"
+                ],
                 answer: 1,
-                explanation: "El ingreso limitado y los precios de los bienes restringen las opciones del consumidor."
+                explanation: "El precio depende del salario monetario, la productividad del trabajo y el margen (mark-up) para cubrir costos de capital."
             },
             {
-                question: "La Ley de los Rendimientos Decrecientes se observa cuando:",
-                options: ["El producto total disminuye", "El producto marginal de un insumo variable disminuye", "El producto promedio aumenta", "Todos los insumos son variables"],
+                question: "¿Cuándo será mayor el precio de un bien según la teoría de costos?",
+                options: [
+                    "Cuando aumenta la productividad",
+                    "Cuando mayor sea el salario monetario, menor la productividad y mayor el mark-up",
+                    "Cuando baja el mark-up",
+                    "Cuando solo aumenta la demanda"
+                ],
                 answer: 1,
-                explanation: "La ley se centra en la disminución del aporte adicional de un insumo variable a medida que se añade más de él."
+                explanation: "El precio será mayor cuanto mayor sea el salario monetario, menor sea la productividad del trabajo y más alto sea el mark-up."
             },
             {
-                question: "En el punto de cierre, las pérdidas de una empresa en competencia perfecta son iguales a sus:",
-                options: ["Costos variables", "Costos marginales", "Costos fijos", "Ingresos totales"],
-                answer: 2,
-                explanation: "En este punto, los ingresos cubren los costos variables, por lo que las pérdidas son solo los costos fijos."
-            },
-            {
-                question: "¿Qué tipo de utilidad se utiliza en la teoría moderna del consumidor para ordenar preferencias sin asignar valores numéricos?",
-                options: ["Cardinal", "Total", "Marginal", "Ordinal"],
-                answer: 3,
-                explanation: "La utilidad ordinal permite establecer un orden de preferencia (A es mejor que B) sin cuantificar la diferencia."
-            },
-            {
-                question: "Si el producto marginal de un insumo es cero, significa que añadir una unidad adicional de ese insumo:",
-                options: ["Aumenta la producción total", "Disminuye la producción total", "No cambia la producción total", "Aumenta el costo total"],
-                answer: 2,
-                explanation: "Un producto marginal de cero implica que la producción total ha alcanzado su máximo y no aumenta con más insumo."
-            },
-            {
-                question: "Los costos variables son aquellos que:",
-                options: ["No cambian con la producción", "Se incurren incluso con producción cero", "Varían directamente con el nivel de producción", "Son siempre mayores que los costos fijos"],
-                answer: 2,
-                explanation: "Ejemplos incluyen materias primas y salarios de producción, que aumentan o disminuyen con la cantidad producida."
-            },
-            {
-                question: "La condición de maximización de beneficios CM = P es válida para una empresa en competencia perfecta porque:",
-                options: ["El CM es siempre constante", "El P es igual al Ingreso Marginal", "El P es igual al Costo Promedio", "La empresa tiene poder de mercado"],
+                question: "¿Cómo se inicia el proceso inflacionario según la teoría de costos?",
+                options: [
+                    "Por exceso de demanda",
+                    "Por un empujón de los costos, no por un tirón de la demanda",
+                    "Solo por emisión monetaria",
+                    "Por problemas estructurales únicamente"
+                ],
                 answer: 1,
-                explanation: "En competencia perfecta, cada unidad adicional vendida aporta el precio de mercado como ingreso marginal."
+                explanation: "El proceso inflacionario se inicia por un empujón de los costos (cost-push) y no por un tirón de la demanda (demand-pull)."
             },
             {
-                question: "El costo de oportunidad es un concepto fundamental en economía debido a:",
-                options: ["La abundancia de recursos", "La escasez de recursos", "La facilidad de medición", "La ausencia de elecciones"],
+                question: "¿Qué caracteriza a la formación de salarios en el mercado de trabajo real?",
+                options: [
+                    "Es de competencia perfecta",
+                    "No es competitiva; existen instituciones laborales como sindicatos que protegen a los trabajadores",
+                    "Solo la determina el gobierno",
+                    "Es totalmente aleatoria"
+                ],
                 answer: 1,
-                explanation: "La escasez de recursos obliga a tomar decisiones, y cada decisión implica sacrificar una alternativa."
+                explanation: "La formación de salarios no es competitiva; existen instituciones laborales como sindicatos que protegen a la parte más débil."
             },
             {
-                question: "Si una empresa está en el largo plazo, ¿qué factores de producción puede ajustar?",
-                options: ["Solo la mano de obra", "Solo el capital", "Solo las materias primas", "Todos los factores"],
-                answer: 3,
-                explanation: "El largo plazo se define como el período en el que todos los insumos son variables y ajustables."
-            },
-            {
-                question: "Cuando el Costo Promedio (CP) está en su punto mínimo, ¿qué relación tiene con el Costo Marginal (CM)?",
-                options: ["CM es mayor que CP", "CM es menor que CP", "CM es igual a CP", "CM es cero"],
-                answer: 2,
-                explanation: "La curva de CM siempre cruza la curva de CP en su punto mínimo."
-            },
-            {
-                question: "La Ley de la Utilidad Marginal Decreciente explica por qué la curva de demanda tiene pendiente:",
-                options: ["Positiva", "Negativa", "Cero", "Infinita"],
+                question: "¿Cuándo hay propiamente inflación de costos?",
+                options: [
+                    "Siempre que aumentan los salarios",
+                    "Solo si el crecimiento de salarios es superior al crecimiento de la productividad",
+                    "Cuando baja la productividad únicamente",
+                    "Nunca ocurre en la realidad"
+                ],
                 answer: 1,
-                explanation: "A medida que el precio baja, la UM por dólar aumenta, incentivando un mayor consumo, lo que resulta en una relación inversa entre precio y cantidad demandada."
+                explanation: "Solo si el crecimiento de salarios es superior al crecimiento de la productividad cabe hablar propiamente de inflación de costos."
             },
             {
-                question: "Un ejemplo de costo fijo para una empresa de software sería:",
-                options: ["El salario de un programador por hora", "El costo de la electricidad de los servidores", "El alquiler de las oficinas centrales", "El costo de las licencias de software por usuario"],
-                answer: 2,
-                explanation: "El alquiler de las oficinas es un gasto que no varía con la cantidad de software producido en el corto plazo."
-            },
-            {
-                question: "Si una empresa en competencia perfecta tiene beneficios económicos positivos a corto plazo, ¿qué se espera que suceda a largo plazo?",
-                options: ["Los beneficios se mantendrán altos", "Nuevas empresas entrarán al mercado", "Las empresas existentes saldrán del mercado", "El precio de mercado aumentará"],
+                question: "¿Qué es la espiral salarios-salarios?",
+                options: [
+                    "Reducción generalizada de salarios",
+                    "Incrementos salariales de sectores dinámicos se transmiten al resto del mercado laboral",
+                    "Solo afecta a un sector",
+                    "No tiene efecto sobre la inflación"
+                ],
                 answer: 1,
-                explanation: "La libre entrada de empresas en competencia perfecta atrae a nuevos competidores si hay beneficios extraordinarios, lo que reduce los beneficios a cero a largo plazo."
+                explanation: "La espiral salarios-salarios es cuando los incrementos en sectores dinámicos se transmiten al resto del mercado de trabajo."
             },
             {
-                question: "El Producto Promedio del Trabajo se calcula dividiendo el Producto Total por:",
-                options: ["El Producto Marginal", "La cantidad de trabajo", "El capital", "El costo total"],
+                question: "¿Qué preocupa más a los trabajadores según la teoría de costos?",
+                options: [
+                    "Solo el salario nominal",
+                    "El nivel relativo de sus salarios (poder adquisitivo) más que el nivel absoluto",
+                    "Únicamente las vacaciones",
+                    "Solo las horas trabajadas"
+                ],
                 answer: 1,
-                explanation: "El Producto Promedio mide la eficiencia promedio de cada unidad de trabajo."
+                explanation: "Los trabajadores se preocupan más del nivel relativo de sus salarios (lo que pueden comprar) que del nivel absoluto o nominal."
             },
+
+            // INFLACIÓN ESTRUCTURALISTA
             {
-                question: "La regla del menor costo para la selección de insumos es análoga a la regla de maximización de utilidad del consumidor porque ambas buscan:",
-                options: ["Minimizar los ingresos", "Igualar los precios", "Igualar los beneficios", "Igualar el beneficio/producto marginal por unidad monetaria gastada"],
-                answer: 3,
-                explanation: "Ambas reglas buscan la eficiencia en la asignación de recursos, ya sea para maximizar la satisfacción o la producción, por unidad de gasto."
-            },
-            {
-                question: "Si una empresa experimenta rendimientos decrecientes de escala, significa que al duplicar todos sus insumos, la producción:",
-                options: ["Se duplica", "Se triplica", "Aumenta menos del doble", "Disminuye"],
-                answer: 2,
-                explanation: "Los rendimientos decrecientes de escala implican que la producción crece a un ritmo menor que el aumento proporcional de los insumos."
-            },
-            {
-                question: "El costo de oportunidad de ver una película en el cine en lugar de estudiar para un examen es:",
-                options: ["Solo el precio de la entrada", "El precio de la entrada más la posible mejora en la calificación del examen", "Solo el tiempo invertido", "Solo el costo de los snacks"],
+                question: "¿Dónde se identifica típicamente la inflación estructuralista?",
+                options: [
+                    "Solo en países desarrollados",
+                    "En países en vías de desarrollo o subdesarrollados",
+                    "Únicamente en Europa",
+                    "No existe en la realidad"
+                ],
                 answer: 1,
-                explanation: "El costo de oportunidad incluye el valor de la mejor alternativa sacrificada, que en este caso es el beneficio de estudiar."
+                explanation: "La inflación estructuralista suele identificarse como la inflación típica de los países en vías de desarrollo o subdesarrollados."
             },
             {
-                question: "En competencia perfecta, la curva de oferta de la empresa a corto plazo es la porción de su curva de Costo Marginal que está por encima del:",
-                options: ["Costo Fijo Promedio mínimo", "Costo Total Promedio mínimo", "Costo Variable Promedio mínimo", "Ingreso Marginal"],
-                answer: 2,
-                explanation: "La empresa solo producirá si el precio cubre al menos sus costos variables, y la cantidad se determina por el CM."
-            },
-            {
-                question: "La principal diferencia entre el corto y el largo plazo en la teoría de costos es que en el corto plazo:",
-                options: ["Todos los costos son variables", "Existen costos fijos", "No hay costos variables", "La empresa no puede producir"],
+                question: "Según los estructuralistas, ¿dónde descansan las bases de la inflación?",
+                options: [
+                    "Solo en factores monetarios",
+                    "En el sistema productivo y social; los factores monetarios solo propagan",
+                    "Únicamente en el déficit fiscal",
+                    "Solo en factores externos"
+                ],
                 answer: 1,
-                explanation: "La presencia de al menos un factor fijo da lugar a costos fijos en el corto plazo."
+                explanation: "Los estructuralistas sostienen que las bases de la inflación descansan en el sistema productivo y social, no en factores monetarios."
             },
             {
-                question: "Si el Producto Marginal del Trabajo es negativo, significa que añadir un trabajador adicional:",
-                options: ["Aumenta la producción total", "Disminuye la producción total", "No afecta la producción total", "Aumenta el Producto Promedio"],
+                question: "¿Qué papel tienen los factores monetarios según los estructuralistas?",
+                options: [
+                    "Son la causa principal",
+                    "Solo tienen importancia como elementos propagadores, no originan la inflación",
+                    "No tienen ningún papel",
+                    "Son la única causa"
+                ],
                 answer: 1,
-                explanation: "Un PMg negativo implica que el trabajador adicional es tan ineficiente que reduce la producción total."
+                explanation: "Los factores monetarios solo tienen importancia como elementos propagadores de la inflación, pero no la originan."
             },
             {
-                question: "El Costo Total Promedio (CP) se calcula como:",
-                options: ["CF + CV", "CM / c", "CT / c", "CV / c"],
-                answer: 2,
-                explanation: "El CP es el costo por unidad de producción."
-            },
-            {
-                question: "En un mercado de competencia perfecta, si una empresa está obteniendo beneficios económicos positivos, ¿qué sucederá con el precio de mercado a largo plazo?",
-                options: ["Aumentará", "Disminuirá", "Permanecerá constante", "Se volverá cero"],
+                question: "¿Qué constituye la causa de las presiones inflacionarias según el estructuralismo?",
+                options: [
+                    "Solo exceso de demanda",
+                    "Rigideces estructurales e institucionales básicas",
+                    "Únicamente emisión monetaria",
+                    "Solo factores psicológicos"
+                ],
                 answer: 1,
-                explanation: "La entrada de nuevas empresas aumentará la oferta, lo que presionará el precio a la baja hasta que los beneficios económicos sean cero."
+                explanation: "Ciertas rigideces estructurales e institucionales básicas constituyen la causa de las presiones inflacionarias."
             },
             {
-                question: "La Ley de los Rendimientos Decrecientes es una observación empírica que se aplica a la producción cuando:",
-                options: ["Todos los insumos son variables", "Al menos un insumo es fijo", "La tecnología cambia rápidamente", "La empresa es un monopolio"],
+                question: "¿De dónde surgen las presiones inflacionarias básicas según el estructuralismo?",
+                options: [
+                    "Solo del banco central",
+                    "De cuellos de botella o estrangulamientos en determinados sectores",
+                    "Únicamente de importaciones",
+                    "Solo de exportaciones"
+                ],
                 answer: 1,
-                explanation: "La ley se basa en la limitación impuesta por los factores fijos a la productividad de los factores variables."
+                explanation: "Las presiones inflacionarias surgen de cuellos de botella o estrangulamientos en determinados sectores que repercuten sobre los demás."
             },
             {
-                question: "El concepto de utilidad se refiere a:",
-                options: ["El precio de un bien", "La cantidad de un bien", "La satisfacción o el beneficio subjetivo", "El costo de producción"],
-                answer: 2,
-                explanation: "La utilidad es la medida de la satisfacción que un consumidor obtiene de un bien o servicio."
-            },
-            {
-                question: "Si el Costo Variable Promedio (CVP) está disminuyendo, es probable que el Costo Marginal (CM) sea:",
-                options: ["Mayor que el CVP", "Menor que el CVP", "Igual al CVP", "Cero"],
+                question: "Según los estructuralistas, ¿la inflación está causada por exceso de crecimiento?",
+                options: [
+                    "Sí, siempre",
+                    "No, está causada por falta de crecimiento",
+                    "Solo en países desarrollados",
+                    "No hay relación con el crecimiento"
+                ],
                 answer: 1,
-                explanation: "Cuando el CM es menor que el CVP, arrastra el CVP hacia abajo."
+                explanation: "La inflación no está causada por exceso de crecimiento sino, todo lo contrario, por la falta del mismo."
             },
             {
-                question: "La condición de cierre a corto plazo para una empresa en competencia perfecta se da cuando el precio es igual al:",
-                options: ["Costo Fijo Promedio", "Costo Total Promedio", "Costo Variable Promedio mínimo", "Costo Marginal máximo"],
-                answer: 2,
-                explanation: "Si el precio no cubre los costos variables, la empresa no puede seguir operando de manera sostenible."
-            },
-            {
-                question: "Un ejemplo de rendimientos constantes de escala sería:",
-                options: ["Una empresa que duplica sus insumos y triplica su producción", "Una empresa que duplica sus insumos y duplica su producción", "Una empresa que duplica sus insumos y aumenta su producción en un 50%", "Una empresa que reduce sus costos unitarios al aumentar la producción"],
+                question: "¿Por qué la demanda inelástica en algunos sectores genera inflación según estructuralistas?",
+                options: [
+                    "Porque la producción siempre aumenta",
+                    "Porque el insuficiente desarrollo impide satisfacer la demanda internamente, generando dependencia externa",
+                    "Solo por problemas monetarios",
+                    "No genera inflación"
+                ],
                 answer: 1,
-                explanation: "La producción aumenta en la misma proporción que los insumos."
+                explanation: "El insuficiente desarrollo impide que la demanda sea satisfecha internamente, apareciendo dependencia del exterior y presiones inflacionarias."
             },
             {
-                question: "La principal diferencia entre costos económicos y contables radica en que los económicos incluyen:",
-                options: ["Solo los gastos de capital", "Solo los gastos de operación", "Los costos de oportunidad", "Solo los costos explícitos"],
-                answer: 2,
-                explanation: "Los costos económicos consideran tanto los costos explícitos como los implícitos (costos de oportunidad)."
-            },
-            {
-                question: "La curva de indiferencia de un consumidor muestra:",
-                options: ["Las combinaciones de bienes que puede comprar", "Las combinaciones de bienes que le dan la misma utilidad", "La relación entre precio y cantidad demandada", "La producción máxima con ciertos insumos"],
+                question: "¿Qué caracteriza al sector agrario según los estructuralistas?",
+                options: [
+                    "Alta elasticidad de oferta",
+                    "Rigidez de la oferta; la producción es muy inelástica respecto a los precios",
+                    "Perfecta competencia",
+                    "No tiene importancia"
+                ],
                 answer: 1,
-                explanation: "Todos los puntos en una curva de indiferencia representan el mismo nivel de satisfacción."
+                explanation: "El sector agrario presenta rigidez de la oferta; la producción agrícola es muy inelástica respecto a los precios."
             },
             {
-                question: "Si el Producto Marginal del Trabajo es creciente, significa que añadir un trabajador adicional:",
-                options: ["Disminuye la producción total", "Aumenta la producción total a un ritmo creciente", "No afecta la producción total", "Aumenta el costo marginal"],
+                question: "Si los precios son inflexibles a la baja, ¿cómo se verifican los cambios de precios relativos?",
+                options: [
+                    "Solo bajando todos los precios",
+                    "Solo a través del alza del precio monetario de los bienes que se han apreciado",
+                    "No se pueden verificar",
+                    "Únicamente con deflación"
+                ],
                 answer: 1,
-                explanation: "Un PMg creciente indica que cada trabajador adicional es más productivo que el anterior."
+                explanation: "Si los precios monetarios son inflexibles a la baja, todo cambio de precios relativos se verifica solo mediante alzas de precios apreciados."
             },
             {
-                question: "El Costo Variable Promedio (CVP) se calcula como:",
-                options: ["CF / c", "CT / c", "CV / c", "CM / c"],
-                answer: 2,
-                explanation: "El CVP es el costo variable por unidad de producción."
-            },
-            {
-                question: "En competencia perfecta, el precio de mercado es determinado por:",
-                options: ["Una sola empresa dominante", "El gobierno", "El libre juego de la oferta y la demanda del mercado", "Los consumidores"],
-                answer: 2,
-                explanation: "Debido a la atomización, el precio se establece por la interacción de todas las fuerzas del mercado."
-            },
-            {
-                question: "El Principio Equimarginal es fundamental para la derivación de la curva de demanda porque explica cómo los consumidores ajustan su consumo ante cambios en:",
-                options: ["La oferta de bienes", "Los precios relativos de los bienes", "La tecnología de producción", "Los costos de la empresa"],
+                question: "¿Qué proponen los estructuralistas para combatir la inflación?",
+                options: [
+                    "Solo restricción monetaria",
+                    "Desarrollo continuado, aun a costa de estabilidad de precios",
+                    "Únicamente reducir salarios",
+                    "No proponen nada"
+                ],
                 answer: 1,
-                explanation: "El principio muestra cómo los consumidores reasignan su gasto para mantener la igualdad de UM/P ante cambios en los precios."
+                explanation: "Los estructuralistas se inclinan por desarrollo continuado, aun a costa de la estabilidad de precios, para corregir deficiencias estructurales."
             },
+
+            // EXPECTATIVAS E INFLACIÓN
             {
-                question: "La Ley de los Rendimientos Decrecientes es una explicación de por qué la curva de Costo Marginal (CM) eventualmente tiene pendiente:",
-                options: ["Negativa", "Positiva", "Cero", "Infinita"],
+                question: "¿Qué papel juegan las expectativas en la evolución de la inflación?",
+                options: [
+                    "Ninguno",
+                    "Es importante; lo que la gente espera que suceda con la economía afecta la inflación",
+                    "Solo en teoría",
+                    "Únicamente en hiperinflaciones"
+                ],
                 answer: 1,
-                explanation: "A medida que el PMg disminuye, el costo de producir una unidad adicional aumenta, lo que se refleja en un CM creciente."
+                explanation: "Es importante destacar el rol que juegan las expectativas en la evolución de la inflación; lo que la gente espera afecta el resultado."
             },
             {
-                question: "Un ejemplo de costo de oportunidad en la vida diaria sería:",
-                options: ["El dinero gastado en un café", "El tiempo que se podría haber usado para estudiar en lugar de ver televisión", "El pago del alquiler mensual", "El costo de la gasolina para ir al trabajo"],
+                question: "¿Qué son las expectativas en términos económicos?",
+                options: [
+                    "Solo deseos personales",
+                    "Lo que la gente espera que suceda en el futuro con la economía y sus componentes",
+                    "Únicamente predicciones del gobierno",
+                    "No tienen definición"
+                ],
                 answer: 1,
-                explanation: "El costo de oportunidad es el valor de la mejor alternativa sacrificada, como el beneficio de estudiar."
+                explanation: "Las expectativas son lo que la gente espera que suceda en el futuro con la economía: desempleo, actividad, inversión, evolución de precios."
             },
             {
-                question: "En el largo plazo, una empresa en competencia perfecta ajustará su tamaño de planta para producir en el punto donde:",
-                options: ["El Costo Fijo Promedio es mínimo", "El Costo Variable Promedio es mínimo", "El Costo Total Promedio de largo plazo es mínimo", "El Costo Marginal es máximo"],
-                answer: 2,
-                explanation: "A largo plazo, las empresas buscan operar en la escala más eficiente, donde el CTP de largo plazo es mínimo."
-            },
-            {
-                question: "La maximización de beneficios para una empresa se logra cuando la diferencia entre:",
-                options: ["Ingreso Total y Costo Marginal es máxima", "Ingreso Total y Costo Total es máxima", "Costo Total y Costo Variable es máxima", "Ingreso Marginal y Costo Promedio es máxima"],
+                question: "¿Qué son las expectativas estáticas?",
+                options: [
+                    "Expectativas que siempre cambian",
+                    "Los agentes esperan que la inflación sea igual a una tasa determinada año tras año",
+                    "Solo se usan en modelos complejos",
+                    "No existen en la realidad"
+                ],
                 answer: 1,
-                explanation: "El beneficio es la diferencia entre ingresos y costos totales, y el objetivo es maximizar esa diferencia."
+                explanation: "En expectativas estáticas, sindicatos y empresas esperan que la inflación sea igual a una tasa determinada año tras año."
             },
             {
-                question: "Si una empresa está produciendo en el corto plazo y el precio es igual al Costo Total Promedio (CP), entonces la empresa está obteniendo:",
-                options: ["Beneficios económicos positivos", "Pérdidas", "Beneficios económicos cero", "Beneficios contables negativos"],
-                answer: 2,
-                explanation: "Si P=CP, los ingresos cubren todos los costos (incluyendo el costo de oportunidad), resultando en cero beneficios económicos."
-            },
-            {
-                question: "La principal diferencia entre rendimientos decrecientes y rendimientos de escala decrecientes es que los primeros se refieren a cambios en:",
-                options: ["Todos los insumos", "Un solo insumo", "La tecnología", "Los precios de los insumos"],
+                question: "¿Qué caracterizan las expectativas adaptativas?",
+                options: [
+                    "No se adaptan nunca",
+                    "Se forman como promedio ponderado entre la inflación efectiva de ese año y la esperada un año atrás",
+                    "Solo miran el futuro",
+                    "Ignoran la inflación pasada"
+                ],
                 answer: 1,
-                explanation: "Los rendimientos decrecientes se aplican a un solo insumo variable, mientras que los rendimientos de escala se refieren a cambios en todos los insumos."
+                explanation: "Las expectativas adaptativas se forman como promedio ponderado entre la inflación efectiva de ese año y la inflación que esperaban un año atrás."
             },
             {
-                question: "Un ejemplo de costo variable para una empresa de fabricación de ropa sería:",
-                options: ["El alquiler de la fábrica", "El salario del gerente de producción", "El costo de la tela y los botones", "El seguro de la maquinaria"],
-                answer: 2,
-                explanation: "El costo de la tela y los botones varía directamente con la cantidad de ropa producida."
-            },
-            {
-                question: "La curva de indiferencia de un consumidor es convexa al origen debido a:",
-                options: ["La Ley de la Utilidad Marginal Decreciente", "La restricción presupuestaria", "La Ley de los Rendimientos Decrecientes", "La maximización de beneficios"],
-                answer: 0,
-                explanation: "A medida que el consumidor tiene más de un bien, su utilidad marginal disminuye, por lo que está dispuesto a sacrificar menos del otro bien para obtener más de este."
-            },
-            {
-                question: "El Producto Marginal del Trabajo es la pendiente de la curva de:",
-                options: ["Costo Total", "Producto Total", "Costo Marginal", "Producto Promedio"],
+                question: "¿Qué caracterizan las expectativas racionales?",
+                options: [
+                    "Solo miran el pasado",
+                    "Los agentes cuentan con un buen modelo y pueden predecir con precisión; información perfecta",
+                    "Son siempre incorrectas",
+                    "No consideran la demanda agregada"
+                ],
                 answer: 1,
-                explanation: "El PMg mide el cambio en el PT por cada unidad adicional de trabajo."
+                explanation: "Las expectativas racionales suponen que los agentes tienen un buen modelo económico, pueden predecir con precisión y tienen información perfecta."
             },
             {
-                question: "Si el Costo Marginal (CM) es mayor que el Costo Variable Promedio (CVP), entonces el CVP:",
-                options: ["Disminuye", "Aumenta", "Permanece constante", "Es cero"],
+                question: "¿De qué depende que una expansión de demanda reduzca el desempleo?",
+                options: [
+                    "Solo de la oferta monetaria",
+                    "De si dicha expansión era esperada o no; depende de las expectativas sobre inflación",
+                    "Únicamente de los sindicatos",
+                    "No hay relación"
+                ],
                 answer: 1,
-                explanation: "Cuando el costo de la última unidad es mayor que el promedio variable, eleva el promedio."
+                explanation: "Que se reduzca el desempleo depende de si la expansión era esperada o no, lo que a su vez depende de la formación de expectativas sobre inflación."
             },
+
+            // EFECTOS DE LA INFLACIÓN
             {
-                question: "En un mercado de competencia perfecta, si el precio es igual al Costo Marginal (CM), la empresa está:",
-                options: ["Maximizando sus ingresos", "Minimizando sus costos", "Maximizando sus beneficios", "Operando con pérdidas"],
-                answer: 2,
-                explanation: "Esta es la condición de maximización de beneficios para una empresa precio-aceptante."
-            },
-            {
-                question: "El concepto de 'free-rider' (consumidor parasitario) se asocia más comúnmente con:",
-                options: ["Bienes privados", "Bienes públicos", "Monopolios", "Externalidades negativas"],
+                question: "¿Cuáles son algunos efectos de la inflación?",
+                options: [
+                    "Solo beneficios para todos",
+                    "Disminución del valor real de la moneda, desaliento del ahorro e inversión, escasez de bienes",
+                    "Únicamente aumento del empleo",
+                    "No tiene efectos negativos"
+                ],
                 answer: 1,
-                explanation: "Los bienes públicos son no excluyentes, lo que permite a los individuos beneficiarse sin contribuir a su costo."
+                explanation: "La inflación causa disminución del valor real de la moneda, desaliento del ahorro e inversión por incertidumbre, y escasez de bienes."
             },
             {
-                question: "La principal función de la teoría del consumidor es explicar:",
-                options: ["Cómo las empresas producen bienes", "Cómo se determinan los precios en el mercado", "Cómo los individuos toman decisiones de consumo", "Cómo el gobierno interviene en la economía"],
-                answer: 2,
-                explanation: "La teoría del consumidor se centra en las elecciones de los individuos para maximizar su satisfacción."
-            },
-            {
-                question: "Si una empresa está operando en el corto plazo y el precio es mayor que su Costo Variable Promedio (CVP) pero menor que su Costo Total Promedio (CP), la empresa debería:",
-                options: ["Cerrar inmediatamente", "Aumentar su producción", "Seguir produciendo para minimizar pérdidas", "Reducir su producción a cero"],
-                answer: 2,
-                explanation: "En esta situación, la empresa cubre sus costos variables y parte de los fijos, por lo que es mejor seguir operando para minimizar las pérdidas."
-            },
-            {
-                question: "La Ley de los Rendimientos Decrecientes es una razón por la cual la curva de Costo Variable Promedio (CVP) eventualmente tiene forma de:",
-                options: ["L", "J", "U", "Recta"],
-                answer: 2,
-                explanation: "A medida que el PMg disminuye, el costo de producir cada unidad adicional aumenta, lo que eleva el CVP."
-            },
-            {
-                question: "El costo de oportunidad de construir una nueva carretera incluye:",
-                options: ["Solo el costo de los materiales", "Solo el salario de los trabajadores", "El valor de la tierra que ya no se puede usar para agricultura o viviendas", "Solo los gastos de mantenimiento"],
-                answer: 2,
-                explanation: "El costo de oportunidad considera el valor de la mejor alternativa sacrificada para el uso de los recursos."
-            },
-            {
-                question: "En un mercado de competencia perfecta, si el precio de mercado es de $10 y el Costo Marginal de la última unidad producida es de $12, la empresa debería:",
-                options: ["Aumentar la producción", "Reducir la producción", "Mantener la producción", "Cerrar"],
+                question: "Durante períodos de inflación, ¿varían todos los precios y salarios a la misma tasa?",
+                options: [
+                    "Sí, siempre",
+                    "No, cambian los precios relativos",
+                    "Solo en hiperinflación",
+                    "Únicamente en deflación"
+                ],
                 answer: 1,
-                explanation: "Si el CM es mayor que el precio, la empresa está perdiendo dinero en esa unidad, por lo que debe reducir la producción."
+                explanation: "Durante la inflación no todos los precios y salarios varían a la misma tasa; cambian los precios relativos."
             },
             {
-                question: "La principal diferencia entre rendimientos crecientes de escala y rendimientos marginales crecientes es que los primeros se refieren a cambios en:",
-                options: ["Un solo insumo", "Todos los insumos", "La tecnología", "Los precios"],
+                question: "¿Qué dos consecuencias tiene el cambio de precios relativos durante la inflación?",
+                options: [
+                    "Solo beneficios",
+                    "Redistribuye renta y riqueza, y distorsiona precios relativos y producción",
+                    "Únicamente aumenta el empleo",
+                    "No tiene consecuencias"
+                ],
                 answer: 1,
-                explanation: "Los rendimientos de escala se refieren a la variación de todos los insumos, mientras que los rendimientos marginales se refieren a un solo insumo."
+                explanation: "La inflación redistribuye la renta y riqueza entre grupos, y distorsiona los precios relativos y la producción de diferentes bienes."
             },
             {
-                question: "El concepto de 'utilidad' en economía se refiere a:",
-                options: ["El dinero que se gana", "La satisfacción o el beneficio", "El costo de un bien", "La cantidad producida"],
+                question: "¿Quiénes pierden con la inflación?",
+                options: [
+                    "Todos por igual",
+                    "Los que reciben ingresos fijos: acreedores, rentistas, trabajadores y jubilados",
+                    "Solo los empresarios",
+                    "Nadie pierde"
+                ],
                 answer: 1,
-                explanation: "La utilidad es la medida de la satisfacción o el placer que se obtiene al consumir un bien o servicio."
+                explanation: "Pierden con la inflación los que reciben ingresos fijos: acreedores, los que viven de rentas o intereses, trabajadores y jubilados."
             },
             {
-                question: "Si el Costo Total (CT) es $100 y la cantidad producida (c) es 10, el Costo Promedio (CP) es:",
-                options: ["$10", "$100", "$1000", "$1"],
-                answer: 0,
-                explanation: "CP = CT / c = $100 / 10 = $10."
-            },
-            {
-                question: "La condición de maximización de beneficios para una empresa es producir donde:",
-                options: ["IT = CT", "IMg = CM", "IT es máximo", "CT es mínimo"],
+                question: "¿Por qué la inflación es especialmente problemática para quienes reciben ingresos fijos?",
+                options: [
+                    "Porque pueden ajustar fácilmente sus ingresos",
+                    "Porque no pueden ajustar sus ingresos cuando suben los precios",
+                    "Solo en teoría",
+                    "No es problemática"
+                ],
                 answer: 1,
-                explanation: "La maximización de beneficios ocurre cuando el ingreso adicional de la última unidad es igual a su costo adicional."
+                explanation: "La inflación es un problema especialmente para quienes no pueden ajustar sus ingresos cuando los precios suben."
             },
             {
-                question: "En el corto plazo, la curva de Costo Fijo Promedio (CFP) siempre tiene una forma:",
-                options: ["De U", "Creciente", "Decreciente", "Horizontal"],
-                answer: 2,
-                explanation: "A medida que la producción aumenta, el costo fijo se distribuye entre más unidades, haciendo que el CFP disminuya continuamente."
-            },
-            {
-                question: "La Ley de la Utilidad Marginal Decreciente es la base para explicar por qué la curva de demanda tiene una pendiente:",
-                options: ["Positiva", "Negativa", "Cero", "Infinita"],
+                question: "Si la inflación persiste, ¿cómo comienzan a adaptarse los mercados?",
+                options: [
+                    "No se adaptan nunca",
+                    "La gente comienza a preverla y la tasa de interés de mercado la tiene en cuenta",
+                    "Solo mediante controles de precios",
+                    "Únicamente con deflación"
+                ],
                 answer: 1,
-                explanation: "A medida que el precio de un bien disminuye, la utilidad marginal por unidad monetaria gastada aumenta, incentivando a los consumidores a demandar más de ese bien."
+                explanation: "Si la inflación persiste, la gente comienza a preverla y la tasa de interés de mercado comienza a tenerla en cuenta gradualmente."
             },
             {
-                question: "Si una empresa en competencia perfecta está produciendo a un nivel donde el precio es igual al Costo Total Promedio (CP), entonces:",
-                options: ["Está obteniendo beneficios extraordinarios", "Está operando con pérdidas", "Está obteniendo beneficios económicos normales (cero)", "Debería cerrar"],
-                answer: 2,
-                explanation: "Cuando P=CP, los ingresos cubren todos los costos, incluyendo el costo de oportunidad, lo que significa cero beneficios económicos."
-            },
-            {
-                question: "El concepto de 'rendimientos de escala' se refiere a cómo cambia la producción cuando se modifican:",
-                options: ["Un solo insumo", "Los precios de los insumos", "Todos los insumos en la misma proporción", "La demanda del producto"],
-                answer: 2,
-                explanation: "Los rendimientos de escala analizan el efecto de un cambio proporcional en todos los factores de producción."
-            },
-            {
-                question: "Un ejemplo de costo de oportunidad para un estudiante que decide ir a una fiesta en lugar de estudiar para un examen importante es:",
-                options: ["El costo de la entrada a la fiesta", "El costo de la bebida en la fiesta", "La posible nota más baja en el examen", "El costo del transporte a la fiesta"],
-                answer: 2,
-                explanation: "El costo de oportunidad es el valor de la mejor alternativa sacrificada, que en este caso es el beneficio de obtener una mejor calificación."
-            },
-            {
-                question: "La principal diferencia entre el Producto Marginal y el Producto Promedio es que el PMg mide el cambio en la producción por la última unidad de insumo, mientras que el PMe mide:",
-                options: ["La producción total", "La producción por unidad de insumo en promedio", "El costo por unidad de insumo", "El ingreso por unidad de insumo"],
+                question: "¿A quién beneficia la inflación imprevista?",
+                options: [
+                    "A los acreedores",
+                    "A los deudores, porque redistribuye riqueza de acreedores a deudores",
+                    "A todos por igual",
+                    "A nadie"
+                ],
                 answer: 1,
-                explanation: "El Producto Promedio es la producción total dividida por la cantidad de insumo, dando una medida de eficiencia promedio."
+                explanation: "La inflación imprevista redistribuye la riqueza de los acreedores a favor de los deudores (ayuda a quien ha pedido prestado)."
             },
             {
-                question: "Si el Costo Marginal (CM) es menor que el Costo Variable Promedio (CVP), entonces el CVP:",
-                options: ["Aumenta", "Disminuye", "Permanece constante", "Es cero"],
+                question: "¿Cómo afecta la inflación a quienes tienen ingresos variables versus fijos?",
+                options: [
+                    "Afecta igual a todos",
+                    "Redistribuye poder adquisitivo desde ingresos fijos hacia ingresos variables",
+                    "Solo afecta a los ricos",
+                    "No redistribuye nada"
+                ],
                 answer: 1,
-                explanation: "Cuando el costo de la última unidad producida es menor que el promedio variable, arrastra el promedio hacia abajo."
+                explanation: "La inflación redistribuye poder adquisitivo desde las personas con ingresos fijos nominales hacia las que tienen ingresos variables."
             },
             {
-                question: "En un mercado de competencia perfecta, la empresa es 'precio-aceptante' porque:",
-                options: ["Tiene un producto único", "Hay pocas empresas en el mercado", "No tiene poder para influir en el precio de mercado", "Puede fijar el precio que desee"],
-                answer: 2,
-                explanation: "La gran cantidad de compradores y vendedores y el producto homogéneo impiden que una sola empresa influya en el precio."
-            },
-            {
-                question: "El Principio Equimarginal es una regla que ayuda al consumidor a:",
-                options: ["Minimizar sus gastos", "Maximizar su utilidad", "Reducir su consumo", "Aumentar sus ingresos"],
+                question: "¿Cuál es la principal conclusión sobre el efecto distributivo de la inflación?",
+                options: [
+                    "Beneficia a todos",
+                    "Agita la renta y activos, redistribuyendo aleatoriamente la riqueza entre la población",
+                    "Solo afecta a los pobres",
+                    "No redistribuye nada"
+                ],
                 answer: 1,
-                explanation: "El principio guía al consumidor a asignar su ingreso de manera óptima para obtener la mayor satisfacción posible."
+                explanation: "La principal conclusión es que la inflación agita la renta y los activos, redistribuyendo aleatoriamente la riqueza entre la población."
             },
             {
-                question: "La Ley de los Rendimientos Decrecientes se aplica a la producción en el corto plazo porque:",
-                options: ["Todos los insumos son variables", "Al menos un insumo es fijo", "La tecnología es constante", "Los precios de los insumos son constantes"],
+                question: "¿Qué ocurre con el valor real de la moneda durante la inflación?",
+                options: [
+                    "Aumenta",
+                    "Disminuye a través del tiempo",
+                    "Permanece constante",
+                    "Se duplica"
+                ],
                 answer: 1,
-                explanation: "La ley se basa en la existencia de factores fijos que limitan la productividad de los factores variables adicionales."
+                explanation: "Uno de los efectos de la inflación es la disminución del valor real de la moneda a través del tiempo."
             },
+
+            // CURVA DE PHILLIPS
             {
-                question: "El Costo Total (CT) de una empresa se calcula como:",
-                options: ["CF - CV", "CF + CV", "CM * c", "CP * c"],
+                question: "¿Qué muestra la Curva de Phillips de corto plazo?",
+                options: [
+                    "Relación positiva entre inflación y desempleo",
+                    "Relación negativa entre inflación y desempleo (trade-off)",
+                    "No hay relación entre ambas variables",
+                    "Solo muestra la inflación"
+                ],
                 answer: 1,
-                explanation: "El costo total es la suma de los costos fijos y los costos variables."
+                explanation: "La Curva de Phillips de corto plazo muestra una relación negativa entre inflación (π) y desempleo (U): un trade-off o intercambio."
             },
             {
-                question: "En un mercado de competencia perfecta, el Ingreso Marginal (IMg) es igual al:",
-                options: ["Costo Marginal", "Costo Promedio", "Precio de mercado", "Cero"],
-                answer: 2,
-                explanation: "Para una empresa precio-aceptante, cada unidad adicional vendida aporta el precio de mercado como ingreso."
-            },
-            {
-                question: "Si una empresa en competencia perfecta está operando donde el precio es igual al Costo Variable Promedio (CVP) mínimo, se dice que está en su:",
-                options: ["Punto de beneficio máximo", "Punto de cero utilidad", "Punto de cierre", "Punto de equilibrio"],
-                answer: 2,
-                explanation: "En este punto, la empresa apenas cubre sus costos variables y decidirá si sigue operando o cierra."
-            },
-            {
-                question: "El concepto de 'rendimientos de escala crecientes' implica que:",
-                options: ["La producción aumenta menos que proporcionalmente a los insumos", "La producción aumenta proporcionalmente a los insumos", "La producción aumenta más que proporcionalmente a los insumos", "La producción disminuye al aumentar los insumos"],
-                answer: 2,
-                explanation: "Esto significa que la eficiencia aumenta a medida que la escala de producción se expande."
-            },
-            {
-                question: "El costo de oportunidad de un recurso es el valor de:",
-                options: ["Su precio de mercado", "La mejor alternativa a la que se renuncia", "El costo de su producción", "El beneficio que genera"],
+                question: "¿Quién realizó los primeros estudios sobre la relación entre desempleo y salarios nominales?",
+                options: [
+                    "John Maynard Keynes",
+                    "A. W. Phillips, en el Reino Unido",
+                    "Adam Smith",
+                    "Milton Friedman"
+                ],
                 answer: 1,
-                explanation: "El costo de oportunidad es el valor de la alternativa que no se elige."
+                explanation: "A. W. Phillips realizó estudios relacionando el desempleo con la evolución de los salarios nominales en el Reino Unido."
             },
             {
-                question: "La curva de Costo Marginal (CM) siempre intersecta la curva de Costo Total Promedio (CP) en su punto:",
-                options: ["Máximo", "Mínimo", "Cero", "Creciente"],
+                question: "Aunque Irving Fisher fue el primero en analizar esta relación, ¿por qué se llama Curva de Phillips?",
+                options: [
+                    "Porque Phillips la inventó primero",
+                    "Porque Phillips realizó estudios detallados que popularizaron el concepto",
+                    "Por error histórico",
+                    "No se llama así"
+                ],
                 answer: 1,
-                explanation: "Esta es una propiedad fundamental de las curvas de costos."
+                explanation: "Aunque Fisher fue primero, la curva debe su nombre a los estudios detallados realizados por A. W. Phillips que la popularizaron."
             },
             {
-                question: "En un mercado de competencia perfecta, la curva de oferta de la industria es la suma de las curvas de:",
-                options: ["Demanda individuales", "Costo fijo promedio", "Costo marginal de las empresas individuales por encima del CVP mínimo", "Ingreso marginal"],
-                answer: 2,
-                explanation: "La oferta de la industria se deriva de las decisiones de producción de todas las empresas individuales."
-            },
-            {
-                question: "La Ley de la Utilidad Marginal Decreciente es la razón por la cual la curva de indiferencia es:",
-                options: ["Cóncava al origen", "Convexa al origen", "Recta", "Vertical"],
+                question: "Según la Curva de Phillips de corto plazo, ¿qué implica mantener bajas tasas de desempleo?",
+                options: [
+                    "No hay costos",
+                    "Será a costa de cierto grado de inflación",
+                    "Se logra sin ningún problema",
+                    "Solo requiere más gasto público"
+                ],
                 answer: 1,
-                explanation: "A medida que se tiene más de un bien, la utilidad marginal de ese bien disminuye, lo que hace que el consumidor esté dispuesto a sacrificar menos del otro bien para obtener más de este."
+                explanation: "Si queremos mantener bajas tasas de desempleo, será a costa de cierto grado de inflación según la Curva de Phillips."
             },
             {
-                question: "Si el Producto Marginal (PMg) es mayor que el Producto Promedio (PMe), entonces el PMe:",
-                options: ["Disminuye", "Aumenta", "Permanece constante", "Es cero"],
+                question: "Si se desea disminuir la inflación según la Curva de Phillips de corto plazo, ¿qué sucede?",
+                options: [
+                    "No tiene costos",
+                    "Será a costa de que el desempleo se incremente",
+                    "El empleo también aumenta",
+                    "No afecta el desempleo"
+                ],
                 answer: 1,
-                explanation: "Si el aporte adicional es mayor que el promedio, eleva el promedio."
+                explanation: "Si lo que se desea es disminuir la inflación, será a costa de que el desempleo se incremente."
             },
             {
-                question: "Los costos que no varían con el nivel de producción se denominan:",
-                options: ["Costos variables", "Costos marginales", "Costos fijos", "Costos de oportunidad"],
-                answer: 2,
-                explanation: "Estos costos se incurren independientemente de la cantidad producida."
-            },
-            {
-                question: "En un mercado de competencia perfecta, el beneficio económico de una empresa a largo plazo tiende a ser:",
-                options: ["Positivo", "Negativo", "Cero", "Infinito"],
-                answer: 2,
-                explanation: "La libre entrada y salida de empresas asegura que los beneficios extraordinarios se disipen a largo plazo."
-            },
-            {
-                question: "La función de producción es una relación que especifica la producción máxima obtenible con:",
-                options: ["Cualquier cantidad de insumos", "Una cantidad determinada de insumos", "Un costo fijo", "Un precio dado"],
+                question: "¿Por qué existe un trade-off entre inflación y desempleo en el corto plazo?",
+                options: [
+                    "No existe tal trade-off",
+                    "Ambos problemas causan efectos negativos pero son inevitables en el corto plazo",
+                    "Solo por intervención del gobierno",
+                    "Únicamente en países desarrollados"
+                ],
                 answer: 1,
-                explanation: "La función de producción es una relación técnica que muestra la eficiencia máxima de la combinación de insumos."
+                explanation: "Ambos problemas causan efectos negativos en la economía, pero son inevitables en el corto plazo; hay que elegir un balance."
             },
             {
-                question: "El Costo Total Promedio (CP) es la suma de:",
-                options: ["Costo Fijo y Costo Variable", "Costo Marginal y Costo Fijo", "Costo Fijo Promedio y Costo Variable Promedio", "Ingreso Total y Costo Total"],
-                answer: 2,
-                explanation: "CP = CFP + CVP."
-            },
-            {
-                question: "La Ley de los Rendimientos Decrecientes es una de las razones por las que la curva de Costo Marginal (CM) eventualmente:",
-                options: ["Disminuye", "Aumenta", "Permanece constante", "Se vuelve cero"],
+                question: "¿Qué dilema enfrenta la autoridad económica según la Curva de Phillips?",
+                options: [
+                    "Solo debe preocuparse por la inflación",
+                    "¿Ajustar política tolerando inflación para evitar desempleo alto, o posición dura contra inflación a costa de más desempleo?",
+                    "Solo debe enfocarse en el desempleo",
+                    "No enfrenta ningún dilema"
+                ],
                 answer: 1,
-                explanation: "A medida que el PMg disminuye, el costo de producir una unidad adicional aumenta."
+                explanation: "La autoridad enfrenta el dilema: ¿ajustar política tolerando inflación para evitar desempleo alto, o tomar posición dura contra inflación aunque aumente desempleo?"
             },
             {
-                question: "El costo de oportunidad de un recurso es el valor de la mejor alternativa:",
-                options: ["Comprada", "Vendida", "Sacrificada", "Producida"],
-                answer: 2,
-                explanation: "Es el valor de la opción que no se elige."
-            },
-            {
-                question: "En un mercado de competencia perfecta, si el precio es mayor que el Costo Total Promedio (CP), la empresa está obteniendo:",
-                options: ["Pérdidas", "Beneficios económicos normales", "Beneficios económicos positivos", "Cero ingresos"],
-                answer: 2,
-                explanation: "Si P > CP, los ingresos superan todos los costos, generando beneficios extraordinarios."
-            },
-            {
-                question: "La principal diferencia entre el corto y el largo plazo en la teoría de la producción es la flexibilidad para ajustar:",
-                options: ["Solo los precios", "Solo la demanda", "Todos los insumos", "Solo los costos fijos"],
-                answer: 2,
-                explanation: "En el largo plazo, todos los factores de producción son variables."
-            },
-            {
-                question: "El Costo Marginal (CM) es la pendiente de la curva de:",
-                options: ["Costo Fijo", "Costo Variable", "Costo Total", "Costo Promedio"],
-                answer: 2,
-                explanation: "El CM mide el cambio en el CT por unidad de producción."
-            },
-            {
-                question: "La condición de cierre a corto plazo para una empresa en competencia perfecta se da cuando el precio es igual al Costo Variable Promedio (CVP) mínimo porque:",
-                options: ["La empresa cubre todos sus costos", "La empresa no cubre sus costos fijos", "La empresa no cubre sus costos variables", "La empresa maximiza sus beneficios"],
-                answer: 2,
-                explanation: "Si el precio no cubre los costos variables, cada unidad producida genera pérdidas que superan los costos fijos, por lo que es mejor cerrar."
-            },
-            {
-                question: "Los rendimientos de escala crecientes se asocian con:",
-                options: ["Deseconomías de escala", "Economías de escala", "Rendimientos marginales decrecientes", "Costos fijos crecientes"],
+                question: "¿Hasta cuándo se mantuvo estable la relación de la Curva de Phillips?",
+                options: [
+                    "Siempre ha sido estable",
+                    "Mostró estabilidad en algunos países hasta fines de los años sesenta",
+                    "Nunca fue estable",
+                    "Solo en el siglo XXI"
+                ],
                 answer: 1,
-                explanation: "Las economías de escala implican que los costos unitarios disminuyen a medida que la producción aumenta."
+                explanation: "La relación negativa entre inflación y desempleo demostró notable estabilidad en algunos países durante ciertos períodos hasta fines de los sesenta."
             },
             {
-                question: "El costo de oportunidad de un recurso es el valor de la mejor alternativa a la que se renuncia. Esto es crucial para entender:",
-                options: ["Solo las decisiones de consumo", "Solo las decisiones de producción", "Todas las decisiones económicas", "Solo las decisiones monetarias"],
-                answer: 2,
-                explanation: "La escasez de recursos implica que todas las decisiones económicas tienen un costo de oportunidad."
-            },
-            {
-                question: "La curva de Costo Marginal (CM) intersecta la curva de Costo Variable Promedio (CVP) en su punto:",
-                options: ["Máximo", "Mínimo", "Cero", "Creciente"],
+                question: "¿Qué sucede con la Curva de Phillips a largo plazo?",
+                options: [
+                    "Se vuelve más estable",
+                    "La relación se torna inestable y poco sistemática",
+                    "Desaparece completamente",
+                    "Se hace horizontal"
+                ],
                 answer: 1,
-                explanation: "Esta es una propiedad fundamental de las curvas de costos."
+                explanation: "A largo plazo, la relación entre inflación y desempleo se torna inestable y poco sistemática, según estudios posteriores."
             },
             {
-                question: "En un mercado de competencia perfecta, la empresa es 'precio-aceptante' y su curva de demanda individual es:",
-                options: ["Vertical", "Horizontal", "Con pendiente negativa", "Con pendiente positiva"],
+                question: "¿Qué justifica la inestabilidad de la Curva de Phillips a largo plazo según el modelo neoclásico?",
+                options: [
+                    "Errores de medición",
+                    "La inflación imprevista puede aumentar producción y empleo a corto plazo, pero a largo plazo desaparece la ilusión monetaria",
+                    "Solo factores externos",
+                    "No hay justificación"
+                ],
                 answer: 1,
-                explanation: "La empresa puede vender cualquier cantidad al precio de mercado sin afectarlo."
+                explanation: "La inflación imprevista puede aumentar producción y empleo a corto plazo, pero a largo plazo, cuando desaparece la ilusión monetaria, no existe trade-off."
             },
+
+            // DESEMPLEO
             {
-                question: "El Principio Equimarginal ayuda al consumidor a asignar su ingreso de manera que la utilidad marginal por dólar gastado sea:",
-                options: ["Máxima en un bien", "Mínima en todos los bienes", "Igual en todos los bienes", "Creciente en todos los bienes"],
-                answer: 2,
-                explanation: "La igualdad de la UM/P en todos los bienes asegura la asignación óptima del ingreso."
-            },
-            {
-                question: "La Ley de los Rendimientos Decrecientes explica por qué la curva de Costo Marginal (CM) eventualmente tiene una pendiente:",
-                options: ["Negativa", "Positiva", "Cero", "Infinita"],
+                question: "¿Qué es la tasa de desempleo?",
+                options: [
+                    "El porcentaje de la población que no trabaja",
+                    "El porcentaje de la fuerza laboral que está desocupada y busca activamente empleo",
+                    "Solo los que nunca han trabajado",
+                    "Todos los que no tienen trabajo"
+                ],
                 answer: 1,
-                explanation: "A medida que el producto marginal disminuye, el costo de producir una unidad adicional aumenta, lo que se refleja en un CM creciente."
+                explanation: "La tasa de desempleo es el porcentaje de la fuerza laboral que está desocupada y busca activamente trabajo."
             },
             {
-                question: "Un ejemplo de costo fijo para una empresa de transporte sería:",
-                options: ["El combustible de los camiones", "El salario de los conductores por viaje", "El seguro anual de la flota de camiones", "El mantenimiento por kilómetro recorrido"],
-                answer: 2,
-                explanation: "El seguro anual es un gasto que no varía con la cantidad de viajes realizados en el corto plazo."
-            },
-            {
-                question: "En un mercado de competencia perfecta, si el precio es menor que el Costo Total Promedio (CP) pero mayor que el Costo Variable Promedio (CVP), la empresa debería:",
-                options: ["Cerrar inmediatamente", "Aumentar su producción", "Seguir produciendo para minimizar pérdidas", "Reducir su producción a cero"],
-                answer: 2,
-                explanation: "La empresa cubre sus costos variables y parte de los fijos, por lo que es mejor seguir operando para minimizar las pérdidas."
-            },
-            {
-                question: "La principal diferencia entre el Producto Marginal y el Producto Promedio es que el PMg mide el cambio en la producción por la última unidad de insumo, mientras que el PMe mide:",
-                options: ["La producción total", "La producción por unidad de insumo en promedio", "El costo por unidad de insumo", "El ingreso por unidad de insumo"],
+                question: "¿Qué es la tasa natural de desempleo?",
+                options: [
+                    "Cero desempleo",
+                    "La tasa de desempleo que existe cuando la economía está en equilibrio de largo plazo",
+                    "100% de desempleo",
+                    "Solo desempleo estructural"
+                ],
                 answer: 1,
-                explanation: "El Producto Promedio es la producción total dividida por la cantidad de insumo, dando una medida de eficiencia promedio."
+                explanation: "La tasa natural de desempleo es la que existe cuando la economía está en equilibrio de largo plazo, compatible con precios estables."
             },
             {
-                question: "Si el Costo Marginal (CM) es menor que el Costo Promedio (CP), entonces el CP:",
-                options: ["Aumenta", "Disminuye", "Permanece constante", "Se vuelve cero"],
+                question: "¿Qué tipos de desempleo existen?",
+                options: [
+                    "Solo uno",
+                    "Friccional, estructural y cíclico",
+                    "Únicamente cíclico",
+                    "Solo estructural"
+                ],
                 answer: 1,
-                explanation: "Cuando el costo de la última unidad producida es menor que el promedio, arrastra el promedio hacia abajo."
+                explanation: "Los tres tipos principales de desempleo son: friccional (transitorio), estructural (cambios en la estructura económica) y cíclico (recesiones)."
             },
             {
-                question: "En un mercado de competencia perfecta, la empresa es 'precio-aceptante' y su curva de demanda individual es:",
-                options: ["Vertical", "Horizontal", "Con pendiente negativa", "Con pendiente positiva"],
+                question: "¿Qué es el desempleo friccional?",
+                options: [
+                    "Desempleo permanente",
+                    "Desempleo temporal debido al tiempo de búsqueda entre empleos",
+                    "Solo por recesión",
+                    "Desempleo involuntario"
+                ],
                 answer: 1,
-                explanation: "La empresa puede vender cualquier cantidad al precio de mercado sin afectarlo."
+                explanation: "El desempleo friccional es temporal, resultado del tiempo necesario para que los trabajadores encuentren nuevos empleos."
             },
             {
-                question: "El Principio Equimarginal es una regla que ayuda al consumidor a:",
-                options: ["Minimizar sus gastos", "Maximizar su utilidad", "Reducir su consumo", "Aumentar sus ingresos"],
+                question: "¿Qué es el desempleo estructural?",
+                options: [
+                    "Solo temporal",
+                    "Desempleo causado por cambios en la estructura de la economía que dejan obsoletas ciertas habilidades",
+                    "Por falta de demanda agregada únicamente",
+                    "No existe"
+                ],
                 answer: 1,
-                explanation: "El principio guía al consumidor a asignar su ingreso de manera óptima para obtener la mayor satisfacción posible."
+                explanation: "El desempleo estructural surge cuando cambios en la economía (tecnología, comercio) dejan obsoletas las habilidades de algunos trabajadores."
             },
             {
-                question: "La Ley de los Rendimientos Decrecientes se aplica a la producción en el corto plazo porque:",
-                options: ["Todos los insumos son variables", "Al menos un insumo es fijo", "La tecnología es constante", "Los precios de los insumos son constantes"],
+                question: "¿Qué es el desempleo cíclico?",
+                options: [
+                    "Desempleo permanente",
+                    "Desempleo causado por recesiones y fluctuaciones del ciclo económico",
+                    "Solo por cambios tecnológicos",
+                    "Desempleo voluntario"
+                ],
                 answer: 1,
-                explanation: "La ley se basa en la existencia de factores fijos que limitan la productividad de los factores variables adicionales."
+                explanation: "El desempleo cíclico es causado por las recesiones y contracciones del ciclo económico."
             },
             {
-                question: "El Costo Total (CT) de una empresa se calcula como:",
-                options: ["CF - CV", "CF + CV", "CM * c", "CP * c"],
+                question: "¿A largo plazo, la Curva de Phillips es vertical?",
+                options: [
+                    "No, siempre es negativa",
+                    "Sí, indica que no hay trade-off permanente entre inflación y desempleo",
+                    "Es horizontal",
+                    "No tiene forma definida"
+                ],
                 answer: 1,
-                explanation: "El costo total es la suma de los costos fijos y los costos variables."
+                explanation: "A largo plazo, la Curva de Phillips es vertical en la tasa natural de desempleo, lo que indica que no existe trade-off permanente."
             },
             {
-                question: "En un mercado de competencia perfecta, el Ingreso Marginal (IMg) es igual al:",
-                options: ["Costo Marginal", "Costo Promedio", "Precio de mercado", "Cero"],
-                answer: 2,
-                explanation: "Para una empresa precio-aceptante, cada unidad adicional vendida aporta el precio de mercado como ingreso."
-            },
-            {
-                question: "Si una empresa en competencia perfecta está operando donde el precio es igual al Costo Variable Promedio (CVP) mínimo, se dice que está en su:",
-                options: ["Punto de beneficio máximo", "Punto de cero utilidad", "Punto de cierre", "Punto de equilibrio"],
-                answer: 2,
-                explanation: "En este punto, la empresa apenas cubre sus costos variables y decidirá si sigue operando o cierra."
-            },
-            {
-                question: "El concepto de 'rendimientos de escala crecientes' implica que:",
-                options: ["La producción aumenta menos que proporcionalmente a los insumos", "La producción aumenta proporcionalmente a los insumos", "La producción aumenta más que proporcionalmente a los insumos", "La producción disminuye al aumentar los insumos"],
-                answer: 2,
-                explanation: "Esto significa que la eficiencia aumenta a medida que la escala de producción se expande."
-            },
-            {
-                question: "El costo de oportunidad de un recurso es el valor de:",
-                options: ["Su precio de mercado", "La mejor alternativa a la que se renuncia", "El costo de su producción", "El beneficio que genera"],
+                question: "¿Qué implica que la Curva de Phillips de largo plazo sea vertical?",
+                options: [
+                    "La inflación siempre baja",
+                    "No se puede reducir el desempleo por debajo de la tasa natural mediante expansión de demanda sin acelerar inflación",
+                    "El desempleo siempre es cero",
+                    "La inflación no existe"
+                ],
                 answer: 1,
-                explanation: "El costo de oportunidad es el valor de la alternativa que no se elige."
+                explanation: "Implica que no se puede reducir el desempleo por debajo de la tasa natural con expansión de demanda sin acelerar continuamente la inflación."
             },
             {
-                question: "La curva de Costo Marginal (CM) siempre intersecta la curva de Costo Total Promedio (CP) en su punto:",
-                options: ["Máximo", "Mínimo", "Cero", "Creciente"],
+                question: "¿Qué sucede si el gobierno intenta mantener el desempleo persistentemente bajo mediante política expansiva?",
+                options: [
+                    "Se logra sin costo",
+                    "Generará inflación acelerada según el modelo de expectativas",
+                    "Solo baja la inflación",
+                    "No pasa nada"
+                ],
                 answer: 1,
-                explanation: "Esta es una propiedad fundamental de las curvas de costos."
+                explanation: "Intentar mantener el desempleo bajo de forma persistente mediante expansión generará inflación acelerada, según el modelo de expectativas."
             },
             {
-                question: "En un mercado de competencia perfecta, la curva de oferta de la industria es la suma de las curvas de:",
-                options: ["Demanda individuales", "Costo fijo promedio", "Costo marginal de las empresas individuales por encima del CVP mínimo", "Ingreso marginal"],
-                answer: 2,
-                explanation: "La oferta de la industria se deriva de las decisiones de producción de todas las empresas individuales."
-            },
-            {
-                question: "La Ley de la Utilidad Marginal Decreciente es la razón por la cual la curva de indiferencia es:",
-                options: ["Cóncava al origen", "Convexa al origen", "Recta", "Vertical"],
+                question: "¿Cómo afecta el mark-up (margen de ganancia) al precio según la teoría de costos?",
+                options: [
+                    "No tiene efecto",
+                    "Mayor mark-up implica mayor precio",
+                    "Solo reduce el precio",
+                    "Únicamente afecta salarios"
+                ],
                 answer: 1,
-                explanation: "A medida que se tiene más de un bien, la utilidad marginal de ese bien disminuye, lo que hace que el consumidor esté dispuesto a sacrificar menos del otro bien para obtener más de este."
+                explanation: "El precio será mayor cuanto más alto sea el mark-up que las empresas aplican para cubrir costos de capital y obtener ganancias."
             },
             {
-                question: "Si el Producto Marginal (PMg) es mayor que el Producto Promedio (PMe), entonces el PMe:",
-                options: ["Disminuye", "Aumenta", "Permanece constante", "Es cero"],
+                question: "¿Qué rol juegan las empresas con poder de mercado en la inflación de costos?",
+                options: [
+                    "Ninguno",
+                    "Pueden trasladar aumentos de costos a precios y fijar márgenes (mark-up) discrecionalmente",
+                    "Solo reducen precios",
+                    "No tienen poder sobre precios"
+                ],
                 answer: 1,
-                explanation: "Si el aporte adicional es mayor que el promedio, eleva el promedio."
+                explanation: "Las empresas con poder de mercado pueden trasladar aumentos de costos a precios y fijar márgenes de ganancia discrecionalmente."
             },
             {
-                question: "Los costos que no varían con el nivel de producción se denominan:",
-                options: ["Costos variables", "Costos marginales", "Costos fijos", "Costos de oportunidad"],
-                answer: 2,
-                explanation: "Estos costos se incurren independientemente de la cantidad producida."
-            },
-            {
-                question: "En un mercado de competencia perfecta, el beneficio económico de una empresa a largo plazo tiende a ser:",
-                options: ["Positivo", "Negativo", "Cero", "Infinito"],
-                answer: 2,
-                explanation: "La libre entrada y salida de empresas asegura que los beneficios extraordinarios se disipen a largo plazo."
-            },
-            {
-                question: "La función de producción es una relación que especifica la producción máxima obtenible con:",
-                options: ["Cualquier cantidad de insumos", "Una cantidad determinada de insumos", "Un costo fijo", "Un precio dado"],
+                question: "¿Cómo combaten los trabajadores la inflación en un mercado laboral con sindicatos?",
+                options: [
+                    "No pueden hacer nada",
+                    "Negociando aumentos salariales para recuperar o superar el poder adquisitivo perdido",
+                    "Solo aceptando salarios menores",
+                    "Renunciando a sus empleos"
+                ],
                 answer: 1,
-                explanation: "La función de producción es una relación técnica que muestra la eficiencia máxima de la combinación de insumos."
+                explanation: "Los trabajadores, a través de sindicatos, negocian aumentos salariales para recuperar o superar el poder adquisitivo perdido por la inflación."
             },
             {
-                question: "El Costo Total Promedio (CP) es la suma de:",
-                options: ["Costo Fijo y Costo Variable", "Costo Marginal y Costo Fijo", "Costo Fijo Promedio y Costo Variable Promedio", "Ingreso Total y Costo Total"],
-                answer: 2,
-                explanation: "CP = CFP + CVP."
-            },
-            {
-                question: "La Ley de los Rendimientos Decrecientes es una de las razones por las que la curva de Costo Marginal (CM) eventualmente:",
-                options: ["Disminuye", "Aumenta", "Permanece constante", "Se vuelve cero"],
+                question: "¿Qué genera la espiral inflacionaria salarios-precios?",
+                options: [
+                    "Estabilidad de precios",
+                    "Los aumentos salariales se trasladan a precios, que a su vez generan nuevas demandas salariales",
+                    "Solo beneficios para todos",
+                    "Deflación"
+                ],
                 answer: 1,
-                explanation: "A medida que el PMg disminuye, el costo de producir una unidad adicional aumenta."
+                explanation: "La espiral salarios-precios ocurre cuando aumentos salariales se trasladan a precios, generando nueva inflación y nuevas demandas salariales."
             },
             {
-                question: "El costo de oportunidad de un recurso es el valor de la mejor alternativa:",
-                options: ["Comprada", "Vendida", "Sacrificada", "Producida"],
-                answer: 2,
-                explanation: "Es el valor de la opción que no se elige."
-            },
-            {
-                question: "En un mercado de competencia perfecta, si el precio es mayor que el Costo Total Promedio (CP), la empresa está obteniendo:",
-                options: ["Pérdidas", "Beneficios económicos normales", "Beneficios económicos positivos", "Cero ingresos"],
-                answer: 2,
-                explanation: "Si P > CP, los ingresos superan todos los costos, generando beneficios extraordinarios."
-            },
-            {
-                question: "La principal diferencia entre el corto y el largo plazo en la teoría de la producción es la flexibilidad para ajustar:",
-                options: ["Solo los precios", "Solo la demanda", "Todos los insumos", "Solo los costos fijos"],
-                answer: 2,
-                explanation: "En el largo plazo, todos los factores de producción son variables."
-            },
-            {
-                question: "El Costo Marginal (CM) es la pendiente de la curva de:",
-                options: ["Costo Fijo", "Costo Variable", "Costo Total", "Costo Promedio"],
-                answer: 2,
-                explanation: "El CM mide el cambio en el CT por unidad de producción."
-            },
-            {
-                question: "La condición de cierre a corto plazo para una empresa en competencia perfecta se da cuando el precio es igual al Costo Variable Promedio (CVP) mínimo porque:",
-                options: ["La empresa cubre todos sus costos", "La empresa no cubre sus costos fijos", "La empresa no cubre sus costos variables", "La empresa maximiza sus beneficios"],
-                answer: 2,
-                explanation: "Si el precio no cubre los costos variables, cada unidad producida genera pérdidas que superan los costos fijos, por lo que es mejor cerrar."
-            },
-            {
-                question: "Los rendimientos de escala crecientes se asocian con:",
-                options: ["Deseconomías de escala", "Economías de escala", "Rendimientos marginales decrecientes", "Costos fijos crecientes"],
+                question: "¿Cuál es un ejemplo clásico de rigidez estructural según los estructuralistas?",
+                options: [
+                    "Exceso de oferta en todos los sectores",
+                    "Sector agrario con oferta inelástica en países en desarrollo",
+                    "Solo exceso de demanda",
+                    "Perfecta flexibilidad de precios"
+                ],
                 answer: 1,
-                explanation: "Las economías de escala implican que los costos unitarios disminuyen a medida que la producción aumenta."
-            },
-            {
-                question: "El costo de oportunidad de un recurso es el valor de la mejor alternativa a la que se renuncia. Esto es crucial para entender:",
-                options: ["Solo las decisiones de consumo", "Solo las decisiones de producción", "Todas las decisiones económicas", "Solo las decisiones monetarias"],
-                answer: 2,
-                explanation: "La escasez de recursos implica que todas las decisiones económicas tienen un costo de oportunidad."
-            },
-            {
-                question: "La curva de Costo Marginal (CM) intersecta la curva de Costo Variable Promedio (CVP) en su punto:",
-                options: ["Máximo", "Mínimo", "Cero", "Creciente"],
-                answer: 1,
-                explanation: "Esta es una propiedad fundamental de las curvas de costos."
-            },
-            {
-                question: "En un mercado de competencia perfecta, la empresa es 'precio-aceptante' y su curva de demanda individual es:",
-                options: ["Vertical", "Horizontal", "Con pendiente negativa", "Con pendiente positiva"],
-                answer: 1,
-                explanation: "La empresa puede vender cualquier cantidad al precio de mercado sin afectarlo."
-            },
-            {
-                question: "El Principio Equimarginal ayuda al consumidor a asignar su ingreso de manera que la utilidad marginal por dólar gastado sea:",
-                options: ["Máxima en un bien", "Mínima en todos los bienes", "Igual en todos los bienes", "Creciente en todos los bienes"],
-                answer: 2,
-                explanation: "La igualdad de la UM/P en todos los bienes asegura la asignación óptima del ingreso."
-            },
-            {
-                question: "La Ley de los Rendimientos Decrecientes explica por qué la curva de Costo Marginal (CM) eventualmente tiene una pendiente:",
-                options: ["Negativa", "Positiva", "Cero", "Infinita"],
-                answer: 1,
-                explanation: "A medida que el producto marginal disminuye, el costo de producir una unidad adicional aumenta, lo que se refleja en un CM creciente."
-            },
-            {
-                question: "Un ejemplo de costo fijo para una empresa de transporte sería:",
-                options: ["El combustible de los camiones", "El salario de los conductores por viaje", "El seguro anual de la flota de camiones", "El mantenimiento por kilómetro recorrido"],
-                answer: 2,
-                explanation: "El seguro anual es un gasto que no varía con la cantidad de viajes realizados en el corto plazo."
-            },
-            {
-                question: "En un mercado de competencia perfecta, si el precio es menor que el Costo Total Promedio (CP) pero mayor que el Costo Variable Promedio (CVP), la empresa debería:",
-                options: ["Cerrar inmediatamente", "Aumentar su producción", "Seguir produciendo para minimizar pérdidas", "Reducir su producción a cero"],
-                answer: 2,
-                explanation: "La empresa cubre sus costos variables y parte de los fijos, por lo que es mejor seguir operando para minimizar las pérdidas."
+                explanation: "Un ejemplo clásico es el sector agrario con oferta inelástica en países en desarrollo, que no puede responder rápidamente a cambios en demanda."
             }
         ];
 
