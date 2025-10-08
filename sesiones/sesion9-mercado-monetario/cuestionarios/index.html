@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Exámenes de práctica sobre Teoría del Consumidor, Producción y Costos - Sesión 5 CBC UBA">
-    <meta name="keywords" content="utilidad, costos, producción, competencia perfecta, utilidad marginal, costo marginal, costo de oportunidad, microeconomía CBC">
+    <meta name="description" content="Cuestionario interactivo de Mercado Monetario para el CBC de la UBA. 80 preguntas sobre base monetaria, oferta monetaria, multiplicador y política monetaria.">
+    <meta name="keywords" content="economía, CBC, UBA, mercado monetario, base monetaria, oferta monetaria, multiplicador monetario, demanda de dinero, política monetaria, tasa de interés, cuestionario">
     <meta name="author" content="Economía CBC - UBA">
-    <title>Exámenes de Práctica - Sesión 5 CBC</title>
+    <title>Cuestionario: Sesión 9 - Mercado Monetario | Economía CBC-UBA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,8 +93,8 @@
     <div id="app" class="container bg-white p-8 rounded-2xl shadow-xl w-full">
         <!-- Pantalla de selección de cuestionarios -->
         <div id="quiz-selection-screen">
-            <h1 class="text-3xl font-bold text-center mb-4 text-indigo-700">Selecciona un Examen de Práctica</h1>
-            <p class="text-center text-gray-600 mb-8">Cada examen contiene 20 preguntas aleatorias que abarcan el contenido de la Teoría del Consumidor, Producción y Costos. ¡Mucha suerte!</p>
+            <h1 class="text-3xl font-bold text-center mb-4 text-indigo-700">Sesión 9 - Mercado Monetario</h1>
+            <p class="text-center text-gray-600 mb-8">Cuestionario sobre base monetaria, oferta monetaria, multiplicador monetario, demanda de dinero y política monetaria</p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
                 <button onclick="startQuiz(0)" class="card p-6 text-center gradient-bg text-white font-bold text-xl rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none">Examen de Práctica 1</button>
                 <button onclick="startQuiz(1)" class="card p-6 text-center gradient-bg text-white font-bold text-xl rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none">Examen de Práctica 2</button>
@@ -138,1032 +138,900 @@
 
     <script>
         const allQuestions = [
-            // Teoría del Consumidor y Utilidad
+            // BASE MONETARIA Y OFERTA MONETARIA
             {
-                question: "¿Qué concepto describe la satisfacción adicional que se obtiene al consumir una unidad más de un bien?",
-                options: ["Utilidad total", "Utilidad promedio", "Utilidad marginal", "Utilidad neta"],
-                answer: 2,
-                explanation: "La utilidad marginal es la satisfacción extra que se deriva de consumir una unidad adicional de un bien."
-            },
-            {
-                question: "Según la Ley de la Utilidad Marginal Decreciente, a medida que se consume más de un bien, la utilidad marginal tiende a:",
-                options: ["Aumentar", "Permanecer constante", "Reducirse", "Volverse infinita"],
-                answer: 2,
-                explanation: "La Ley de la Utilidad Marginal Decreciente establece que cada unidad adicional de un bien consumido aporta menos satisfacción que la anterior."
-            },
-            {
-                question: "Si la canasta A tiene mayor utilidad que la canasta B para un consumidor, esto significa que el consumidor:",
-                options: ["Prefiere B antes que A", "Es indiferente entre A y B", "Prefiere A antes que B", "No puede comparar A y B"],
-                answer: 2,
-                explanation: "La utilidad es una medida de satisfacción, por lo que mayor utilidad implica mayor preferencia."
-            },
-            {
-                question: "La restricción presupuestaria de un consumidor está determinada por:",
-                options: ["Sus preferencias y gustos", "Su ingreso y los precios de los bienes", "La utilidad marginal de los bienes", "La cantidad de bienes disponibles en el mercado"],
+                question: "¿Qué es la base monetaria (BM)?",
+                options: [
+                    "Solo los billetes y monedas en circulación",
+                    "Billetes y monedas en circulación más las reservas de los bancos comerciales",
+                    "Todos los depósitos bancarios del sistema",
+                    "La suma de todos los agregados monetarios M1, M2 y M3"
+                ],
                 answer: 1,
-                explanation: "La restricción presupuestaria define las combinaciones de bienes que un consumidor puede adquirir con su ingreso limitado y los precios de mercado."
+                explanation: "La base monetaria es la suma de los billetes y monedas en poder del público (ByM) más las reservas (R) que los bancos comerciales mantienen en el banco central."
             },
             {
-                question: "El Principio Equimarginal establece que un consumidor maximiza su utilidad cuando la utilidad marginal del último dólar gastado en cada bien es:",
-                options: ["Cero", "Máxima", "La misma", "Decreciente"],
+                question: "¿Cómo se expresa algebraicamente la base monetaria?",
+                options: [
+                    "BM = ByM - R",
+                    "BM = ByM + D",
+                    "BM = ByM + R",
+                    "BM = D + R"
+                ],
                 answer: 2,
-                explanation: "Para maximizar la satisfacción, el consumidor debe igualar la utilidad marginal por unidad monetaria gastada en todos los bienes."
+                explanation: "La base monetaria se expresa como BM = ByM + R, donde ByM son billetes y monedas, y R son las reservas bancarias."
             },
             {
-                question: "Si (UM del Bien X / Precio del Bien X) es mayor que (UM del Bien Y / Precio del Bien Y), un consumidor racional debería:",
-                options: ["Consumir más del Bien Y", "Consumir menos del Bien X", "Consumir más del Bien X", "Ser indiferente entre ambos bienes"],
+                question: "¿Qué institución tiene el monopolio legal de emitir dinero en un país?",
+                options: [
+                    "Los bancos comerciales",
+                    "El Ministerio de Economía",
+                    "El banco central",
+                    "El gobierno nacional"
+                ],
                 answer: 2,
-                explanation: "Si el Bien X ofrece más utilidad por dólar, el consumidor debe reasignar gasto hacia él para aumentar su satisfacción total."
+                explanation: "El banco central ejerce la autoridad legal de emitir dinero, poseyendo el monopolio de la creación de dinero legal."
             },
             {
-                question: "La pendiente negativa de la curva de demanda se explica por el hecho de que, si el precio de un bien aumenta, el consumidor tiende a:",
-                options: ["Aumentar su consumo para mantener la utilidad", "Reducir su consumo para restablecer el equilibrio de utilidad marginal por dólar", "Mantener su consumo constante", "Buscar bienes sustitutos más caros"],
+                question: "¿Qué representa el coeficiente de encaje (λ)?",
+                options: [
+                    "La razón entre billetes y depósitos",
+                    "La razón entre reservas y depósitos (R/D)",
+                    "La razón entre base monetaria y oferta monetaria",
+                    "El multiplicador del dinero"
+                ],
                 answer: 1,
-                explanation: "Un aumento de precio reduce la UM/P, por lo que el consumidor reduce el consumo para aumentar la UM y restablecer el equilibrio."
+                explanation: "El coeficiente de encaje (λ) es la razón reserva/depósitos: λ = R/D, representando la fracción de depósitos mantenida como reservas."
             },
             {
-                question: "El enfoque de utilidad ordinal en la teoría del consumidor permite:",
-                options: ["Medir la satisfacción con números exactos", "Ordenar las preferencias sin asignar valores numéricos", "Comparar la satisfacción entre diferentes personas", "Determinar la utilidad total de un bien"],
+                question: "¿Quién establece el nivel de reservas exigidas o encaje legal?",
+                options: [
+                    "Los bancos comerciales libremente",
+                    "El banco central",
+                    "Los depositantes",
+                    "El mercado financiero"
+                ],
                 answer: 1,
-                explanation: "La utilidad ordinal se centra en la capacidad de ordenar las preferencias (A es preferido a B) sin cuantificar la magnitud de esa preferencia."
+                explanation: "El banco central es quien establece el nivel de reservas exigidas o encaje legal que todo banco debe mantener."
             },
             {
-                question: "El punto de equilibrio del consumidor se encuentra donde la curva de indiferencia es _______ a la restricción presupuestaria.",
-                options: ["Paralela", "Perpendicular", "Tangente", "Secante"],
+                question: "¿Cómo se expresa la oferta monetaria (OM)?",
+                options: [
+                    "OM = ByM + R",
+                    "OM = BM + R",
+                    "OM = ByM + D",
+                    "OM = R + D"
+                ],
                 answer: 2,
-                explanation: "La tangencia indica el punto donde la pendiente de la curva de indiferencia (TMS) es igual a la pendiente de la restricción presupuestaria (relación de precios)."
+                explanation: "La oferta monetaria es OM = ByM + D, la suma de billetes y monedas en poder del público más los depósitos a la vista."
             },
             {
-                question: "La Tasa Marginal de Sustitución (TMS) mide:",
-                options: ["La cantidad de un bien que se puede producir con una unidad de otro", "La cantidad de un bien que un consumidor está dispuesto a sacrificar por una unidad de otro, manteniendo la utilidad", "La relación de precios entre dos bienes", "La utilidad marginal de un bien"],
+                question: "¿Cuál es la diferencia principal entre base monetaria y oferta monetaria?",
+                options: [
+                    "La BM incluye depósitos, la OM incluye reservas",
+                    "La BM incluye reservas bancarias, la OM incluye depósitos del público",
+                    "No hay diferencia, son lo mismo",
+                    "La BM es mayor que la OM"
+                ],
                 answer: 1,
-                explanation: "La TMS refleja la disposición del consumidor a intercambiar un bien por otro sin cambiar su nivel de satisfacción."
-            },
-
-            // Teoría del Productor y Rendimientos
-            {
-                question: "¿Cuál de los siguientes NO es un factor de producción (insumo)?",
-                options: ["Capital", "Tierra", "Trabajo", "Utilidad"],
-                answer: 3,
-                explanation: "La utilidad es un concepto de satisfacción del consumidor, no un insumo productivo."
+                explanation: "La BM incluye las reservas de la banca privada, mientras que la OM incluye los depósitos bancarios del público en el sistema."
             },
             {
-                question: "La producción adicional que se obtiene al añadir una unidad más de un insumo, manteniendo los demás constantes, se denomina:",
-                options: ["Producto total", "Producto promedio", "Producto marginal", "Rendimiento de escala"],
+                question: "En la mayoría de los países, ¿cómo es la relación entre OM y BM?",
+                options: [
+                    "OM es menor que BM",
+                    "OM es igual a BM",
+                    "OM es mayor que BM",
+                    "No hay relación entre ambas"
+                ],
                 answer: 2,
-                explanation: "El producto marginal mide el cambio en la producción total resultante de añadir una unidad de un insumo variable."
+                explanation: "En casi todos los países, la oferta monetaria es mayor que la base monetaria debido al proceso de creación de dinero bancario."
             },
             {
-                question: "Según la Ley de los Rendimientos Decrecientes, si se añade más trabajo a una cantidad fija de capital, el producto marginal del trabajo eventualmente:",
-                options: ["Aumentará", "Permanecerá constante", "Disminuirá", "Se volverá infinito"],
-                answer: 2,
-                explanation: "La ley establece que, a partir de cierto punto, cada unidad adicional de un insumo variable aportará menos a la producción total."
-            },
-            {
-                question: "En el corto plazo, ¿cuál de los siguientes factores de producción es típicamente fijo para una empresa?",
-                options: ["Mano de obra", "Materias primas", "Capital (planta y equipo)", "Energía"],
-                answer: 2,
-                explanation: "El capital (maquinaria, edificios) es el factor que no puede ajustarse fácilmente en el corto plazo."
-            },
-            {
-                question: "Si la producción aumenta en una proporción mayor que el aumento de todos los insumos, se dice que la empresa experimenta:",
-                options: ["Rendimientos constantes de escala", "Rendimientos decrecientes de escala", "Rendimientos crecientes de escala (economías de escala)", "Rendimientos marginales decrecientes"],
-                answer: 2,
-                explanation: "Los rendimientos crecientes de escala implican que la eficiencia aumenta a medida que la escala de producción se expande."
-            },
-            {
-                question: "El largo plazo en la teoría de la producción se define como el período en el que:",
-                options: ["Todos los factores de producción son fijos", "Al menos un factor de producción es fijo", "Todos los factores de producción son variables", "La empresa no puede ajustar su producción"],
-                answer: 2,
-                explanation: "En el largo plazo, la empresa tiene la flexibilidad de ajustar todos sus insumos, incluyendo el tamaño de la planta."
-            },
-            {
-                question: "Un ejemplo de rendimientos decrecientes de escala podría ser:",
-                options: ["Una fábrica que duplica su producción al duplicar sus insumos", "Una empresa de software que reduce sus costos unitarios al aumentar la producción", "Una empresa muy grande que enfrenta problemas de gestión y coordinación al expandirse", "Una panadería que produce el doble con el doble de insumos"],
-                answer: 2,
-                explanation: "Los problemas de gestión y coordinación en empresas muy grandes pueden llevar a ineficiencias y rendimientos decrecientes de escala."
-            },
-            {
-                question: "El Producto Medio del Trabajo se calcula como:",
-                options: ["Cambio en la producción total / Cambio en el trabajo", "Producción total / Cantidad de trabajo", "Costo total / Cantidad de trabajo", "Producto marginal / Cantidad de trabajo"],
+                question: "¿Qué permite que la oferta monetaria sea mayor que la base monetaria?",
+                options: [
+                    "La inflación",
+                    "El efecto multiplicador del dinero",
+                    "Las exportaciones",
+                    "El gasto público"
+                ],
                 answer: 1,
-                explanation: "El Producto Medio indica la producción por unidad de trabajo empleada."
+                explanation: "El efecto multiplicador del dinero, resultado de la interacción entre depósitos y préstamos, permite que OM sea mayor que BM."
             },
             {
-                question: "La Ley de los Rendimientos Decrecientes se aplica a:",
-                options: ["El largo plazo, cuando todos los insumos son variables", "El corto plazo, cuando al menos un insumo es fijo", "Solo a la agricultura", "Solo a la industria de servicios"],
-                answer: 1,
-                explanation: "Esta ley es relevante en el corto plazo porque asume que hay al menos un factor fijo que limita la productividad de los factores variables."
-            },
-            {
-                question: "El cambio tecnológico que mejora la productividad y permite producir más con los mismos insumos se conoce como:",
-                options: ["Innovación de producto", "Innovación de proceso", "Rendimientos constantes", "Economías de alcance"],
-                answer: 1,
-                explanation: "La innovación de proceso se refiere a mejoras en las técnicas de producción que aumentan la eficiencia."
+                question: "¿Qué agregado monetario representa el dinero más líquido?",
+                options: [
+                    "M3",
+                    "M2",
+                    "M1 (billetes y monedas)",
+                    "Todos tienen igual liquidez"
+                ],
+                answer: 2,
+                explanation: "M1 (billetes y monedas) es el agregado más líquido. Cuanto más alto el subíndice, menor el grado de liquidez."
             },
 
-            // Análisis Económico de los Costos
+            // MULTIPLICADOR MONETARIO
             {
-                question: "¿Cuál de los siguientes es un costo fijo para una empresa?",
-                options: ["Salarios por hora de los trabajadores de producción", "Materias primas", "Alquiler de la fábrica", "Electricidad utilizada en la producción"],
-                answer: 2,
-                explanation: "El alquiler de la fábrica es un gasto que no varía con el nivel de producción en el corto plazo."
-            },
-            {
-                question: "El costo adicional en que se incurre al producir una unidad más de un bien se denomina:",
-                options: ["Costo total", "Costo promedio", "Costo variable", "Costo marginal"],
-                answer: 3,
-                explanation: "El costo marginal es el incremento en el costo total resultante de producir una unidad adicional."
-            },
-            {
-                question: "Si el Costo Marginal (CM) es menor que el Costo Promedio (CP), entonces el Costo Promedio:",
-                options: ["Aumenta", "Disminuye", "Permanece constante", "Se vuelve cero"],
+                question: "¿Qué representa el coeficiente 'e' en el multiplicador monetario?",
+                options: [
+                    "La razón reservas/depósitos",
+                    "La razón billetes y monedas/depósitos (ByM/D)",
+                    "La base monetaria",
+                    "El encaje legal"
+                ],
                 answer: 1,
-                explanation: "Cuando el costo de la última unidad producida es menor que el promedio, arrastra el promedio hacia abajo."
+                explanation: "El coeficiente 'e' representa la razón billetes y monedas/depósitos (e = ByM/D), también llamada preferencia por la liquidez."
             },
             {
-                question: "El valor del bien o servicio más valioso al que se renuncia al tomar una decisión se conoce como:",
-                options: ["Costo contable", "Costo explícito", "Costo de oportunidad", "Costo hundido"],
-                answer: 2,
-                explanation: "El costo de oportunidad es el valor de la mejor alternativa sacrificada."
-            },
-            {
-                question: "La suma de los costos fijos y los costos variables de una empresa es igual a su:",
-                options: ["Costo marginal", "Costo promedio", "Costo total", "Costo de oportunidad"],
-                answer: 2,
-                explanation: "El costo total es la suma de todos los costos incurridos en la producción."
-            },
-            {
-                question: "Si el Costo Marginal (CM) es igual al Costo Promedio (CP), entonces el Costo Promedio se encuentra en su punto:",
-                options: ["Máximo", "Mínimo", "Cero", "Creciente"],
+                question: "¿De qué factores depende la preferencia por la liquidez (e)?",
+                options: [
+                    "Solo de las decisiones del banco central",
+                    "De las preferencias del público y condiciones económicas para transacciones",
+                    "Únicamente de la inflación",
+                    "Solo del tipo de cambio"
+                ],
                 answer: 1,
-                explanation: "La curva de CM siempre cruza la curva de CP en su punto mínimo."
+                explanation: "La preferencia por la liquidez depende de las preferencias del público al elegir entre billetes y depósitos, y de las condiciones económicas."
             },
             {
-                question: "Los costos que varían directamente con el nivel de producción se conocen como:",
-                options: ["Costos fijos", "Costos hundidos", "Costos variables", "Costos de oportunidad"],
-                answer: 2,
-                explanation: "Los costos variables cambian a medida que la cantidad producida varía."
-            },
-            {
-                question: "El Costo Fijo Promedio (CFP) de una empresa siempre:",
-                options: ["Aumenta con la producción", "Disminuye con la producción", "Permanece constante", "Es igual al Costo Marginal"],
+                question: "¿Cuál es la fórmula del multiplicador monetario (m)?",
+                options: [
+                    "m = e + λ",
+                    "m = (e + 1) / (e + λ)",
+                    "m = λ / e",
+                    "m = e × λ"
+                ],
                 answer: 1,
-                explanation: "A medida que la producción aumenta, el costo fijo se distribuye entre más unidades, reduciendo el CFP."
+                explanation: "El multiplicador monetario es m = (e + 1) / (e + λ), donde e es ByM/D y λ es R/D."
             },
             {
-                question: "La regla del menor costo para la selección de insumos establece que una empresa debe igualar el producto marginal por dólar gastado en cada:",
-                options: ["Producto final", "Factor de producción", "Costo fijo", "Costo variable"],
-                answer: 1,
-                explanation: "Esta regla asegura la combinación de insumos más eficiente para un nivel de producción dado."
-            },
-            {
-                question: "Un costo económico es más amplio que un costo contable porque incluye:",
-                options: ["Solo gastos monetarios", "Solo gastos explícitos", "Costos de oportunidad implícitos", "Solo impuestos"],
+                question: "¿Cómo se relaciona la oferta monetaria con la base monetaria a través del multiplicador?",
+                options: [
+                    "OM = BM / m",
+                    "OM = BM - m",
+                    "OM = m × BM",
+                    "OM = BM + m"
+                ],
                 answer: 2,
-                explanation: "Los costos económicos consideran el valor de las alternativas sacrificadas, no solo las transacciones monetarias."
+                explanation: "La oferta monetaria es un múltiplo de la base monetaria: OM = m × BM, donde m es el multiplicador monetario."
+            },
+            {
+                question: "¿Por qué el multiplicador monetario siempre es mayor que uno?",
+                options: [
+                    "Porque la inflación es positiva",
+                    "Porque los bancos mantienen solo una fracción de depósitos como reservas",
+                    "Porque el banco central así lo determina",
+                    "Porque e siempre es mayor que λ"
+                ],
+                answer: 1,
+                explanation: "El multiplicador es mayor que 1 porque λ < 1 (los bancos mantienen solo una fracción de depósitos como reservas), haciendo que el numerador sea mayor que el denominador."
+            },
+            {
+                question: "Si aumenta el coeficiente de encaje (λ), ¿qué sucede con el multiplicador?",
+                options: [
+                    "Aumenta",
+                    "Disminuye",
+                    "Permanece constante",
+                    "Se duplica"
+                ],
+                answer: 1,
+                explanation: "Un aumento de λ aumenta el denominador de la fórmula m = (e+1)/(e+λ), lo que disminuye el multiplicador y genera menor OM."
+            },
+            {
+                question: "Si aumenta 'e' (preferencia por liquidez), ¿qué ocurre con la oferta monetaria?",
+                options: [
+                    "Aumenta",
+                    "Disminuye, ceteris paribus",
+                    "No se modifica",
+                    "Se duplica"
+                ],
+                answer: 1,
+                explanation: "Si aumenta e, ceteris paribus, se produce una disminución del multiplicador y, por ende, de la OM."
+            },
+            {
+                question: "Si e = 0.1, λ = 0.2 y BM = 100 MM, ¿cuál es el valor aproximado de OM?",
+                options: [
+                    "200 MM",
+                    "300 MM",
+                    "367 MM",
+                    "500 MM"
+                ],
+                answer: 2,
+                explanation: "OM = [(0.1+1)/(0.1+0.2)] × 100 = [1.1/0.3] × 100 = 3.67 × 100 = 367 MM aproximadamente."
+            },
+            {
+                question: "Si el banco central aumenta la tasa de encaje de 0.2 a 0.3 (con e=0.1 y BM=100MM), ¿qué sucede con OM?",
+                options: [
+                    "Aumenta a 400 MM",
+                    "Permanece en 367 MM",
+                    "Disminuye a 275 MM",
+                    "Disminuye a 150 MM"
+                ],
+                answer: 2,
+                explanation: "OM' = [(0.1+1)/(0.1+0.3)] × 100 = [1.1/0.4] × 100 = 2.75 × 100 = 275 MM. La OM disminuye."
+            },
+            {
+                question: "¿Qué elemento NO es componente del proceso que determina la oferta monetaria?",
+                options: [
+                    "La base monetaria",
+                    "El multiplicador monetario",
+                    "El tipo de cambio",
+                    "El coeficiente de encaje"
+                ],
+                answer: 2,
+                explanation: "Para determinar OM se necesita conocer la BM y el multiplicador (que depende de e y λ), pero no directamente el tipo de cambio."
             },
 
-            // Maximización de Beneficios en Competencia Perfecta
+            // DEMANDA DE DINERO - ENFOQUE NEOCLÁSICO VS KEYNESIANO
             {
-                question: "En un mercado de competencia perfecta, las empresas son consideradas 'precio-aceptantes' porque:",
-                options: ["Pueden fijar el precio que deseen", "Tienen un producto diferenciado", "Hay muchos compradores y vendedores pequeños", "El gobierno fija los precios"],
-                answer: 2,
-                explanation: "Ningún participante individual tiene suficiente poder para influir en el precio de mercado."
+                question: "Según el enfoque neoclásico, ¿por qué se demanda dinero?",
+                options: [
+                    "Por motivos de transacción, precaución y especulación",
+                    "Únicamente por la necesidad de realizar transacciones",
+                    "Solo por motivos especulativos",
+                    "Por acumulación de riqueza"
+                ],
+                answer: 1,
+                explanation: "Desde el punto de vista neoclásico, únicamente se demanda dinero por la necesidad de realizar transacciones."
             },
             {
-                question: "Una empresa en competencia perfecta maximiza sus beneficios cuando produce a un nivel donde:",
-                options: ["El Ingreso Total es máximo", "El Costo Total es mínimo", "El Costo Marginal es igual al Precio", "El Costo Promedio es mínimo"],
-                answer: 2,
-                explanation: "En competencia perfecta, el precio es igual al ingreso marginal, por lo que CM=P es la condición de maximización."
+                question: "Según Keynes, ¿cuáles son los tres motivos para demandar dinero?",
+                options: [
+                    "Consumo, ahorro e inversión",
+                    "Transacción, precaución y especulación",
+                    "Producción, distribución y consumo",
+                    "Ahorro, préstamo e inversión"
+                ],
+                answer: 1,
+                explanation: "Keynes identificó tres motivos: transacción (para compras cotidianas), precaución (contingencias imprevistas) y especulación (expectativas de interés)."
             },
             {
-                question: "Si el precio de mercado cae por debajo del Costo Variable Promedio (CVP) mínimo, una empresa en competencia perfecta debería:",
-                options: ["Aumentar su producción", "Seguir produciendo para cubrir costos fijos", "Cerrar en el corto plazo", "Bajar aún más su precio"],
-                answer: 2,
-                explanation: "Si no se cubren los costos variables, cada unidad producida genera pérdidas adicionales, por lo que es mejor cerrar."
+                question: "¿Qué es el motivo transacción para demandar dinero?",
+                options: [
+                    "Ahorrar para el futuro",
+                    "Mantener liquidez para realizar transacciones cotidianas",
+                    "Especular con bonos",
+                    "Invertir en acciones"
+                ],
+                answer: 1,
+                explanation: "El motivo transacción abarca la liquidez necesaria para hacer frente a las transacciones cotidianas ordinarias."
             },
             {
-                question: "La curva de oferta a corto plazo de una empresa en competencia perfecta es su curva de:",
-                options: ["Costo total", "Costo promedio", "Costo marginal por encima del CVP mínimo", "Costo fijo promedio"],
-                answer: 2,
-                explanation: "La empresa solo ofrecerá producción si el precio cubre al menos sus costos variables, y la cantidad ofrecida se determina por el CM."
+                question: "¿De qué variable depende principalmente la demanda de dinero por motivo transacción?",
+                options: [
+                    "De la tasa de interés",
+                    "Del nivel de renta o ingreso",
+                    "Del tipo de cambio",
+                    "De la inflación"
+                ],
+                answer: 1,
+                explanation: "El saldo monetario deseado con fines transaccionales depende directamente del nivel de renta o ingreso de las personas."
             },
             {
-                question: "En competencia perfecta, el Ingreso Marginal (IMg) de una empresa es igual a:",
-                options: ["El Costo Marginal", "El Costo Promedio", "El Precio de mercado", "Cero"],
-                answer: 2,
-                explanation: "Dado que la empresa es precio-aceptante, cada unidad adicional vendida aporta el precio de mercado como ingreso."
+                question: "¿Qué representa el motivo precaución en la demanda de dinero?",
+                options: [
+                    "Comprar bienes de lujo",
+                    "Enfrentar contingencias imprevistas",
+                    "Especular en el mercado de valores",
+                    "Pagar impuestos"
+                ],
+                answer: 1,
+                explanation: "El motivo precaución se refiere a mantener dinero para enfrentar contingencias imprevistas, también asociado al nivel de renta."
             },
             {
-                question: "Una característica clave de la competencia perfecta es la libre entrada y salida de empresas, lo que asegura que a largo plazo los beneficios económicos sean:",
-                options: ["Muy altos", "Negativos", "Cero (normales)", "Iguales a los de un monopolio"],
-                answer: 2,
-                explanation: "La entrada de nuevas empresas reduce los beneficios hasta que solo se cubren los costos de oportunidad, y la salida ocurre si hay pérdidas."
+                question: "¿Qué caracteriza al motivo especulación en la demanda de dinero?",
+                options: [
+                    "Está directamente relacionado con la tasa de interés",
+                    "Está inversamente relacionado con la tasa de interés",
+                    "No depende de la tasa de interés",
+                    "Solo depende del ingreso"
+                ],
+                answer: 1,
+                explanation: "La demanda de dinero por especulación está inversamente relacionada con el tipo de interés: si se espera que suba, se prefiere mantener dinero."
             },
             {
-                question: "El punto de cero utilidad para una empresa en competencia perfecta ocurre cuando el precio es igual a su:",
-                options: ["Costo Marginal", "Costo Variable Promedio", "Costo Fijo Promedio", "Costo Promedio Total"],
+                question: "Si un inversor espera que la tasa de interés suba a corto plazo, ¿qué preferirá hacer?",
+                options: [
+                    "Comprar bonos inmediatamente",
+                    "Mantener sus ahorros en forma de dinero",
+                    "Invertir en acciones",
+                    "Depositar todo a plazo fijo"
+                ],
+                answer: 1,
+                explanation: "Si espera que el interés suba (y baje la cotización de bonos), preferirá mantener dinero esperando ese aumento para luego comprar bonos más baratos."
+            },
+            {
+                question: "¿Qué sucede con la cotización de bonos cuando sube la tasa de interés?",
+                options: [
+                    "Aumenta",
+                    "Disminuye",
+                    "Permanece constante",
+                    "No hay relación"
+                ],
+                answer: 1,
+                explanation: "Existe una relación inversa: cuando sube el tipo de interés, disminuye la cotización (precio) de los bonos en el mercado."
+            },
+            {
+                question: "¿Por qué en inglés la demanda de dinero se conoce como 'liquid money'?",
+                options: [
+                    "Porque el dinero es líquido físicamente",
+                    "Porque representa un activo seguro y sumamente líquido",
+                    "Porque solo incluye depósitos bancarios",
+                    "Porque se refiere al agua embotellada"
+                ],
+                answer: 1,
+                explanation: "Se llama 'liquid money' porque representa la necesidad de tener un activo seguro y sumamente líquido (fácilmente convertible)."
+            },
+            {
+                question: "¿Cuáles son los tres agentes que tienen dinero para comprar bienes y servicios?",
+                options: [
+                    "Productores, distribuidores y minoristas",
+                    "Economías domésticas, empresas y Estado",
+                    "Bancos, gobierno y ciudadanos",
+                    "Sector primario, secundario y terciario"
+                ],
+                answer: 1,
+                explanation: "Las economías domésticas (familias), las empresas y el Estado son los tres agentes que demandan dinero para comprar bienes y servicios."
+            },
+
+            // EQUILIBRIO DEL MERCADO MONETARIO
+            {
+                question: "¿Qué determina conjuntamente la oferta y demanda de dinero?",
+                options: [
+                    "El tipo de cambio",
+                    "La tasa de interés del mercado",
+                    "El nivel de precios",
+                    "El salario real"
+                ],
+                answer: 1,
+                explanation: "La oferta y la demanda de dinero determinan conjuntamente la tasa de interés del mercado (en este modelo simplificado)."
+            },
+            {
+                question: "¿Por qué la curva de oferta monetaria es vertical en el gráfico del mercado de dinero?",
+                options: [
+                    "Porque depende de la tasa de interés",
+                    "Porque el banco central manipula la OM independientemente de la tasa de interés",
+                    "Porque la demanda es horizontal",
+                    "Porque no hay relación con el dinero"
+                ],
+                answer: 1,
+                explanation: "La OM es vertical porque el banco central la determina mediante instrumentos monetarios, sin relación causal con la tasa de interés."
+            },
+            {
+                question: "¿Qué pendiente tiene la curva de demanda de dinero?",
+                options: [
+                    "Pendiente positiva",
+                    "Pendiente negativa",
+                    "Es vertical",
+                    "Es horizontal"
+                ],
+                answer: 1,
+                explanation: "La curva de demanda de dinero tiene pendiente negativa: existe relación inversa entre tasa de interés y saldos monetarios reales deseados."
+            },
+            {
+                question: "¿Qué son los saldos monetarios reales (SMR)?",
+                options: [
+                    "El dinero nominal sin ajustar",
+                    "El dinero medido en unidades de poder adquisitivo (dinero nominal/índice de precios)",
+                    "Solo los billetes y monedas",
+                    "Los depósitos bancarios"
+                ],
+                answer: 1,
+                explanation: "Los SMR son el dinero medido en unidades de su poder adquisitivo: cantidades nominales de dinero sobre un índice de precios."
+            },
+            {
+                question: "¿Por qué la demanda de dinero tiene pendiente negativa?",
+                options: [
+                    "Porque a mayor ingreso, menor demanda de dinero",
+                    "Porque a mayor tasa de interés, es más caro tener dinero líquido en vez de depositado",
+                    "Porque la oferta es vertical",
+                    "Porque el banco central así lo determina"
+                ],
+                answer: 1,
+                explanation: "A mayor tasa de interés, resulta más caro mantener dinero líquido contra la alternativa de tenerlo depositado ganando intereses."
+            },
+            {
+                question: "¿Qué es la tasa de interés en el mercado monetario?",
+                options: [
+                    "El precio de los bienes",
+                    "El precio que se paga por la utilización de dinero",
+                    "El salario de los trabajadores",
+                    "El tipo de cambio"
+                ],
+                answer: 1,
+                explanation: "La tasa de interés es el precio que se paga por la utilización de dinero, determinada en el mercado monetario."
+            },
+            {
+                question: "Si la tasa de interés es superior a la de equilibrio, ¿qué ocurre?",
+                options: [
+                    "Hay escasez de dinero",
+                    "Hay exceso de saldos monetarios y la gente prefiere depositar",
+                    "La oferta aumenta",
+                    "La demanda desaparece"
+                ],
+                answer: 1,
+                explanation: "Si la tasa es muy alta, hay exceso de saldos monetarios; la gente no quiere tanto efectivo porque el mercado paga mucho por depósitos."
+            },
+            {
+                question: "Si la tasa de interés es inferior a la de equilibrio, ¿qué sucede?",
+                options: [
+                    "Hay exceso de oferta",
+                    "Los saldos monetarios resultan insuficientes y sube la tasa",
+                    "La demanda disminuye",
+                    "No pasa nada"
+                ],
+                answer: 1,
+                explanation: "Si la tasa es muy baja, los saldos monetarios son insuficientes; la gente desea más dinero, haciendo subir la tasa hasta el equilibrio."
+            },
+            {
+                question: "¿Qué representa 'ie' en el gráfico del mercado monetario?",
+                options: [
+                    "El ingreso de equilibrio",
+                    "La tasa de interés de equilibrio",
+                    "La inflación esperada",
+                    "El encaje legal"
+                ],
+                answer: 1,
+                explanation: "ie representa la tasa de interés de equilibrio, donde coinciden los deseos de oferta y demanda en el mercado de dinero."
+            },
+            {
+                question: "En el equilibrio del mercado monetario, ¿qué característica tiene la tasa de interés?",
+                options: [
+                    "Es la máxima posible",
+                    "Es donde coinciden los deseos de oferta y demanda de dinero",
+                    "Es cero",
+                    "Es negativa"
+                ],
+                answer: 1,
+                explanation: "La tasa de equilibrio (ie) es aquella donde coinciden los deseos de la oferta y la demanda en el mercado de dinero."
+            },
+
+            // POLÍTICA MONETARIA EXPANSIVA
+            {
+                question: "¿Qué componentes determinan la oferta monetaria según el modelo?",
+                options: [
+                    "Solo la base monetaria",
+                    "Base monetaria, tasa de encaje y razón ByM/depósitos",
+                    "Únicamente la tasa de interés",
+                    "Solo el ingreso nacional"
+                ],
+                answer: 1,
+                explanation: "Los componentes de la OM son la base monetaria, la tasa de encaje (λ) y la razón de billetes y monedas sobre depósitos (e)."
+            },
+            {
+                question: "Si la tasa de encaje disminuye, ¿qué sucede con la oferta monetaria?",
+                options: [
+                    "Disminuye",
+                    "Aumenta",
+                    "Permanece constante",
+                    "Desaparece"
+                ],
+                answer: 1,
+                explanation: "Si λ disminuye, el multiplicador aumenta y la oferta monetaria se incrementa, desplazándose hacia la derecha."
+            },
+            {
+                question: "Si la base monetaria aumenta, ¿cómo se desplaza la curva de oferta monetaria?",
+                options: [
+                    "Hacia la izquierda",
+                    "Hacia la derecha",
+                    "No se desplaza",
+                    "Se vuelve horizontal"
+                ],
+                answer: 1,
+                explanation: "Un aumento de la BM incrementa la OM, desplazando la curva hacia la derecha (hacia fuera del origen)."
+            },
+            {
+                question: "¿Qué indica un desplazamiento de OM hacia la derecha?",
+                options: [
+                    "Política monetaria contractiva",
+                    "Política monetaria expansiva",
+                    "No hay cambio de política",
+                    "Crisis económica"
+                ],
+                answer: 1,
+                explanation: "Un desplazamiento de OM hacia la derecha indica política monetaria expansiva impulsada por el banco central."
+            },
+            {
+                question: "Cuando la oferta monetaria se desplaza de OM a OM' (hacia la derecha), ¿qué pasa con la tasa de interés?",
+                options: [
+                    "Aumenta",
+                    "Disminuye",
+                    "Permanece igual",
+                    "Se vuelve negativa"
+                ],
+                answer: 1,
+                explanation: "Cuando la OM se desplaza hacia la derecha (política expansiva), la tasa de interés de equilibrio disminuye."
+            },
+            {
+                question: "Si la tasa de redescuento disminuye, ¿qué ocurre con la oferta monetaria?",
+                options: [
+                    "Disminuye",
+                    "Aumenta",
+                    "No se modifica",
+                    "Se duplica"
+                ],
+                answer: 1,
+                explanation: "Una disminución de la tasa de redescuento es una medida expansiva que aumenta la oferta monetaria."
+            },
+            {
+                question: "Si 'e' (razón ByM/depósitos) disminuye, ¿qué sucede con OM?",
+                options: [
+                    "Disminuye",
+                    "Aumenta",
+                    "No cambia",
+                    "Se vuelve cero"
+                ],
+                answer: 1,
+                explanation: "Si e disminuye, el multiplicador aumenta y la oferta monetaria se incrementa."
+            },
+            {
+                question: "¿Qué relación existe entre tasa de interés e inversión?",
+                options: [
+                    "Relación directa: a mayor interés, mayor inversión",
+                    "Relación inversa: a mayor interés, menor inversión",
+                    "No hay relación",
+                    "Depende solo del consumo"
+                ],
+                answer: 1,
+                explanation: "Existe una relación inversa: cuando la tasa de interés disminuye, la inversión aumenta y viceversa."
+            },
+            {
+                question: "¿Cómo afecta una política monetaria expansiva a la inversión?",
+                options: [
+                    "La reduce",
+                    "Baja la tasa de interés, lo que aumenta la inversión",
+                    "No la afecta",
+                    "Solo afecta al consumo"
+                ],
+                answer: 1,
+                explanation: "Una política expansiva reduce la tasa de interés, lo que incentiva el aumento de la inversión."
+            },
+            {
+                question: "Si aumenta la inversión por una política monetaria expansiva, ¿qué pasa con la demanda agregada?",
+                options: [
+                    "Disminuye",
+                    "Aumenta, porque la inversión es un componente de la DA",
+                    "Permanece constante",
+                    "Solo afecta la oferta agregada"
+                ],
+                answer: 1,
+                explanation: "Como la inversión es componente de la demanda agregada, un aumento de inversión incrementa la DA."
+            },
+
+            // POLÍTICA MONETARIA CONTRACTIVA
+            {
+                question: "Si la tasa de encaje aumenta, ¿cómo se desplaza la oferta monetaria?",
+                options: [
+                    "Hacia la derecha",
+                    "Hacia la izquierda (hacia dentro del origen)",
+                    "No se desplaza",
+                    "Se vuelve horizontal"
+                ],
+                answer: 1,
+                explanation: "Un aumento de λ reduce el multiplicador y la OM, desplazando la curva hacia la izquierda (hacia dentro del origen)."
+            },
+            {
+                question: "Si la base monetaria disminuye, ¿qué ocurre con la oferta monetaria?",
+                options: [
+                    "Aumenta",
+                    "Disminuye",
+                    "Permanece igual",
+                    "Se duplica"
+                ],
+                answer: 1,
+                explanation: "Una disminución de la BM reduce la oferta monetaria, desplazándola hacia la izquierda."
+            },
+            {
+                question: "¿Qué indica un desplazamiento de OM hacia la izquierda?",
+                options: [
+                    "Política monetaria expansiva",
+                    "Política monetaria contractiva",
+                    "Aumento del consumo",
+                    "Reducción de impuestos"
+                ],
+                answer: 1,
+                explanation: "Un desplazamiento de OM hacia la izquierda indica una política monetaria contractiva impulsada por el banco central."
+            },
+            {
+                question: "Cuando OM se desplaza hacia la izquierda, ¿qué sucede con la tasa de interés de equilibrio?",
+                options: [
+                    "Disminuye",
+                    "Aumenta",
+                    "Permanece constante",
+                    "Se vuelve cero"
+                ],
+                answer: 1,
+                explanation: "Cuando la OM se desplaza hacia la izquierda (política contractiva), la tasa de interés de equilibrio aumenta."
+            },
+            {
+                question: "Si la tasa de redescuento aumenta, ¿qué tipo de política se está aplicando?",
+                options: [
+                    "Política monetaria expansiva",
+                    "Política monetaria contractiva",
+                    "Política fiscal expansiva",
+                    "No es una política monetaria"
+                ],
+                answer: 1,
+                explanation: "Un aumento de la tasa de redescuento es una medida de política monetaria contractiva que reduce la OM."
+            },
+            {
+                question: "Si la razón ByM/depósitos aumenta, ¿qué sucede con la oferta monetaria?",
+                options: [
+                    "Aumenta",
+                    "Disminuye",
+                    "No se modifica",
+                    "Se vuelve infinita"
+                ],
+                answer: 1,
+                explanation: "Si e aumenta, el multiplicador disminuye y la oferta monetaria se reduce."
+            },
+            {
+                question: "¿Cómo afecta una política monetaria contractiva a la inversión?",
+                options: [
+                    "La aumenta",
+                    "Aumenta la tasa de interés, lo que reduce la inversión",
+                    "No la afecta",
+                    "Solo afecta al gasto público"
+                ],
+                answer: 1,
+                explanation: "Una política contractiva aumenta la tasa de interés, lo que desincentiva la inversión (relación inversa)."
+            },
+            {
+                question: "Si disminuye la inversión por política contractiva, ¿qué pasa con la demanda agregada?",
+                options: [
+                    "Aumenta",
+                    "Disminuye, porque la inversión es componente de la DA",
+                    "Permanece igual",
+                    "Solo afecta la oferta"
+                ],
+                answer: 1,
+                explanation: "Como la inversión es componente de la DA, una reducción de inversión disminuye la demanda agregada."
+            },
+            {
+                question: "¿Puede la demanda agregada ser afectada por política monetaria?",
+                options: [
+                    "No, solo la política fiscal afecta la DA",
+                    "Sí, indirectamente a través de cambios en la inversión",
+                    "Solo en economías cerradas",
+                    "Nunca"
+                ],
+                answer: 1,
+                explanation: "La DA no solo es afectada por política fiscal, sino también indirectamente por política monetaria a través de la inversión."
+            },
+            {
+                question: "¿Cuál NO es un instrumento de política monetaria contractiva?",
+                options: [
+                    "Aumentar la tasa de encaje",
+                    "Disminuir la base monetaria",
+                    "Aumentar la tasa de redescuento",
+                    "Disminuir la tasa de encaje"
+                ],
                 answer: 3,
-                explanation: "En este punto, los ingresos cubren exactamente todos los costos, incluyendo el costo de oportunidad del capital."
+                explanation: "Disminuir la tasa de encaje es una medida EXPANSIVA, no contractiva. Las demás son contractivas."
             },
+
+            // DESPLAZAMIENTOS DE LA DEMANDA DE DINERO
             {
-                question: "Si una empresa en competencia perfecta está produciendo donde CM > P, debería:",
-                options: ["Aumentar su producción", "Reducir su producción", "Mantener su producción constante", "Cerrar inmediatamente"],
+                question: "Si aumenta la renta o ingreso de las personas, ¿qué sucede con la demanda de dinero?",
+                options: [
+                    "Disminuye",
+                    "Aumenta (se desplaza hacia la derecha)",
+                    "Permanece constante",
+                    "Se vuelve vertical"
+                ],
                 answer: 1,
-                explanation: "Si el costo de la última unidad es mayor que el precio, la empresa está perdiendo dinero en esa unidad y debe reducir la producción."
+                explanation: "Un aumento de la renta lleva a los individuos a elevar su demanda de dinero para transacciones, desplazando DM hacia la derecha."
             },
             {
-                question: "La curva de demanda que enfrenta una empresa individual en competencia perfecta es:",
-                options: ["Inelástica", "Perfectamente inelástica", "Perfectamente elástica", "Elástica"],
-                answer: 2,
-                explanation: "Al ser precio-aceptante, la empresa puede vender cualquier cantidad al precio de mercado, pero nada a un precio superior."
-            },
-            {
-                question: "El objetivo principal de una empresa en cualquier estructura de mercado es:",
-                options: ["Maximizar las ventas", "Minimizar los costos", "Maximizar los beneficios", "Maximizar la cuota de mercado"],
-                answer: 2,
-                explanation: "La maximización de beneficios es el motor fundamental de las decisiones empresariales."
-            },
-            {
-                question: "La principal diferencia entre utilidad cardinal y utilidad ordinal es que la primera:",
-                options: ["Permite ordenar preferencias", "Asigna valores numéricos a la satisfacción", "Es el enfoque moderno", "No se usa en economía"],
+                question: "Si la demanda de dinero se desplaza hacia la derecha (con OM fija), ¿qué pasa con la tasa de interés?",
+                options: [
+                    "Disminuye",
+                    "Aumenta",
+                    "Permanece igual",
+                    "Se vuelve negativa"
+                ],
                 answer: 1,
-                explanation: "La utilidad cardinal intentaba cuantificar la satisfacción, mientras que la ordinal solo la ordena."
+                explanation: "Cuando aumenta la demanda de dinero (desplazamiento a la derecha) con oferta fija, la tasa de interés aumenta."
             },
             {
-                question: "Si un consumidor está en equilibrio, y el precio del Bien A aumenta, ¿qué sucederá con la cantidad demandada del Bien A?",
-                options: ["Aumentará", "Permanecerá constante", "Disminuirá", "Depende de la elasticidad"],
-                answer: 2,
-                explanation: "Para restablecer el equilibrio (UM/P igual para todos los bienes), el consumidor debe reducir el consumo del bien cuyo precio subió."
-            },
-            {
-                question: "La función de producción muestra la relación entre:",
-                options: ["Costos e ingresos", "Precios y cantidades demandadas", "Insumos y producción máxima", "Oferta y demanda"],
-                answer: 2,
-                explanation: "Define la cantidad máxima de producto que se puede obtener con una combinación dada de insumos."
-            },
-            {
-                question: "Si una empresa duplica todos sus insumos y su producción se triplica, experimenta:",
-                options: ["Rendimientos constantes de escala", "Rendimientos decrecientes de escala", "Rendimientos crecientes de escala", "Rendimientos marginales decrecientes"],
-                answer: 2,
-                explanation: "Un aumento más que proporcional en la producción indica rendimientos crecientes de escala."
-            },
-            {
-                question: "El costo de oportunidad de estudiar en la universidad incluye:",
-                options: ["Solo la matrícula", "Solo los libros", "Los ingresos que se dejan de percibir por no trabajar", "Solo los gastos explícitos"],
-                answer: 2,
-                explanation: "El costo de oportunidad considera el valor de la mejor alternativa sacrificada, como el salario que se podría haber ganado."
-            },
-            {
-                question: "En un mercado perfectamente competitivo, la curva de demanda que enfrenta una empresa individual es:",
-                options: ["Horizontal", "Vertical", "Con pendiente negativa", "Con pendiente positiva"],
-                answer: 0,
-                explanation: "La empresa es precio-aceptante y puede vender cualquier cantidad al precio de mercado, lo que se representa con una línea horizontal."
-            },
-            {
-                question: "Si el CM es mayor que el CP, ¿qué le sucede al CP?",
-                options: ["Disminuye", "Aumenta", "Permanece constante", "Se vuelve cero"],
+                question: "¿Por qué aumenta la tasa de interés cuando aumenta la renta?",
+                options: [
+                    "Porque disminuye la oferta",
+                    "Porque aumenta la demanda de dinero líquido pero la oferta está fija",
+                    "Porque el banco central así lo decide",
+                    "Por la inflación"
+                ],
                 answer: 1,
-                explanation: "Si el costo de la última unidad es mayor que el promedio, eleva el promedio."
+                explanation: "Cuando aumenta la renta, aumenta la demanda de dinero líquido, pero como la oferta está fija, la tasa de interés sube."
             },
             {
-                question: "El problema del consumidor se refiere a cómo maximizar la utilidad sujeto a:",
-                options: ["La oferta de bienes", "La restricción presupuestaria", "La función de producción", "Los costos de la empresa"],
+                question: "Si aumenta la demanda de dinero y la oferta permanece fija, ¿qué sucede con los saldos monetarios reales?",
+                options: [
+                    "Aumentan",
+                    "No se modifican",
+                    "Disminuyen",
+                    "Se duplican"
+                ],
                 answer: 1,
-                explanation: "El ingreso limitado y los precios de los bienes restringen las opciones del consumidor."
+                explanation: "Al desplazarse la demanda con oferta fija, la tasa de interés aumenta pero los saldos monetarios reales no se modifican."
             },
             {
-                question: "La Ley de los Rendimientos Decrecientes se observa cuando:",
-                options: ["El producto total disminuye", "El producto marginal de un insumo variable disminuye", "El producto promedio aumenta", "Todos los insumos son variables"],
+                question: "Si disminuye la renta o el PIB, ¿cómo se desplaza la demanda de dinero?",
+                options: [
+                    "Hacia la derecha",
+                    "Hacia la izquierda",
+                    "No se desplaza",
+                    "Se vuelve horizontal"
+                ],
                 answer: 1,
-                explanation: "La ley se centra en la disminución del aporte adicional de un insumo variable a medida que se añade más de él."
+                explanation: "Cuando disminuye la renta, la demanda de dinero se desplaza hacia la izquierda (menor demanda de liquidez)."
             },
             {
-                question: "En el punto de cierre, las pérdidas de una empresa en competencia perfecta son iguales a sus:",
-                options: ["Costos variables", "Costos marginales", "Costos fijos", "Ingresos totales"],
-                answer: 2,
-                explanation: "En este punto, los ingresos cubren los costos variables, por lo que las pérdidas son solo los costos fijos."
-            },
-            {
-                question: "¿Qué tipo de utilidad se utiliza en la teoría moderna del consumidor para ordenar preferencias sin asignar valores numéricos?",
-                options: ["Cardinal", "Total", "Marginal", "Ordinal"],
-                answer: 3,
-                explanation: "La utilidad ordinal permite establecer un orden de preferencia (A es mejor que B) sin cuantificar la diferencia."
-            },
-            {
-                question: "Si el producto marginal de un insumo es cero, significa que añadir una unidad adicional de ese insumo:",
-                options: ["Aumenta la producción total", "Disminuye la producción total", "No cambia la producción total", "Aumenta el costo total"],
-                answer: 2,
-                explanation: "Un producto marginal de cero implica que la producción total ha alcanzado su máximo y no aumenta con más insumo."
-            },
-            {
-                question: "Los costos variables son aquellos que:",
-                options: ["No cambian con la producción", "Se incurren incluso con producción cero", "Varían directamente con el nivel de producción", "Son siempre mayores que los costos fijos"],
-                answer: 2,
-                explanation: "Ejemplos incluyen materias primas y salarios de producción, que aumentan o disminuyen con la cantidad producida."
-            },
-            {
-                question: "La condición de maximización de beneficios CM = P es válida para una empresa en competencia perfecta porque:",
-                options: ["El CM es siempre constante", "El P es igual al Ingreso Marginal", "El P es igual al Costo Promedio", "La empresa tiene poder de mercado"],
+                question: "Si la demanda de dinero se desplaza hacia la izquierda, ¿qué ocurre con la tasa de interés de equilibrio?",
+                options: [
+                    "Aumenta",
+                    "Disminuye",
+                    "Permanece constante",
+                    "Se vuelve infinita"
+                ],
                 answer: 1,
-                explanation: "En competencia perfecta, cada unidad adicional vendida aporta el precio de mercado como ingreso marginal."
+                explanation: "Un desplazamiento de la DM hacia la izquierda (menor demanda) reduce la tasa de interés de equilibrio."
             },
             {
-                question: "El costo de oportunidad es un concepto fundamental en economía debido a:",
-                options: ["La abundancia de recursos", "La escasez de recursos", "La facilidad de medición", "La ausencia de elecciones"],
+                question: "¿Qué relación existe entre el nivel de producto y la tasa de interés de equilibrio?",
+                options: [
+                    "Relación inversa: mayor producto, menor tasa de interés",
+                    "Relación directa: mayor producto, mayor tasa de interés",
+                    "No hay relación",
+                    "Solo depende de la inflación"
+                ],
                 answer: 1,
-                explanation: "La escasez de recursos obliga a tomar decisiones, y cada decisión implica sacrificar una alternativa."
+                explanation: "Existe relación directa: cuanto más alto el producto, mayor la demanda de dinero y mayor la tasa de interés de equilibrio."
             },
             {
-                question: "Si una empresa está en el largo plazo, ¿qué factores de producción puede ajustar?",
-                options: ["Solo la mano de obra", "Solo el capital", "Solo las materias primas", "Todos los factores"],
-                answer: 3,
-                explanation: "El largo plazo se define como el período en el que todos los insumos son variables y ajustables."
-            },
-            {
-                question: "Cuando el Costo Promedio (CP) está en su punto mínimo, ¿qué relación tiene con el Costo Marginal (CM)?",
-                options: ["CM es mayor que CP", "CM es menor que CP", "CM es igual a CP", "CM es cero"],
-                answer: 2,
-                explanation: "La curva de CM siempre cruza la curva de CP en su punto mínimo."
-            },
-            {
-                question: "La Ley de la Utilidad Marginal Decreciente explica por qué la curva de demanda tiene pendiente:",
-                options: ["Positiva", "Negativa", "Cero", "Infinita"],
+                question: "¿Por qué motivo actúan las personas cuando aumentan su demanda de dinero al aumentar el ingreso?",
+                options: [
+                    "Solo por especulación",
+                    "Por motivos transacción y/o precaución",
+                    "Solo por acumular riqueza",
+                    "Por motivos políticos"
+                ],
                 answer: 1,
-                explanation: "A medida que el precio baja, la UM por dólar aumenta, incentivando un mayor consumo, lo que resulta en una relación inversa entre precio y cantidad demandada."
+                explanation: "Al aumentar el ingreso, las personas incrementan la demanda de dinero líquido actuando por motivos transacción o precaución."
             },
             {
-                question: "Un ejemplo de costo fijo para una empresa de software sería:",
-                options: ["El salario de un programador por hora", "El costo de la electricidad de los servidores", "El alquiler de las oficinas centrales", "El costo de las licencias de software por usuario"],
-                answer: 2,
-                explanation: "El alquiler de las oficinas es un gasto que no varía con la cantidad de software producido en el corto plazo."
-            },
-            {
-                question: "Si una empresa en competencia perfecta tiene beneficios económicos positivos a corto plazo, ¿qué se espera que suceda a largo plazo?",
-                options: ["Los beneficios se mantendrán altos", "Nuevas empresas entrarán al mercado", "Las empresas existentes saldrán del mercado", "El precio de mercado aumentará"],
+                question: "Si el producto es bajo, ¿qué sucede con la tasa de interés?",
+                options: [
+                    "Es alta",
+                    "Es baja, porque hay menor demanda de dinero para transacciones",
+                    "Es cero",
+                    "No se ve afectada"
+                ],
                 answer: 1,
-                explanation: "La libre entrada de empresas en competencia perfecta atrae a nuevos competidores si hay beneficios extraordinarios, lo que reduce los beneficios a cero a largo plazo."
+                explanation: "Cuanto más bajo es el producto, más baja es la tasa de interés, porque los individuos demandan menos dinero líquido."
             },
             {
-                question: "El Producto Promedio del Trabajo se calcula dividiendo el Producto Total por:",
-                options: ["El Producto Marginal", "La cantidad de trabajo", "El capital", "El costo total"],
+                question: "¿Qué tipo de cambio se analiza cuando la demanda de dinero se desplaza por cambios en la renta?",
+                options: [
+                    "Cambio desde el mercado de dinero",
+                    "Cambio desde el mercado de bienes (nivel de ingreso) que afecta el mercado monetario",
+                    "Cambio en el mercado de trabajo",
+                    "No hay cambio"
+                ],
                 answer: 1,
-                explanation: "El Producto Promedio mide la eficiencia promedio de cada unidad de trabajo."
+                explanation: "Es un cambio desde el mercado de bienes (incremento del ingreso) que influye sobre el mercado monetario modificando la demanda de dinero."
             },
+
+            // CONCEPTOS FUNDAMENTALES Y CONFIANZA
             {
-                question: "La regla del menor costo para la selección de insumos es análoga a la regla de maximización de utilidad del consumidor porque ambas buscan:",
-                options: ["Minimizar los ingresos", "Igualar los precios", "Igualar los beneficios", "Igualar el beneficio/producto marginal por unidad monetaria gastada"],
-                answer: 3,
-                explanation: "Ambas reglas buscan la eficiencia en la asignación de recursos, ya sea para maximizar la satisfacción o la producción, por unidad de gasto."
-            },
-            {
-                question: "Si una empresa experimenta rendimientos decrecientes de escala, significa que al duplicar todos sus insumos, la producción:",
-                options: ["Se duplica", "Se triplica", "Aumenta menos del doble", "Disminuye"],
-                answer: 2,
-                explanation: "Los rendimientos decrecientes de escala implican que la producción crece a un ritmo menor que el aumento proporcional de los insumos."
-            },
-            {
-                question: "El costo de oportunidad de ver una película en el cine en lugar de estudiar para un examen es:",
-                options: ["Solo el precio de la entrada", "El precio de la entrada más la posible mejora en la calificación del examen", "Solo el tiempo invertido", "Solo el costo de los snacks"],
+                question: "Hasta hace un siglo, ¿qué se utilizaba principalmente como dinero?",
+                options: [
+                    "Dinero fiduciario exclusivamente",
+                    "Mercancías como metales preciosos (oro y plata)",
+                    "Solo billetes",
+                    "Tarjetas de crédito"
+                ],
                 answer: 1,
-                explanation: "El costo de oportunidad incluye el valor de la mejor alternativa sacrificada, que en este caso es el beneficio de estudiar."
+                explanation: "Hasta hace relativamente poco tiempo, se utilizaban mercancías como metales preciosos (oro y plata) como dinero."
             },
             {
-                question: "En competencia perfecta, la curva de oferta de la empresa a corto plazo es la porción de su curva de Costo Marginal que está por encima del:",
-                options: ["Costo Fijo Promedio mínimo", "Costo Total Promedio mínimo", "Costo Variable Promedio mínimo", "Ingreso Marginal"],
-                answer: 2,
-                explanation: "La empresa solo producirá si el precio cubre al menos sus costos variables, y la cantidad se determina por el CM."
-            },
-            {
-                question: "La principal diferencia entre el corto y el largo plazo en la teoría de costos es que en el corto plazo:",
-                options: ["Todos los costos son variables", "Existen costos fijos", "No hay costos variables", "La empresa no puede producir"],
+                question: "¿Qué característica tenía el papel moneda cuando se usaba en sistemas antiguos?",
+                options: [
+                    "Era inconvertible",
+                    "Era convertible a un metal precioso a un precio fijo",
+                    "No tenía respaldo",
+                    "Era digital"
+                ],
                 answer: 1,
-                explanation: "La presencia de al menos un factor fijo da lugar a costos fijos en el corto plazo."
+                explanation: "El papel moneda, cuando se usaba, era convertible a un metal precioso determinado a un precio fijo equivalente."
             },
             {
-                question: "Si el Producto Marginal del Trabajo es negativo, significa que añadir un trabajador adicional:",
-                options: ["Aumenta la producción total", "Disminuye la producción total", "No afecta la producción total", "Aumenta el Producto Promedio"],
+                question: "En sistemas con dinero respaldado por metales, ¿qué determinaba la oferta monetaria?",
+                options: [
+                    "Solo las políticas estatales",
+                    "La producción de los bienes que funcionaban como dinero",
+                    "El banco central exclusivamente",
+                    "No había oferta monetaria"
+                ],
                 answer: 1,
-                explanation: "Un PMg negativo implica que el trabajador adicional es tan ineficiente que reduce la producción total."
+                explanation: "En tales sistemas, la producción de los bienes que funcionaban como dinero (oro, plata) determinaba la oferta monetaria."
             },
             {
-                question: "El Costo Total Promedio (CP) se calcula como:",
-                options: ["CF + CV", "CM / c", "CT / c", "CV / c"],
-                answer: 2,
-                explanation: "El CP es el costo por unidad de producción."
-            },
-            {
-                question: "En un mercado de competencia perfecta, si una empresa está obteniendo beneficios económicos positivos, ¿qué sucederá con el precio de mercado a largo plazo?",
-                options: ["Aumentará", "Disminuirá", "Permanecerá constante", "Se volverá cero"],
+                question: "¿Qué es el dinero fiduciario?",
+                options: [
+                    "Dinero respaldado totalmente por oro",
+                    "Dinero sin respaldo en mercancías, basado en la confianza",
+                    "Dinero convertible a metales",
+                    "Solo monedas de oro"
+                ],
                 answer: 1,
-                explanation: "La entrada de nuevas empresas aumentará la oferta, lo que presionará el precio a la baja hasta que los beneficios económicos sean cero."
+                explanation: "El dinero fiduciario es el que no tiene respaldo en mercancías y funciona por la confianza del público en su valor."
             },
             {
-                question: "La Ley de los Rendimientos Decrecientes es una observación empírica que se aplica a la producción cuando:",
-                options: ["Todos los insumos son variables", "Al menos un insumo es fijo", "La tecnología cambia rápidamente", "La empresa es un monopolio"],
+                question: "¿Qué rol juegan las reservas adicionales (encaje excedente) que mantienen los bancos?",
+                options: [
+                    "Son obligatorias por ley",
+                    "Son medida de precaución ante caídas en depósitos",
+                    "No tienen ningún propósito",
+                    "Solo existen en teoría"
+                ],
                 answer: 1,
-                explanation: "La ley se basa en la limitación impuesta por los factores fijos a la productividad de los factores variables."
+                explanation: "Además del encaje legal, los bancos pueden optar por mantener reservas adicionales como medida de precaución."
             },
             {
-                question: "El concepto de utilidad se refiere a:",
-                options: ["El precio de un bien", "La cantidad de un bien", "La satisfacción o el beneficio subjetivo", "El costo de producción"],
-                answer: 2,
-                explanation: "La utilidad es la medida de la satisfacción que un consumidor obtiene de un bien o servicio."
-            },
-            {
-                question: "Si el Costo Variable Promedio (CVP) está disminuyendo, es probable que el Costo Marginal (CM) sea:",
-                options: ["Mayor que el CVP", "Menor que el CVP", "Igual al CVP", "Cero"],
+                question: "¿Qué permite el proceso de creación de dinero bancario?",
+                options: [
+                    "Que la BM sea mayor que la OM",
+                    "Que la OM sea mayor que la BM mediante interacción entre depósitos y préstamos",
+                    "Que no exista dinero",
+                    "Que los bancos no presten"
+                ],
                 answer: 1,
-                explanation: "Cuando el CM es menor que el CVP, arrastra el CVP hacia abajo."
+                explanation: "La interacción entre depósitos y préstamos permite la multiplicación del dinero legal en dinero bancario, haciendo OM > BM."
             },
             {
-                question: "La condición de cierre a corto plazo para una empresa en competencia perfecta se da cuando el precio es igual al:",
-                options: ["Costo Fijo Promedio", "Costo Total Promedio", "Costo Variable Promedio mínimo", "Costo Marginal máximo"],
-                answer: 2,
-                explanation: "Si el precio no cubre los costos variables, la empresa no puede seguir operando de manera sostenible."
-            },
-            {
-                question: "Un ejemplo de rendimientos constantes de escala sería:",
-                options: ["Una empresa que duplica sus insumos y triplica su producción", "Una empresa que duplica sus insumos y duplica su producción", "Una empresa que duplica sus insumos y aumenta su producción en un 50%", "Una empresa que reduce sus costos unitarios al aumentar la producción"],
+                question: "¿Qué elemento es fundamental para el funcionamiento del dinero según el capítulo?",
+                options: [
+                    "El respaldo en oro",
+                    "La confianza de las personas que participan en la economía",
+                    "Solo las leyes del gobierno",
+                    "El tipo de cambio"
+                ],
                 answer: 1,
-                explanation: "La producción aumenta en la misma proporción que los insumos."
+                explanation: "El funcionamiento del dinero en cualquier economía moderna depende fundamentalmente de la confianza de las personas."
             },
             {
-                question: "La principal diferencia entre costos económicos y contables radica en que los económicos incluyen:",
-                options: ["Solo los gastos de capital", "Solo los gastos de operación", "Los costos de oportunidad", "Solo los costos explícitos"],
-                answer: 2,
-                explanation: "Los costos económicos consideran tanto los costos explícitos como los implícitos (costos de oportunidad)."
-            },
-            {
-                question: "La curva de indiferencia de un consumidor muestra:",
-                options: ["Las combinaciones de bienes que puede comprar", "Las combinaciones de bienes que le dan la misma utilidad", "La relación entre precio y cantidad demandada", "La producción máxima con ciertos insumos"],
+                question: "Según el texto, ¿qué es el dinero en definitiva?",
+                options: [
+                    "Solo papel y metal",
+                    "Una cuestión de fe (confianza)",
+                    "Únicamente oro",
+                    "Un invento reciente"
+                ],
                 answer: 1,
-                explanation: "Todos los puntos en una curva de indiferencia representan el mismo nivel de satisfacción."
+                explanation: "El texto concluye que el dinero resulta en definitiva una cuestión de fe, es decir, de confianza en el sistema."
             },
             {
-                question: "Si el Producto Marginal del Trabajo es creciente, significa que añadir un trabajador adicional:",
-                options: ["Disminuye la producción total", "Aumenta la producción total a un ritmo creciente", "No afecta la producción total", "Aumenta el costo marginal"],
+                question: "¿Qué puede hacer el banco central mediante políticas monetarias?",
+                options: [
+                    "Solo imprimir dinero",
+                    "Modificar la oferta monetaria incrementándola o disminuyéndola",
+                    "Solo controlar los precios",
+                    "Determinar los salarios"
+                ],
                 answer: 1,
-                explanation: "Un PMg creciente indica que cada trabajador adicional es más productivo que el anterior."
+                explanation: "El banco central puede llevar adelante políticas monetarias (expansivas o contractivas) para modificar la oferta monetaria."
             },
             {
-                question: "El Costo Variable Promedio (CVP) se calcula como:",
-                options: ["CF / c", "CT / c", "CV / c", "CM / c"],
-                answer: 2,
-                explanation: "El CVP es el costo variable por unidad de producción."
-            },
-            {
-                question: "En competencia perfecta, el precio de mercado es determinado por:",
-                options: ["Una sola empresa dominante", "El gobierno", "El libre juego de la oferta y la demanda del mercado", "Los consumidores"],
-                answer: 2,
-                explanation: "Debido a la atomización, el precio se establece por la interacción de todas las fuerzas del mercado."
-            },
-            {
-                question: "El Principio Equimarginal es fundamental para la derivación de la curva de demanda porque explica cómo los consumidores ajustan su consumo ante cambios en:",
-                options: ["La oferta de bienes", "Los precios relativos de los bienes", "La tecnología de producción", "Los costos de la empresa"],
+                question: "¿Cuáles son los objetivos finales de la política monetaria?",
+                options: [
+                    "Solo controlar la base monetaria",
+                    "El producto, el empleo y la inflación",
+                    "Solo la tasa de interés",
+                    "Únicamente el tipo de cambio"
+                ],
                 answer: 1,
-                explanation: "El principio muestra cómo los consumidores reasignan su gasto para mantener la igualdad de UM/P ante cambios en los precios."
-            },
-            {
-                question: "La Ley de los Rendimientos Decrecientes es una explicación de por qué la curva de Costo Marginal (CM) eventualmente tiene pendiente:",
-                options: ["Negativa", "Positiva", "Cero", "Infinita"],
-                answer: 1,
-                explanation: "A medida que el PMg disminuye, el costo de producir una unidad adicional aumenta, lo que se refleja en un CM creciente."
-            },
-            {
-                question: "Un ejemplo de costo de oportunidad en la vida diaria sería:",
-                options: ["El dinero gastado en un café", "El tiempo que se podría haber usado para estudiar en lugar de ver televisión", "El pago del alquiler mensual", "El costo de la gasolina para ir al trabajo"],
-                answer: 1,
-                explanation: "El costo de oportunidad es el valor de la mejor alternativa sacrificada, como el beneficio de estudiar."
-            },
-            {
-                question: "En el largo plazo, una empresa en competencia perfecta ajustará su tamaño de planta para producir en el punto donde:",
-                options: ["El Costo Fijo Promedio es mínimo", "El Costo Variable Promedio es mínimo", "El Costo Total Promedio de largo plazo es mínimo", "El Costo Marginal es máximo"],
-                answer: 2,
-                explanation: "A largo plazo, las empresas buscan operar en la escala más eficiente, donde el CTP de largo plazo es mínimo."
-            },
-            {
-                question: "La maximización de beneficios para una empresa se logra cuando la diferencia entre:",
-                options: ["Ingreso Total y Costo Marginal es máxima", "Ingreso Total y Costo Total es máxima", "Costo Total y Costo Variable es máxima", "Ingreso Marginal y Costo Promedio es máxima"],
-                answer: 1,
-                explanation: "El beneficio es la diferencia entre ingresos y costos totales, y el objetivo es maximizar esa diferencia."
-            },
-            {
-                question: "Si una empresa está produciendo en el corto plazo y el precio es igual al Costo Total Promedio (CP), entonces la empresa está obteniendo:",
-                options: ["Beneficios económicos positivos", "Pérdidas", "Beneficios económicos cero", "Beneficios contables negativos"],
-                answer: 2,
-                explanation: "Si P=CP, los ingresos cubren todos los costos (incluyendo el costo de oportunidad), resultando en cero beneficios económicos."
-            },
-            {
-                question: "La principal diferencia entre rendimientos decrecientes y rendimientos de escala decrecientes es que los primeros se refieren a cambios en:",
-                options: ["Todos los insumos", "Un solo insumo", "La tecnología", "Los precios de los insumos"],
-                answer: 1,
-                explanation: "Los rendimientos decrecientes se aplican a un solo insumo variable, mientras que los rendimientos de escala se refieren a cambios en todos los insumos."
-            },
-            {
-                question: "Un ejemplo de costo variable para una empresa de fabricación de ropa sería:",
-                options: ["El alquiler de la fábrica", "El salario del gerente de producción", "El costo de la tela y los botones", "El seguro de la maquinaria"],
-                answer: 2,
-                explanation: "El costo de la tela y los botones varía directamente con la cantidad de ropa producida."
-            },
-            {
-                question: "La curva de indiferencia de un consumidor es convexa al origen debido a:",
-                options: ["La Ley de la Utilidad Marginal Decreciente", "La restricción presupuestaria", "La Ley de los Rendimientos Decrecientes", "La maximización de beneficios"],
-                answer: 0,
-                explanation: "A medida que el consumidor tiene más de un bien, su utilidad marginal disminuye, por lo que está dispuesto a sacrificar menos del otro bien para obtener más de este."
-            },
-            {
-                question: "El Producto Marginal del Trabajo es la pendiente de la curva de:",
-                options: ["Costo Total", "Producto Total", "Costo Marginal", "Producto Promedio"],
-                answer: 1,
-                explanation: "El PMg mide el cambio en el PT por cada unidad adicional de trabajo."
-            },
-            {
-                question: "Si el Costo Marginal (CM) es mayor que el Costo Variable Promedio (CVP), entonces el CVP:",
-                options: ["Disminuye", "Aumenta", "Permanece constante", "Es cero"],
-                answer: 1,
-                explanation: "Cuando el costo de la última unidad es mayor que el promedio variable, eleva el promedio."
-            },
-            {
-                question: "En un mercado de competencia perfecta, si el precio es igual al Costo Marginal (CM), la empresa está:",
-                options: ["Maximizando sus ingresos", "Minimizando sus costos", "Maximizando sus beneficios", "Operando con pérdidas"],
-                answer: 2,
-                explanation: "Esta es la condición de maximización de beneficios para una empresa precio-aceptante."
-            },
-            {
-                question: "El concepto de 'free-rider' (consumidor parasitario) se asocia más comúnmente con:",
-                options: ["Bienes privados", "Bienes públicos", "Monopolios", "Externalidades negativas"],
-                answer: 1,
-                explanation: "Los bienes públicos son no excluyentes, lo que permite a los individuos beneficiarse sin contribuir a su costo."
-            },
-            {
-                question: "La principal función de la teoría del consumidor es explicar:",
-                options: ["Cómo las empresas producen bienes", "Cómo se determinan los precios en el mercado", "Cómo los individuos toman decisiones de consumo", "Cómo el gobierno interviene en la economía"],
-                answer: 2,
-                explanation: "La teoría del consumidor se centra en las elecciones de los individuos para maximizar su satisfacción."
-            },
-            {
-                question: "Si una empresa está operando en el corto plazo y el precio es mayor que su Costo Variable Promedio (CVP) pero menor que su Costo Total Promedio (CP), la empresa debería:",
-                options: ["Cerrar inmediatamente", "Aumentar su producción", "Seguir produciendo para minimizar pérdidas", "Reducir su producción a cero"],
-                answer: 2,
-                explanation: "En esta situación, la empresa cubre sus costos variables y parte de los fijos, por lo que es mejor seguir operando para minimizar las pérdidas."
-            },
-            {
-                question: "La Ley de los Rendimientos Decrecientes es una razón por la cual la curva de Costo Variable Promedio (CVP) eventualmente tiene forma de:",
-                options: ["L", "J", "U", "Recta"],
-                answer: 2,
-                explanation: "A medida que el PMg disminuye, el costo de producir cada unidad adicional aumenta, lo que eleva el CVP."
-            },
-            {
-                question: "El costo de oportunidad de construir una nueva carretera incluye:",
-                options: ["Solo el costo de los materiales", "Solo el salario de los trabajadores", "El valor de la tierra que ya no se puede usar para agricultura o viviendas", "Solo los gastos de mantenimiento"],
-                answer: 2,
-                explanation: "El costo de oportunidad considera el valor de la mejor alternativa sacrificada para el uso de los recursos."
-            },
-            {
-                question: "En un mercado de competencia perfecta, si el precio de mercado es de $10 y el Costo Marginal de la última unidad producida es de $12, la empresa debería:",
-                options: ["Aumentar la producción", "Reducir la producción", "Mantener la producción", "Cerrar"],
-                answer: 1,
-                explanation: "Si el CM es mayor que el precio, la empresa está perdiendo dinero en esa unidad, por lo que debe reducir la producción."
-            },
-            {
-                question: "La principal diferencia entre rendimientos crecientes de escala y rendimientos marginales crecientes es que los primeros se refieren a cambios en:",
-                options: ["Un solo insumo", "Todos los insumos", "La tecnología", "Los precios"],
-                answer: 1,
-                explanation: "Los rendimientos de escala se refieren a la variación de todos los insumos, mientras que los rendimientos marginales se refieren a un solo insumo."
-            },
-            {
-                question: "El concepto de 'utilidad' en economía se refiere a:",
-                options: ["El dinero que se gana", "La satisfacción o el beneficio", "El costo de un bien", "La cantidad producida"],
-                answer: 1,
-                explanation: "La utilidad es la medida de la satisfacción o el placer que se obtiene al consumir un bien o servicio."
-            },
-            {
-                question: "Si el Costo Total (CT) es $100 y la cantidad producida (c) es 10, el Costo Promedio (CP) es:",
-                options: ["$10", "$100", "$1000", "$1"],
-                answer: 0,
-                explanation: "CP = CT / c = $100 / 10 = $10."
-            },
-            {
-                question: "La condición de maximización de beneficios para una empresa es producir donde:",
-                options: ["IT = CT", "IMg = CM", "IT es máximo", "CT es mínimo"],
-                answer: 1,
-                explanation: "La maximización de beneficios ocurre cuando el ingreso adicional de la última unidad es igual a su costo adicional."
-            },
-            {
-                question: "En el corto plazo, la curva de Costo Fijo Promedio (CFP) siempre tiene una forma:",
-                options: ["De U", "Creciente", "Decreciente", "Horizontal"],
-                answer: 2,
-                explanation: "A medida que la producción aumenta, el costo fijo se distribuye entre más unidades, haciendo que el CFP disminuya continuamente."
-            },
-            {
-                question: "La Ley de la Utilidad Marginal Decreciente es la base para explicar por qué la curva de demanda tiene una pendiente:",
-                options: ["Positiva", "Negativa", "Cero", "Infinita"],
-                answer: 1,
-                explanation: "A medida que el precio de un bien disminuye, la utilidad marginal por unidad monetaria gastada aumenta, incentivando a los consumidores a demandar más de ese bien."
-            },
-            {
-                question: "Si una empresa en competencia perfecta está produciendo a un nivel donde el precio es igual al Costo Total Promedio (CP), entonces:",
-                options: ["Está obteniendo beneficios extraordinarios", "Está operando con pérdidas", "Está obteniendo beneficios económicos normales (cero)", "Debería cerrar"],
-                answer: 2,
-                explanation: "Cuando P=CP, los ingresos cubren todos los costos, incluyendo el costo de oportunidad, lo que significa cero beneficios económicos."
-            },
-            {
-                question: "El concepto de 'rendimientos de escala' se refiere a cómo cambia la producción cuando se modifican:",
-                options: ["Un solo insumo", "Los precios de los insumos", "Todos los insumos en la misma proporción", "La demanda del producto"],
-                answer: 2,
-                explanation: "Los rendimientos de escala analizan el efecto de un cambio proporcional en todos los factores de producción."
-            },
-            {
-                question: "Un ejemplo de costo de oportunidad para un estudiante que decide ir a una fiesta en lugar de estudiar para un examen importante es:",
-                options: ["El costo de la entrada a la fiesta", "El costo de la bebida en la fiesta", "La posible nota más baja en el examen", "El costo del transporte a la fiesta"],
-                answer: 2,
-                explanation: "El costo de oportunidad es el valor de la mejor alternativa sacrificada, que en este caso es el beneficio de obtener una mejor calificación."
-            },
-            {
-                question: "La principal diferencia entre el Producto Marginal y el Producto Promedio es que el PMg mide el cambio en la producción por la última unidad de insumo, mientras que el PMe mide:",
-                options: ["La producción total", "La producción por unidad de insumo en promedio", "El costo por unidad de insumo", "El ingreso por unidad de insumo"],
-                answer: 1,
-                explanation: "El Producto Promedio es la producción total dividida por la cantidad de insumo, dando una medida de eficiencia promedio."
-            },
-            {
-                question: "Si el Costo Marginal (CM) es menor que el Costo Variable Promedio (CVP), entonces el CVP:",
-                options: ["Aumenta", "Disminuye", "Permanece constante", "Es cero"],
-                answer: 1,
-                explanation: "Cuando el costo de la última unidad producida es menor que el promedio variable, arrastra el promedio hacia abajo."
-            },
-            {
-                question: "En un mercado de competencia perfecta, la empresa es 'precio-aceptante' porque:",
-                options: ["Tiene un producto único", "Hay pocas empresas en el mercado", "No tiene poder para influir en el precio de mercado", "Puede fijar el precio que desee"],
-                answer: 2,
-                explanation: "La gran cantidad de compradores y vendedores y el producto homogéneo impiden que una sola empresa influya en el precio."
-            },
-            {
-                question: "El Principio Equimarginal es una regla que ayuda al consumidor a:",
-                options: ["Minimizar sus gastos", "Maximizar su utilidad", "Reducir su consumo", "Aumentar sus ingresos"],
-                answer: 1,
-                explanation: "El principio guía al consumidor a asignar su ingreso de manera óptima para obtener la mayor satisfacción posible."
-            },
-            {
-                question: "La Ley de los Rendimientos Decrecientes se aplica a la producción en el corto plazo porque:",
-                options: ["Todos los insumos son variables", "Al menos un insumo es fijo", "La tecnología es constante", "Los precios de los insumos son constantes"],
-                answer: 1,
-                explanation: "La ley se basa en la existencia de factores fijos que limitan la productividad de los factores variables adicionales."
-            },
-            {
-                question: "El Costo Total (CT) de una empresa se calcula como:",
-                options: ["CF - CV", "CF + CV", "CM * c", "CP * c"],
-                answer: 1,
-                explanation: "El costo total es la suma de los costos fijos y los costos variables."
-            },
-            {
-                question: "En un mercado de competencia perfecta, el Ingreso Marginal (IMg) es igual al:",
-                options: ["Costo Marginal", "Costo Promedio", "Precio de mercado", "Cero"],
-                answer: 2,
-                explanation: "Para una empresa precio-aceptante, cada unidad adicional vendida aporta el precio de mercado como ingreso."
-            },
-            {
-                question: "Si una empresa en competencia perfecta está operando donde el precio es igual al Costo Variable Promedio (CVP) mínimo, se dice que está en su:",
-                options: ["Punto de beneficio máximo", "Punto de cero utilidad", "Punto de cierre", "Punto de equilibrio"],
-                answer: 2,
-                explanation: "En este punto, la empresa apenas cubre sus costos variables y decidirá si sigue operando o cierra."
-            },
-            {
-                question: "El concepto de 'rendimientos de escala crecientes' implica que:",
-                options: ["La producción aumenta menos que proporcionalmente a los insumos", "La producción aumenta proporcionalmente a los insumos", "La producción aumenta más que proporcionalmente a los insumos", "La producción disminuye al aumentar los insumos"],
-                answer: 2,
-                explanation: "Esto significa que la eficiencia aumenta a medida que la escala de producción se expande."
-            },
-            {
-                question: "El costo de oportunidad de un recurso es el valor de:",
-                options: ["Su precio de mercado", "La mejor alternativa a la que se renuncia", "El costo de su producción", "El beneficio que genera"],
-                answer: 1,
-                explanation: "El costo de oportunidad es el valor de la alternativa que no se elige."
-            },
-            {
-                question: "La curva de Costo Marginal (CM) siempre intersecta la curva de Costo Total Promedio (CP) en su punto:",
-                options: ["Máximo", "Mínimo", "Cero", "Creciente"],
-                answer: 1,
-                explanation: "Esta es una propiedad fundamental de las curvas de costos."
-            },
-            {
-                question: "En un mercado de competencia perfecta, la curva de oferta de la industria es la suma de las curvas de:",
-                options: ["Demanda individuales", "Costo fijo promedio", "Costo marginal de las empresas individuales por encima del CVP mínimo", "Ingreso marginal"],
-                answer: 2,
-                explanation: "La oferta de la industria se deriva de las decisiones de producción de todas las empresas individuales."
-            },
-            {
-                question: "La Ley de la Utilidad Marginal Decreciente es la razón por la cual la curva de indiferencia es:",
-                options: ["Cóncava al origen", "Convexa al origen", "Recta", "Vertical"],
-                answer: 1,
-                explanation: "A medida que se tiene más de un bien, la utilidad marginal de ese bien disminuye, lo que hace que el consumidor esté dispuesto a sacrificar menos del otro bien para obtener más de este."
-            },
-            {
-                question: "Si el Producto Marginal (PMg) es mayor que el Producto Promedio (PMe), entonces el PMe:",
-                options: ["Disminuye", "Aumenta", "Permanece constante", "Es cero"],
-                answer: 1,
-                explanation: "Si el aporte adicional es mayor que el promedio, eleva el promedio."
-            },
-            {
-                question: "Los costos que no varían con el nivel de producción se denominan:",
-                options: ["Costos variables", "Costos marginales", "Costos fijos", "Costos de oportunidad"],
-                answer: 2,
-                explanation: "Estos costos se incurren independientemente de la cantidad producida."
-            },
-            {
-                question: "En un mercado de competencia perfecta, el beneficio económico de una empresa a largo plazo tiende a ser:",
-                options: ["Positivo", "Negativo", "Cero", "Infinito"],
-                answer: 2,
-                explanation: "La libre entrada y salida de empresas asegura que los beneficios extraordinarios se disipen a largo plazo."
-            },
-            {
-                question: "La función de producción es una relación que especifica la producción máxima obtenible con:",
-                options: ["Cualquier cantidad de insumos", "Una cantidad determinada de insumos", "Un costo fijo", "Un precio dado"],
-                answer: 1,
-                explanation: "La función de producción es una relación técnica que muestra la eficiencia máxima de la combinación de insumos."
-            },
-            {
-                question: "El Costo Total Promedio (CP) es la suma de:",
-                options: ["Costo Fijo y Costo Variable", "Costo Marginal y Costo Fijo", "Costo Fijo Promedio y Costo Variable Promedio", "Ingreso Total y Costo Total"],
-                answer: 2,
-                explanation: "CP = CFP + CVP."
-            },
-            {
-                question: "La Ley de los Rendimientos Decrecientes es una de las razones por las que la curva de Costo Marginal (CM) eventualmente:",
-                options: ["Disminuye", "Aumenta", "Permanece constante", "Se vuelve cero"],
-                answer: 1,
-                explanation: "A medida que el PMg disminuye, el costo de producir una unidad adicional aumenta."
-            },
-            {
-                question: "El costo de oportunidad de un recurso es el valor de la mejor alternativa:",
-                options: ["Comprada", "Vendida", "Sacrificada", "Producida"],
-                answer: 2,
-                explanation: "Es el valor de la opción que no se elige."
-            },
-            {
-                question: "En un mercado de competencia perfecta, si el precio es mayor que el Costo Total Promedio (CP), la empresa está obteniendo:",
-                options: ["Pérdidas", "Beneficios económicos normales", "Beneficios económicos positivos", "Cero ingresos"],
-                answer: 2,
-                explanation: "Si P > CP, los ingresos superan todos los costos, generando beneficios extraordinarios."
-            },
-            {
-                question: "La principal diferencia entre el corto y el largo plazo en la teoría de la producción es la flexibilidad para ajustar:",
-                options: ["Solo los precios", "Solo la demanda", "Todos los insumos", "Solo los costos fijos"],
-                answer: 2,
-                explanation: "En el largo plazo, todos los factores de producción son variables."
-            },
-            {
-                question: "El Costo Marginal (CM) es la pendiente de la curva de:",
-                options: ["Costo Fijo", "Costo Variable", "Costo Total", "Costo Promedio"],
-                answer: 2,
-                explanation: "El CM mide el cambio en el CT por unidad de producción."
-            },
-            {
-                question: "La condición de cierre a corto plazo para una empresa en competencia perfecta se da cuando el precio es igual al Costo Variable Promedio (CVP) mínimo porque:",
-                options: ["La empresa cubre todos sus costos", "La empresa no cubre sus costos fijos", "La empresa no cubre sus costos variables", "La empresa maximiza sus beneficios"],
-                answer: 2,
-                explanation: "Si el precio no cubre los costos variables, cada unidad producida genera pérdidas que superan los costos fijos, por lo que es mejor cerrar."
-            },
-            {
-                question: "Los rendimientos de escala crecientes se asocian con:",
-                options: ["Deseconomías de escala", "Economías de escala", "Rendimientos marginales decrecientes", "Costos fijos crecientes"],
-                answer: 1,
-                explanation: "Las economías de escala implican que los costos unitarios disminuyen a medida que la producción aumenta."
-            },
-            {
-                question: "El costo de oportunidad de un recurso es el valor de la mejor alternativa a la que se renuncia. Esto es crucial para entender:",
-                options: ["Solo las decisiones de consumo", "Solo las decisiones de producción", "Todas las decisiones económicas", "Solo las decisiones monetarias"],
-                answer: 2,
-                explanation: "La escasez de recursos implica que todas las decisiones económicas tienen un costo de oportunidad."
-            },
-            {
-                question: "La curva de Costo Marginal (CM) intersecta la curva de Costo Variable Promedio (CVP) en su punto:",
-                options: ["Máximo", "Mínimo", "Cero", "Creciente"],
-                answer: 1,
-                explanation: "Esta es una propiedad fundamental de las curvas de costos."
-            },
-            {
-                question: "En un mercado de competencia perfecta, la empresa es 'precio-aceptante' y su curva de demanda individual es:",
-                options: ["Vertical", "Horizontal", "Con pendiente negativa", "Con pendiente positiva"],
-                answer: 1,
-                explanation: "La empresa puede vender cualquier cantidad al precio de mercado sin afectarlo."
-            },
-            {
-                question: "El Principio Equimarginal ayuda al consumidor a asignar su ingreso de manera que la utilidad marginal por dólar gastado sea:",
-                options: ["Máxima en un bien", "Mínima en todos los bienes", "Igual en todos los bienes", "Creciente en todos los bienes"],
-                answer: 2,
-                explanation: "La igualdad de la UM/P en todos los bienes asegura la asignación óptima del ingreso."
-            },
-            {
-                question: "La Ley de los Rendimientos Decrecientes explica por qué la curva de Costo Marginal (CM) eventualmente tiene una pendiente:",
-                options: ["Negativa", "Positiva", "Cero", "Infinita"],
-                answer: 1,
-                explanation: "A medida que el producto marginal disminuye, el costo de producir una unidad adicional aumenta, lo que se refleja en un CM creciente."
-            },
-            {
-                question: "Un ejemplo de costo fijo para una empresa de transporte sería:",
-                options: ["El combustible de los camiones", "El salario de los conductores por viaje", "El seguro anual de la flota de camiones", "El mantenimiento por kilómetro recorrido"],
-                answer: 2,
-                explanation: "El seguro anual es un gasto que no varía con la cantidad de viajes realizados en el corto plazo."
-            },
-            {
-                question: "En un mercado de competencia perfecta, si el precio es menor que el Costo Total Promedio (CP) pero mayor que el Costo Variable Promedio (CVP), la empresa debería:",
-                options: ["Cerrar inmediatamente", "Aumentar su producción", "Seguir produciendo para minimizar pérdidas", "Reducir su producción a cero"],
-                answer: 2,
-                explanation: "La empresa cubre sus costos variables y parte de los fijos, por lo que es mejor seguir operando para minimizar las pérdidas."
-            },
-            {
-                question: "La principal diferencia entre el Producto Marginal y el Producto Promedio es que el PMg mide el cambio en la producción por la última unidad de insumo, mientras que el PMe mide:",
-                options: ["La producción total", "La producción por unidad de insumo en promedio", "El costo por unidad de insumo", "El ingreso por unidad de insumo"],
-                answer: 1,
-                explanation: "El Producto Promedio es la producción total dividida por la cantidad de insumo, dando una medida de eficiencia promedio."
-            },
-            {
-                question: "Si el Costo Marginal (CM) es menor que el Costo Promedio (CP), entonces el CP:",
-                options: ["Aumenta", "Disminuye", "Permanece constante", "Se vuelve cero"],
-                answer: 1,
-                explanation: "Cuando el costo de la última unidad producida es menor que el promedio, arrastra el promedio hacia abajo."
-            },
-            {
-                question: "En un mercado de competencia perfecta, la empresa es 'precio-aceptante' y su curva de demanda individual es:",
-                options: ["Vertical", "Horizontal", "Con pendiente negativa", "Con pendiente positiva"],
-                answer: 1,
-                explanation: "La empresa puede vender cualquier cantidad al precio de mercado sin afectarlo."
-            },
-            {
-                question: "El Principio Equimarginal es una regla que ayuda al consumidor a:",
-                options: ["Minimizar sus gastos", "Maximizar su utilidad", "Reducir su consumo", "Aumentar sus ingresos"],
-                answer: 1,
-                explanation: "El principio guía al consumidor a asignar su ingreso de manera óptima para obtener la mayor satisfacción posible."
-            },
-            {
-                question: "La Ley de los Rendimientos Decrecientes se aplica a la producción en el corto plazo porque:",
-                options: ["Todos los insumos son variables", "Al menos un insumo es fijo", "La tecnología es constante", "Los precios de los insumos son constantes"],
-                answer: 1,
-                explanation: "La ley se basa en la existencia de factores fijos que limitan la productividad de los factores variables adicionales."
-            },
-            {
-                question: "El Costo Total (CT) de una empresa se calcula como:",
-                options: ["CF - CV", "CF + CV", "CM * c", "CP * c"],
-                answer: 1,
-                explanation: "El costo total es la suma de los costos fijos y los costos variables."
-            },
-            {
-                question: "En un mercado de competencia perfecta, el Ingreso Marginal (IMg) es igual al:",
-                options: ["Costo Marginal", "Costo Promedio", "Precio de mercado", "Cero"],
-                answer: 2,
-                explanation: "Para una empresa precio-aceptante, cada unidad adicional vendida aporta el precio de mercado como ingreso."
-            },
-            {
-                question: "Si una empresa en competencia perfecta está operando donde el precio es igual al Costo Variable Promedio (CVP) mínimo, se dice que está en su:",
-                options: ["Punto de beneficio máximo", "Punto de cero utilidad", "Punto de cierre", "Punto de equilibrio"],
-                answer: 2,
-                explanation: "En este punto, la empresa apenas cubre sus costos variables y decidirá si sigue operando o cierra."
-            },
-            {
-                question: "El concepto de 'rendimientos de escala crecientes' implica que:",
-                options: ["La producción aumenta menos que proporcionalmente a los insumos", "La producción aumenta proporcionalmente a los insumos", "La producción aumenta más que proporcionalmente a los insumos", "La producción disminuye al aumentar los insumos"],
-                answer: 2,
-                explanation: "Esto significa que la eficiencia aumenta a medida que la escala de producción se expande."
-            },
-            {
-                question: "El costo de oportunidad de un recurso es el valor de:",
-                options: ["Su precio de mercado", "La mejor alternativa a la que se renuncia", "El costo de su producción", "El beneficio que genera"],
-                answer: 1,
-                explanation: "El costo de oportunidad es el valor de la alternativa que no se elige."
-            },
-            {
-                question: "La curva de Costo Marginal (CM) siempre intersecta la curva de Costo Total Promedio (CP) en su punto:",
-                options: ["Máximo", "Mínimo", "Cero", "Creciente"],
-                answer: 1,
-                explanation: "Esta es una propiedad fundamental de las curvas de costos."
-            },
-            {
-                question: "En un mercado de competencia perfecta, la curva de oferta de la industria es la suma de las curvas de:",
-                options: ["Demanda individuales", "Costo fijo promedio", "Costo marginal de las empresas individuales por encima del CVP mínimo", "Ingreso marginal"],
-                answer: 2,
-                explanation: "La oferta de la industria se deriva de las decisiones de producción de todas las empresas individuales."
-            },
-            {
-                question: "La Ley de la Utilidad Marginal Decreciente es la razón por la cual la curva de indiferencia es:",
-                options: ["Cóncava al origen", "Convexa al origen", "Recta", "Vertical"],
-                answer: 1,
-                explanation: "A medida que se tiene más de un bien, la utilidad marginal de ese bien disminuye, lo que hace que el consumidor esté dispuesto a sacrificar menos del otro bien para obtener más de este."
-            },
-            {
-                question: "Si el Producto Marginal (PMg) es mayor que el Producto Promedio (PMe), entonces el PMe:",
-                options: ["Disminuye", "Aumenta", "Permanece constante", "Es cero"],
-                answer: 1,
-                explanation: "Si el aporte adicional es mayor que el promedio, eleva el promedio."
-            },
-            {
-                question: "Los costos que no varían con el nivel de producción se denominan:",
-                options: ["Costos variables", "Costos marginales", "Costos fijos", "Costos de oportunidad"],
-                answer: 2,
-                explanation: "Estos costos se incurren independientemente de la cantidad producida."
-            },
-            {
-                question: "En un mercado de competencia perfecta, el beneficio económico de una empresa a largo plazo tiende a ser:",
-                options: ["Positivo", "Negativo", "Cero", "Infinito"],
-                answer: 2,
-                explanation: "La libre entrada y salida de empresas asegura que los beneficios extraordinarios se disipen a largo plazo."
-            },
-            {
-                question: "La función de producción es una relación que especifica la producción máxima obtenible con:",
-                options: ["Cualquier cantidad de insumos", "Una cantidad determinada de insumos", "Un costo fijo", "Un precio dado"],
-                answer: 1,
-                explanation: "La función de producción es una relación técnica que muestra la eficiencia máxima de la combinación de insumos."
-            },
-            {
-                question: "El Costo Total Promedio (CP) es la suma de:",
-                options: ["Costo Fijo y Costo Variable", "Costo Marginal y Costo Fijo", "Costo Fijo Promedio y Costo Variable Promedio", "Ingreso Total y Costo Total"],
-                answer: 2,
-                explanation: "CP = CFP + CVP."
-            },
-            {
-                question: "La Ley de los Rendimientos Decrecientes es una de las razones por las que la curva de Costo Marginal (CM) eventualmente:",
-                options: ["Disminuye", "Aumenta", "Permanece constante", "Se vuelve cero"],
-                answer: 1,
-                explanation: "A medida que el PMg disminuye, el costo de producir una unidad adicional aumenta."
-            },
-            {
-                question: "El costo de oportunidad de un recurso es el valor de la mejor alternativa:",
-                options: ["Comprada", "Vendida", "Sacrificada", "Producida"],
-                answer: 2,
-                explanation: "Es el valor de la opción que no se elige."
-            },
-            {
-                question: "En un mercado de competencia perfecta, si el precio es mayor que el Costo Total Promedio (CP), la empresa está obteniendo:",
-                options: ["Pérdidas", "Beneficios económicos normales", "Beneficios económicos positivos", "Cero ingresos"],
-                answer: 2,
-                explanation: "Si P > CP, los ingresos superan todos los costos, generando beneficios extraordinarios."
-            },
-            {
-                question: "La principal diferencia entre el corto y el largo plazo en la teoría de la producción es la flexibilidad para ajustar:",
-                options: ["Solo los precios", "Solo la demanda", "Todos los insumos", "Solo los costos fijos"],
-                answer: 2,
-                explanation: "En el largo plazo, todos los factores de producción son variables."
-            },
-            {
-                question: "El Costo Marginal (CM) es la pendiente de la curva de:",
-                options: ["Costo Fijo", "Costo Variable", "Costo Total", "Costo Promedio"],
-                answer: 2,
-                explanation: "El CM mide el cambio en el CT por unidad de producción."
-            },
-            {
-                question: "La condición de cierre a corto plazo para una empresa en competencia perfecta se da cuando el precio es igual al Costo Variable Promedio (CVP) mínimo porque:",
-                options: ["La empresa cubre todos sus costos", "La empresa no cubre sus costos fijos", "La empresa no cubre sus costos variables", "La empresa maximiza sus beneficios"],
-                answer: 2,
-                explanation: "Si el precio no cubre los costos variables, cada unidad producida genera pérdidas que superan los costos fijos, por lo que es mejor cerrar."
-            },
-            {
-                question: "Los rendimientos de escala crecientes se asocian con:",
-                options: ["Deseconomías de escala", "Economías de escala", "Rendimientos marginales decrecientes", "Costos fijos crecientes"],
-                answer: 1,
-                explanation: "Las economías de escala implican que los costos unitarios disminuyen a medida que la producción aumenta."
-            },
-            {
-                question: "El costo de oportunidad de un recurso es el valor de la mejor alternativa a la que se renuncia. Esto es crucial para entender:",
-                options: ["Solo las decisiones de consumo", "Solo las decisiones de producción", "Todas las decisiones económicas", "Solo las decisiones monetarias"],
-                answer: 2,
-                explanation: "La escasez de recursos implica que todas las decisiones económicas tienen un costo de oportunidad."
-            },
-            {
-                question: "La curva de Costo Marginal (CM) intersecta la curva de Costo Variable Promedio (CVP) en su punto:",
-                options: ["Máximo", "Mínimo", "Cero", "Creciente"],
-                answer: 1,
-                explanation: "Esta es una propiedad fundamental de las curvas de costos."
-            },
-            {
-                question: "En un mercado de competencia perfecta, la empresa es 'precio-aceptante' y su curva de demanda individual es:",
-                options: ["Vertical", "Horizontal", "Con pendiente negativa", "Con pendiente positiva"],
-                answer: 1,
-                explanation: "La empresa puede vender cualquier cantidad al precio de mercado sin afectarlo."
-            },
-            {
-                question: "El Principio Equimarginal ayuda al consumidor a asignar su ingreso de manera que la utilidad marginal por dólar gastado sea:",
-                options: ["Máxima en un bien", "Mínima en todos los bienes", "Igual en todos los bienes", "Creciente en todos los bienes"],
-                answer: 2,
-                explanation: "La igualdad de la UM/P en todos los bienes asegura la asignación óptima del ingreso."
-            },
-            {
-                question: "La Ley de los Rendimientos Decrecientes explica por qué la curva de Costo Marginal (CM) eventualmente tiene una pendiente:",
-                options: ["Negativa", "Positiva", "Cero", "Infinita"],
-                answer: 1,
-                explanation: "A medida que el producto marginal disminuye, el costo de producir una unidad adicional aumenta, lo que se refleja en un CM creciente."
-            },
-            {
-                question: "Un ejemplo de costo fijo para una empresa de transporte sería:",
-                options: ["El combustible de los camiones", "El salario de los conductores por viaje", "El seguro anual de la flota de camiones", "El mantenimiento por kilómetro recorrido"],
-                answer: 2,
-                explanation: "El seguro anual es un gasto que no varía con la cantidad de viajes realizados en el corto plazo."
-            },
-            {
-                question: "En un mercado de competencia perfecta, si el precio es menor que el Costo Total Promedio (CP) pero mayor que el Costo Variable Promedio (CVP), la empresa debería:",
-                options: ["Cerrar inmediatamente", "Aumentar su producción", "Seguir produciendo para minimizar pérdidas", "Reducir su producción a cero"],
-                answer: 2,
-                explanation: "La empresa cubre sus costos variables y parte de los fijos, por lo que es mejor seguir operando para minimizar las pérdidas."
+                explanation: "Los objetivos finales son el producto, el empleo y la inflación. La OM y BM son objetivos intermedios para influir sobre los finales."
             }
         ];
 
