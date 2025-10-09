@@ -137,904 +137,802 @@
     </div>
 
     <script>
+        // Base de preguntas sobre Mercado Monetario
         const allQuestions = [
-            // BASE MONETARIA Y OFERTA MONETARIA
             {
-                question: "¿Qué es la base monetaria (BM)?",
+                question: "¿Qué es el dinero según el enfoque del capítulo?",
                 options: [
-                    "Solo los billetes y monedas en circulación",
-                    "Billetes y monedas en circulación más las reservas de los bancos comerciales",
-                    "Todos los depósitos bancarios del sistema",
-                    "La suma de todos los agregados monetarios M1, M2 y M3"
+                    "Una mercancía con utilidad intrínseca respaldada por oro",
+                    "Un acuerdo social realizado frecuentemente en forma inconsciente",
+                    "Un conjunto de bienes tangibles almacenados por el Estado",
+                    "Una obligación emitida por el sector bancario privado"
                 ],
                 answer: 1,
-                explanation: "La base monetaria es la suma de los billetes y monedas en poder del público (ByM) más las reservas (R) que los bancos comerciales mantienen en el banco central."
+                explanation: "El dinero no es una cosa, sino más bien un acuerdo social que con frecuencia se realiza en forma inconsciente."
             },
             {
-                question: "¿Cómo se expresa algebraicamente la base monetaria?",
+                question: "¿Qué diferencia al dinero-mercancía del dinero fiduciario?",
                 options: [
-                    "BM = ByM - R",
-                    "BM = ByM + D",
-                    "BM = ByM + R",
-                    "BM = D + R"
+                    "El dinero-mercancía tiene utilidad intrínseca además de servir para intercambios",
+                    "El dinero fiduciario siempre está respaldado por metales preciosos",
+                    "El dinero-mercancía solo lo emiten los gobiernos nacionales",
+                    "El dinero fiduciario es convertible a oro a tipo fijo"
                 ],
-                answer: 2,
-                explanation: "La base monetaria se expresa como BM = ByM + R, donde ByM son billetes y monedas, y R son las reservas bancarias."
+                answer: 0,
+                explanation: "El dinero-mercancía (ganado, oro) tenía utilidad intrínseca además de usarse para intercambios, mientras el fiduciario no tiene más utilidad que el intercambio."
             },
             {
-                question: "¿Qué institución tiene el monopolio legal de emitir dinero en un país?",
+                question: "¿Qué significa que el dinero sea 'fiduciario' (fiat money)?",
                 options: [
-                    "Los bancos comerciales",
-                    "El Ministerio de Economía",
-                    "El banco central",
-                    "El gobierno nacional"
-                ],
-                answer: 2,
-                explanation: "El banco central ejerce la autoridad legal de emitir dinero, poseyendo el monopolio de la creación de dinero legal."
-            },
-            {
-                question: "¿Qué representa el coeficiente de encaje (λ)?",
-                options: [
-                    "La razón entre billetes y depósitos",
-                    "La razón entre reservas y depósitos (R/D)",
-                    "La razón entre base monetaria y oferta monetaria",
-                    "El multiplicador del dinero"
+                    "Está respaldado por reservas de oro depositadas en el Tesoro",
+                    "Es creado de la nada a partir de una deuda sin intereses",
+                    "Solo circula dentro del territorio del país emisor",
+                    "Tiene valor intrínseco como mercancía antes de ser moneda"
                 ],
                 answer: 1,
-                explanation: "El coeficiente de encaje (λ) es la razón reserva/depósitos: λ = R/D, representando la fracción de depósitos mantenida como reservas."
+                explanation: "El dinero fiduciario es literalmente creado de la nada a partir de una deuda sobre la que no se pagan intereses ('fiat' significa 'hágase')."
             },
             {
-                question: "¿Quién establece el nivel de reservas exigidas o encaje legal?",
+                question: "¿Qué monopolio otorga el Estado sobre el dinero?",
                 options: [
-                    "Los bancos comerciales libremente",
-                    "El banco central",
-                    "Los depositantes",
-                    "El mercado financiero"
+                    "El derecho exclusivo a operar todos los bancos comerciales",
+                    "El derecho a emitir dinero de alta potencia legalmente",
+                    "La capacidad de fijar todas las tasas de interés",
+                    "El control total sobre los depósitos bancarios privados"
                 ],
                 answer: 1,
-                explanation: "El banco central es quien establece el nivel de reservas exigidas o encaje legal que todo banco debe mantener."
+                explanation: "El derecho a emitir dinero de alta potencia es siempre monopolio legal de cada uno de los estados."
             },
             {
-                question: "¿Cómo se expresa la oferta monetaria (OM)?",
+                question: "¿Qué son los activos financieros?",
                 options: [
-                    "OM = ByM + R",
-                    "OM = BM + R",
-                    "OM = ByM + D",
-                    "OM = R + D"
-                ],
-                answer: 2,
-                explanation: "La oferta monetaria es OM = ByM + D, la suma de billetes y monedas en poder del público más los depósitos a la vista."
-            },
-            {
-                question: "¿Cuál es la diferencia principal entre base monetaria y oferta monetaria?",
-                options: [
-                    "La BM incluye depósitos, la OM incluye reservas",
-                    "La BM incluye reservas bancarias, la OM incluye depósitos del público",
-                    "No hay diferencia, son lo mismo",
-                    "La BM es mayor que la OM"
+                    "Bienes de capital fijo como maquinarias y edificios productivos",
+                    "Títulos por los que el comprador recibe ingreso futuro del vendedor",
+                    "Mercancías almacenadas con valor de reventa garantizado",
+                    "Propiedades inmobiliarias con potencial de apreciación"
                 ],
                 answer: 1,
-                explanation: "La BM incluye las reservas de la banca privada, mientras que la OM incluye los depósitos bancarios del público en el sistema."
+                explanation: "Los activos financieros son títulos por los cuales el comprador adquiere el derecho a recibir un ingreso futuro del vendedor."
             },
             {
-                question: "En la mayoría de los países, ¿cómo es la relación entre OM y BM?",
+                question: "¿Cuáles son las tres características principales de los activos financieros?",
                 options: [
-                    "OM es menor que BM",
-                    "OM es igual a BM",
-                    "OM es mayor que BM",
-                    "No hay relación entre ambas"
+                    "Liquidez, riesgo y rentabilidad según sus propiedades",
+                    "Plazo, garantía y tasa de interés nominal",
+                    "Divisibilidad, durabilidad y facilidad de transporte",
+                    "Escasez, utilidad y valor de mercado corriente"
                 ],
-                answer: 2,
-                explanation: "En casi todos los países, la oferta monetaria es mayor que la base monetaria debido al proceso de creación de dinero bancario."
+                answer: 0,
+                explanation: "Los activos financieros poseen tres características principales: liquidez, riesgo y rentabilidad."
             },
             {
-                question: "¿Qué permite que la oferta monetaria sea mayor que la base monetaria?",
+                question: "¿Qué característica esencial distingue al dinero de otros activos?",
                 options: [
-                    "La inflación",
-                    "El efecto multiplicador del dinero",
-                    "Las exportaciones",
-                    "El gasto público"
-                ],
-                answer: 1,
-                explanation: "El efecto multiplicador del dinero, resultado de la interacción entre depósitos y préstamos, permite que OM sea mayor que BM."
-            },
-            {
-                question: "¿Qué agregado monetario representa el dinero más líquido?",
-                options: [
-                    "M3",
-                    "M2",
-                    "M1 (billetes y monedas)",
-                    "Todos tienen igual liquidez"
-                ],
-                answer: 2,
-                explanation: "M1 (billetes y monedas) es el agregado más líquido. Cuanto más alto el subíndice, menor el grado de liquidez."
-            },
-
-            // MULTIPLICADOR MONETARIO
-            {
-                question: "¿Qué representa el coeficiente 'e' en el multiplicador monetario?",
-                options: [
-                    "La razón reservas/depósitos",
-                    "La razón billetes y monedas/depósitos (ByM/D)",
-                    "La base monetaria",
-                    "El encaje legal"
+                    "Genera intereses más altos que otros activos financieros",
+                    "Puede usarse para realizar transacciones como medio de cambio aceptado",
+                    "Está respaldado por reservas de metales preciosos",
+                    "Mantiene su valor real constante a través del tiempo"
                 ],
                 answer: 1,
-                explanation: "El coeficiente 'e' representa la razón billetes y monedas/depósitos (e = ByM/D), también llamada preferencia por la liquidez."
+                explanation: "La característica esencial del dinero es que puede usarse para realizar transacciones, es decir, ser un medio de cambio aceptado por todos."
             },
             {
-                question: "¿De qué factores depende la preferencia por la liquidez (e)?",
+                question: "¿Qué condición esencial requiere el trueque para funcionar?",
                 options: [
-                    "Solo de las decisiones del banco central",
-                    "De las preferencias del público y condiciones económicas para transacciones",
-                    "Únicamente de la inflación",
-                    "Solo del tipo de cambio"
+                    "Que todos los bienes tengan el mismo valor unitario",
+                    "La doble o múltiple coincidencia de deseos entre participantes",
+                    "Que exista un mercado centralizado con precios fijos",
+                    "La existencia de un patrón oro que respalde los intercambios"
                 ],
                 answer: 1,
-                explanation: "La preferencia por la liquidez depende de las preferencias del público al elegir entre billetes y depósitos, y de las condiciones económicas."
+                explanation: "En una economía de trueque debe producirse la doble o múltiple coincidencia en los deseos respecto de los bienes a intercambiar."
             },
             {
-                question: "¿Cuál es la fórmula del multiplicador monetario (m)?",
+                question: "¿Qué función cumple el dinero como 'unidad de cuenta'?",
                 options: [
-                    "m = e + λ",
-                    "m = (e + 1) / (e + λ)",
-                    "m = λ / e",
-                    "m = e × λ"
+                    "Permite acumular riqueza para intercambios futuros",
+                    "Permite la contabilización de las transacciones monetarias",
+                    "Facilita el pago de impuestos al gobierno central",
+                    "Garantiza el poder adquisitivo constante del ingreso"
                 ],
                 answer: 1,
-                explanation: "El multiplicador monetario es m = (e + 1) / (e + λ), donde e es ByM/D y λ es R/D."
+                explanation: "Como unidad de cuenta o numerario, el dinero permite la contabilización de las transacciones comerciales."
             },
             {
-                question: "¿Cómo se relaciona la oferta monetaria con la base monetaria a través del multiplicador?",
+                question: "¿Cuáles son las tres funciones fundamentales del dinero?",
                 options: [
-                    "OM = BM / m",
-                    "OM = BM - m",
-                    "OM = m × BM",
-                    "OM = BM + m"
-                ],
-                answer: 2,
-                explanation: "La oferta monetaria es un múltiplo de la base monetaria: OM = m × BM, donde m es el multiplicador monetario."
-            },
-            {
-                question: "¿Por qué el multiplicador monetario siempre es mayor que uno?",
-                options: [
-                    "Porque la inflación es positiva",
-                    "Porque los bancos mantienen solo una fracción de depósitos como reservas",
-                    "Porque el banco central así lo determina",
-                    "Porque e siempre es mayor que λ"
+                    "Inversión, ahorro y consumo de las familias",
+                    "Medio de cambio, unidad de cuenta y reserva de valor",
+                    "Emisión, circulación y cancelación de obligaciones",
+                    "Producción, distribución y acumulación de riqueza"
                 ],
                 answer: 1,
-                explanation: "El multiplicador es mayor que 1 porque λ < 1 (los bancos mantienen solo una fracción de depósitos como reservas), haciendo que el numerador sea mayor que el denominador."
+                explanation: "El dinero cumple tres funciones: medio de cambio o pago, unidad de cuenta y reserva de valor."
             },
             {
-                question: "Si aumenta el coeficiente de encaje (λ), ¿qué sucede con el multiplicador?",
+                question: "¿Cuándo el dinero pierde su función de reserva de valor?",
                 options: [
-                    "Aumenta",
-                    "Disminuye",
-                    "Permanece constante",
-                    "Se duplica"
+                    "Cuando el gobierno cambia el diseño de los billetes",
+                    "Cuando la inflación erosiona el poder adquisitivo futuro",
+                    "Cuando los bancos cobran comisiones por mantener depósitos",
+                    "Cuando se introducen nuevas monedas de curso legal"
                 ],
                 answer: 1,
-                explanation: "Un aumento de λ aumenta el denominador de la fórmula m = (e+1)/(e+λ), lo que disminuye el multiplicador y genera menor OM."
+                explanation: "El dinero pierde potencia como reserva de valor cuando con la misma cantidad nominal no se puede comprar lo mismo en el futuro por inflación."
             },
             {
-                question: "Si aumenta 'e' (preferencia por liquidez), ¿qué ocurre con la oferta monetaria?",
+                question: "¿Qué significa liquidez de un activo financiero?",
                 options: [
-                    "Aumenta",
-                    "Disminuye, ceteris paribus",
-                    "No se modifica",
-                    "Se duplica"
+                    "La capacidad de un activo para convertirse en efectivo sin perder valor",
+                    "El porcentaje de agua que contiene un bien almacenado",
+                    "La tasa de interés que genera el activo anualmente",
+                    "La garantía gubernamental que respalda el activo"
+                ],
+                answer: 0,
+                explanation: "La liquidez es la capacidad de un activo para convertirse en efectivo sin perder valor, es decir, de la manera menos costosa."
+            },
+            {
+                question: "¿Qué es la base monetaria o dinero de alta potencia?",
+                options: [
+                    "El total de depósitos a plazo fijo en bancos comerciales",
+                    "Billetes, monedas y reservas bancarias en el banco central",
+                    "Los créditos otorgados por el sistema financiero total",
+                    "Las acciones y bonos negociados en la bolsa de valores"
                 ],
                 answer: 1,
-                explanation: "Si aumenta e, ceteris paribus, se produce una disminución del multiplicador y, por ende, de la OM."
+                explanation: "La base monetaria está compuesta por billetes, monedas y reservas que los bancos guardan en el banco central (alta liquidez)."
             },
             {
-                question: "Si e = 0.1, λ = 0.2 y BM = 100 MM, ¿cuál es el valor aproximado de OM?",
+                question: "¿Qué es el agregado monetario M1?",
                 options: [
-                    "200 MM",
-                    "300 MM",
-                    "367 MM",
-                    "500 MM"
-                ],
-                answer: 2,
-                explanation: "OM = [(0.1+1)/(0.1+0.2)] × 100 = [1.1/0.3] × 100 = 3.67 × 100 = 367 MM aproximadamente."
-            },
-            {
-                question: "Si el banco central aumenta la tasa de encaje de 0.2 a 0.3 (con e=0.1 y BM=100MM), ¿qué sucede con OM?",
-                options: [
-                    "Aumenta a 400 MM",
-                    "Permanece en 367 MM",
-                    "Disminuye a 275 MM",
-                    "Disminuye a 150 MM"
-                ],
-                answer: 2,
-                explanation: "OM' = [(0.1+1)/(0.1+0.3)] × 100 = [1.1/0.4] × 100 = 2.75 × 100 = 275 MM. La OM disminuye."
-            },
-            {
-                question: "¿Qué elemento NO es componente del proceso que determina la oferta monetaria?",
-                options: [
-                    "La base monetaria",
-                    "El multiplicador monetario",
-                    "El tipo de cambio",
-                    "El coeficiente de encaje"
-                ],
-                answer: 2,
-                explanation: "Para determinar OM se necesita conocer la BM y el multiplicador (que depende de e y λ), pero no directamente el tipo de cambio."
-            },
-
-            // DEMANDA DE DINERO - ENFOQUE NEOCLÁSICO VS KEYNESIANO
-            {
-                question: "Según el enfoque neoclásico, ¿por qué se demanda dinero?",
-                options: [
-                    "Por motivos de transacción, precaución y especulación",
-                    "Únicamente por la necesidad de realizar transacciones",
-                    "Solo por motivos especulativos",
-                    "Por acumulación de riqueza"
+                    "Solo las reservas bancarias depositadas en el banco central",
+                    "Billetes, monedas y depósitos a la vista disponibles",
+                    "La suma de todos los depósitos a plazo fijo",
+                    "El total de créditos otorgados por bancos comerciales"
                 ],
                 answer: 1,
+                explanation: "M1 es la suma de billetes y monedas más los depósitos a la vista que pueden ser solicitados en cualquier momento sin recargo."
+            },
+            {
+                question: "¿Cómo cambia la liquidez entre M1, M2 y M3?",
+                options: [
+                    "M3 es más líquido que M1 por incluir más activos",
+                    "Cuanto más alto el subíndice, menos líquido es el agregado",
+                    "Todos tienen la misma liquidez independiente del número",
+                    "Solo M1 es líquido, los demás son ilíquidos"
+                ],
+                answer: 1,
+                explanation: "Cuanto más alto es el subíndice (M2, M3), menos líquido es el conjunto de activos que encierra."
+            },
+            {
+                question: "¿Qué diferencia hay entre depósito a la vista y plazo fijo?",
+                options: [
+                    "El depósito a plazo siempre paga menor tasa de interés",
+                    "El depósito a la vista puede retirarse sin costo en cualquier momento",
+                    "El depósito a plazo no está protegido por el banco central",
+                    "El depósito a la vista solo puede hacerse en efectivo"
+                ],
+                answer: 1,
+                explanation: "El depósito a la vista puede retirarse en cualquier momento sin costo, mientras el plazo fijo requiere esperar o pagar recargo."
+            },
+            {
+                question: "¿Cuál es el rol de los bancos comerciales como intermediarios?",
+                options: [
+                    "Fabricar billetes y monedas para el banco central",
+                    "Aceptar depósitos de un grupo y prestarlos a otro",
+                    "Regular la política monetaria del país directamente",
+                    "Determinar el tipo de cambio oficial de la moneda"
+                ],
+                answer: 1,
+                explanation: "Los bancos comerciales son intermediarios financieros que aceptan depósitos o fondos de un grupo y los prestan a otro."
+            },
+            {
+                question: "¿Cuál es el pilar fundamental del sistema financiero?",
+                options: [
+                    "La regulación estricta impuesta por organismos internacionales",
+                    "La confianza de las personas en el dinero y los bancos",
+                    "El respaldo en oro de todos los billetes emitidos",
+                    "La tasa de interés fijada por el banco central"
+                ],
+                answer: 1,
+                explanation: "Todos los sistemas financieros descansan sobre un pilar fundamental: la confianza o fe en el dinero y los bancos."
+            },
+            {
+                question: "¿Qué sucede cuando se deteriora la confianza en el sistema financiero?",
+                options: [
+                    "El banco central emite más billetes para tranquilizar al público",
+                    "Las personas salen a retirar dinero iniciando una posible crisis",
+                    "Los depósitos aumentan por temor a mantener efectivo",
+                    "El gobierno toma el control directo de todos los bancos"
+                ],
+                answer: 1,
+                explanation: "La sola sospecha de problemas hace que las personas pierdan confianza y salgan a retirar dinero, iniciando una crisis."
+            },
+            {
+                question: "¿Quién puede crear dinero legal (billetes y monedas)?",
+                options: [
+                    "Cualquier banco comercial autorizado por el Ministerio de Economía",
+                    "Solo el banco central tiene derecho exclusivo a emitirlo",
+                    "Los bancos comerciales y cooperativas de crédito conjuntamente",
+                    "El Poder Legislativo mediante leyes presupuestarias"
+                ],
+                answer: 1,
+                explanation: "El banco central es el único que puede crear o generar dinero legal, es decir, billetes y monedas."
+            },
+            {
+                question: "¿Cómo se divide el dinero total de una economía?",
+                options: [
+                    "Entre dinero interno producido y dinero externo importado",
+                    "Entre dinero legal (base monetaria) y dinero bancario",
+                    "Entre dinero físico tangible y dinero virtual electrónico",
+                    "Entre dinero del sector público y del sector privado"
+                ],
+                answer: 1,
+                explanation: "El dinero total se divide entre el legal (base monetaria creada por el banco central) y el bancario (creado por interacción del sistema)."
+            },
+            {
+                question: "¿Qué son las operaciones de mercado abierto del banco central?",
+                options: [
+                    "Préstamos directos a empresas del sector productivo real",
+                    "Compra y venta de bonos para modificar la base monetaria",
+                    "Emisión de billetes nuevos para reemplazar los deteriorados",
+                    "Fijación del tipo de cambio oficial de la moneda"
+                ],
+                answer: 1,
+                explanation: "Las operaciones de mercado abierto son la compra y venta de bonos que realiza el banco central para afectar la base monetaria."
+            },
+            {
+                question: "¿Qué efecto tiene una compra de bonos por el banco central?",
+                options: [
+                    "Disminuye la base monetaria porque retira dinero del sistema",
+                    "Incrementa la oferta de dinero de alta potencia circulante",
+                    "No afecta la cantidad de dinero en la economía",
+                    "Reduce los depósitos bancarios del sector privado"
+                ],
+                answer: 1,
+                explanation: "Una compra de bonos por el banco central provoca un incremento de la oferta de dinero de alta potencia porque paga con dinero nuevo."
+            },
+            {
+                question: "¿Qué sucede cuando el banco central vende bonos?",
+                options: [
+                    "Aumenta la base monetaria porque ingresa dinero al sistema",
+                    "Disminuye la base monetaria porque retira dinero circulante",
+                    "Se mantiene constante la cantidad de dinero total",
+                    "Se duplica el multiplicador monetario de la economía"
+                ],
+                answer: 1,
+                explanation: "Una venta de bonos por el banco central provoca una disminución de la base monetaria porque retira dinero de la circulación."
+            },
+            {
+                question: "¿Qué es la tasa de redescuento del banco central?",
+                options: [
+                    "La tasa que cobran los bancos comerciales a sus clientes",
+                    "La tasa que cobra el banco central a bancos comerciales por préstamos",
+                    "El porcentaje de reservas obligatorias sobre depósitos",
+                    "La inflación esperada descontada del tipo de interés nominal"
+                ],
+                answer: 1,
+                explanation: "La tasa de redescuento es la tasa de interés que cobra el banco central a los bancos comerciales por préstamos que les otorga."
+            },
+            {
+                question: "¿Qué efecto tiene aumentar la tasa de redescuento?",
+                options: [
+                    "Aumentan los préstamos porque son más rentables para el central",
+                    "Disminuyen los préstamos porque se vuelve más caro endeudarse",
+                    "No afecta la cantidad de préstamos otorgados al sistema",
+                    "Se duplican automáticamente las reservas bancarias obligatorias"
+                ],
+                answer: 1,
+                explanation: "Si se aumenta la tasa de redescuento, disminuyen los préstamos a bancos comerciales porque se vuelve más caro el endeudamiento."
+            },
+            {
+                question: "¿Qué son las operaciones en moneda extranjera del banco central?",
+                options: [
+                    "Regulaciones sobre movimientos de capital internacional",
+                    "Compra o venta de divisas para afectar la base monetaria",
+                    "Préstamos en dólares a empresas del sector privado",
+                    "Fijación administrativa del tipo de cambio oficial"
+                ],
+                answer: 1,
+                explanation: "El banco central compra o vende activos denominados en moneda extranjera (divisas) para afectar la base monetaria."
+            },
+            {
+                question: "¿Cómo se expresa matemáticamente la base monetaria (BM)?",
+                options: [
+                    "BM = Depósitos totales + Créditos otorgados",
+                    "BM = Billetes y monedas + Reservas bancarias",
+                    "BM = M1 + M2 + M3 según todos los agregados",
+                    "BM = Oferta monetaria / Multiplicador monetario"
+                ],
+                answer: 1,
+                explanation: "La base monetaria BM = ByM (billetes y monedas en poder del público) + R (reservas bancarias en el banco central)."
+            },
+            {
+                question: "¿Qué es el coeficiente de encaje o tasa de encaje (λ)?",
+                options: [
+                    "El porcentaje de depósitos que se mantienen como reservas",
+                    "La proporción de créditos sobre el total de activos",
+                    "El cociente entre billetes emitidos y depósitos totales",
+                    "La tasa de interés promedio cobrada por préstamos"
+                ],
+                answer: 0,
+                explanation: "El coeficiente de encaje λ = R/D es el porcentaje de los depósitos que se mantienen en forma de reservas."
+            },
+            {
+                question: "¿Quién establece el encaje legal o reservas exigidas?",
+                options: [
+                    "Cada banco comercial según su criterio de prudencia",
+                    "El banco central como autoridad monetaria del país",
+                    "El Ministerio de Economía mediante decretos anuales",
+                    "La asociación de bancos comerciales por consenso"
+                ],
+                answer: 1,
+                explanation: "El banco central establece el nivel de reservas exigidas o encaje legal que todo banco debe mantener."
+            },
+            {
+                question: "¿Cómo se define la oferta monetaria (OM)?",
+                options: [
+                    "OM = Base monetaria × Multiplicador monetario",
+                    "OM = Billetes y monedas + Depósitos a la vista",
+                    "OM = Créditos totales - Depósitos totales",
+                    "OM = Reservas bancarias + Bonos del gobierno"
+                ],
+                answer: 1,
+                explanation: "La oferta monetaria OM = ByM (billetes y monedas) + D (depósitos totales a la vista en el sistema bancario)."
+            },
+            {
+                question: "¿Qué diferencia a la base monetaria de la oferta monetaria?",
+                options: [
+                    "La base incluye depósitos y la oferta incluye reservas",
+                    "La base incluye reservas bancarias y la oferta incluye depósitos",
+                    "Ambas son idénticas en economías modernas desarrolladas",
+                    "La base solo incluye monedas y la oferta incluye billetes"
+                ],
+                answer: 1,
+                explanation: "La BM incluye reservas bancarias (R), mientras que la OM incluye depósitos del público (D)."
+            },
+            {
+                question: "¿Por qué la oferta monetaria es mayor que la base monetaria?",
+                options: [
+                    "Porque el gobierno emite bonos que se suman al dinero",
+                    "Por el proceso de creación de dinero del sistema bancario",
+                    "Porque incluye también las monedas extranjeras circulantes",
+                    "Por los intereses acumulados en todos los depósitos"
+                ],
+                answer: 1,
+                explanation: "La OM es mayor que la BM debido al proceso de creación de dinero característico del sistema bancario (multiplicador)."
+            },
+            {
+                question: "¿Qué es la preferencia por la liquidez (e)?",
+                options: [
+                    "La eficiencia del sistema bancario al otorgar créditos",
+                    "La razón billetes y monedas sobre depósitos (ByM/D)",
+                    "El coeficiente de encaje legal exigido por el central",
+                    "La elasticidad de la demanda de dinero respecto al ingreso"
+                ],
+                answer: 1,
+                explanation: "La preferencia por la liquidez e = ByM/D es la razón entre billetes y monedas en manos del público y los depósitos."
+            },
+            {
+                question: "¿De qué depende la preferencia por la liquidez (e)?",
+                options: [
+                    "De las preferencias del público y condiciones para transacciones",
+                    "De la tasa de encaje fijada por el banco central",
+                    "Del nivel de inflación esperada para el próximo período",
+                    "De las reservas internacionales del banco central"
+                ],
+                answer: 0,
+                explanation: "La preferencia por la liquidez depende de las preferencias del público y las condiciones que impone la economía para transacciones."
+            },
+            {
+                question: "¿Cómo se calcula el multiplicador monetario (m)?",
+                options: [
+                    "m = Base monetaria / Oferta monetaria total",
+                    "m = (e + 1) / (e + λ) donde e y λ son coeficientes",
+                    "m = Depósitos totales / Reservas bancarias obligatorias",
+                    "m = Tasa de interés / Tasa de inflación esperada"
+                ],
+                answer: 1,
+                explanation: "El multiplicador monetario m = (e+1)/(e+λ), donde e es la preferencia por liquidez y λ el coeficiente de encaje."
+            },
+            {
+                question: "¿Por qué el multiplicador monetario siempre es mayor que 1?",
+                options: [
+                    "Porque la inflación siempre aumenta el valor nominal del dinero",
+                    "Porque λ es menor que 1 y el numerador supera al denominador",
+                    "Porque los bancos siempre prestan más de lo que depositan",
+                    "Porque el banco central emite dinero constantemente"
+                ],
+                answer: 1,
+                explanation: "El multiplicador es mayor que 1 porque λ (reservas/depósitos) es menor que 1, haciendo que el numerador supere al denominador."
+            },
+            {
+                question: "¿Qué sucede con el multiplicador si aumenta λ (encaje)?",
+                options: [
+                    "El multiplicador aumenta y la oferta monetaria crece",
+                    "El multiplicador disminuye y genera menor oferta monetaria",
+                    "El multiplicador no se ve afectado por cambios en λ",
+                    "El multiplicador se duplica automáticamente por ley"
+                ],
+                answer: 1,
+                explanation: "Un aumento del coeficiente λ disminuye el multiplicador y genera menor oferta monetaria, ceteris paribus."
+            },
+            {
+                question: "¿Qué relación existe entre OM, BM y el multiplicador (m)?",
+                options: [
+                    "OM = BM + m según la identidad contable",
+                    "OM = m × BM según el proceso de creación de dinero",
+                    "OM = BM / m por definición del multiplicador",
+                    "OM = BM - m restando las reservas bancarias"
+                ],
+                answer: 1,
+                explanation: "La oferta monetaria es OM = m × BM, es decir, la base monetaria multiplicada por el multiplicador monetario."
+            },
+            {
+                question: "Si e=0.1, λ=0.2 y BM=100MM, ¿cuál es la oferta monetaria aproximada?",
+                options: [
+                    "OM = 200 MM por el efecto multiplicador",
+                    "OM = 367 MM aplicando m = (e+1)/(e+λ)",
+                    "OM = 100 MM porque la base no cambia",
+                    "OM = 500 MM por el encaje fraccionario"
+                ],
+                answer: 1,
+                explanation: "m = (0.1+1)/(0.1+0.2) = 1.1/0.3 = 3.67, entonces OM = 3.67 × 100 = 367 MM aproximadamente."
+            },
+            {
+                question: "¿Por qué la curva de oferta monetaria es vertical respecto a la tasa de interés?",
+                options: [
+                    "Porque la tasa de interés no afecta las decisiones del banco central",
+                    "Porque la OM no depende de la tasa de interés sino de BM, λ y e",
+                    "Porque los bancos siempre prestan al mismo tipo de interés",
+                    "Porque está fijada administrativamente por el gobierno"
+                ],
+                answer: 1,
+                explanation: "La OM se representa vertical porque depende de BM, λ y e, no de la tasa de interés, por lo que no hay relación causal."
+            },
+            {
+                question: "Según los neoclásicos, ¿por qué se demanda dinero?",
+                options: [
+                    "Únicamente por la necesidad de realizar transacciones corrientes",
+                    "Por motivos de especulación en mercados financieros",
+                    "Por precaución ante contingencias futuras imprevistas",
+                    "Por los tres motivos: transacción, precaución y especulación"
+                ],
+                answer: 0,
                 explanation: "Desde el punto de vista neoclásico, únicamente se demanda dinero por la necesidad de realizar transacciones."
             },
             {
-                question: "Según Keynes, ¿cuáles son los tres motivos para demandar dinero?",
+                question: "¿Cuáles son los tres motivos keynesianos de demanda de dinero?",
                 options: [
-                    "Consumo, ahorro e inversión",
-                    "Transacción, precaución y especulación",
-                    "Producción, distribución y consumo",
-                    "Ahorro, préstamo e inversión"
+                    "Consumo, ahorro e inversión de las familias",
+                    "Transacción, precaución y especulación del público",
+                    "Emisión, circulación y atesoramiento de billetes",
+                    "Depósitos, préstamos y reservas del sistema bancario"
                 ],
                 answer: 1,
-                explanation: "Keynes identificó tres motivos: transacción (para compras cotidianas), precaución (contingencias imprevistas) y especulación (expectativas de interés)."
+                explanation: "Keynes identificó tres motivos: transacción (operaciones cotidianas), precaución (contingencias) y especulación (invertir cuando convenga)."
             },
             {
-                question: "¿Qué es el motivo transacción para demandar dinero?",
+                question: "¿Qué es el motivo transacción de la demanda de dinero?",
                 options: [
-                    "Ahorrar para el futuro",
-                    "Mantener liquidez para realizar transacciones cotidianas",
-                    "Especular con bonos",
-                    "Invertir en acciones"
+                    "La necesidad de efectivo para enfrentar gastos imprevistos",
+                    "La liquidez necesaria para transacciones cotidianas ordinarias",
+                    "El deseo de especular con cambios en tasas de interés",
+                    "La obligación legal de mantener reservas en el central"
                 ],
                 answer: 1,
-                explanation: "El motivo transacción abarca la liquidez necesaria para hacer frente a las transacciones cotidianas ordinarias."
+                explanation: "El motivo transacción es la liquidez necesaria para hacer frente a las transacciones cotidianas ordinarias."
             },
             {
-                question: "¿De qué variable depende principalmente la demanda de dinero por motivo transacción?",
+                question: "¿De qué depende la demanda de dinero por motivo transacción?",
                 options: [
-                    "De la tasa de interés",
-                    "Del nivel de renta o ingreso",
-                    "Del tipo de cambio",
-                    "De la inflación"
+                    "Depende directamente del nivel de renta o ingreso",
+                    "Depende inversamente de la tasa de inflación esperada",
+                    "Depende del tipo de cambio nominal de la moneda",
+                    "Depende del nivel de reservas internacionales del país"
                 ],
-                answer: 1,
-                explanation: "El saldo monetario deseado con fines transaccionales depende directamente del nivel de renta o ingreso de las personas."
+                answer: 0,
+                explanation: "El saldo monetario para transacciones depende directamente del nivel de renta o ingreso de las personas."
             },
             {
-                question: "¿Qué representa el motivo precaución en la demanda de dinero?",
+                question: "¿Qué caracteriza al motivo precaución?",
                 options: [
-                    "Comprar bienes de lujo",
-                    "Enfrentar contingencias imprevistas",
-                    "Especular en el mercado de valores",
-                    "Pagar impuestos"
+                    "Mantener dinero para especular en mercados de valores",
+                    "Mantener dinero para enfrentar contingencias imprevistas futuras",
+                    "Ahorrar para comprar bienes de consumo duradero",
+                    "Invertir en activos de largo plazo más rentables"
                 ],
                 answer: 1,
-                explanation: "El motivo precaución se refiere a mantener dinero para enfrentar contingencias imprevistas, también asociado al nivel de renta."
+                explanation: "El motivo precaución implica mantener dinero para enfrentar contingencias imprevistas, asociado también al nivel de renta."
             },
             {
-                question: "¿Qué caracteriza al motivo especulación en la demanda de dinero?",
+                question: "¿Qué relación tiene la demanda especulativa con la tasa de interés?",
                 options: [
-                    "Está directamente relacionado con la tasa de interés",
-                    "Está inversamente relacionado con la tasa de interés",
-                    "No depende de la tasa de interés",
-                    "Solo depende del ingreso"
+                    "Es directa: más interés, más demanda de dinero líquido",
+                    "Es inversa: más interés esperado a futuro, más demanda de dinero hoy",
+                    "No existe relación entre especulación e interés",
+                    "Es proporcional al cuadrado de la tasa de interés"
                 ],
                 answer: 1,
-                explanation: "La demanda de dinero por especulación está inversamente relacionada con el tipo de interés: si se espera que suba, se prefiere mantener dinero."
-            },
-            {
-                question: "Si un inversor espera que la tasa de interés suba a corto plazo, ¿qué preferirá hacer?",
-                options: [
-                    "Comprar bonos inmediatamente",
-                    "Mantener sus ahorros en forma de dinero",
-                    "Invertir en acciones",
-                    "Depositar todo a plazo fijo"
-                ],
-                answer: 1,
-                explanation: "Si espera que el interés suba (y baje la cotización de bonos), preferirá mantener dinero esperando ese aumento para luego comprar bonos más baratos."
-            },
-            {
-                question: "¿Qué sucede con la cotización de bonos cuando sube la tasa de interés?",
-                options: [
-                    "Aumenta",
-                    "Disminuye",
-                    "Permanece constante",
-                    "No hay relación"
-                ],
-                answer: 1,
-                explanation: "Existe una relación inversa: cuando sube el tipo de interés, disminuye la cotización (precio) de los bonos en el mercado."
-            },
-            {
-                question: "¿Por qué en inglés la demanda de dinero se conoce como 'liquid money'?",
-                options: [
-                    "Porque el dinero es líquido físicamente",
-                    "Porque representa un activo seguro y sumamente líquido",
-                    "Porque solo incluye depósitos bancarios",
-                    "Porque se refiere al agua embotellada"
-                ],
-                answer: 1,
-                explanation: "Se llama 'liquid money' porque representa la necesidad de tener un activo seguro y sumamente líquido (fácilmente convertible)."
-            },
-            {
-                question: "¿Cuáles son los tres agentes que tienen dinero para comprar bienes y servicios?",
-                options: [
-                    "Productores, distribuidores y minoristas",
-                    "Economías domésticas, empresas y Estado",
-                    "Bancos, gobierno y ciudadanos",
-                    "Sector primario, secundario y terciario"
-                ],
-                answer: 1,
-                explanation: "Las economías domésticas (familias), las empresas y el Estado son los tres agentes que demandan dinero para comprar bienes y servicios."
-            },
-
-            // EQUILIBRIO DEL MERCADO MONETARIO
-            {
-                question: "¿Qué determina conjuntamente la oferta y demanda de dinero?",
-                options: [
-                    "El tipo de cambio",
-                    "La tasa de interés del mercado",
-                    "El nivel de precios",
-                    "El salario real"
-                ],
-                answer: 1,
-                explanation: "La oferta y la demanda de dinero determinan conjuntamente la tasa de interés del mercado (en este modelo simplificado)."
-            },
-            {
-                question: "¿Por qué la curva de oferta monetaria es vertical en el gráfico del mercado de dinero?",
-                options: [
-                    "Porque depende de la tasa de interés",
-                    "Porque el banco central manipula la OM independientemente de la tasa de interés",
-                    "Porque la demanda es horizontal",
-                    "Porque no hay relación con el dinero"
-                ],
-                answer: 1,
-                explanation: "La OM es vertical porque el banco central la determina mediante instrumentos monetarios, sin relación causal con la tasa de interés."
+                explanation: "La demanda especulativa está inversamente relacionada con el tipo de interés: si se espera que suba, se mantiene dinero líquido."
             },
             {
                 question: "¿Qué pendiente tiene la curva de demanda de dinero?",
                 options: [
-                    "Pendiente positiva",
-                    "Pendiente negativa",
-                    "Es vertical",
-                    "Es horizontal"
+                    "Pendiente positiva porque más ingreso aumenta la demanda",
+                    "Pendiente negativa por relación inversa entre demanda e interés",
+                    "Pendiente vertical porque es independiente del interés",
+                    "Pendiente horizontal porque la demanda es perfectamente elástica"
                 ],
                 answer: 1,
-                explanation: "La curva de demanda de dinero tiene pendiente negativa: existe relación inversa entre tasa de interés y saldos monetarios reales deseados."
+                explanation: "La curva de demanda tiene pendiente negativa: existe relación inversa entre tasa de interés y saldos monetarios reales demandados."
+            },
+            {
+                question: "¿Qué determina la tasa de interés de equilibrio en el mercado monetario?",
+                options: [
+                    "La fija administrativamente el banco central cada trimestre",
+                    "La oferta y demanda de dinero conjuntamente determinan ie",
+                    "Depende únicamente del nivel de inflación corriente",
+                    "La establece la asociación de bancos comerciales"
+                ],
+                answer: 1,
+                explanation: "La oferta y la demanda de dinero determinan conjuntamente la tasa de interés de equilibrio del mercado (ie)."
             },
             {
                 question: "¿Qué son los saldos monetarios reales (SMR)?",
                 options: [
-                    "El dinero nominal sin ajustar",
-                    "El dinero medido en unidades de poder adquisitivo (dinero nominal/índice de precios)",
-                    "Solo los billetes y monedas",
-                    "Los depósitos bancarios"
+                    "El dinero nominal multiplicado por la tasa de interés",
+                    "El dinero medido en unidades de poder adquisitivo (M/P)",
+                    "Los depósitos a plazo fijo ajustados por inflación",
+                    "Las reservas bancarias depositadas en el banco central"
                 ],
                 answer: 1,
-                explanation: "Los SMR son el dinero medido en unidades de su poder adquisitivo: cantidades nominales de dinero sobre un índice de precios."
+                explanation: "Los saldos monetarios reales son el dinero medido en unidades de poder adquisitivo: cantidades nominales sobre índice de precios."
             },
             {
-                question: "¿Por qué la demanda de dinero tiene pendiente negativa?",
+                question: "¿Qué sucede si la tasa de interés está por encima del equilibrio?",
                 options: [
-                    "Porque a mayor ingreso, menor demanda de dinero",
-                    "Porque a mayor tasa de interés, es más caro tener dinero líquido en vez de depositado",
-                    "Porque la oferta es vertical",
-                    "Porque el banco central así lo determina"
+                    "Hay exceso de demanda y la tasa sube aún más",
+                    "Hay saldos monetarios excesivos y la gente reduce efectivo líquido",
+                    "El banco central interviene comprando bonos masivamente",
+                    "Los bancos quiebran por falta de reservas suficientes"
                 ],
                 answer: 1,
-                explanation: "A mayor tasa de interés, resulta más caro mantener dinero líquido contra la alternativa de tenerlo depositado ganando intereses."
+                explanation: "Con tasa de interés alta hay saldos excesivos: la gente no mantiene tanto efectivo porque el mercado paga mucho por depósitos."
             },
             {
-                question: "¿Qué es la tasa de interés en el mercado monetario?",
+                question: "¿Qué es una política monetaria expansiva?",
                 options: [
-                    "El precio de los bienes",
-                    "El precio que se paga por la utilización de dinero",
-                    "El salario de los trabajadores",
-                    "El tipo de cambio"
+                    "Aumentar impuestos para reducir el déficit fiscal del gobierno",
+                    "Aumentar la oferta monetaria desplazándola hacia la derecha",
+                    "Reducir el gasto público para controlar la inflación",
+                    "Devaluar la moneda para mejorar la competitividad exportadora"
                 ],
                 answer: 1,
-                explanation: "La tasa de interés es el precio que se paga por la utilización de dinero, determinada en el mercado monetario."
+                explanation: "Una política monetaria expansiva aumenta la oferta monetaria (OM se desplaza a la derecha), reduciendo la tasa de interés."
             },
             {
-                question: "Si la tasa de interés es superior a la de equilibrio, ¿qué ocurre?",
+                question: "¿Cómo afecta una política monetaria expansiva a la tasa de interés?",
                 options: [
-                    "Hay escasez de dinero",
-                    "Hay exceso de saldos monetarios y la gente prefiere depositar",
-                    "La oferta aumenta",
-                    "La demanda desaparece"
+                    "La tasa de interés aumenta por exceso de demanda",
+                    "La tasa de interés disminuye con mayor oferta monetaria",
+                    "La tasa permanece constante por intervención del central",
+                    "La tasa se duplica automáticamente por la expansión"
                 ],
                 answer: 1,
-                explanation: "Si la tasa es muy alta, hay exceso de saldos monetarios; la gente no quiere tanto efectivo porque el mercado paga mucho por depósitos."
+                explanation: "Una política monetaria expansiva (OM aumenta) hace que la tasa de interés de equilibrio disminuya."
             },
             {
-                question: "Si la tasa de interés es inferior a la de equilibrio, ¿qué sucede?",
+                question: "¿Qué instrumentos puede usar el banco central para política expansiva?",
                 options: [
-                    "Hay exceso de oferta",
-                    "Los saldos monetarios resultan insuficientes y sube la tasa",
-                    "La demanda disminuye",
-                    "No pasa nada"
+                    "Aumentar encaje, aumentar redescuento, vender bonos",
+                    "Disminuir encaje, disminuir redescuento, comprar bonos o aumentar BM",
+                    "Aumentar impuestos, reducir gasto público, devaluar moneda",
+                    "Nacionalizar bancos, fijar precios, controlar importaciones"
                 ],
                 answer: 1,
-                explanation: "Si la tasa es muy baja, los saldos monetarios son insuficientes; la gente desea más dinero, haciendo subir la tasa hasta el equilibrio."
+                explanation: "Para política expansiva: disminuir λ o tasa redescuento, disminuir e, aumentar BM o comprar bonos (operaciones mercado abierto)."
             },
             {
-                question: "¿Qué representa 'ie' en el gráfico del mercado monetario?",
+                question: "¿Cómo afecta la política monetaria expansiva a la inversión?",
                 options: [
-                    "El ingreso de equilibrio",
-                    "La tasa de interés de equilibrio",
-                    "La inflación esperada",
-                    "El encaje legal"
+                    "Reduce la inversión porque hay más dinero circulante",
+                    "Aumenta la inversión porque baja la tasa de interés",
+                    "No afecta la inversión que depende solo de expectativas",
+                    "Duplica la inversión automáticamente por la expansión"
                 ],
                 answer: 1,
-                explanation: "ie representa la tasa de interés de equilibrio, donde coinciden los deseos de oferta y demanda en el mercado de dinero."
+                explanation: "La política expansiva reduce la tasa de interés, y como hay relación inversa entre i e I, la inversión aumenta."
             },
             {
-                question: "En el equilibrio del mercado monetario, ¿qué característica tiene la tasa de interés?",
+                question: "¿Cómo afecta indirectamente la política monetaria a la demanda agregada?",
                 options: [
-                    "Es la máxima posible",
-                    "Es donde coinciden los deseos de oferta y demanda de dinero",
-                    "Es cero",
-                    "Es negativa"
+                    "No tiene efecto sobre la demanda agregada total",
+                    "Afecta la inversión que es componente de la demanda agregada",
+                    "Solo afecta el consumo pero no otros componentes",
+                    "Reduce siempre la demanda agregada sin excepción"
                 ],
                 answer: 1,
-                explanation: "La tasa de equilibrio (ie) es aquella donde coinciden los deseos de la oferta y la demanda en el mercado de dinero."
+                explanation: "La política monetaria afecta la tasa de interés, que afecta la inversión (componente de DA), modificando así indirectamente la DA."
             },
-
-            // POLÍTICA MONETARIA EXPANSIVA
             {
-                question: "¿Qué componentes determinan la oferta monetaria según el modelo?",
+                question: "¿Qué es una política monetaria contractiva?",
                 options: [
-                    "Solo la base monetaria",
-                    "Base monetaria, tasa de encaje y razón ByM/depósitos",
-                    "Únicamente la tasa de interés",
-                    "Solo el ingreso nacional"
+                    "Aumentar el gasto público financiado con emisión monetaria",
+                    "Disminuir la oferta monetaria desplazándola hacia la izquierda",
+                    "Reducir impuestos para estimular el consumo privado",
+                    "Depreciar el tipo de cambio nominal de la moneda"
                 ],
                 answer: 1,
-                explanation: "Los componentes de la OM son la base monetaria, la tasa de encaje (λ) y la razón de billetes y monedas sobre depósitos (e)."
+                explanation: "Una política monetaria contractiva disminuye la oferta monetaria (OM se desplaza a la izquierda), aumentando la tasa de interés."
             },
             {
-                question: "Si la tasa de encaje disminuye, ¿qué sucede con la oferta monetaria?",
+                question: "¿Qué instrumentos usa el banco central para política contractiva?",
                 options: [
-                    "Disminuye",
-                    "Aumenta",
-                    "Permanece constante",
-                    "Desaparece"
+                    "Disminuir encaje, disminuir redescuento, comprar bonos",
+                    "Aumentar encaje, aumentar redescuento, vender bonos o reducir BM",
+                    "Aumentar gasto público, reducir impuestos, apreciar moneda",
+                    "Congelar precios, controlar salarios, racionar crédito"
                 ],
                 answer: 1,
-                explanation: "Si λ disminuye, el multiplicador aumenta y la oferta monetaria se incrementa, desplazándose hacia la derecha."
+                explanation: "Para política contractiva: aumentar λ o tasa redescuento, aumentar e, reducir BM o vender bonos del banco central."
             },
             {
-                question: "Si la base monetaria aumenta, ¿cómo se desplaza la curva de oferta monetaria?",
+                question: "¿Cómo afecta la política contractiva a la tasa de interés y la inversión?",
                 options: [
-                    "Hacia la izquierda",
-                    "Hacia la derecha",
-                    "No se desplaza",
-                    "Se vuelve horizontal"
+                    "Reduce la tasa y aumenta la inversión privada",
+                    "Aumenta la tasa y disminuye la inversión privada",
+                    "No afecta ni la tasa ni la inversión",
+                    "Duplica tanto la tasa como la inversión"
                 ],
                 answer: 1,
-                explanation: "Un aumento de la BM incrementa la OM, desplazando la curva hacia la derecha (hacia fuera del origen)."
+                explanation: "La política contractiva aumenta la tasa de interés, lo que por relación inversa disminuye la inversión."
             },
             {
-                question: "¿Qué indica un desplazamiento de OM hacia la derecha?",
+                question: "¿Qué sucede con la demanda de dinero si aumenta el ingreso nacional?",
                 options: [
-                    "Política monetaria contractiva",
-                    "Política monetaria expansiva",
-                    "No hay cambio de política",
-                    "Crisis económica"
+                    "La demanda de dinero disminuye porque hay más riqueza",
+                    "La demanda de dinero se desplaza a la derecha aumentando",
+                    "La demanda de dinero permanece constante siempre",
+                    "La demanda de dinero se vuelve perfectamente inelástica"
                 ],
                 answer: 1,
-                explanation: "Un desplazamiento de OM hacia la derecha indica política monetaria expansiva impulsada por el banco central."
+                explanation: "Un incremento del ingreso lleva a elevar la demanda de dinero para transacciones, desplazando DM a la derecha."
             },
             {
-                question: "Cuando la oferta monetaria se desplaza de OM a OM' (hacia la derecha), ¿qué pasa con la tasa de interés?",
+                question: "¿Cómo afecta un aumento del ingreso a la tasa de interés de equilibrio?",
                 options: [
-                    "Aumenta",
-                    "Disminuye",
-                    "Permanece igual",
-                    "Se vuelve negativa"
+                    "La tasa disminuye porque hay más dinero disponible",
+                    "La tasa aumenta porque aumenta la demanda de dinero líquido",
+                    "La tasa permanece constante porque el central interviene",
+                    "La tasa se reduce a cero por exceso de oferta"
                 ],
                 answer: 1,
-                explanation: "Cuando la OM se desplaza hacia la derecha (política expansiva), la tasa de interés de equilibrio disminuye."
+                explanation: "Un aumento del ingreso aumenta la demanda de dinero, y con oferta fija, la tasa de interés de equilibrio sube."
             },
             {
-                question: "Si la tasa de redescuento disminuye, ¿qué ocurre con la oferta monetaria?",
+                question: "¿Qué relación existe entre nivel de producto y tasa de interés?",
                 options: [
-                    "Disminuye",
-                    "Aumenta",
-                    "No se modifica",
-                    "Se duplica"
+                    "Relación directa: más producto, más tasa de interés",
+                    "Relación inversa: más producto, menor tasa de interés",
+                    "No existe relación entre producto e interés",
+                    "Relación cuadrática según función de producción"
+                ],
+                answer: 0,
+                explanation: "El equilibrio financiero implica que cuanto más alto es el producto, mayor es la demanda de dinero y más alta la tasa de interés."
+            },
+            {
+                question: "Si disminuye la renta nacional, ¿qué pasa con la demanda de dinero?",
+                options: [
+                    "Aumenta porque las personas necesitan más liquidez",
+                    "Se traslada hacia la izquierda disminuyendo la demanda",
+                    "Permanece constante independiente del ingreso",
+                    "Se duplica automáticamente por precaución"
                 ],
                 answer: 1,
-                explanation: "Una disminución de la tasa de redescuento es una medida expansiva que aumenta la oferta monetaria."
+                explanation: "Cuando disminuye la renta, la demanda de dinero se traslada hacia la izquierda y la tasa de interés disminuye."
             },
             {
-                question: "Si 'e' (razón ByM/depósitos) disminuye, ¿qué sucede con OM?",
+                question: "¿Por qué el shekel sumerio era considerado un símbolo sagrado?",
                 options: [
-                    "Disminuye",
-                    "Aumenta",
-                    "No cambia",
-                    "Se vuelve cero"
+                    "Porque era fabricado con oro extraído de templos",
+                    "Porque representaba los misterios de la fertilidad vital",
+                    "Porque solo podían usarlo los sacerdotes religiosos",
+                    "Porque estaba inscrito con textos de leyes divinas"
                 ],
                 answer: 1,
-                explanation: "Si e disminuye, el multiplicador aumenta y la oferta monetaria se incrementa."
+                explanation: "El shekel sumerio era un símbolo sagrado que representaba los misterios de la fertilidad vital (She=trigo, kel=celemín)."
             },
             {
-                question: "¿Qué relación existe entre tasa de interés e inversión?",
+                question: "¿Qué paradoja tiene el dólar estadounidense respecto a religión?",
                 options: [
-                    "Relación directa: a mayor interés, mayor inversión",
-                    "Relación inversa: a mayor interés, menor inversión",
-                    "No hay relación",
-                    "Depende solo del consumo"
+                    "Está prohibido su uso en ceremonias religiosas oficiales",
+                    "Dice 'In God we trust' en país con separación Iglesia-Estado",
+                    "Solo puede ser emitido por instituciones religiosas",
+                    "Representa deidades paganas en todos sus símbolos"
                 ],
                 answer: 1,
-                explanation: "Existe una relación inversa: cuando la tasa de interés disminuye, la inversión aumenta y viceversa."
+                explanation: "Es irónico que el dólar diga 'In God we trust' en un país que estableció separación entre Iglesia y Estado desde su fundación."
             },
             {
-                question: "¿Cómo afecta una política monetaria expansiva a la inversión?",
+                question: "¿Qué significa 'esterilizar' variaciones de la base monetaria?",
                 options: [
-                    "La reduce",
-                    "Baja la tasa de interés, lo que aumenta la inversión",
-                    "No la afecta",
-                    "Solo afecta al consumo"
+                    "Destruir billetes deteriorados para reemplazarlos por nuevos",
+                    "Compensar con operaciones de mercado abierto variaciones de otras fuentes",
+                    "Impedir completamente cualquier cambio en la cantidad de dinero",
+                    "Eliminar el dinero falsificado que ingresa al sistema"
                 ],
                 answer: 1,
-                explanation: "Una política expansiva reduce la tasa de interés, lo que incentiva el aumento de la inversión."
-            },
-            {
-                question: "Si aumenta la inversión por una política monetaria expansiva, ¿qué pasa con la demanda agregada?",
-                options: [
-                    "Disminuye",
-                    "Aumenta, porque la inversión es un componente de la DA",
-                    "Permanece constante",
-                    "Solo afecta la oferta agregada"
-                ],
-                answer: 1,
-                explanation: "Como la inversión es componente de la demanda agregada, un aumento de inversión incrementa la DA."
-            },
-
-            // POLÍTICA MONETARIA CONTRACTIVA
-            {
-                question: "Si la tasa de encaje aumenta, ¿cómo se desplaza la oferta monetaria?",
-                options: [
-                    "Hacia la derecha",
-                    "Hacia la izquierda (hacia dentro del origen)",
-                    "No se desplaza",
-                    "Se vuelve horizontal"
-                ],
-                answer: 1,
-                explanation: "Un aumento de λ reduce el multiplicador y la OM, desplazando la curva hacia la izquierda (hacia dentro del origen)."
-            },
-            {
-                question: "Si la base monetaria disminuye, ¿qué ocurre con la oferta monetaria?",
-                options: [
-                    "Aumenta",
-                    "Disminuye",
-                    "Permanece igual",
-                    "Se duplica"
-                ],
-                answer: 1,
-                explanation: "Una disminución de la BM reduce la oferta monetaria, desplazándola hacia la izquierda."
-            },
-            {
-                question: "¿Qué indica un desplazamiento de OM hacia la izquierda?",
-                options: [
-                    "Política monetaria expansiva",
-                    "Política monetaria contractiva",
-                    "Aumento del consumo",
-                    "Reducción de impuestos"
-                ],
-                answer: 1,
-                explanation: "Un desplazamiento de OM hacia la izquierda indica una política monetaria contractiva impulsada por el banco central."
-            },
-            {
-                question: "Cuando OM se desplaza hacia la izquierda, ¿qué sucede con la tasa de interés de equilibrio?",
-                options: [
-                    "Disminuye",
-                    "Aumenta",
-                    "Permanece constante",
-                    "Se vuelve cero"
-                ],
-                answer: 1,
-                explanation: "Cuando la OM se desplaza hacia la izquierda (política contractiva), la tasa de interés de equilibrio aumenta."
-            },
-            {
-                question: "Si la tasa de redescuento aumenta, ¿qué tipo de política se está aplicando?",
-                options: [
-                    "Política monetaria expansiva",
-                    "Política monetaria contractiva",
-                    "Política fiscal expansiva",
-                    "No es una política monetaria"
-                ],
-                answer: 1,
-                explanation: "Un aumento de la tasa de redescuento es una medida de política monetaria contractiva que reduce la OM."
-            },
-            {
-                question: "Si la razón ByM/depósitos aumenta, ¿qué sucede con la oferta monetaria?",
-                options: [
-                    "Aumenta",
-                    "Disminuye",
-                    "No se modifica",
-                    "Se vuelve infinita"
-                ],
-                answer: 1,
-                explanation: "Si e aumenta, el multiplicador disminuye y la oferta monetaria se reduce."
-            },
-            {
-                question: "¿Cómo afecta una política monetaria contractiva a la inversión?",
-                options: [
-                    "La aumenta",
-                    "Aumenta la tasa de interés, lo que reduce la inversión",
-                    "No la afecta",
-                    "Solo afecta al gasto público"
-                ],
-                answer: 1,
-                explanation: "Una política contractiva aumenta la tasa de interés, lo que desincentiva la inversión (relación inversa)."
-            },
-            {
-                question: "Si disminuye la inversión por política contractiva, ¿qué pasa con la demanda agregada?",
-                options: [
-                    "Aumenta",
-                    "Disminuye, porque la inversión es componente de la DA",
-                    "Permanece igual",
-                    "Solo afecta la oferta"
-                ],
-                answer: 1,
-                explanation: "Como la inversión es componente de la DA, una reducción de inversión disminuye la demanda agregada."
-            },
-            {
-                question: "¿Puede la demanda agregada ser afectada por política monetaria?",
-                options: [
-                    "No, solo la política fiscal afecta la DA",
-                    "Sí, indirectamente a través de cambios en la inversión",
-                    "Solo en economías cerradas",
-                    "Nunca"
-                ],
-                answer: 1,
-                explanation: "La DA no solo es afectada por política fiscal, sino también indirectamente por política monetaria a través de la inversión."
-            },
-            {
-                question: "¿Cuál NO es un instrumento de política monetaria contractiva?",
-                options: [
-                    "Aumentar la tasa de encaje",
-                    "Disminuir la base monetaria",
-                    "Aumentar la tasa de redescuento",
-                    "Disminuir la tasa de encaje"
-                ],
-                answer: 3,
-                explanation: "Disminuir la tasa de encaje es una medida EXPANSIVA, no contractiva. Las demás son contractivas."
-            },
-
-            // DESPLAZAMIENTOS DE LA DEMANDA DE DINERO
-            {
-                question: "Si aumenta la renta o ingreso de las personas, ¿qué sucede con la demanda de dinero?",
-                options: [
-                    "Disminuye",
-                    "Aumenta (se desplaza hacia la derecha)",
-                    "Permanece constante",
-                    "Se vuelve vertical"
-                ],
-                answer: 1,
-                explanation: "Un aumento de la renta lleva a los individuos a elevar su demanda de dinero para transacciones, desplazando DM hacia la derecha."
-            },
-            {
-                question: "Si la demanda de dinero se desplaza hacia la derecha (con OM fija), ¿qué pasa con la tasa de interés?",
-                options: [
-                    "Disminuye",
-                    "Aumenta",
-                    "Permanece igual",
-                    "Se vuelve negativa"
-                ],
-                answer: 1,
-                explanation: "Cuando aumenta la demanda de dinero (desplazamiento a la derecha) con oferta fija, la tasa de interés aumenta."
-            },
-            {
-                question: "¿Por qué aumenta la tasa de interés cuando aumenta la renta?",
-                options: [
-                    "Porque disminuye la oferta",
-                    "Porque aumenta la demanda de dinero líquido pero la oferta está fija",
-                    "Porque el banco central así lo decide",
-                    "Por la inflación"
-                ],
-                answer: 1,
-                explanation: "Cuando aumenta la renta, aumenta la demanda de dinero líquido, pero como la oferta está fija, la tasa de interés sube."
-            },
-            {
-                question: "Si aumenta la demanda de dinero y la oferta permanece fija, ¿qué sucede con los saldos monetarios reales?",
-                options: [
-                    "Aumentan",
-                    "No se modifican",
-                    "Disminuyen",
-                    "Se duplican"
-                ],
-                answer: 1,
-                explanation: "Al desplazarse la demanda con oferta fija, la tasa de interés aumenta pero los saldos monetarios reales no se modifican."
-            },
-            {
-                question: "Si disminuye la renta o el PIB, ¿cómo se desplaza la demanda de dinero?",
-                options: [
-                    "Hacia la derecha",
-                    "Hacia la izquierda",
-                    "No se desplaza",
-                    "Se vuelve horizontal"
-                ],
-                answer: 1,
-                explanation: "Cuando disminuye la renta, la demanda de dinero se desplaza hacia la izquierda (menor demanda de liquidez)."
-            },
-            {
-                question: "Si la demanda de dinero se desplaza hacia la izquierda, ¿qué ocurre con la tasa de interés de equilibrio?",
-                options: [
-                    "Aumenta",
-                    "Disminuye",
-                    "Permanece constante",
-                    "Se vuelve infinita"
-                ],
-                answer: 1,
-                explanation: "Un desplazamiento de la DM hacia la izquierda (menor demanda) reduce la tasa de interés de equilibrio."
-            },
-            {
-                question: "¿Qué relación existe entre el nivel de producto y la tasa de interés de equilibrio?",
-                options: [
-                    "Relación inversa: mayor producto, menor tasa de interés",
-                    "Relación directa: mayor producto, mayor tasa de interés",
-                    "No hay relación",
-                    "Solo depende de la inflación"
-                ],
-                answer: 1,
-                explanation: "Existe relación directa: cuanto más alto el producto, mayor la demanda de dinero y mayor la tasa de interés de equilibrio."
-            },
-            {
-                question: "¿Por qué motivo actúan las personas cuando aumentan su demanda de dinero al aumentar el ingreso?",
-                options: [
-                    "Solo por especulación",
-                    "Por motivos transacción y/o precaución",
-                    "Solo por acumular riqueza",
-                    "Por motivos políticos"
-                ],
-                answer: 1,
-                explanation: "Al aumentar el ingreso, las personas incrementan la demanda de dinero líquido actuando por motivos transacción o precaución."
-            },
-            {
-                question: "Si el producto es bajo, ¿qué sucede con la tasa de interés?",
-                options: [
-                    "Es alta",
-                    "Es baja, porque hay menor demanda de dinero para transacciones",
-                    "Es cero",
-                    "No se ve afectada"
-                ],
-                answer: 1,
-                explanation: "Cuanto más bajo es el producto, más baja es la tasa de interés, porque los individuos demandan menos dinero líquido."
-            },
-            {
-                question: "¿Qué tipo de cambio se analiza cuando la demanda de dinero se desplaza por cambios en la renta?",
-                options: [
-                    "Cambio desde el mercado de dinero",
-                    "Cambio desde el mercado de bienes (nivel de ingreso) que afecta el mercado monetario",
-                    "Cambio en el mercado de trabajo",
-                    "No hay cambio"
-                ],
-                answer: 1,
-                explanation: "Es un cambio desde el mercado de bienes (incremento del ingreso) que influye sobre el mercado monetario modificando la demanda de dinero."
-            },
-
-            // CONCEPTOS FUNDAMENTALES Y CONFIANZA
-            {
-                question: "Hasta hace un siglo, ¿qué se utilizaba principalmente como dinero?",
-                options: [
-                    "Dinero fiduciario exclusivamente",
-                    "Mercancías como metales preciosos (oro y plata)",
-                    "Solo billetes",
-                    "Tarjetas de crédito"
-                ],
-                answer: 1,
-                explanation: "Hasta hace relativamente poco tiempo, se utilizaban mercancías como metales preciosos (oro y plata) como dinero."
-            },
-            {
-                question: "¿Qué característica tenía el papel moneda cuando se usaba en sistemas antiguos?",
-                options: [
-                    "Era inconvertible",
-                    "Era convertible a un metal precioso a un precio fijo",
-                    "No tenía respaldo",
-                    "Era digital"
-                ],
-                answer: 1,
-                explanation: "El papel moneda, cuando se usaba, era convertible a un metal precioso determinado a un precio fijo equivalente."
-            },
-            {
-                question: "En sistemas con dinero respaldado por metales, ¿qué determinaba la oferta monetaria?",
-                options: [
-                    "Solo las políticas estatales",
-                    "La producción de los bienes que funcionaban como dinero",
-                    "El banco central exclusivamente",
-                    "No había oferta monetaria"
-                ],
-                answer: 1,
-                explanation: "En tales sistemas, la producción de los bienes que funcionaban como dinero (oro, plata) determinaba la oferta monetaria."
-            },
-            {
-                question: "¿Qué es el dinero fiduciario?",
-                options: [
-                    "Dinero respaldado totalmente por oro",
-                    "Dinero sin respaldo en mercancías, basado en la confianza",
-                    "Dinero convertible a metales",
-                    "Solo monedas de oro"
-                ],
-                answer: 1,
-                explanation: "El dinero fiduciario es el que no tiene respaldo en mercancías y funciona por la confianza del público en su valor."
-            },
-            {
-                question: "¿Qué rol juegan las reservas adicionales (encaje excedente) que mantienen los bancos?",
-                options: [
-                    "Son obligatorias por ley",
-                    "Son medida de precaución ante caídas en depósitos",
-                    "No tienen ningún propósito",
-                    "Solo existen en teoría"
-                ],
-                answer: 1,
-                explanation: "Además del encaje legal, los bancos pueden optar por mantener reservas adicionales como medida de precaución."
-            },
-            {
-                question: "¿Qué permite el proceso de creación de dinero bancario?",
-                options: [
-                    "Que la BM sea mayor que la OM",
-                    "Que la OM sea mayor que la BM mediante interacción entre depósitos y préstamos",
-                    "Que no exista dinero",
-                    "Que los bancos no presten"
-                ],
-                answer: 1,
-                explanation: "La interacción entre depósitos y préstamos permite la multiplicación del dinero legal en dinero bancario, haciendo OM > BM."
-            },
-            {
-                question: "¿Qué elemento es fundamental para el funcionamiento del dinero según el capítulo?",
-                options: [
-                    "El respaldo en oro",
-                    "La confianza de las personas que participan en la economía",
-                    "Solo las leyes del gobierno",
-                    "El tipo de cambio"
-                ],
-                answer: 1,
-                explanation: "El funcionamiento del dinero en cualquier economía moderna depende fundamentalmente de la confianza de las personas."
-            },
-            {
-                question: "Según el texto, ¿qué es el dinero en definitiva?",
-                options: [
-                    "Solo papel y metal",
-                    "Una cuestión de fe (confianza)",
-                    "Únicamente oro",
-                    "Un invento reciente"
-                ],
-                answer: 1,
-                explanation: "El texto concluye que el dinero resulta en definitiva una cuestión de fe, es decir, de confianza en el sistema."
-            },
-            {
-                question: "¿Qué puede hacer el banco central mediante políticas monetarias?",
-                options: [
-                    "Solo imprimir dinero",
-                    "Modificar la oferta monetaria incrementándola o disminuyéndola",
-                    "Solo controlar los precios",
-                    "Determinar los salarios"
-                ],
-                answer: 1,
-                explanation: "El banco central puede llevar adelante políticas monetarias (expansivas o contractivas) para modificar la oferta monetaria."
+                explanation: "Esterilizar significa compensar con operaciones de mercado abierto las variaciones de BM provenientes de redescuento o divisas."
             },
             {
                 question: "¿Cuáles son los objetivos finales de la política monetaria?",
                 options: [
-                    "Solo controlar la base monetaria",
-                    "El producto, el empleo y la inflación",
-                    "Solo la tasa de interés",
-                    "Únicamente el tipo de cambio"
+                    "Maximizar únicamente las ganancias de los bancos comerciales",
+                    "Promover estabilidad, crecimiento del producto, empleo y baja inflación",
+                    "Mantener constante la tasa de interés nominal siempre",
+                    "Garantizar rentabilidad de inversiones del sector financiero"
                 ],
                 answer: 1,
-                explanation: "Los objetivos finales son el producto, el empleo y la inflación. La OM y BM son objetivos intermedios para influir sobre los finales."
+                explanation: "Los objetivos finales de la política monetaria son promover estabilidad y crecimiento económico con bajo desempleo y poca inflación."
+            },
+            {
+                question: "¿Qué papel cumplen las tasas de interés como objetivo de política?",
+                options: [
+                    "Son objetivos finales que el banco central busca maximizar",
+                    "Son objetivos intermedios para influir sobre producto, empleo e inflación",
+                    "No tienen ningún rol en la política monetaria moderna",
+                    "Son variables exógenas que el central no puede controlar"
+                ],
+                answer: 1,
+                explanation: "Las tasas de interés y agregados monetarios son objetivos intermedios que se controlan para influir sobre objetivos finales."
+            },
+            {
+                question: "¿Qué relación existe entre confianza y 'ficción' del sistema financiero?",
+                options: [
+                    "El sistema es una ficción porque todo el dinero es falso",
+                    "El sistema es ficción aceptada porque el dinero que creen poseer no existe totalmente",
+                    "No existe relación entre confianza y funcionamiento del sistema",
+                    "La confianza elimina toda ficción del sistema financiero"
+                ],
+                answer: 1,
+                explanation: "El sistema financiero es una 'ficción' aceptada por todos: el dinero que las personas creen poseer no existe totalmente en realidad."
+            },
+            {
+                question: "¿Qué lección histórica da la crisis argentina de 2001?",
+                options: [
+                    "La inflación siempre destruye los sistemas financieros",
+                    "El deterioro de la confianza puede deteriorar todo el sistema",
+                    "Los bancos extranjeros son más seguros que los locales",
+                    "El tipo de cambio fijo garantiza la estabilidad monetaria"
+                ],
+                answer: 1,
+                explanation: "La crisis de finales de 2001 en Argentina demostró que el deterioro de la confianza puede deteriorar todo el sistema financiero."
+            },
+            {
+                question: "¿Por qué el efectivo es el activo más líquido?",
+                options: [
+                    "Porque genera la tasa de interés más alta del mercado",
+                    "Porque no tiene costo utilizarlo para realizar transacciones inmediatas",
+                    "Porque está respaldado por reservas de oro del central",
+                    "Porque puede depositarse en cualquier banco sin comisión"
+                ],
+                answer: 1,
+                explanation: "El dinero en efectivo es el activo más líquido porque no tiene costo o recargo utilizarlo para realizar transacciones ('se liquida' instantáneamente)."
+            },
+            {
+                question: "¿Qué significa que el dinero sea 'moneda de curso legal'?",
+                options: [
+                    "Que solo circula dentro del territorio del país emisor",
+                    "Que la ley establece que puede cancelar todas las obligaciones",
+                    "Que está respaldado por reservas del tesoro nacional",
+                    "Que solo puede ser emitido por bancos autorizados"
+                ],
+                answer: 1,
+                explanation: "Moneda de curso legal significa que la ley establece que todas las obligaciones pueden cancelarse con ese dinero."
             }
         ];
-
+        
         let quizzes = [];
         let currentQuiz;
         let currentQuestionIndex = 0;

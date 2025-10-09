@@ -137,538 +137,791 @@
     </div>
 
     <script>
+        // Base de preguntas sobre Macroeconomía y Cuentas Nacionales
         const allQuestions = [
-            // Conceptos Básicos de Macroeconomía
             {
-                question: "¿Cuál es el objetivo principal de la macroeconomía?",
-                options: ["Estudiar el comportamiento individual de los consumidores", "Estudiar la conducta de la economía en su conjunto", "Analizar únicamente el mercado de valores", "Examinar exclusivamente la política fiscal"],
+                question: "¿Qué mide el Producto Bruto Interno (PBI)?",
+                options: [
+                    "El valor total de bienes intermedios producidos",
+                    "El valor de mercado de bienes y servicios finales",
+                    "La suma de todos los precios de la economía",
+                    "El ingreso disponible de las familias únicamente"
+                ],
                 answer: 1,
-                explanation: "La macroeconomía es el estudio de la conducta de la economía en su conjunto, examinando las fuerzas que afectan a empresas, consumidores y trabajadores."
+                explanation: "El PBI mide el valor de mercado de todos los bienes y servicios finales producidos en un país durante un período determinado."
             },
             {
-                question: "¿Cuáles son los dos temas centrales de la macroeconomía?",
-                options: ["La oferta y la demanda individual", "Las fluctuaciones de corto plazo y las tendencias de largo plazo", "Los impuestos y los subsidios", "La competencia perfecta y el monopolio"],
+                question: "¿Cómo se calcula el Valor Agregado Bruto (VAB)?",
+                options: [
+                    "Sumando el total de las ventas de todas las empresas",
+                    "Restando el consumo intermedio del valor bruto de producción",
+                    "Multiplicando las cantidades producidas por sus precios corrientes",
+                    "Dividiendo el producto bruto entre la población total"
+                ],
                 answer: 1,
-                explanation: "Los dos temas centrales son las fluctuaciones de corto plazo (ciclo de negocios) y las tendencias de más largo plazo en producción y estándares de vida (crecimiento económico)."
+                explanation: "El VAB se calcula como la diferencia entre el Valor Bruto de Producción (VBP) y el Consumo Intermedio (CI)."
             },
             {
-                question: "¿Quién es considerado el fundador de la macroeconomía moderna?",
-                options: ["Adam Smith", "John Maynard Keynes", "Milton Friedman", "Paul Samuelson"],
+                question: "¿Qué son los bienes intermedios en cuentas nacionales?",
+                options: [
+                    "Bienes que las familias consumen directamente en el hogar",
+                    "Bienes a los que les falta transformación para su uso final",
+                    "Bienes de capital que duran más de un año productivo",
+                    "Bienes importados que requieren procesamiento adicional"
+                ],
                 answer: 1,
-                explanation: "John Maynard Keynes fundó la ciencia macroeconómica en los años treinta cuando intentaba entender el mecanismo que había provocado la Gran Depresión."
+                explanation: "Los bienes intermedios son aquellos que requieren algún tipo de transformación adicional antes de estar listos para cumplir su función final."
             },
             {
-                question: "¿Qué establece la Employment Act (Ley de Empleo) de 1946 en Estados Unidos?",
-                options: ["Que el gobierno no debe intervenir en la economía", "Que el gobierno debe promover el máximo empleo, producción y poder de compra", "Que solo debe controlarse la inflación", "Que la economía debe ser completamente privada"],
+                question: "¿Qué incluye el Excedente Bruto de Explotación (EBE)?",
+                options: [
+                    "Los salarios pagados a trabajadores y empleados formales",
+                    "Beneficios empresariales, intereses, rentas y depreciaciones",
+                    "Las transferencias del gobierno hacia el sector privado",
+                    "Los impuestos indirectos netos de subsidios otorgados"
+                ],
                 answer: 1,
-                explanation: "La Ley de Empleo de 1946 estableció como responsabilidad del gobierno federal promover el máximo nivel de empleo, producción y poder de compra."
+                explanation: "El EBE incluye los beneficios de las empresas, intereses, alquileres y las amortizaciones o depreciaciones del capital."
             },
             {
-                question: "¿Qué es el ciclo de negocios?",
-                options: ["El tiempo que tarda una empresa en producir un bien", "Las fluctuaciones de corto plazo en producción, empleo y precios", "El período fiscal de una empresa", "El ciclo de vida de un producto"],
+                question: "¿Por qué el enfoque del producto y el del ingreso son iguales?",
+                options: [
+                    "Porque ambos miden únicamente el consumo de las familias",
+                    "Porque el beneficio es residual y ajusta para igualar ambos",
+                    "Porque solo se contabilizan los bienes finales producidos",
+                    "Porque los impuestos indirectos igualan ambos flujos"
+                ],
                 answer: 1,
-                explanation: "El ciclo de negocios se refiere a las fluctuaciones de corto plazo en la producción, el empleo, las condiciones financieras y los precios de la economía."
+                explanation: "Los beneficios actúan como residuo que se ajusta automáticamente para que los costos/ingresos igualen exactamente el valor de los productos."
             },
             {
-                question: "¿Cuál fue una de las principales contribuciones de Keynes a la macroeconomía?",
-                options: ["Demostrar que el desempleo es siempre temporal", "Afirmar que la política gubernamental puede afectar la producción y reducir el desempleo", "Probar que los mercados siempre se auto-regulan", "Negar la existencia de los ciclos económicos"],
+                question: "¿Qué problema evita el concepto de valor agregado?",
+                options: [
+                    "La inflación que distorsiona las mediciones reales anuales",
+                    "La doble contabilización de productos intermedios",
+                    "Las depreciaciones del capital fijo de la economía",
+                    "Las exportaciones netas que pueden ser negativas"
+                ],
                 answer: 1,
-                explanation: "Keynes sostuvo que la política monetaria y fiscal del gobierno podían afectar la producción y reducir el desempleo, acortando las recesiones económicas."
+                explanation: "El valor agregado evita contar múltiples veces los mismos productos en diferentes etapas del proceso productivo."
             },
             {
-                question: "¿Qué caracterizó a la Gran Depresión de los años treinta?",
-                options: ["Alta inflación y bajo desempleo", "Crecimiento económico sostenido", "Colapso de producción, empleo y precios", "Estabilidad económica prolongada"],
-                answer: 2,
-                explanation: "Durante la Gran Depresión la producción, el empleo y los precios se colapsaron en Estados Unidos y gran parte del mundo industrializado."
-            },
-            {
-                question: "¿Cuáles son las tres metas principales de la política macroeconómica?",
-                options: ["Privatización, desregulación y apertura comercial", "Alto nivel de producción, bajo desempleo y precios estables", "Reducir impuestos, aumentar gasto y emitir dinero", "Maximizar exportaciones, minimizar importaciones y equilibrar el presupuesto"],
+                question: "¿Cuál es la diferencia entre PBI y PBN?",
+                options: [
+                    "El PBN resta las depreciaciones del capital fijo",
+                    "El PBN suma el Ingreso Neto de Factores del Exterior",
+                    "El PBN incluye solo la producción del sector público",
+                    "El PBN se mide a precios constantes siempre"
+                ],
                 answer: 1,
-                explanation: "Las tres metas principales son un alto nivel y rápido crecimiento del producto, un bajo desempleo y precios estables."
+                explanation: "El Producto Bruto Nacional (PBN) se obtiene sumando al PBI el Ingreso Neto de los Factores Recibidos del Exterior (INFRE)."
             },
-            
-            // Producto Interno Bruto (PIB)
             {
-                question: "¿Qué es el Producto Interno Bruto (PIB)?",
-                options: ["El ingreso total de las familias en un año", "El valor de mercado de todos los bienes y servicios finales producidos en un país durante un año", "La suma de todas las exportaciones de un país", "El total de impuestos recaudados por el gobierno"],
+                question: "¿Qué representa el INFRE en las cuentas nacionales?",
+                options: [
+                    "La inversión extranjera directa recibida en el país",
+                    "La diferencia entre ingresos de factores recibidos y pagados",
+                    "Las importaciones netas de bienes y servicios del exterior",
+                    "Los intereses de la deuda pública externa únicamente"
+                ],
                 answer: 1,
-                explanation: "El PIB es el valor total de mercado de los bienes y servicios finales producidos en un país durante un año dado."
+                explanation: "El INFRE es la diferencia entre las remuneraciones a factores argentinos en el exterior y a factores extranjeros en Argentina."
             },
             {
-                question: "La ecuación básica del PIB es:",
-                options: ["PIB = C + I", "PIB = C + I + G + X", "PIB = C + I + G + (X - M)", "PIB = C + G + M"],
-                answer: 2,
-                explanation: "El PIB se calcula como la suma del consumo (C), inversión bruta (I), gasto público (G) y exportaciones netas (X - M)."
-            },
-            {
-                question: "¿Cuál es la diferencia entre PIB nominal y PIB real?",
-                options: ["El PIB nominal se mide en dólares y el real en pesos", "El PIB nominal se mide a precios corrientes y el real a precios constantes", "No hay diferencia, son lo mismo", "El PIB nominal incluye servicios y el real solo bienes"],
+                question: "¿Qué significa transformar una variable de bruta a neta?",
+                options: [
+                    "Expresarla a precios constantes del año base seleccionado",
+                    "Restarle las depreciaciones o consumo de capital fijo",
+                    "Dividirla por la población total para obtener per cápita",
+                    "Sumarle el ingreso neto de los factores del exterior"
+                ],
                 answer: 1,
-                explanation: "El PIB nominal se mide a precios de mercado corrientes, mientras que el PIB real se calcula a precios constantes o invariables de un año base."
+                explanation: "Una variable neta se obtiene restando las depreciaciones del capital a la variable bruta correspondiente."
             },
             {
-                question: "¿Por qué es importante el PIB per cápita?",
-                options: ["Mide la inflación de un país", "Determina la balanza comercial", "Es central para determinar la evolución de los salarios reales y niveles de vida", "Calcula el déficit fiscal"],
-                answer: 2,
-                explanation: "El PIB per cápita es el elemento central para determinar la evolución de los salarios reales y de los niveles de vida de la población."
-            },
-            {
-                question: "¿Cuáles son las dos formas principales de medir el PIB?",
-                options: ["Por ingresos y por egresos", "Por flujo de productos y por flujo de ingresos", "Por oferta y por demanda", "Por producción y por consumo"],
-                answer: 1,
-                explanation: "El PIB puede medirse como flujo de productos (suma de bienes y servicios finales) o como suma de ingresos (salarios, rentas, intereses y utilidades)."
-            },
-            {
-                question: "En el enfoque del flujo de productos, ¿qué se incluye en el PIB?",
-                options: ["Todos los bienes producidos, incluyendo los intermedios", "Solo los bienes finales que se adquieren y usan por los consumidores", "Únicamente los bienes de capital", "Solo las materias primas"],
-                answer: 1,
-                explanation: "Se incluyen solo bienes finales: bienes que se adquieren y se usan de forma casi inmediata por los consumidores, evitando la duplicación de los bienes intermedios."
-            },
-            {
-                question: "En el enfoque de ingresos, ¿qué componentes se suman para calcular el PIB?",
-                options: ["Solo los salarios de los trabajadores", "Salarios, rentas, intereses y utilidades", "Únicamente las ganancias empresariales", "Solo los impuestos recaudados"],
-                answer: 1,
-                explanation: "El enfoque de ingresos suma todos los ingresos de los factores: salarios (trabajo), rentas (tierra), intereses y utilidades (capital)."
-            },
-            {
-                question: "¿Por qué ambos enfoques (productos e ingresos) dan el mismo resultado?",
-                options: ["Porque se ajustan artificialmente", "Porque los costos de producir bienes son los ingresos que las familias reciben", "Porque solo se cuentan las transacciones en efectivo", "Porque excluyen los servicios"],
-                answer: 1,
-                explanation: "Los enfoques son equivalentes porque los costos de negocios (salarios, rentas, utilidades) son exactamente los ingresos que las familias reciben de las empresas."
-            },
-            
-            // Sistema de Cuentas Nacionales
-            {
-                question: "¿Qué es el Sistema de Cuentas Nacionales?",
-                options: ["Un registro de las cuentas bancarias del país", "Un sistema contable estadístico que permite una visión agregada de la actividad económica", "Un listado de todas las empresas nacionales", "Un sistema de recaudación de impuestos"],
-                answer: 1,
-                explanation: "El Sistema de Cuentas Nacionales es un sistema contable estadístico que permite acceder a una visión agregada o global de la actividad económica de un país."
-            },
-            {
-                question: "¿Cuáles son los tres métodos para calcular el producto?",
-                options: ["Producto, ingreso y capital", "Producto, gasto e inversión", "Producto (valor agregado), ingreso y gasto final", "Oferta, demanda y equilibrio"],
-                answer: 2,
-                explanation: "Los tres métodos son: por el lado del producto o valor agregado, por el lado del ingreso, y por el lado del gasto final."
-            },
-            {
-                question: "¿Qué es el Valor Agregado Bruto (VAB)?",
-                options: ["El valor total de las ventas de una empresa", "La diferencia entre el valor bruto de producción y el consumo intermedio", "La suma de todos los impuestos", "El beneficio neto de las empresas"],
-                answer: 1,
-                explanation: "El Valor Agregado Bruto es la diferencia entre el valor bruto de producción (VBP) menos el consumo intermedio (CI)."
-            },
-            {
-                question: "¿Qué son los bienes intermedios?",
-                options: ["Bienes de mediano precio", "Bienes a los que les falta algún tipo de transformación para estar listos", "Bienes importados", "Bienes que duran poco tiempo"],
-                answer: 1,
-                explanation: "Los bienes intermedios son aquellos a los cuales les falta algún tipo de transformación para estar listos para cumplir con su función."
-            },
-            {
-                question: "¿Qué son los bienes finales?",
-                options: ["Los últimos producidos en el año", "Bienes que están terminados y listos para satisfacer necesidades", "Bienes de lujo", "Bienes que se exportan"],
-                answer: 1,
-                explanation: "Los bienes finales son los que están terminados y pueden ser de consumo (satisfacen necesidades directamente) o de capital (se usan para producir otros bienes)."
-            },
-            {
-                question: "¿Por qué se excluyen los bienes intermedios del cálculo del PIB?",
-                options: ["Porque no tienen valor económico", "Para evitar la doble contabilización del valor", "Porque no generan empleo", "Porque son importados"],
-                answer: 1,
-                explanation: "Se excluyen para evitar duplicación, ya que su valor está incluido en el precio de los bienes finales que ayudan a producir."
-            },
-            {
-                question: "La ecuación PB = VAB = VBP - CI significa que:",
-                options: ["El producto bruto es igual a las ventas totales", "El producto bruto es igual al valor agregado, que es la producción menos los insumos", "El producto bruto es igual a los impuestos", "El producto bruto es igual a las exportaciones"],
-                answer: 1,
-                explanation: "El Producto Bruto (PB) es igual al Valor Agregado Bruto (VAB), que se calcula como el Valor Bruto de Producción (VBP) menos el Consumo Intermedio (CI)."
-            },
-            {
-                question: "En el método del gasto, ¿qué componentes se incluyen en una economía cerrada sin gobierno?",
-                options: ["Solo el consumo", "Consumo e inversión", "Consumo, inversión y exportaciones", "Solo la inversión"],
-                answer: 1,
-                explanation: "En una economía cerrada sin gobierno, el gasto se compone de consumo (C) e inversión (I): PB = C + I."
-            },
-            {
-                question: "En el método del ingreso, ¿qué representa la ecuación YB = W + EBE?",
-                options: ["Que el ingreso bruto es la suma de exportaciones y beneficios", "Que el ingreso bruto es la suma de salarios y excedente bruto de explotación", "Que el ingreso bruto es igual a los impuestos", "Que el ingreso bruto es la suma de consumo e inversión"],
-                answer: 1,
-                explanation: "El Ingreso Bruto (YB) es la suma de los salarios (W) pagados al factor trabajo y el Excedente Bruto de Explotación (EBE) que incluye beneficios, intereses y depreciaciones."
-            },
-            
-            // Depreciación y conceptos Bruto vs Neto
-            {
-                question: "¿Qué es la depreciación o consumo de capital fijo?",
-                options: ["El aumento del valor de los bienes de capital", "El desgaste de los bienes de capital por su uso productivo", "La inversión en nuevos equipos", "El costo de mantener el capital constante"],
-                answer: 1,
-                explanation: "La depreciación es el desgaste de los bienes de capital a medida que se los utiliza productivamente, reduciendo su valor."
-            },
-            {
-                question: "¿Qué diferencia hay entre Inversión Bruta (IB) e Inversión Neta (IN)?",
-                options: ["La IB incluye importaciones y la IN no", "La IN = IB - Depreciación", "La IB es privada y la IN es pública", "No hay diferencia"],
-                answer: 1,
-                explanation: "La Inversión Neta (IN) es la Inversión Bruta (IB) menos la Depreciación (D). La IN representa la efectiva adición al stock de capital."
-            },
-            {
-                question: "¿Cómo se transforma una variable 'bruta' en 'neta'?",
-                options: ["Sumándole los impuestos", "Restándole la depreciación", "Multiplicándola por la inflación", "Dividiéndola entre la población"],
-                answer: 1,
-                explanation: "Para transformar cualquier variable bruta en neta se le resta la depreciación (D). Por ejemplo: YN = YB - D."
-            },
-            {
-                question: "¿Qué representa el término 'bruto' en Producto Bruto?",
-                options: ["Que está medido en términos nominales", "Que incluye las depreciaciones o amortizaciones", "Que solo incluye bienes tangibles", "Que excluye los servicios"],
-                answer: 1,
-                explanation: "La palabra 'bruto' implica que en las definiciones se incluyen las depreciaciones o amortizaciones de la economía."
-            },
-            {
-                question: "Las amortizaciones son:",
-                options: ["Los pagos de deudas externas", "Las reservas en dinero que las empresas hacen para compensar la depreciación", "Los subsidios del gobierno", "Los dividendos pagados a accionistas"],
-                answer: 1,
-                explanation: "Las amortizaciones son las reservas equivalentes en dinero que las empresas hacen para compensar la depreciación del capital."
-            },
-            
-            // Economía con Sector Público
-            {
-                question: "Al incluir el sector público, ¿cómo se modifica la ecuación del PIB?",
-                options: ["PIB = C + I + G + (X - M)", "PIB = C + I - G", "PIB = C + G", "PIB = I + G + X"],
+                question: "En cuentas nacionales, ¿cómo se diferencia C del gasto público?",
+                options: [
+                    "C incluye gastos de consumo privado y público totales",
+                    "C solo incluye el consumo privado de las familias",
+                    "C incluye gastos de inversión de empresas privadas",
+                    "C excluye servicios y solo incluye bienes de consumo"
+                ],
                 answer: 0,
-                explanation: "Con sector público y economía abierta, la ecuación es PIB = C + I + G + (X - M), donde G es el gasto público."
+                explanation: "En Argentina, C incluye gastos de consumo de familias y gobierno; la inversión (I) también incluye inversión pública y privada."
             },
             {
-                question: "¿Qué representa G en la ecuación del PIB?",
-                options: ["Las ganancias de las empresas", "El gasto público en bienes y servicios", "Los gastos generales de las familias", "Las garantías bancarias"],
+                question: "¿Qué es una variable medida a precios corrientes?",
+                options: [
+                    "Variable ajustada por inflación del período anterior",
+                    "Variable valuada a los precios vigentes en ese período",
+                    "Variable expresada en dólares estadounidenses constantes",
+                    "Variable dividida por el deflactor implícito del PBI"
+                ],
                 answer: 1,
-                explanation: "G representa las compras del Estado en bienes y servicios (gasto público)."
+                explanation: "Una variable a precios corrientes está valuada con los precios del período que se está midiendo actualmente."
             },
             {
-                question: "¿Qué incluye el gasto público (G) según las Cuentas Nacionales argentinas?",
-                options: ["Solo los salarios públicos", "Se distribuye entre consumo (C) e inversión (I) según corresponda", "Solo los subsidios", "Únicamente los pagos de deuda"],
+                question: "¿Para qué sirven las variables a precios constantes?",
+                options: [
+                    "Para proyectar el crecimiento futuro de la economía",
+                    "Para comparar magnitudes de diferentes períodos eliminando inflación",
+                    "Para calcular los impuestos indirectos netos de subsidios",
+                    "Para medir el ingreso disponible de las familias"
+                ],
                 answer: 1,
-                explanation: "En Argentina, el gasto público no se contabiliza separado como G, sino que se incluye en C o I según sean compras de consumo o inversión."
+                explanation: "Las variables a precios constantes eliminan el efecto de la variación de precios, permitiendo comparaciones reales entre períodos."
             },
             {
-                question: "¿Qué son las transferencias en el presupuesto público?",
-                options: ["Pagos por bienes y servicios adquiridos por el Estado", "Pagos sin contraprestación como jubilaciones y subsidios sociales", "Exportaciones del sector público", "Inversiones del gobierno"],
-                answer: 1,
-                explanation: "Las transferencias son pagos sin contraprestación (como jubilaciones) que no remuneran factores en la producción corriente y no se incluyen en el PIB."
-            },
-            
-            // Precios de Mercado vs Costo de Factores
-            {
-                question: "¿Cuál es la diferencia entre valuación a precios de mercado y a costo de factores?",
-                options: ["No hay diferencia", "Los precios de mercado incluyen impuestos indirectos menos subsidios", "El costo de factores incluye todos los impuestos", "Los precios de mercado solo consideran salarios"],
-                answer: 1,
-                explanation: "Los precios de mercado incluyen impuestos indirectos (como IVA) y excluyen subsidios, mientras que el costo de factores solo considera la retribución a los factores productivos."
-            },
-            {
-                question: "Para pasar del costo de factores a precios de mercado se debe:",
-                options: ["Restar los impuestos indirectos", "Sumar los impuestos indirectos y restar los subsidios", "Sumar solo los subsidios", "Multiplicar por la tasa de inflación"],
-                answer: 1,
-                explanation: "Para pasar de costo de factores a precios de mercado se suman los impuestos indirectos y se restan los subsidios."
-            },
-            {
-                question: "¿Qué son los impuestos indirectos?",
-                options: ["Impuestos sobre la renta de las personas", "Impuestos que se cobran al venderse bienes y servicios, como el IVA", "Impuestos sobre las ganancias empresariales", "Impuestos sobre el comercio exterior"],
-                answer: 1,
-                explanation: "Los impuestos indirectos son aquellos que se cobran al venderse bienes y servicios (como el IVA o impuestos internos) y se incluyen en el precio de mercado."
-            },
-            {
-                question: "¿Qué son los subsidios en el contexto de las Cuentas Nacionales?",
-                options: ["Préstamos del gobierno a empresas", "Subvenciones a la producción que reduce el precio de mercado", "Impuestos negativos a las importaciones", "Bonos para consumidores"],
-                answer: 1,
-                explanation: "Los subsidios son subvenciones que el Estado otorga para estimular la producción de ciertos bienes, reduciendo su precio de mercado."
-            },
-            
-            // Economía Abierta
-            {
-                question: "Al considerar una economía abierta, ¿qué nuevos componentes se agregan al PIB?",
-                options: ["Solo las exportaciones", "Las exportaciones y las importaciones", "Solo el tipo de cambio", "Las reservas internacionales"],
-                answer: 1,
-                explanation: "En una economía abierta se agregan las exportaciones (X) que se suman y las importaciones (M) que se restan del PIB."
-            },
-            {
-                question: "¿Qué son las exportaciones (X)?",
-                options: ["Bienes producidos en el exterior y consumidos localmente", "Bienes producidos en el país y demandados en el exterior", "Servicios prestados por extranjeros", "Inversiones en el extranjero"],
-                answer: 1,
-                explanation: "Las exportaciones son los bienes y servicios producidos en el país que son demandados por agentes económicos residentes en el exterior."
-            },
-            {
-                question: "¿Qué son las importaciones (M)?",
-                options: ["Bienes producidos localmente para exportar", "Demandas del país satisfechas con artículos producidos en el exterior", "Impuestos sobre bienes extranjeros", "Transferencias al exterior"],
-                answer: 1,
-                explanation: "Las importaciones son demandas del país que se satisfacen con bienes y servicios producidos en el exterior."
-            },
-            {
-                question: "¿Por qué se restan las importaciones en el cálculo del PIB?",
-                options: ["Porque son más caras que los bienes locales", "Porque no forman parte de la producción nacional", "Porque generan inflación", "Porque reducen el empleo"],
-                answer: 1,
-                explanation: "Se restan porque las importaciones no forman parte de la producción nacional; son bienes producidos en otros países."
-            },
-            {
-                question: "¿Qué significa que el PIB sea 'interno'?",
-                options: ["Que solo considera la economía informal", "Que mide la producción dentro de las fronteras geográficas del país", "Que excluye el sector público", "Que solo incluye empresas nacionales"],
-                answer: 1,
-                explanation: "El término 'interno' indica que se mide el valor generado dentro de las fronteras geográficas del país, independientemente de la nacionalidad del propietario."
-            },
-            {
-                question: "¿Se incluye en el PIB la producción de una empresa extranjera operando en el país?",
-                options: ["No, porque es capital extranjero", "Sí, porque produce dentro del territorio nacional", "Solo si exporta sus productos", "Solo parcialmente"],
-                answer: 1,
-                explanation: "Sí se incluye, porque el PIB mide toda la producción realizada dentro de las fronteras del país, sin importar la nacionalidad del capital."
-            },
-            {
-                question: "¿Se incluye en el PIB la producción de una sucursal argentina en el exterior?",
-                options: ["Sí, porque es capital argentino", "No, porque está fuera del territorio nacional", "Sí, pero solo las utilidades repatriadas", "Depende del país donde opere"],
-                answer: 1,
-                explanation: "No se incluye en el PIB porque está fuera del territorio nacional. El PIB mide producción dentro de las fronteras geográficas."
-            },
-            
-            // PBI vs PBN e INFRE
-            {
-                question: "¿Qué diferencia hay entre residentes y no residentes?",
-                options: ["Los residentes pagan más impuestos", "Los residentes viven dentro de las fronteras del país en forma permanente", "Los no residentes no pueden trabajar en el país", "No hay diferencia económica"],
-                answer: 1,
-                explanation: "Son residentes las personas físicas o jurídicas que viven o actúan dentro de las fronteras del país en forma permanente."
-            },
-            {
-                question: "¿Qué significa INFRE?",
-                options: ["Inflación Real Esperada", "Ingreso Neto de Factores Recibidos del Exterior", "Índice Nacional de Flujos de Renta Externa", "Inversión Nacional en Formación de Recursos Externos"],
-                answer: 1,
-                explanation: "INFRE significa Ingreso Neto de los Factores Recibidos del Exterior, que es la diferencia entre ingresos y egresos por retribución a factores."
-            },
-            {
-                question: "¿Qué incluye el INFRE?",
-                options: ["Solo las exportaciones netas", "Salarios y retribuciones al capital de residentes en el exterior menos los de no residentes en el país", "Solo los intereses de la deuda externa", "Las remesas de inmigrantes ilegales"],
-                answer: 1,
-                explanation: "El INFRE incluye salarios (W) y retribuciones al capital (R) recibidos del exterior menos los pagados al exterior."
-            },
-            {
-                question: "La ecuación del INFRE es:",
-                options: ["INFRE = X - M", "INFRE = (Wr + Rr) - (Wp + Rp)", "INFRE = PIB - C", "INFRE = I - D"],
-                answer: 1,
-                explanation: "INFRE = (Wr + Rr) - (Wp + Rp), donde Wr y Rr son ingresos recibidos del exterior y Wp y Rp son pagos al exterior."
-            },
-            {
-                question: "¿Qué representa Wp en la ecuación del INFRE?",
-                options: ["Salarios argentinos en el exterior", "Salarios de extranjeros en Argentina remitidos al exterior", "Ganancias de empresas públicas", "Importaciones de bienes de capital"],
-                answer: 1,
-                explanation: "Wp representa los salarios obtenidos por extranjeros en Argentina y remitidos al exterior."
-            },
-            {
-                question: "¿Qué representa Rr en la ecuación del INFRE?",
-                options: ["Reservas del Banco Central", "Retribuciones al capital argentino en el exterior remitidas a Argentina", "Renta de la tierra nacional", "Recaudación de impuestos"],
-                answer: 1,
-                explanation: "Rr representa las retribuciones al capital argentino radicado en el exterior y remitidas a Argentina."
-            },
-            {
-                question: "Si una empresa extranjera en Argentina envía utilidades a su casa matriz, esto afecta:",
-                options: ["Aumenta el INFRE", "Disminuye el INFRE (se registra como Rp)", "No afecta el INFRE", "Solo afecta las exportaciones"],
-                answer: 1,
-                explanation: "Esto se registra como Rp (retribuciones pagadas) y disminuye el INFRE al restar en la ecuación."
-            },
-            {
-                question: "¿Cuál es la relación entre PBI y PBN?",
-                options: ["PBN = PBI + INFRE", "PBN = PBI - INFRE", "PBN = PBI × INFRE", "Son siempre iguales"],
+                question: "¿Qué mide el Índice de Precios al Consumidor (IPC)?",
+                options: [
+                    "La variación del costo de una canasta fija de consumo",
+                    "El cociente entre PBI nominal y PBI real del período",
+                    "Los precios mayoristas de materias primas y bienes intermedios",
+                    "El promedio ponderado de precios de todos los bienes finales"
+                ],
                 answer: 0,
-                explanation: "El Producto Bruto Nacional (PBN) es igual al Producto Bruto Interno (PBI) más el Ingreso Neto de Factores Recibidos del Exterior (INFRE)."
+                explanation: "El IPC mide la variación de precios de una canasta fija de bienes representativa del gasto de consumo de los hogares."
             },
             {
-                question: "¿Qué mide el Producto Bruto Nacional (PBN)?",
-                options: ["La producción dentro del territorio", "La producción generada por factores propiedad de residentes del país, estén donde estén", "Solo las exportaciones", "El consumo nacional"],
+                question: "¿Qué tipo de índice es el IPC según su ponderación?",
+                options: [
+                    "Índice de Paasche con ponderaciones móviles del período actual",
+                    "Índice de Laspeyres con ponderaciones fijas del año base",
+                    "Índice de Fisher que promedia Laspeyres y Paasche",
+                    "Índice implícito derivado del cociente de variables nominales"
+                ],
                 answer: 1,
-                explanation: "El PBN mide la producción generada por factores de producción propiedad de residentes del país, sin importar dónde estén ubicados."
+                explanation: "El IPC es un índice de Laspeyres que utiliza ponderaciones fijas correspondientes al año base."
             },
             {
-                question: "Si el INFRE es negativo, significa que:",
-                options: ["El país recibe más ingresos del exterior de los que paga", "El país paga más al exterior de lo que recibe", "El país no tiene relaciones internacionales", "El PIB es mayor que el PBN"],
+                question: "¿Qué diferencia al IPM del IPC en su medición?",
+                options: [
+                    "El IPM mide precios finales y el IPC mide precios mayoristas",
+                    "El IPM incluye materias primas y mide en etapa mayorista",
+                    "El IPM se calcula mensualmente y el IPC anualmente",
+                    "El IPM usa Paasche y el IPC usa Laspeyres"
+                ],
                 answer: 1,
-                explanation: "Un INFRE negativo significa que los pagos al exterior (Wp + Rp) superan a los ingresos recibidos del exterior (Wr + Rr)."
+                explanation: "El IPM incluye materias primas y bienes semielaborados, midiéndolos en su primera transacción comercial importante (etapa mayorista)."
             },
-            
-            // Inflación y Desempleo
             {
-                question: "¿Qué es la inflación?",
-                options: ["El aumento de los salarios", "El aumento generalizado y sostenido del nivel general de precios", "La devaluación de la moneda", "El crecimiento del PIB"],
+                question: "¿Cómo se calcula el deflactor implícito del PBI?",
+                options: [
+                    "Sumando los precios de todos los bienes finales producidos",
+                    "Dividiendo el PBI nominal entre el PBI real",
+                    "Multiplicando el IPC por el IPM del mismo período",
+                    "Restando el PIB real del PIB nominal del año"
+                ],
                 answer: 1,
-                explanation: "La inflación es el fenómeno de aumento generalizado y sostenido del nivel general de precios en una economía."
+                explanation: "El deflactor implícito es el cociente entre el PBI a valores corrientes (nominal) y el PBI a valores constantes (real)."
             },
             {
-                question: "¿Por qué la alta inflación es problemática?",
-                options: ["Porque aumenta el empleo", "Porque la vara de medición de los precios deja de funcionar adecuadamente", "Porque reduce las exportaciones", "Porque aumenta el ahorro"],
+                question: "¿Qué característica tiene el deflactor del PBI vs otros índices?",
+                options: [
+                    "Solo mide bienes de consumo de las familias argentinas",
+                    "Tiene ponderaciones móviles reflejando la producción actual",
+                    "Se basa en una canasta fija del año base",
+                    "Excluye servicios y solo incluye bienes tangibles"
+                ],
                 answer: 1,
-                explanation: "Durante periodos de alta inflación, la vara de medición de precios deja de funcionar, causando confusión en las decisiones económicas y erosionando ingresos reales."
+                explanation: "El deflactor es un índice de Paasche con ponderaciones móviles, reflejando todos los bienes y servicios finales producidos."
             },
             {
-                question: "¿Qué es la estanflación?",
-                options: ["Crecimiento con inflación", "Combinación de lento crecimiento e inflación", "Deflación con recesión", "Estabilidad de precios"],
+                question: "¿Qué mide la tasa de actividad en el mercado laboral?",
+                options: [
+                    "El porcentaje de ocupados sobre la población total",
+                    "El porcentaje de la PEA sobre la población total",
+                    "El porcentaje de desocupados sobre la PEA total",
+                    "El porcentaje de subocupados sobre los ocupados"
+                ],
                 answer: 1,
-                explanation: "La estanflación es una combinación de lento crecimiento económico (estancamiento) e inflación, fenómeno observado en los años setenta."
+                explanation: "La tasa de actividad se calcula como el porcentaje de la Población Económicamente Activa sobre la población total."
             },
             {
-                question: "¿Cuál es una meta típica de inflación para muchos países?",
-                options: ["0%", "Entre 1% y 3% anual", "Entre 10% y 15% anual", "No tener meta de inflación"],
+                question: "¿Quiénes conforman la Población Económicamente Activa (PEA)?",
+                options: [
+                    "Todos los residentes mayores de 14 años del país",
+                    "Los ocupados más los desocupados que buscan trabajo",
+                    "Solo las personas que tienen empleo remunerado actualmente",
+                    "Los ocupados plenos más los subocupados demandantes"
+                ],
                 answer: 1,
-                explanation: "Muchos países fijan metas de inflación que frecuentemente se encuentran entre 1% y 3% anual para mantener estabilidad de precios."
+                explanation: "La PEA incluye a las personas que tienen ocupación más aquellas que sin tenerla la buscan activamente."
             },
             {
-                question: "¿Qué país experimentó una hiperinflación de aproximadamente 20,000,000% en 2008?",
-                options: ["Argentina", "Venezuela", "Zimbabwe", "Brasil"],
-                answer: 2,
-                explanation: "Zimbabwe tuvo una hiperinflación de aproximadamente 20,000,000% anual en 2008, el récord más alto en años recientes."
-            },
-            {
-                question: "El desempleo se refiere a:",
-                options: ["Personas que no quieren trabajar", "Trabajadores que buscan empleo pero no lo encuentran", "Jubilados", "Estudiantes"],
+                question: "¿Qué define a una persona como desocupada en la EPH?",
+                options: [
+                    "Persona que trabajó menos de 15 horas en la semana",
+                    "Persona sin trabajo que buscó activamente en la semana de referencia",
+                    "Persona que no tiene empleo formal registrado actualmente",
+                    "Persona inactiva que suspendió la búsqueda por desaliento"
+                ],
                 answer: 1,
-                explanation: "El desempleo se refiere a personas que están buscando activamente trabajo pero no pueden encontrarlo."
+                explanation: "Se considera desocupada a la persona que, sin tener trabajo, buscó activamente uno en la semana de referencia de la encuesta."
             },
             {
-                question: "Durante la Gran Depresión, ¿qué porcentaje alcanzó el desempleo en Estados Unidos?",
-                options: ["5%", "10%", "Casi 25%", "50%"],
-                answer: 2,
-                explanation: "Durante la Gran Depresión el desempleo llegó a representar casi una cuarta parte (25%) de la fuerza laboral en Estados Unidos."
-            },
-            
-            // Instrumentos de Política Macroeconómica
-            {
-                question: "¿Cuáles son los dos grandes instrumentos de política macroeconómica?",
-                options: ["Oferta y demanda", "Política monetaria y política fiscal", "Exportaciones e importaciones", "Salarios y precios"],
+                question: "¿Qué caracteriza a un trabajador subocupado?",
+                options: [
+                    "Trabaja más de 45 horas semanales involuntariamente",
+                    "Trabaja menos de 35 horas y desea trabajar más",
+                    "Tiene empleo informal no registrado en la seguridad social",
+                    "Realiza changas mientras busca trabajo estable"
+                ],
                 answer: 1,
-                explanation: "Los dos grandes instrumentos son la política monetaria (manejo de dinero y crédito) y la política fiscal (impuestos y gasto público)."
+                explanation: "Un subocupado es quien trabaja menos de 35 horas semanales por causas involuntarias y está dispuesto a trabajar más."
             },
             {
-                question: "¿Qué incluye la política monetaria?",
-                options: ["Solo los impuestos", "Compra y venta de bonos, regulación de instituciones financieras", "Solo el gasto público", "La emisión de billetes únicamente"],
+                question: "¿Qué mide la tasa de desempleo o desocupación?",
+                options: [
+                    "El porcentaje de desocupados sobre la población total del país",
+                    "El porcentaje de desocupados sobre la PEA total",
+                    "El porcentaje de inactivos sobre la población en edad de trabajar",
+                    "El porcentaje de subocupados más desocupados sobre la PEA"
+                ],
                 answer: 1,
-                explanation: "La política monetaria incluye la compra y venta de bonos, el manejo de tasas de interés y la regulación de las instituciones financieras."
+                explanation: "La tasa de desempleo se calcula como el porcentaje de la población desocupada sobre la Población Económicamente Activa."
             },
             {
-                question: "¿Qué incluye la política fiscal?",
-                options: ["Solo la regulación bancaria", "El gasto del gobierno y los impuestos", "Solo las tasas de interés", "El tipo de cambio"],
+                question: "¿Qué distingue al subocupado demandante del no demandante?",
+                options: [
+                    "El demandante trabaja menos horas que el no demandante",
+                    "El demandante busca activamente otra ocupación además",
+                    "El no demandante está registrado en la seguridad social",
+                    "El no demandante trabaja más de 20 horas semanales"
+                ],
                 answer: 1,
-                explanation: "La política fiscal incluye decisiones sobre el gasto del gobierno y la recaudación de impuestos."
+                explanation: "El subocupado demandante busca activamente otra ocupación, mientras que el no demandante no la busca aunque desee trabajar más."
             },
             {
-                question: "¿Qué busca la política monetaria restrictiva?",
-                options: ["Aumentar la inflación", "Enfriar la economía para controlar la inflación", "Aumentar el gasto público", "Reducir los impuestos"],
+                question: "¿Cómo se define una persona ocupada en la EPH?",
+                options: [
+                    "Trabajó al menos 1 hora remunerada o 15 no remuneradas",
+                    "Tiene contrato laboral formal registrado ante AFIP",
+                    "Recibe salario superior al mínimo vital y móvil",
+                    "Trabaja entre 35 y 45 horas semanales normales"
+                ],
+                answer: 0,
+                explanation: "Se considera ocupado a quien trabajó al menos una hora en forma remunerada o 15 horas sin remuneración en la semana de referencia."
+            },
+            {
+                question: "¿Qué son los impuestos indirectos en cuentas nacionales?",
+                options: [
+                    "Impuestos al ingreso de personas físicas y jurídicas",
+                    "Impuestos sobre ventas como IVA e impuestos internos",
+                    "Aportes obligatorios a la seguridad social de trabajadores",
+                    "Retenciones a las exportaciones de productos primarios"
+                ],
                 answer: 1,
-                explanation: "La política monetaria restrictiva busca 'jalar las riendas' a la economía cuando crece muy rápido, para evitar un repunte inflacionario."
+                explanation: "Los impuestos indirectos se cobran sobre las ventas de bienes y servicios, como el IVA y los impuestos internos."
             },
             {
-                question: "¿Cómo puede la política fiscal estimular la economía?",
-                options: ["Aumentando impuestos y reduciendo el gasto", "Reduciendo impuestos y/o aumentando el gasto público", "Solo mediante emisión monetaria", "Prohibiendo las importaciones"],
+                question: "¿Cómo se relacionan valuación a costo de factores y a precios de mercado?",
+                options: [
+                    "Costo factores = Precios mercado - Impuestos indirectos + Subsidios",
+                    "Precios mercado = Costo factores + Depreciaciones del capital",
+                    "Costo factores = Precios mercado + Exportaciones netas",
+                    "Precios mercado = Costo factores - Transferencias del gobierno"
+                ],
+                answer: 0,
+                explanation: "A costo de factores se obtiene restando impuestos indirectos y sumando subsidios a la valuación a precios de mercado."
+            },
+            {
+                question: "¿Qué papel cumplen los subsidios en las cuentas nacionales?",
+                options: [
+                    "Aumentan el costo de factores respecto al precio de mercado",
+                    "Reducen el precio de mercado respecto al costo de factores",
+                    "Se suman a los impuestos indirectos en el cálculo del PBI",
+                    "Se restan del consumo intermedio en el cálculo del VAB"
+                ],
                 answer: 1,
-                explanation: "La política fiscal puede estimular la economía reduciendo impuestos (aumentando el ingreso disponible) y/o aumentando el gasto público."
+                explanation: "Los subsidios hacen que el precio de mercado sea menor que el costo de factores, ya que el gobierno ayuda a financiar la producción."
             },
-            
-            // Crecimiento Económico
             {
-                question: "¿Qué se entiende por crecimiento económico?",
-                options: ["El aumento de la población", "El crecimiento de la producción per cápita de largo plazo", "El aumento de precios", "La expansión territorial"],
+                question: "En economía abierta, ¿qué representa (X-M) en el PBI?",
+                options: [
+                    "La inversión extranjera directa neta recibida en el país",
+                    "Las exportaciones netas o saldo de balanza comercial",
+                    "El ingreso neto de factores recibidos del exterior",
+                    "La variación de reservas internacionales del Banco Central"
+                ],
                 answer: 1,
-                explanation: "El crecimiento económico se refiere al crecimiento de la producción per cápita de un país, central para determinar la evolución de salarios reales y niveles de vida."
+                explanation: "(X-M) representa las exportaciones netas, es decir, el saldo de la balanza comercial de bienes y servicios."
             },
             {
-                question: "¿Cuáles son factores fundamentales para el crecimiento económico de largo plazo?",
-                options: ["Solo los recursos naturales", "Mercados privados regulados, estabilidad macroeconómica, inversión, apertura comercial e instituciones sólidas", "Solo el tamaño de la población", "Únicamente el gasto militar"],
+                question: "¿Qué significa que el PBI es 'interno'?",
+                options: [
+                    "Incluye solo producción de empresas nacionales públicas",
+                    "Mide producción dentro del territorio geográfico del país",
+                    "Excluye las exportaciones de bienes al resto del mundo",
+                    "Se calcula sin considerar el sector externo de la economía"
+                ],
                 answer: 1,
-                explanation: "Los factores incluyen mercados privados bien regulados, política macroeconómica estable, altas tasas de ahorro e inversión, apertura al comercio e instituciones honestas."
+                explanation: "Interno significa que se mide lo producido dentro del territorio, independientemente de quién sea propietario de los factores."
             },
             {
-                question: "¿Qué países experimentaron un notable crecimiento en la segunda mitad del siglo XX?",
-                options: ["Solo Estados Unidos", "Japón, Corea del Sur, Taiwán y posteriormente China", "Solo países europeos", "Ningún país en desarrollo"],
+                question: "¿Qué es el Ingreso Disponible según las cuentas nacionales?",
+                options: [
+                    "El PBI más las transferencias corrientes del exterior",
+                    "El YBN más transferencias corrientes netas del exterior",
+                    "El ingreso nacional neto menos impuestos indirectos",
+                    "La suma de salarios y beneficios de todas las empresas"
+                ],
                 answer: 1,
-                explanation: "Japón, Corea del Sur, Taiwán y posteriormente China experimentaron notables ganancias en los estándares de vida en la segunda mitad del siglo XX."
+                explanation: "El Ingreso Bruto Nacional disponible (YBNd) se obtiene sumando al YBN las transferencias corrientes netas recibidas del exterior."
             },
             {
-                question: "¿Qué región ha sufrido reducciones en su producción per cápita en décadas recientes?",
-                options: ["Asia Oriental", "Europa Occidental", "África subsahariana", "América del Norte"],
-                answer: 2,
-                explanation: "Algunos países del África subsahariana han sufrido reducciones en su producción per cápita y niveles de vida en décadas recientes."
-            },
-            {
-                question: "¿Cuánto creció aproximadamente el PIB per cápita real en Estados Unidos desde la Segunda Guerra Mundial hasta 2000?",
-                options: ["50%", "100%", "Casi 250%", "500%"],
-                answer: 2,
-                explanation: "El PIB per cápita en términos reales en Estados Unidos creció en casi 250% desde el fin de la Segunda Guerra Mundial hasta el 2000."
-            },
-            
-            // Crisis y Recesiones
-            {
-                question: "¿Qué evento desencadenó la recesión de 2007-2009 en Estados Unidos?",
-                options: ["Una guerra comercial", "Una severa crisis de los mercados financieros iniciada por la caída de precios de la vivienda", "Un terremoto", "La crisis del petróleo"],
+                question: "¿Cuál es la identidad fundamental entre ahorro e inversión?",
+                options: [
+                    "El ahorro medido siempre supera la inversión medida",
+                    "El ahorro medido es idéntico a la inversión medida",
+                    "El ahorro es mayor en economías con superávit fiscal",
+                    "La inversión supera al ahorro cuando hay déficit comercial"
+                ],
                 answer: 1,
-                explanation: "La recesión de 2007-2009 fue desencadenada por una severa crisis de los mercados financieros iniciada por la caída de los precios de la vivienda."
+                explanation: "Por definición contable, el ahorro medido debe ser exactamente igual a la inversión medida en las cuentas nacionales."
             },
             {
-                question: "¿Qué sucedió con el PIB estadounidense entre 1929 y 1933?",
-                options: ["Creció un 50%", "Se mantuvo estable", "Cayó de 104 mil millones a 56 mil millones de dólares", "Se duplicó"],
-                answer: 2,
-                explanation: "Durante la Gran Depresión, el PIB estadounidense cayó de 104,000 millones de dólares a 56,000 millones de dólares entre 1929 y 1933."
-            },
-            {
-                question: "¿Qué caracterizó a 'la década fabulosa' de los años noventa?",
-                options: ["Alta inflación", "Rápido crecimiento, bajo desempleo y precios estables", "Profunda recesión", "Guerra comercial"],
+                question: "¿Qué incluye el ahorro nacional total en economía abierta?",
+                options: [
+                    "Solo el ahorro privado de familias y empresas nacionales",
+                    "El ahorro privado más el ahorro gubernamental",
+                    "La inversión bruta interna más las exportaciones netas",
+                    "El superávit fiscal más las reservas internacionales"
+                ],
                 answer: 1,
-                explanation: "Los años noventa en Estados Unidos fueron testigos de rápido crecimiento económico, desempleo a la baja y precios estables."
+                explanation: "El ahorro nacional (ST) es la suma del ahorro privado (SP) más el ahorro gubernamental (SG o superávit fiscal)."
             },
             {
-                question: "¿Qué país sufrió una prolongada recesión después de 1990 con deflación y alto desempleo?",
-                options: ["China", "Brasil", "Japón", "India"],
-                answer: 2,
-                explanation: "Japón sufrió una de las recesiones más profundas y prolongadas de la era moderna, con baja de precios y alto desempleo después de 1990."
-            },
-            {
-                question: "¿Qué herramientas usaron los líderes mundiales durante la crisis de 2007-2009?",
-                options: ["Solo esperaron que pasara", "Política monetaria y fiscal para reducir desempleo y estimular la economía", "Solo aumentaron impuestos", "Cerraron fronteras comerciales"],
+                question: "¿Qué componentes conforman la inversión nacional total?",
+                options: [
+                    "La inversión privada más el gasto de capital del gobierno",
+                    "La inversión privada más las exportaciones netas (X-M)",
+                    "La formación bruta de capital fijo más existencias",
+                    "El ahorro privado más el superávit presupuestario"
+                ],
                 answer: 1,
-                explanation: "Los líderes políticos usaron herramientas de política monetaria y fiscal para reducir el desempleo y estimular la actividad económica."
+                explanation: "La inversión nacional total incluye la inversión bruta doméstica privada (I) más la inversión extranjera neta o exportaciones netas (X)."
             },
-            
-            // Conceptos Adicionales
             {
-                question: "¿Qué diferencia hay entre macroeconomía y microeconomía?",
-                options: ["No hay diferencia", "La macroeconomía estudia la economía en su conjunto, la microeconomía estudia agentes individuales", "La macroeconomía solo estudia empresas grandes", "La microeconomía solo estudia familias"],
+                question: "¿Qué es el ahorro gubernamental en las cuentas nacionales?",
+                options: [
+                    "La recaudación tributaria total del gobierno nacional",
+                    "El superávit del presupuesto (ingresos menos gastos)",
+                    "Las reservas del Banco Central en divisas extranjeras",
+                    "Los depósitos del Tesoro en el sistema bancario"
+                ],
                 answer: 1,
-                explanation: "La macroeconomía estudia el comportamiento de la economía en su conjunto, mientras que la microeconomía estudia precios, cantidades y mercados individuales."
+                explanation: "El ahorro gubernamental (SG) es el superávit presupuestario, es decir, ingresos tributarios menos gastos gubernamentales."
             },
             {
-                question: "¿Qué se entiende por 'exuberancia irracional' en los mercados?",
-                options: ["Crecimiento sostenible", "Excesivo optimismo que lleva a burbujas especulativas", "Pesimismo generalizado", "Estabilidad de precios"],
+                question: "Si hay déficit fiscal, ¿cómo afecta al ahorro nacional?",
+                options: [
+                    "El ahorro nacional aumenta automáticamente por mayor gasto",
+                    "El ahorro nacional disminuye porque el ahorro gubernamental es negativo",
+                    "El ahorro nacional no se ve afectado por el déficit",
+                    "El ahorro privado debe aumentar en la misma magnitud"
+                ],
                 answer: 1,
-                explanation: "La exuberancia irracional se refiere al excesivo optimismo en los mercados que puede llevar a burbujas en los precios de activos como acciones o vivienda."
+                explanation: "Un déficit fiscal significa ahorro gubernamental negativo, lo que reduce el ahorro nacional total (ST = SP + SG)."
             },
             {
-                question: "¿Qué fenómeno ocurrió dos veces en la primera década del siglo XXI?",
-                options: ["Hiperinflación", "Explosión de burbujas en el mercado (tecnológica y vivienda)", "Guerras mundiales", "Sequías prolongadas"],
+                question: "¿Qué representa un superávit en la cuenta corriente externa?",
+                options: [
+                    "Las importaciones superan a las exportaciones del período",
+                    "Las exportaciones netas son positivas en ese período",
+                    "El país aumentó su endeudamiento externo neto",
+                    "La inversión extranjera directa ingresó al país"
+                ],
                 answer: 1,
-                explanation: "Las burbujas de mercado explotaron dos veces: primero con el desplome de las acciones tecnológicas en 2000, y luego con la caída de precios de vivienda en 2007."
+                explanation: "Un superávit de cuenta corriente indica que las exportaciones netas (X-M) son positivas, ingresando más divisas que egresos."
             },
             {
-                question: "¿Qué demostró el colapso de la Unión Soviética en términos económicos?",
-                options: ["La superioridad de la planificación central", "La superioridad económica de los mercados privados", "Que la economía no importa", "Que solo la agricultura es importante"],
+                question: "¿Cuál fue la principal contribución de Keynes a la macroeconomía?",
+                options: [
+                    "Demostró que los mercados siempre se equilibran automáticamente",
+                    "Argumentó que puede persistir desempleo y que las políticas públicas pueden reducirlo",
+                    "Propuso eliminar toda intervención estatal en la economía",
+                    "Desarrolló la teoría cuantitativa del dinero y la inflación"
+                ],
                 answer: 1,
-                explanation: "El colapso de la Unión Soviética demostró la superioridad económica de los mercados privados como enfoque para alentar el crecimiento económico."
+                explanation: "Keynes argumentó que puede persistir alto desempleo y que la política monetaria y fiscal pueden afectar la producción y reducir el desempleo."
             },
             {
-                question: "En el método del valor agregado, ¿qué sucede con el valor de los insumos?",
-                options: ["Se suma al producto final", "Se resta para evitar doble contabilización", "Se ignora completamente", "Se multiplica por un factor"],
+                question: "¿Qué son las cuentas nacionales aumentadas?",
+                options: [
+                    "Cuentas que solo registran actividades del sector formal",
+                    "Cuentas que incluyen actividades no mercantiles con valor económico",
+                    "Cuentas ajustadas únicamente por inflación del período",
+                    "Cuentas que duplican el valor de servicios públicos"
+                ],
                 answer: 1,
-                explanation: "El valor de los insumos (consumo intermedio) se resta del valor bruto de producción para calcular el valor agregado y evitar doble contabilización."
+                explanation: "Las cuentas aumentadas incluyen actividades con valor económico que no pasan por el mercado, como trabajo doméstico o capital humano."
             },
             {
-                question: "¿Qué tipo de bien es una mesa comprada por un restaurante?",
-                options: ["Bien de consumo", "Bien intermedio", "Bien de capital (inversión)", "Bien público"],
-                answer: 2,
-                explanation: "Una mesa comprada por un restaurante es un bien de capital (inversión), ya que se usa para producir servicios (comidas) y es durable."
+                question: "¿Por qué el trabajo doméstico no remunerado no figura en el PBI?",
+                options: [
+                    "Porque no genera utilidad o bienestar para las familias",
+                    "Porque no pasa por el mercado y no tiene transacción monetaria",
+                    "Porque solo se contabilizan actividades del sector primario",
+                    "Porque está incluido en el consumo de bienes durables"
+                ],
+                answer: 1,
+                explanation: "El PBI tradicional solo registra transacciones de mercado; el trabajo doméstico no remunerado no pasa por el mercado aunque genere valor."
             },
             {
-                question: "¿Qué tipo de bien es una mesa comprada por una familia?",
-                options: ["Bien de capital", "Bien intermedio", "Bien de consumo", "Bien inferior"],
-                answer: 2,
-                explanation: "Una mesa comprada por una familia es un bien de consumo, ya que satisface directamente las necesidades del hogar."
+                question: "¿Qué omisión ambiental importante presenta el PBI tradicional?",
+                options: [
+                    "No incluye la producción de energías renovables limpias",
+                    "No resta los daños ambientales como contaminación o degradación",
+                    "No suma las inversiones en conservación de recursos naturales",
+                    "No considera el agotamiento de minerales no renovables"
+                ],
+                answer: 1,
+                explanation: "El PBI tradicional no resta los costos de daños ambientales como contaminación del aire, agua o degradación de recursos."
+            },
+            {
+                question: "¿Qué actividades de la economía subterránea se excluyen del PBI?",
+                options: [
+                    "Todas las transacciones en efectivo sin factura formal",
+                    "Las actividades ilegales como narcotráfico o contrabando",
+                    "El comercio informal en mercados y ferias callejeras",
+                    "Los servicios profesionales de monotributistas"
+                ],
+                answer: 1,
+                explanation: "Se excluyen deliberadamente actividades ilegales que son 'males' sociales, no 'bienes', aunque el comercio ilegal tiene magnitud significativa."
+            },
+            {
+                question: "¿Cómo se relacionan las tres ópticas de medición del PBI?",
+                options: [
+                    "Son completamente independientes y dan resultados diferentes",
+                    "Son identidades contables que siempre dan el mismo resultado",
+                    "Solo coinciden en equilibrio de pleno empleo",
+                    "Difieren por los impuestos indirectos y subsidios"
+                ],
+                answer: 1,
+                explanation: "Las tres ópticas (producto, ingreso y gasto) son identidades contables que por definición siempre arrojan el mismo resultado."
+            },
+            {
+                question: "¿Qué refleja un aumento del PBI nominal sin variación del real?",
+                options: [
+                    "La economía creció en términos de producción física",
+                    "Solo hubo inflación sin crecimiento de cantidades producidas",
+                    "Aumentó la productividad de los factores productivos",
+                    "Se incrementó el empleo y disminuyó el desempleo"
+                ],
+                answer: 1,
+                explanation: "Si el PBI nominal sube pero el real no varía, significa que solo aumentaron los precios (inflación) sin crecimiento de producción."
+            },
+            {
+                question: "¿Por qué es importante distinguir entre PBI nominal y real?",
+                options: [
+                    "Para calcular correctamente los impuestos del período",
+                    "Para separar crecimiento de cantidades de efecto de precios",
+                    "Para determinar el tipo de cambio nominal apropiado",
+                    "Para establecer el nivel salarial mínimo del país"
+                ],
+                answer: 1,
+                explanation: "La distinción permite separar el crecimiento real de la producción del efecto de la variación de precios (inflación o deflación)."
+            },
+            {
+                question: "En la tabla de producción de pan, ¿por qué se resta el costo de intermedios?",
+                options: [
+                    "Para cumplir con las normas tributarias vigentes",
+                    "Para evitar contar múltiples veces el mismo valor agregado",
+                    "Para calcular el beneficio neto de cada empresa",
+                    "Para determinar el precio final al consumidor"
+                ],
+                answer: 1,
+                explanation: "Se restan los productos intermedios para evitar la doble o múltiple contabilización del valor en diferentes etapas productivas."
+            },
+            {
+                question: "¿Qué sucede si sumamos todas las ventas sin considerar valor agregado?",
+                options: [
+                    "Obtenemos el PBI correctamente medido del período",
+                    "Sobreestimamos el producto por contar varias veces los intermedios",
+                    "Medimos solo la actividad del sector primario",
+                    "Calculamos el consumo intermedio total de la economía"
+                ],
+                answer: 1,
+                explanation: "Sumar todas las ventas sobreestima el producto porque cuenta múltiples veces el valor de los productos intermedios en cada etapa."
+            },
+            {
+                question: "¿Qué relación existe entre depreciación e inversión?",
+                options: [
+                    "La depreciación es siempre mayor que la inversión bruta",
+                    "Inversión neta = Inversión bruta - Depreciación",
+                    "La depreciación solo afecta a la inversión pública",
+                    "Inversión bruta = Inversión neta + Consumo intermedio"
+                ],
+                answer: 1,
+                explanation: "La inversión neta (IN) es la efectiva adición al stock de capital, y se calcula restando la depreciación (D) de la inversión bruta (IB)."
+            },
+            {
+                question: "¿Qué representa la depreciación o amortización en cuentas nacionales?",
+                options: [
+                    "El pago de intereses de la deuda pública externa",
+                    "El desgaste y pérdida de valor del capital productivo",
+                    "La reducción del valor de la moneda por inflación",
+                    "El costo de mantenimiento de equipos e instalaciones"
+                ],
+                answer: 1,
+                explanation: "La depreciación representa la pérdida de valor de los bienes de capital por desgaste en el proceso productivo corriente."
+            },
+            {
+                question: "¿Cómo obtienen los economistas los datos para las cuentas nacionales?",
+                options: [
+                    "Únicamente mediante encuestas directas a todas las empresas",
+                    "De estados contables, encuestas, impuestos, ventas y empleo",
+                    "Solo de declaraciones tributarias presentadas ante AFIP",
+                    "Exclusivamente del sistema de cuentas bancarias registradas"
+                ],
+                answer: 1,
+                explanation: "Se utilizan múltiples fuentes: estados contables, encuestas, declaraciones de impuestos, estadísticas de ventas y datos de empleo."
+            },
+            {
+                question: "¿Qué relación existe entre gasto final y PBI?",
+                options: [
+                    "El gasto final es siempre menor que el PBI calculado",
+                    "El gasto final en bienes finales es igual al PBI",
+                    "El gasto final solo incluye consumo de las familias",
+                    "El gasto final excluye la inversión bruta del período"
+                ],
+                answer: 1,
+                explanation: "El gasto final (C+I+G+X-M) en bienes finales es, por definición, igual al PBI medido por el enfoque del gasto."
+            },
+            {
+                question: "¿Qué información provee la Encuesta Permanente de Hogares (EPH)?",
+                options: [
+                    "Únicamente datos de inflación y variación de precios",
+                    "Tasas de actividad, empleo, desempleo y subocupación",
+                    "El PBI trimestral desagregado por sector económico",
+                    "Las exportaciones e importaciones de bienes y servicios"
+                ],
+                answer: 1,
+                explanation: "La EPH provee estimaciones de tasas de actividad, empleo, desempleo, subocupación y otras características del mercado laboral."
+            },
+            {
+                question: "¿Por qué la EPH se realiza solo en aglomerados urbanos?",
+                options: [
+                    "Porque la población rural es económicamente inactiva",
+                    "Por razones prácticas, aunque 88% de la población es urbana",
+                    "Porque el desempleo rural es permanentemente cero",
+                    "Porque solo se mide empleo en industria y servicios"
+                ],
+                answer: 1,
+                explanation: "Por razones prácticas de implementación, pero como el 88% de la población argentina es urbana, la EPH es representativa."
+            },
+            {
+                question: "¿Qué condición debe cumplir alguien para ser considerado ocupado?",
+                options: [
+                    "Tener ingresos superiores al salario mínimo vital y móvil",
+                    "Haber trabajado al menos una hora remunerada esa semana",
+                    "Estar inscripto en el sistema de seguridad social",
+                    "Trabajar tiempo completo entre 35 y 45 horas semanales"
+                ],
+                answer: 1,
+                explanation: "Se considera ocupado a quien trabajó al menos una hora en forma remunerada, o 15 horas sin remuneración, en la semana de referencia."
+            },
+            {
+                question: "¿Qué representa el concepto de 'desocupación abierta'?",
+                options: [
+                    "Personas con empleo precario que buscan trabajo mejor",
+                    "Personas sin trabajo que buscan activamente en la semana de referencia",
+                    "Trabajadores que perdieron empleo hace más de seis meses",
+                    "Personas inactivas que desistieron de buscar por desaliento"
+                ],
+                answer: 1,
+                explanation: "La desocupación abierta es la estándar: personas sin trabajo que buscaron activamente en la semana de referencia de la EPH."
+            },
+            {
+                question: "¿Cómo se calcula la tasa de empleo en el mercado laboral?",
+                options: [
+                    "Ocupados dividido población total, expresado en porcentaje",
+                    "Ocupados dividido PEA total, expresado en porcentaje",
+                    "PEA dividido población en edad de trabajar, en porcentaje",
+                    "Ocupados plenos dividido población total, en porcentaje"
+                ],
+                answer: 0,
+                explanation: "La tasa de empleo se calcula como el porcentaje de la población ocupada sobre la población total del país."
+            },
+            {
+                question: "¿Qué personas se consideran inactivas en el mercado laboral?",
+                options: [
+                    "Personas desocupadas que buscan empleo activamente",
+                    "Personas sin trabajo que no lo buscan activamente",
+                    "Trabajadores subocupados que desean más horas",
+                    "Ocupados que trabajan menos de 35 horas semanales"
+                ],
+                answer: 1,
+                explanation: "Se consideran inactivas las personas que no tienen trabajo ni lo buscan activamente (estudiantes, jubilados, amas de casa, etc.)."
+            },
+            {
+                question: "¿Qué mide la tasa de subocupación demandante?",
+                options: [
+                    "Subocupados demandantes sobre la población total del país",
+                    "Subocupados demandantes sobre la PEA total",
+                    "Subocupados demandantes sobre el total de ocupados",
+                    "Subocupados demandantes sobre los desocupados abiertos"
+                ],
+                answer: 1,
+                explanation: "La tasa de subocupación demandante se calcula como porcentaje de subocupados demandantes sobre la PEA total."
+            },
+            {
+                question: "¿Qué son las transferencias en el contexto de cuentas públicas?",
+                options: [
+                    "Pagos del gobierno a factores productivos del sector privado",
+                    "Pagos sin contraprestación como seguridad social o subsidios",
+                    "Inversiones del gobierno en infraestructura y bienes de capital",
+                    "Impuestos directos cobrados a personas físicas y jurídicas"
+                ],
+                answer: 1,
+                explanation: "Las transferencias son pagos sin contraprestación (sin recibir bienes o servicios a cambio), como jubilaciones, pensiones o subsidios."
+            },
+            {
+                question: "¿Por qué las transferencias no se incluyen en G de las cuentas?",
+                options: [
+                    "Porque son pagos ilegales o informales del gobierno",
+                    "Porque no remuneran factores usados en producción corriente",
+                    "Porque solo se incluyen gastos del gobierno nacional",
+                    "Porque ya están contabilizadas en el consumo privado"
+                ],
+                answer: 1,
+                explanation: "Las transferencias no se incluyen en G porque no son remuneraciones a factores productivos participantes en la producción corriente."
+            },
+            {
+                question: "¿Qué incluye el gasto de consumo final en Argentina según INDEC?",
+                options: [
+                    "Solo el consumo privado de las familias residentes",
+                    "Consumo de familias y gastos de consumo del gobierno",
+                    "Consumo más inversión bruta interna del período",
+                    "Únicamente bienes durables adquiridos por familias"
+                ],
+                answer: 1,
+                explanation: "En Argentina, el consumo final (C) incluye tanto gastos de consumo de familias como gastos de consumo del sector público."
+            },
+            {
+                question: "¿Qué diferencia existe entre residente y no residente?",
+                options: [
+                    "Residente tiene nacionalidad y no residente es extranjero",
+                    "Residente tiene centro de actividad permanente en el país",
+                    "Residente paga impuestos y no residente está exento",
+                    "Residente nació en el país y no residente en el exterior"
+                ],
+                answer: 1,
+                explanation: "Residente es quien vive o tiene el centro de su actividad económica permanentemente dentro del país, independientemente de su nacionalidad."
+            },
+            {
+                question: "¿Qué flujos comprende el INFRE en economía abierta?",
+                options: [
+                    "Solo los intereses de la deuda externa pública",
+                    "Salarios y remuneraciones al capital pagados y recibidos del exterior",
+                    "Exportaciones e importaciones netas de bienes y servicios",
+                    "Inversión extranjera directa menos inversión argentina en el exterior"
+                ],
+                answer: 1,
+                explanation: "El INFRE incluye salarios de trabajadores y remuneraciones al capital (intereses, utilidades, rentas) pagados y recibidos del exterior."
+            },
+            {
+                question: "¿Cómo afecta una empresa extranjera en Argentina al INFRE?",
+                options: [
+                    "Aumenta el INFRE porque genera producción local adicional",
+                    "Disminuye el INFRE cuando gira beneficios a su casa matriz",
+                    "No afecta el INFRE porque opera dentro del territorio",
+                    "Aumenta el INFRE proporcionalmente a su inversión inicial"
+                ],
+                answer: 1,
+                explanation: "Cuando una empresa extranjera gira utilidades al exterior, disminuye el INFRE (aumenta Rp, las remuneraciones pagadas al exterior)."
+            },
+            {
+                question: "¿Por qué el INFRE es negativo en Argentina?",
+                options: [
+                    "Porque exporta menos de lo que importa históricamente",
+                    "Porque hay muchas empresas extranjeras y se pagan intereses de deuda",
+                    "Porque los salarios argentinos son bajos comparativamente",
+                    "Porque el gobierno tiene superávit fiscal permanente"
+                ],
+                answer: 1,
+                explanation: "El INFRE argentino es negativo porque hay muchas empresas extranjeras operando localmente y se pagan significativos intereses de deuda externa."
+            },
+            {
+                question: "¿Qué significa que un índice de precios base 1993=100 vale 300 en 2010?",
+                options: [
+                    "Los precios subieron 300% entre 1993 y 2010",
+                    "Los precios se triplicaron o subieron 200% desde 1993",
+                    "La inflación promedio anual fue exactamente 300%",
+                    "El PBI real creció tres veces desde 1993"
+                ],
+                answer: 1,
+                explanation: "Un índice de 300 significa que los precios se triplicaron (aumentaron 200%) respecto al año base donde el índice era 100."
+            },
+            {
+                question: "¿Cuándo se considera que hay inflación en una economía?",
+                options: [
+                    "Cuando algunos precios individuales suben temporalmente",
+                    "Cuando el nivel general de precios aumenta sostenidamente",
+                    "Solo cuando el IPC aumenta más de 10% anual",
+                    "Cuando el tipo de cambio nominal se deprecia"
+                ],
+                answer: 1,
+                explanation: "Inflación es el aumento generalizado y sostenido en el tiempo del nivel general de precios de una economía."
+            },
+            {
+                question: "¿Cómo se calcula la tasa de inflación anual?",
+                options: [
+                    "Sumando todos los aumentos de precios individuales",
+                    "Variación porcentual del índice de precios entre períodos",
+                    "Dividiendo el PBI nominal entre el PBI real",
+                    "Multiplicando el deflactor implícito por cien"
+                ],
+                answer: 1,
+                explanation: "La tasa de inflación se calcula como la variación porcentual del índice de precios: [(Pt - Pt-1) / Pt-1] × 100."
+            },
+            {
+                question: "¿Qué ventaja tiene usar el deflactor del PBI vs el IPC?",
+                options: [
+                    "El deflactor se actualiza mensualmente y el IPC trimestralmente",
+                    "El deflactor incluye todos los bienes finales producidos, no solo consumo",
+                    "El deflactor mide solo bienes y excluye servicios",
+                    "El deflactor usa ponderaciones fijas del año base"
+                ],
+                answer: 1,
+                explanation: "El deflactor incluye todos los bienes y servicios finales producidos en la economía, no solo la canasta de consumo como el IPC."
+            },
+            {
+                question: "¿Qué limitación tiene el PBI como medida de bienestar?",
+                options: [
+                    "No mide el crecimiento económico de largo plazo",
+                    "No mide satisfacción, distribución del ingreso ni calidad de vida",
+                    "No incluye la producción del sector industrial",
+                    "No puede compararse entre diferentes países"
+                ],
+                answer: 1,
+                explanation: "El PBI mide actividad económica pero no mide satisfacción, felicidad, distribución del ingreso, tiempo libre o calidad de vida."
+            },
+            {
+                question: "¿Qué actividades valiosas omite el PBI tradicional?",
+                options: [
+                    "La producción de bienes durables en fábricas",
+                    "Trabajo doméstico, inversión en educación y valor del ocio",
+                    "Las exportaciones de servicios profesionales",
+                    "La inversión en capital fijo del sector privado"
+                ],
+                answer: 1,
+                explanation: "El PBI omite actividades no mercantiles valiosas como trabajo doméstico no remunerado, inversión en educación y valor del tiempo libre."
+            },
+            {
+                question: "¿Qué proponen las cuentas ambientales SCAEI?",
+                options: [
+                    "Duplicar el valor de producción de energías renovables",
+                    "Restar daños ambientales y sumar conservación de recursos naturales",
+                    "Eliminar del PBI toda actividad contaminante industrial",
+                    "Incluir solo producción certificada como sustentable"
+                ],
+                answer: 1,
+                explanation: "El SCAEI propone ajustar las cuentas restando daños ambientales (contaminación, degradación) y sumando el valor de recursos naturales y su conservación."
             }
         ];
-
+        
         let quizzes = [];
         let currentQuiz;
         let currentQuestionIndex = 0;

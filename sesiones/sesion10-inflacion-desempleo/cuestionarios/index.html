@@ -137,906 +137,6 @@
     </div>
 
     <script>
-        const allQuestions = [
-            // CONCEPTO Y MEDICIÓN DE INFLACIÓN
-            {
-                question: "¿Qué es la inflación?",
-                options: [
-                    "Una disminución temporal de precios",
-                    "El crecimiento continuo y generalizado de los precios de bienes y servicios",
-                    "Un aumento puntual en el precio de un bien específico",
-                    "La reducción del poder adquisitivo del dinero"
-                ],
-                answer: 1,
-                explanation: "La inflación se define como el crecimiento continuo y generalizado de los precios de los bienes y servicios de una economía."
-            },
-            {
-                question: "¿Qué mide el Índice de Precios al Consumidor (IPC)?",
-                options: [
-                    "El costo de una canasta fija de bienes y servicios a lo largo del tiempo",
-                    "Solo el precio de los alimentos",
-                    "Los salarios promedio de los trabajadores",
-                    "La producción total de la economía"
-                ],
-                answer: 0,
-                explanation: "El IPC mide el costo de una canasta fija de bienes y servicios representativa del consumo de las familias a lo largo del tiempo."
-            },
-            {
-                question: "¿Cómo se calcula la tasa de inflación?",
-                options: [
-                    "Dividiendo el IPC actual entre el IPC anterior",
-                    "Variación porcentual del IPC entre dos períodos",
-                    "Sumando todos los precios de la economía",
-                    "Multiplicando el IPC por 100"
-                ],
-                answer: 1,
-                explanation: "La tasa de inflación se calcula como la variación porcentual del IPC entre dos períodos: [(IPC_t - IPC_t-1) / IPC_t-1] × 100."
-            },
-            {
-                question: "¿Qué representa una inflación del 10% anual?",
-                options: [
-                    "Los precios se duplicaron",
-                    "El nivel general de precios aumentó un 10% en un año",
-                    "Solo algunos precios subieron 10%",
-                    "El salario aumentó 10%"
-                ],
-                answer: 1,
-                explanation: "Una inflación del 10% anual significa que el nivel general de precios de la economía aumentó un 10% en un año."
-            },
-            {
-                question: "¿Qué diferencia hay entre inflación y aumento de un precio individual?",
-                options: [
-                    "No hay diferencia",
-                    "La inflación es generalizada y continua, el aumento individual es puntual",
-                    "Solo la inflación afecta a los consumidores",
-                    "El aumento individual es más grave"
-                ],
-                answer: 1,
-                explanation: "La inflación es un aumento generalizado y continuo de precios, mientras que un aumento individual afecta solo a un bien específico."
-            },
-
-            // EXPLICACIÓN MONETARISTA DE LA INFLACIÓN
-            {
-                question: "Según la perspectiva monetarista, ¿qué causa la inflación?",
-                options: [
-                    "Solo los sindicatos",
-                    "El aumento de la cantidad de dinero",
-                    "Únicamente el déficit fiscal",
-                    "La reducción de la productividad"
-                ],
-                answer: 1,
-                explanation: "Los monetaristas sostienen que el aumento de la cantidad de dinero es condición suficiente para que aparezca inflación."
-            },
-            {
-                question: "Para los monetaristas, ¿para qué se demanda dinero principalmente?",
-                options: [
-                    "Para transacciones, precaución y especulación",
-                    "Solo para transacciones",
-                    "Únicamente para especular",
-                    "Para acumular riqueza"
-                ],
-                answer: 1,
-                explanation: "Para los monetaristas, el único motivo por el cual la gente demanda dinero es para realizar transacciones."
-            },
-            {
-                question: "Si aumenta la oferta monetaria y la economía está en pleno empleo, ¿qué sucede según los monetaristas?",
-                options: [
-                    "Aumenta la producción física",
-                    "Los precios suben porque la demanda aumenta pero la producción no puede crecer",
-                    "Baja el desempleo",
-                    "No pasa nada"
-                ],
-                answer: 1,
-                explanation: "Con pleno empleo, la producción no puede aumentar en el corto plazo, entonces la mayor demanda se traduce en aumento de precios."
-            },
-            {
-                question: "¿Qué evidencia respalda la teoría monetarista de la inflación?",
-                options: [
-                    "Estudios de casos aislados",
-                    "Estudios históricos de períodos inflacionarios donde siempre hubo un fenómeno monetario",
-                    "Solo teoría sin evidencia empírica",
-                    "Únicamente experimentos de laboratorio"
-                ],
-                answer: 1,
-                explanation: "Los monetaristas se basan en estudios históricos de períodos inflacionarios donde siempre la causa fue un fenómeno monetario."
-            },
-            {
-                question: "Según los monetaristas, ¿qué intentarán hacer los agentes con exceso de dinero?",
-                options: [
-                    "Ahorrarlo todo",
-                    "Gastar el exceso en la compra de bienes y servicios",
-                    "Destruirlo",
-                    "Convertirlo en oro"
-                ],
-                answer: 1,
-                explanation: "Si los agentes tienen más dinero del que pensaban gastar, intentarán gastar el exceso en la compra de bienes y servicios."
-            },
-
-            // EXPLICACIÓN KEYNESIANA DE LA INFLACIÓN
-            {
-                question: "Según Keynes, ¿cuáles son los tres motivos para demandar dinero?",
-                options: [
-                    "Consumo, ahorro e inversión",
-                    "Transacción, precaución y especulación",
-                    "Solo transacción",
-                    "Compra, venta y ahorro"
-                ],
-                answer: 1,
-                explanation: "Para Keynes, la gente demanda dinero por tres motivos: transacción, precaución y especulación."
-            },
-            {
-                question: "¿Qué es el motivo precaución en la demanda de dinero?",
-                options: [
-                    "Demanda para especular en bolsa",
-                    "Demanda para hacer frente a contingencias e imprevistos",
-                    "Demanda solo para transacciones",
-                    "Demanda para comprar bienes de lujo"
-                ],
-                answer: 1,
-                explanation: "El motivo precaución es la demanda de dinero para hacer frente a contingencias e imprevistos."
-            },
-            {
-                question: "¿Qué es el motivo especulación en la demanda de dinero?",
-                options: [
-                    "Demanda solo para compras diarias",
-                    "Demanda por incertidumbre sobre el valor monetario de otros activos",
-                    "Demanda para pagar salarios",
-                    "Demanda para exportaciones"
-                ],
-                answer: 1,
-                explanation: "El motivo especulación es la demanda de dinero que se debe a la incertidumbre sobre el valor monetario de otros activos."
-            },
-            {
-                question: "Según el enfoque keynesiano, ¿cuál es la variable clave que causa inflación?",
-                options: [
-                    "Solo la oferta monetaria",
-                    "La demanda agregada cuando excede al producto de pleno empleo",
-                    "Únicamente los impuestos",
-                    "Solo el tipo de cambio"
-                ],
-                answer: 1,
-                explanation: "Para Keynes, si la demanda total excede al producto de pleno empleo, tendrá lugar un aumento en el nivel general de precios."
-            },
-            {
-                question: "¿Puede la demanda de dinero absorber aumentos en la oferta monetaria sin inflación según Keynes?",
-                options: [
-                    "No, nunca",
-                    "Sí, en determinadas circunstancias",
-                    "Solo con deflación",
-                    "Únicamente en economías cerradas"
-                ],
-                answer: 1,
-                explanation: "Según Keynes, en determinadas circunstancias la demanda de dinero puede absorber aumentos en la oferta monetaria sin alteraciones de precios."
-            },
-            {
-                question: "¿De qué depende el efecto de un aumento de demanda agregada sobre los precios según Keynes?",
-                options: [
-                    "Solo del banco central",
-                    "Del nivel de recursos desempleados en la economía",
-                    "Únicamente de las exportaciones",
-                    "Solo de los sindicatos"
-                ],
-                answer: 1,
-                explanation: "La incidencia del incremento de la demanda agregada sobre los precios depende del nivel de los recursos desempleados."
-            },
-            {
-                question: "¿Qué sucede si la demanda aumenta cuando el producto está por debajo del potencial?",
-                options: [
-                    "Siempre hay inflación alta",
-                    "La economía incrementa la producción sin alterar precios significativamente",
-                    "La producción no puede aumentar",
-                    "Los precios bajan"
-                ],
-                answer: 1,
-                explanation: "Cuando el producto es inferior al potencial, si la demanda aumenta, la economía incrementa la producción prácticamente sin cambiar precios."
-            },
-            {
-                question: "¿Qué ocurre cuando el producto se aproxima al nivel potencial y aumenta la demanda?",
-                options: [
-                    "La producción sigue aumentando sin límite",
-                    "El aumento de la demanda se traslada a los precios",
-                    "Baja el desempleo sin inflación",
-                    "No pasa nada"
-                ],
-                answer: 1,
-                explanation: "Cuando el producto se aproxima al nivel potencial, el aumento de la demanda se trasladará a los precios (inflación)."
-            },
-            {
-                question: "¿Cuál es la principal diferencia entre monetaristas y keynesianos sobre la inflación?",
-                options: [
-                    "No hay diferencia",
-                    "Los monetaristas enfatizan la oferta monetaria, los keynesianos la demanda agregada y recursos desempleados",
-                    "Solo difieren en métodos estadísticos",
-                    "Los keynesianos niegan que exista inflación"
-                ],
-                answer: 1,
-                explanation: "Los monetaristas enfatizan que la inflación es siempre un fenómeno monetario, mientras los keynesianos destacan la demanda agregada y el nivel de empleo."
-            },
-            {
-                question: "¿Qué es el producto potencial?",
-                options: [
-                    "El producto máximo teórico sin límites",
-                    "El nivel de producto que corresponde con pleno empleo de los recursos",
-                    "Solo la producción agrícola",
-                    "El producto del año anterior"
-                ],
-                answer: 1,
-                explanation: "El producto potencial es el nivel de producto que corresponde con pleno empleo de los recursos de la economía."
-            },
-
-            // INFLACIÓN DE COSTOS
-            {
-                question: "¿Qué explica la teoría de la inflación de costos de producción?",
-                options: [
-                    "Solo problemas monetarios",
-                    "Que grupos económicos concentrados elevan precios al aumentar costos",
-                    "Únicamente exceso de demanda",
-                    "Solo problemas estructurales"
-                ],
-                answer: 1,
-                explanation: "La inflación de costos explica que grupos económicos concentrados (sindicatos, empresas) son culpables de que los precios se eleven."
-            },
-            {
-                question: "¿Cuáles son los dos componentes importantes del costo de producción?",
-                options: [
-                    "Tierra y capital",
-                    "Costos laborales y no laborales",
-                    "Importaciones y exportaciones",
-                    "Solo salarios"
-                ],
-                answer: 1,
-                explanation: "Un componente importante en la formación de precios es el costo de producción, dividido entre costos laborales y no laborales."
-            },
-            {
-                question: "Según la teoría de costos, ¿a quién se atribuye frecuentemente la responsabilidad principal de la inflación?",
-                options: [
-                    "Solo al gobierno",
-                    "A los sindicatos, por imponer aumentos salariales mayores que la productividad",
-                    "Únicamente a los consumidores",
-                    "Solo a los bancos"
-                ],
-                answer: 1,
-                explanation: "Frecuentemente se atribuye la responsabilidad a los sindicatos, que imponen aumentos de salarios en mayor proporción que el crecimiento de productividad."
-            },
-            {
-                question: "¿De qué tres factores depende el precio de un bien según el modelo simplificado?",
-                options: [
-                    "Solo del salario",
-                    "Del salario monetario, productividad del trabajo y mark-up",
-                    "Únicamente de la demanda",
-                    "Solo de los impuestos"
-                ],
-                answer: 1,
-                explanation: "El precio depende del salario monetario, la productividad del trabajo y el margen (mark-up) para cubrir costos de capital."
-            },
-            {
-                question: "¿Cuándo será mayor el precio de un bien según la teoría de costos?",
-                options: [
-                    "Cuando aumenta la productividad",
-                    "Cuando mayor sea el salario monetario, menor la productividad y mayor el mark-up",
-                    "Cuando baja el mark-up",
-                    "Cuando solo aumenta la demanda"
-                ],
-                answer: 1,
-                explanation: "El precio será mayor cuanto mayor sea el salario monetario, menor sea la productividad del trabajo y más alto sea el mark-up."
-            },
-            {
-                question: "¿Cómo se inicia el proceso inflacionario según la teoría de costos?",
-                options: [
-                    "Por exceso de demanda",
-                    "Por un empujón de los costos, no por un tirón de la demanda",
-                    "Solo por emisión monetaria",
-                    "Por problemas estructurales únicamente"
-                ],
-                answer: 1,
-                explanation: "El proceso inflacionario se inicia por un empujón de los costos (cost-push) y no por un tirón de la demanda (demand-pull)."
-            },
-            {
-                question: "¿Qué caracteriza a la formación de salarios en el mercado de trabajo real?",
-                options: [
-                    "Es de competencia perfecta",
-                    "No es competitiva; existen instituciones laborales como sindicatos que protegen a los trabajadores",
-                    "Solo la determina el gobierno",
-                    "Es totalmente aleatoria"
-                ],
-                answer: 1,
-                explanation: "La formación de salarios no es competitiva; existen instituciones laborales como sindicatos que protegen a la parte más débil."
-            },
-            {
-                question: "¿Cuándo hay propiamente inflación de costos?",
-                options: [
-                    "Siempre que aumentan los salarios",
-                    "Solo si el crecimiento de salarios es superior al crecimiento de la productividad",
-                    "Cuando baja la productividad únicamente",
-                    "Nunca ocurre en la realidad"
-                ],
-                answer: 1,
-                explanation: "Solo si el crecimiento de salarios es superior al crecimiento de la productividad cabe hablar propiamente de inflación de costos."
-            },
-            {
-                question: "¿Qué es la espiral salarios-salarios?",
-                options: [
-                    "Reducción generalizada de salarios",
-                    "Incrementos salariales de sectores dinámicos se transmiten al resto del mercado laboral",
-                    "Solo afecta a un sector",
-                    "No tiene efecto sobre la inflación"
-                ],
-                answer: 1,
-                explanation: "La espiral salarios-salarios es cuando los incrementos en sectores dinámicos se transmiten al resto del mercado de trabajo."
-            },
-            {
-                question: "¿Qué preocupa más a los trabajadores según la teoría de costos?",
-                options: [
-                    "Solo el salario nominal",
-                    "El nivel relativo de sus salarios (poder adquisitivo) más que el nivel absoluto",
-                    "Únicamente las vacaciones",
-                    "Solo las horas trabajadas"
-                ],
-                answer: 1,
-                explanation: "Los trabajadores se preocupan más del nivel relativo de sus salarios (lo que pueden comprar) que del nivel absoluto o nominal."
-            },
-
-            // INFLACIÓN ESTRUCTURALISTA
-            {
-                question: "¿Dónde se identifica típicamente la inflación estructuralista?",
-                options: [
-                    "Solo en países desarrollados",
-                    "En países en vías de desarrollo o subdesarrollados",
-                    "Únicamente en Europa",
-                    "No existe en la realidad"
-                ],
-                answer: 1,
-                explanation: "La inflación estructuralista suele identificarse como la inflación típica de los países en vías de desarrollo o subdesarrollados."
-            },
-            {
-                question: "Según los estructuralistas, ¿dónde descansan las bases de la inflación?",
-                options: [
-                    "Solo en factores monetarios",
-                    "En el sistema productivo y social; los factores monetarios solo propagan",
-                    "Únicamente en el déficit fiscal",
-                    "Solo en factores externos"
-                ],
-                answer: 1,
-                explanation: "Los estructuralistas sostienen que las bases de la inflación descansan en el sistema productivo y social, no en factores monetarios."
-            },
-            {
-                question: "¿Qué papel tienen los factores monetarios según los estructuralistas?",
-                options: [
-                    "Son la causa principal",
-                    "Solo tienen importancia como elementos propagadores, no originan la inflación",
-                    "No tienen ningún papel",
-                    "Son la única causa"
-                ],
-                answer: 1,
-                explanation: "Los factores monetarios solo tienen importancia como elementos propagadores de la inflación, pero no la originan."
-            },
-            {
-                question: "¿Qué constituye la causa de las presiones inflacionarias según el estructuralismo?",
-                options: [
-                    "Solo exceso de demanda",
-                    "Rigideces estructurales e institucionales básicas",
-                    "Únicamente emisión monetaria",
-                    "Solo factores psicológicos"
-                ],
-                answer: 1,
-                explanation: "Ciertas rigideces estructurales e institucionales básicas constituyen la causa de las presiones inflacionarias."
-            },
-            {
-                question: "¿De dónde surgen las presiones inflacionarias básicas según el estructuralismo?",
-                options: [
-                    "Solo del banco central",
-                    "De cuellos de botella o estrangulamientos en determinados sectores",
-                    "Únicamente de importaciones",
-                    "Solo de exportaciones"
-                ],
-                answer: 1,
-                explanation: "Las presiones inflacionarias surgen de cuellos de botella o estrangulamientos en determinados sectores que repercuten sobre los demás."
-            },
-            {
-                question: "Según los estructuralistas, ¿la inflación está causada por exceso de crecimiento?",
-                options: [
-                    "Sí, siempre",
-                    "No, está causada por falta de crecimiento",
-                    "Solo en países desarrollados",
-                    "No hay relación con el crecimiento"
-                ],
-                answer: 1,
-                explanation: "La inflación no está causada por exceso de crecimiento sino, todo lo contrario, por la falta del mismo."
-            },
-            {
-                question: "¿Por qué la demanda inelástica en algunos sectores genera inflación según estructuralistas?",
-                options: [
-                    "Porque la producción siempre aumenta",
-                    "Porque el insuficiente desarrollo impide satisfacer la demanda internamente, generando dependencia externa",
-                    "Solo por problemas monetarios",
-                    "No genera inflación"
-                ],
-                answer: 1,
-                explanation: "El insuficiente desarrollo impide que la demanda sea satisfecha internamente, apareciendo dependencia del exterior y presiones inflacionarias."
-            },
-            {
-                question: "¿Qué caracteriza al sector agrario según los estructuralistas?",
-                options: [
-                    "Alta elasticidad de oferta",
-                    "Rigidez de la oferta; la producción es muy inelástica respecto a los precios",
-                    "Perfecta competencia",
-                    "No tiene importancia"
-                ],
-                answer: 1,
-                explanation: "El sector agrario presenta rigidez de la oferta; la producción agrícola es muy inelástica respecto a los precios."
-            },
-            {
-                question: "Si los precios son inflexibles a la baja, ¿cómo se verifican los cambios de precios relativos?",
-                options: [
-                    "Solo bajando todos los precios",
-                    "Solo a través del alza del precio monetario de los bienes que se han apreciado",
-                    "No se pueden verificar",
-                    "Únicamente con deflación"
-                ],
-                answer: 1,
-                explanation: "Si los precios monetarios son inflexibles a la baja, todo cambio de precios relativos se verifica solo mediante alzas de precios apreciados."
-            },
-            {
-                question: "¿Qué proponen los estructuralistas para combatir la inflación?",
-                options: [
-                    "Solo restricción monetaria",
-                    "Desarrollo continuado, aun a costa de estabilidad de precios",
-                    "Únicamente reducir salarios",
-                    "No proponen nada"
-                ],
-                answer: 1,
-                explanation: "Los estructuralistas se inclinan por desarrollo continuado, aun a costa de la estabilidad de precios, para corregir deficiencias estructurales."
-            },
-
-            // EXPECTATIVAS E INFLACIÓN
-            {
-                question: "¿Qué papel juegan las expectativas en la evolución de la inflación?",
-                options: [
-                    "Ninguno",
-                    "Es importante; lo que la gente espera que suceda con la economía afecta la inflación",
-                    "Solo en teoría",
-                    "Únicamente en hiperinflaciones"
-                ],
-                answer: 1,
-                explanation: "Es importante destacar el rol que juegan las expectativas en la evolución de la inflación; lo que la gente espera afecta el resultado."
-            },
-            {
-                question: "¿Qué son las expectativas en términos económicos?",
-                options: [
-                    "Solo deseos personales",
-                    "Lo que la gente espera que suceda en el futuro con la economía y sus componentes",
-                    "Únicamente predicciones del gobierno",
-                    "No tienen definición"
-                ],
-                answer: 1,
-                explanation: "Las expectativas son lo que la gente espera que suceda en el futuro con la economía: desempleo, actividad, inversión, evolución de precios."
-            },
-            {
-                question: "¿Qué son las expectativas estáticas?",
-                options: [
-                    "Expectativas que siempre cambian",
-                    "Los agentes esperan que la inflación sea igual a una tasa determinada año tras año",
-                    "Solo se usan en modelos complejos",
-                    "No existen en la realidad"
-                ],
-                answer: 1,
-                explanation: "En expectativas estáticas, sindicatos y empresas esperan que la inflación sea igual a una tasa determinada año tras año."
-            },
-            {
-                question: "¿Qué caracterizan las expectativas adaptativas?",
-                options: [
-                    "No se adaptan nunca",
-                    "Se forman como promedio ponderado entre la inflación efectiva de ese año y la esperada un año atrás",
-                    "Solo miran el futuro",
-                    "Ignoran la inflación pasada"
-                ],
-                answer: 1,
-                explanation: "Las expectativas adaptativas se forman como promedio ponderado entre la inflación efectiva de ese año y la inflación que esperaban un año atrás."
-            },
-            {
-                question: "¿Qué caracterizan las expectativas racionales?",
-                options: [
-                    "Solo miran el pasado",
-                    "Los agentes cuentan con un buen modelo y pueden predecir con precisión; información perfecta",
-                    "Son siempre incorrectas",
-                    "No consideran la demanda agregada"
-                ],
-                answer: 1,
-                explanation: "Las expectativas racionales suponen que los agentes tienen un buen modelo económico, pueden predecir con precisión y tienen información perfecta."
-            },
-            {
-                question: "¿De qué depende que una expansión de demanda reduzca el desempleo?",
-                options: [
-                    "Solo de la oferta monetaria",
-                    "De si dicha expansión era esperada o no; depende de las expectativas sobre inflación",
-                    "Únicamente de los sindicatos",
-                    "No hay relación"
-                ],
-                answer: 1,
-                explanation: "Que se reduzca el desempleo depende de si la expansión era esperada o no, lo que a su vez depende de la formación de expectativas sobre inflación."
-            },
-
-            // EFECTOS DE LA INFLACIÓN
-            {
-                question: "¿Cuáles son algunos efectos de la inflación?",
-                options: [
-                    "Solo beneficios para todos",
-                    "Disminución del valor real de la moneda, desaliento del ahorro e inversión, escasez de bienes",
-                    "Únicamente aumento del empleo",
-                    "No tiene efectos negativos"
-                ],
-                answer: 1,
-                explanation: "La inflación causa disminución del valor real de la moneda, desaliento del ahorro e inversión por incertidumbre, y escasez de bienes."
-            },
-            {
-                question: "Durante períodos de inflación, ¿varían todos los precios y salarios a la misma tasa?",
-                options: [
-                    "Sí, siempre",
-                    "No, cambian los precios relativos",
-                    "Solo en hiperinflación",
-                    "Únicamente en deflación"
-                ],
-                answer: 1,
-                explanation: "Durante la inflación no todos los precios y salarios varían a la misma tasa; cambian los precios relativos."
-            },
-            {
-                question: "¿Qué dos consecuencias tiene el cambio de precios relativos durante la inflación?",
-                options: [
-                    "Solo beneficios",
-                    "Redistribuye renta y riqueza, y distorsiona precios relativos y producción",
-                    "Únicamente aumenta el empleo",
-                    "No tiene consecuencias"
-                ],
-                answer: 1,
-                explanation: "La inflación redistribuye la renta y riqueza entre grupos, y distorsiona los precios relativos y la producción de diferentes bienes."
-            },
-            {
-                question: "¿Quiénes pierden con la inflación?",
-                options: [
-                    "Todos por igual",
-                    "Los que reciben ingresos fijos: acreedores, rentistas, trabajadores y jubilados",
-                    "Solo los empresarios",
-                    "Nadie pierde"
-                ],
-                answer: 1,
-                explanation: "Pierden con la inflación los que reciben ingresos fijos: acreedores, los que viven de rentas o intereses, trabajadores y jubilados."
-            },
-            {
-                question: "¿Por qué la inflación es especialmente problemática para quienes reciben ingresos fijos?",
-                options: [
-                    "Porque pueden ajustar fácilmente sus ingresos",
-                    "Porque no pueden ajustar sus ingresos cuando suben los precios",
-                    "Solo en teoría",
-                    "No es problemática"
-                ],
-                answer: 1,
-                explanation: "La inflación es un problema especialmente para quienes no pueden ajustar sus ingresos cuando los precios suben."
-            },
-            {
-                question: "Si la inflación persiste, ¿cómo comienzan a adaptarse los mercados?",
-                options: [
-                    "No se adaptan nunca",
-                    "La gente comienza a preverla y la tasa de interés de mercado la tiene en cuenta",
-                    "Solo mediante controles de precios",
-                    "Únicamente con deflación"
-                ],
-                answer: 1,
-                explanation: "Si la inflación persiste, la gente comienza a preverla y la tasa de interés de mercado comienza a tenerla en cuenta gradualmente."
-            },
-            {
-                question: "¿A quién beneficia la inflación imprevista?",
-                options: [
-                    "A los acreedores",
-                    "A los deudores, porque redistribuye riqueza de acreedores a deudores",
-                    "A todos por igual",
-                    "A nadie"
-                ],
-                answer: 1,
-                explanation: "La inflación imprevista redistribuye la riqueza de los acreedores a favor de los deudores (ayuda a quien ha pedido prestado)."
-            },
-            {
-                question: "¿Cómo afecta la inflación a quienes tienen ingresos variables versus fijos?",
-                options: [
-                    "Afecta igual a todos",
-                    "Redistribuye poder adquisitivo desde ingresos fijos hacia ingresos variables",
-                    "Solo afecta a los ricos",
-                    "No redistribuye nada"
-                ],
-                answer: 1,
-                explanation: "La inflación redistribuye poder adquisitivo desde las personas con ingresos fijos nominales hacia las que tienen ingresos variables."
-            },
-            {
-                question: "¿Cuál es la principal conclusión sobre el efecto distributivo de la inflación?",
-                options: [
-                    "Beneficia a todos",
-                    "Agita la renta y activos, redistribuyendo aleatoriamente la riqueza entre la población",
-                    "Solo afecta a los pobres",
-                    "No redistribuye nada"
-                ],
-                answer: 1,
-                explanation: "La principal conclusión es que la inflación agita la renta y los activos, redistribuyendo aleatoriamente la riqueza entre la población."
-            },
-            {
-                question: "¿Qué ocurre con el valor real de la moneda durante la inflación?",
-                options: [
-                    "Aumenta",
-                    "Disminuye a través del tiempo",
-                    "Permanece constante",
-                    "Se duplica"
-                ],
-                answer: 1,
-                explanation: "Uno de los efectos de la inflación es la disminución del valor real de la moneda a través del tiempo."
-            },
-
-            // CURVA DE PHILLIPS
-            {
-                question: "¿Qué muestra la Curva de Phillips de corto plazo?",
-                options: [
-                    "Relación positiva entre inflación y desempleo",
-                    "Relación negativa entre inflación y desempleo (trade-off)",
-                    "No hay relación entre ambas variables",
-                    "Solo muestra la inflación"
-                ],
-                answer: 1,
-                explanation: "La Curva de Phillips de corto plazo muestra una relación negativa entre inflación (π) y desempleo (U): un trade-off o intercambio."
-            },
-            {
-                question: "¿Quién realizó los primeros estudios sobre la relación entre desempleo y salarios nominales?",
-                options: [
-                    "John Maynard Keynes",
-                    "A. W. Phillips, en el Reino Unido",
-                    "Adam Smith",
-                    "Milton Friedman"
-                ],
-                answer: 1,
-                explanation: "A. W. Phillips realizó estudios relacionando el desempleo con la evolución de los salarios nominales en el Reino Unido."
-            },
-            {
-                question: "Aunque Irving Fisher fue el primero en analizar esta relación, ¿por qué se llama Curva de Phillips?",
-                options: [
-                    "Porque Phillips la inventó primero",
-                    "Porque Phillips realizó estudios detallados que popularizaron el concepto",
-                    "Por error histórico",
-                    "No se llama así"
-                ],
-                answer: 1,
-                explanation: "Aunque Fisher fue primero, la curva debe su nombre a los estudios detallados realizados por A. W. Phillips que la popularizaron."
-            },
-            {
-                question: "Según la Curva de Phillips de corto plazo, ¿qué implica mantener bajas tasas de desempleo?",
-                options: [
-                    "No hay costos",
-                    "Será a costa de cierto grado de inflación",
-                    "Se logra sin ningún problema",
-                    "Solo requiere más gasto público"
-                ],
-                answer: 1,
-                explanation: "Si queremos mantener bajas tasas de desempleo, será a costa de cierto grado de inflación según la Curva de Phillips."
-            },
-            {
-                question: "Si se desea disminuir la inflación según la Curva de Phillips de corto plazo, ¿qué sucede?",
-                options: [
-                    "No tiene costos",
-                    "Será a costa de que el desempleo se incremente",
-                    "El empleo también aumenta",
-                    "No afecta el desempleo"
-                ],
-                answer: 1,
-                explanation: "Si lo que se desea es disminuir la inflación, será a costa de que el desempleo se incremente."
-            },
-            {
-                question: "¿Por qué existe un trade-off entre inflación y desempleo en el corto plazo?",
-                options: [
-                    "No existe tal trade-off",
-                    "Ambos problemas causan efectos negativos pero son inevitables en el corto plazo",
-                    "Solo por intervención del gobierno",
-                    "Únicamente en países desarrollados"
-                ],
-                answer: 1,
-                explanation: "Ambos problemas causan efectos negativos en la economía, pero son inevitables en el corto plazo; hay que elegir un balance."
-            },
-            {
-                question: "¿Qué dilema enfrenta la autoridad económica según la Curva de Phillips?",
-                options: [
-                    "Solo debe preocuparse por la inflación",
-                    "¿Ajustar política tolerando inflación para evitar desempleo alto, o posición dura contra inflación a costa de más desempleo?",
-                    "Solo debe enfocarse en el desempleo",
-                    "No enfrenta ningún dilema"
-                ],
-                answer: 1,
-                explanation: "La autoridad enfrenta el dilema: ¿ajustar política tolerando inflación para evitar desempleo alto, o tomar posición dura contra inflación aunque aumente desempleo?"
-            },
-            {
-                question: "¿Hasta cuándo se mantuvo estable la relación de la Curva de Phillips?",
-                options: [
-                    "Siempre ha sido estable",
-                    "Mostró estabilidad en algunos países hasta fines de los años sesenta",
-                    "Nunca fue estable",
-                    "Solo en el siglo XXI"
-                ],
-                answer: 1,
-                explanation: "La relación negativa entre inflación y desempleo demostró notable estabilidad en algunos países durante ciertos períodos hasta fines de los sesenta."
-            },
-            {
-                question: "¿Qué sucede con la Curva de Phillips a largo plazo?",
-                options: [
-                    "Se vuelve más estable",
-                    "La relación se torna inestable y poco sistemática",
-                    "Desaparece completamente",
-                    "Se hace horizontal"
-                ],
-                answer: 1,
-                explanation: "A largo plazo, la relación entre inflación y desempleo se torna inestable y poco sistemática, según estudios posteriores."
-            },
-            {
-                question: "¿Qué justifica la inestabilidad de la Curva de Phillips a largo plazo según el modelo neoclásico?",
-                options: [
-                    "Errores de medición",
-                    "La inflación imprevista puede aumentar producción y empleo a corto plazo, pero a largo plazo desaparece la ilusión monetaria",
-                    "Solo factores externos",
-                    "No hay justificación"
-                ],
-                answer: 1,
-                explanation: "La inflación imprevista puede aumentar producción y empleo a corto plazo, pero a largo plazo, cuando desaparece la ilusión monetaria, no existe trade-off."
-            },
-
-            // DESEMPLEO
-            {
-                question: "¿Qué es la tasa de desempleo?",
-                options: [
-                    "El porcentaje de la población que no trabaja",
-                    "El porcentaje de la fuerza laboral que está desocupada y busca activamente empleo",
-                    "Solo los que nunca han trabajado",
-                    "Todos los que no tienen trabajo"
-                ],
-                answer: 1,
-                explanation: "La tasa de desempleo es el porcentaje de la fuerza laboral que está desocupada y busca activamente trabajo."
-            },
-            {
-                question: "¿Qué es la tasa natural de desempleo?",
-                options: [
-                    "Cero desempleo",
-                    "La tasa de desempleo que existe cuando la economía está en equilibrio de largo plazo",
-                    "100% de desempleo",
-                    "Solo desempleo estructural"
-                ],
-                answer: 1,
-                explanation: "La tasa natural de desempleo es la que existe cuando la economía está en equilibrio de largo plazo, compatible con precios estables."
-            },
-            {
-                question: "¿Qué tipos de desempleo existen?",
-                options: [
-                    "Solo uno",
-                    "Friccional, estructural y cíclico",
-                    "Únicamente cíclico",
-                    "Solo estructural"
-                ],
-                answer: 1,
-                explanation: "Los tres tipos principales de desempleo son: friccional (transitorio), estructural (cambios en la estructura económica) y cíclico (recesiones)."
-            },
-            {
-                question: "¿Qué es el desempleo friccional?",
-                options: [
-                    "Desempleo permanente",
-                    "Desempleo temporal debido al tiempo de búsqueda entre empleos",
-                    "Solo por recesión",
-                    "Desempleo involuntario"
-                ],
-                answer: 1,
-                explanation: "El desempleo friccional es temporal, resultado del tiempo necesario para que los trabajadores encuentren nuevos empleos."
-            },
-            {
-                question: "¿Qué es el desempleo estructural?",
-                options: [
-                    "Solo temporal",
-                    "Desempleo causado por cambios en la estructura de la economía que dejan obsoletas ciertas habilidades",
-                    "Por falta de demanda agregada únicamente",
-                    "No existe"
-                ],
-                answer: 1,
-                explanation: "El desempleo estructural surge cuando cambios en la economía (tecnología, comercio) dejan obsoletas las habilidades de algunos trabajadores."
-            },
-            {
-                question: "¿Qué es el desempleo cíclico?",
-                options: [
-                    "Desempleo permanente",
-                    "Desempleo causado por recesiones y fluctuaciones del ciclo económico",
-                    "Solo por cambios tecnológicos",
-                    "Desempleo voluntario"
-                ],
-                answer: 1,
-                explanation: "El desempleo cíclico es causado por las recesiones y contracciones del ciclo económico."
-            },
-            {
-                question: "¿A largo plazo, la Curva de Phillips es vertical?",
-                options: [
-                    "No, siempre es negativa",
-                    "Sí, indica que no hay trade-off permanente entre inflación y desempleo",
-                    "Es horizontal",
-                    "No tiene forma definida"
-                ],
-                answer: 1,
-                explanation: "A largo plazo, la Curva de Phillips es vertical en la tasa natural de desempleo, lo que indica que no existe trade-off permanente."
-            },
-            {
-                question: "¿Qué implica que la Curva de Phillips de largo plazo sea vertical?",
-                options: [
-                    "La inflación siempre baja",
-                    "No se puede reducir el desempleo por debajo de la tasa natural mediante expansión de demanda sin acelerar inflación",
-                    "El desempleo siempre es cero",
-                    "La inflación no existe"
-                ],
-                answer: 1,
-                explanation: "Implica que no se puede reducir el desempleo por debajo de la tasa natural con expansión de demanda sin acelerar continuamente la inflación."
-            },
-            {
-                question: "¿Qué sucede si el gobierno intenta mantener el desempleo persistentemente bajo mediante política expansiva?",
-                options: [
-                    "Se logra sin costo",
-                    "Generará inflación acelerada según el modelo de expectativas",
-                    "Solo baja la inflación",
-                    "No pasa nada"
-                ],
-                answer: 1,
-                explanation: "Intentar mantener el desempleo bajo de forma persistente mediante expansión generará inflación acelerada, según el modelo de expectativas."
-            },
-            {
-                question: "¿Cómo afecta el mark-up (margen de ganancia) al precio según la teoría de costos?",
-                options: [
-                    "No tiene efecto",
-                    "Mayor mark-up implica mayor precio",
-                    "Solo reduce el precio",
-                    "Únicamente afecta salarios"
-                ],
-                answer: 1,
-                explanation: "El precio será mayor cuanto más alto sea el mark-up que las empresas aplican para cubrir costos de capital y obtener ganancias."
-            },
-            {
-                question: "¿Qué rol juegan las empresas con poder de mercado en la inflación de costos?",
-                options: [
-                    "Ninguno",
-                    "Pueden trasladar aumentos de costos a precios y fijar márgenes (mark-up) discrecionalmente",
-                    "Solo reducen precios",
-                    "No tienen poder sobre precios"
-                ],
-                answer: 1,
-                explanation: "Las empresas con poder de mercado pueden trasladar aumentos de costos a precios y fijar márgenes de ganancia discrecionalmente."
-            },
-            {
-                question: "¿Cómo combaten los trabajadores la inflación en un mercado laboral con sindicatos?",
-                options: [
-                    "No pueden hacer nada",
-                    "Negociando aumentos salariales para recuperar o superar el poder adquisitivo perdido",
-                    "Solo aceptando salarios menores",
-                    "Renunciando a sus empleos"
-                ],
-                answer: 1,
-                explanation: "Los trabajadores, a través de sindicatos, negocian aumentos salariales para recuperar o superar el poder adquisitivo perdido por la inflación."
-            },
-            {
-                question: "¿Qué genera la espiral inflacionaria salarios-precios?",
-                options: [
-                    "Estabilidad de precios",
-                    "Los aumentos salariales se trasladan a precios, que a su vez generan nuevas demandas salariales",
-                    "Solo beneficios para todos",
-                    "Deflación"
-                ],
-                answer: 1,
-                explanation: "La espiral salarios-precios ocurre cuando aumentos salariales se trasladan a precios, generando nueva inflación y nuevas demandas salariales."
-            },
-            {
-                question: "¿Cuál es un ejemplo clásico de rigidez estructural según los estructuralistas?",
-                options: [
-                    "Exceso de oferta en todos los sectores",
-                    "Sector agrario con oferta inelástica en países en desarrollo",
-                    "Solo exceso de demanda",
-                    "Perfecta flexibilidad de precios"
-                ],
-                answer: 1,
-                explanation: "Un ejemplo clásico es el sector agrario con oferta inelástica en países en desarrollo, que no puede responder rápidamente a cambios en demanda."
-            }
-        ];
-
         let quizzes = [];
         let currentQuiz;
         let currentQuestionIndex = 0;
@@ -1052,6 +152,889 @@
         const nextButton = document.getElementById('next-button');
         const feedbackMessage = document.getElementById('feedback-message');
         const finalScoreElement = document.getElementById('final-score');
+
+        const allQuestions = [
+            {
+                question: "¿Cómo se define la inflación según Di Pellino?",
+                options: [
+                    "El aumento temporal de algunos precios específicos de bienes básicos",
+                    "El crecimiento continuo y generalizado de precios con disminución del poder adquisitivo",
+                    "La reducción sostenida de la cantidad de bienes disponibles en el mercado",
+                    "El incremento de salarios nominales superior al crecimiento de la productividad"
+                ],
+                answer: 1,
+                explanation: "La inflación es el crecimiento continuo y generalizado de los precios de los bienes y servicios, acompañado por una disminución del poder adquisitivo del dinero."
+            },
+            {
+                question: "¿Qué característica debe tener el aumento de precios para considerarse inflación?",
+                options: [
+                    "Debe ser sostenido, constante y afectar todos o la mayoría de precios",
+                    "Debe concentrarse únicamente en productos alimenticios básicos",
+                    "Debe ocurrir exclusivamente en bienes importados del exterior",
+                    "Debe presentarse solamente durante periodos de crisis económica"
+                ],
+                answer: 0,
+                explanation: "Para que haya inflación, los precios deben aumentar de forma sostenida y constante, y deben incrementarse todos los precios o por lo menos los más representativos."
+            },
+            {
+                question: "¿Qué es el poder adquisitivo del dinero?",
+                options: [
+                    "La capacidad del Estado para emitir moneda de curso legal",
+                    "La cantidad de bienes y servicios que pueden comprarse con una suma específica",
+                    "El respaldo en oro que tienen los billetes emitidos por autoridades",
+                    "La tasa de interés que pagan los bancos por depósitos a plazo"
+                ],
+                answer: 1,
+                explanation: "El poder adquisitivo está determinado por la cantidad de bienes y servicios que pueden ser comprados con una suma específica de dinero, a un nivel de precios determinado."
+            },
+            {
+                question: "¿Quiénes resultan más perjudicados por la inflación?",
+                options: [
+                    "Los que reciben ingresos fijos como asalariados, jubilados y acreedores",
+                    "Los deudores con préstamos a tasa de interés variable y ajustable",
+                    "Los propietarios de bienes raíces con contratos indexados por inflación",
+                    "Los empresarios que pueden ajustar precios según evolución del mercado"
+                ],
+                answer: 0,
+                explanation: "La inflación es perjudicial para quienes cobran un salario fijo, como asalariados y jubilados, ya que se reduce la cantidad de bienes y servicios que pueden adquirir con los mismos ingresos nominales."
+            },
+            {
+                question: "¿Qué índice mide los precios de la canasta de bienes y servicios de los consumidores?",
+                options: [
+                    "El deflactor del PIB o índice de precios implícitos del producto",
+                    "El índice de precios al consumidor que refleja el gasto familiar",
+                    "El índice de precios al productor de bienes intermedios industriales",
+                    "El índice de términos de intercambio del comercio exterior bilateral"
+                ],
+                answer: 1,
+                explanation: "El índice de precios al consumidor (IPC) mide los precios de la canasta de bienes y servicios de los consumidores."
+            },
+            {
+                question: "¿Qué mide el índice de precios al productor (IPP)?",
+                options: [
+                    "Los precios de bienes intermedios que intercambian productores en cada industria",
+                    "Los precios de los bienes finales que adquieren los consumidores finales",
+                    "Los costos salariales promedio de todos los trabajadores del sector público",
+                    "Los precios de exportación de productos manufacturados hacia mercados externos"
+                ],
+                answer: 0,
+                explanation: "El IPP mide los precios de la canasta de bienes y servicios intermedios (que sufrirán transformación antes de ser adquiridos para consumo final) que intercambian los productores."
+            },
+            {
+                question: "¿Cómo se calcula el deflactor del PIB o índice de precios implícitos?",
+                options: [
+                    "Como el promedio ponderado de todos los salarios nominales del sector formal",
+                    "Como la diferencia entre el PIB a precios constantes y a precios corrientes",
+                    "Como el cociente entre exportaciones e importaciones a precios internacionales",
+                    "Como la suma de todos los índices sectoriales dividida entre el número total"
+                ],
+                answer: 1,
+                explanation: "El deflactor del PIB se calcula como la diferencia entre el PBI a precios constantes (año base) y el PBI a precios corrientes, midiendo los precios de la canasta producida en la economía."
+            },
+            {
+                question: "¿Qué base utilizan los índices de precios para su interpretación?",
+                options: [
+                    "Fijan como base igual a 100 algún año elegido como referencia temporal",
+                    "Utilizan como base el nivel de precios del año inmediatamente anterior",
+                    "Establecen como base el promedio de precios de la última década completa",
+                    "Asignan como base el nivel mínimo histórico de precios registrados"
+                ],
+                answer: 0,
+                explanation: "Los índices fijan como base igual a 100 a algún año que se elige como año base, y la interpretación del valor del índice se va comparando con ese punto inicial."
+            },
+            {
+                question: "Según los monetaristas, ¿cuál es la principal causa de la inflación?",
+                options: [
+                    "El fuerte aumento en la cantidad de dinero que emite el banco central",
+                    "La reducción de la productividad del trabajo en sectores industriales clave",
+                    "El incremento de los salarios por encima de los niveles de subsistencia",
+                    "La escasez de bienes causada por problemas estructurales de la economía"
+                ],
+                answer: 0,
+                explanation: "Para los monetaristas, el principal factor que causa la inflación es el fuerte aumento en la cantidad de dinero que emite el banco central o autoridad monetaria."
+            },
+            {
+                question: "¿Qué establece la teoría cuantitativa del dinero de Irving Fisher?",
+                options: [
+                    "Que existe una relación directa entre cantidad de dinero y nivel general de precios",
+                    "Que los precios dependen exclusivamente de la productividad del trabajo industrial",
+                    "Que la inflación se origina siempre por incrementos en costos de producción",
+                    "Que el nivel de precios está determinado únicamente por expectativas racionales"
+                ],
+                answer: 0,
+                explanation: "La teoría cuantitativa del dinero establece la existencia de una relación directa entre la cantidad de dinero y el nivel general de los precios (ecuación M × v = P × T)."
+            },
+            {
+                question: "En la ecuación de Fisher M × v = P × T, ¿qué representa 'v'?",
+                options: [
+                    "La velocidad de las transacciones o el número de veces que circula el dinero",
+                    "El volumen total de ventas al por menor en el mercado de consumo",
+                    "El valor agregado de la producción nacional durante un año fiscal completo",
+                    "La variación porcentual del nivel de precios respecto del año base anterior"
+                ],
+                answer: 0,
+                explanation: "La 'v' representa la velocidad de las transacciones, es decir, el número de veces que cambian de mano los billetes y monedas en la economía."
+            },
+            {
+                question: "¿Qué suponen los monetaristas sobre el nivel de empleo en la economía?",
+                options: [
+                    "Suponen la existencia de pleno empleo de los factores trabajo y capital",
+                    "Asumen que siempre existe desempleo involuntario superior al cinco por ciento",
+                    "Consideran que el desempleo estructural es permanente e inevitable siempre",
+                    "Plantean que el nivel de empleo varía únicamente con ciclos económicos"
+                ],
+                answer: 0,
+                explanation: "Los monetaristas, como el resto de la corriente neoclásica, suponen la existencia de pleno empleo de los factores trabajo y capital en sus modelos."
+            },
+            {
+                question: "Según los monetaristas, ¿qué efecto tiene aumentar la cantidad de dinero en pleno empleo?",
+                options: [
+                    "Solo puede provocar inflación de precios sin aumentar la producción real",
+                    "Estimula inmediatamente el crecimiento de la producción industrial efectiva",
+                    "Reduce automáticamente las tasas de interés bancarias de largo plazo",
+                    "Genera mayor inversión productiva y expansión de la capacidad instalada"
+                ],
+                answer: 0,
+                explanation: "En pleno empleo no es posible aumentar la producción en el corto plazo, por lo tanto, lo único que puede provocar un aumento de la cantidad de dinero es inflación de precios."
+            },
+            {
+                question: "¿Qué diferencia existe entre monetaristas y keynesianos sobre la demanda de dinero?",
+                options: [
+                    "Monetaristas dicen que se demanda solo para transacciones, keynesianos añaden precaución y especulación",
+                    "Keynesianos afirman que solo se demanda dinero para inversiones productivas rentables",
+                    "Monetaristas consideran que se demanda dinero únicamente como reserva de valor inútil",
+                    "Ambos coinciden totalmente en que el dinero se demanda solo para realizar transacciones"
+                ],
+                answer: 0,
+                explanation: "Para monetaristas el dinero se demanda solo para transacciones. Para keynesianos también se demanda por precaución (contingencias) y especulación (incertidumbre sobre valor de otros activos)."
+            },
+            {
+                question: "Según los keynesianos, ¿qué variable clave explica la inflación?",
+                options: [
+                    "La demanda agregada que puede exceder al producto de pleno empleo de recursos",
+                    "La velocidad de circulación del dinero que es constante en el largo plazo",
+                    "La oferta monetaria que crece siempre por encima del crecimiento del producto",
+                    "Los salarios nominales que suben por presión sindical de los trabajadores organizados"
+                ],
+                answer: 0,
+                explanation: "En el enfoque keynesiano, la variable clave es la demanda agregada; si la demanda total excede al producto de pleno empleo, tendrá lugar un aumento en el nivel general de precios."
+            },
+            {
+                question: "¿De qué depende el impacto de la demanda agregada sobre precios según keynesianos?",
+                options: [
+                    "Depende de la situación de la economía y del nivel de recursos desempleados",
+                    "Depende exclusivamente de la cantidad de dinero en circulación actualmente",
+                    "Depende únicamente del nivel de salarios nominales del sector formal organizado",
+                    "Depende solo de la productividad media del trabajo en sectores industriales clave"
+                ],
+                answer: 0,
+                explanation: "Según keynesianos, la incidencia del incremento de la demanda agregada sobre precios dependerá de la situación en que se encuentre la economía, es decir, del nivel de recursos desempleados."
+            },
+            {
+                question: "¿Qué ocurre según keynesianos cuando el producto está por debajo del potencial?",
+                options: [
+                    "Si la demanda se incrementa, la economía aumenta producción al nivel de precios vigentes",
+                    "Cualquier incremento de demanda se traduce inmediatamente en inflación acelerada",
+                    "La economía no puede responder y todos los ajustes se hacen por precios únicamente",
+                    "Se reduce automáticamente el nivel de empleo hasta alcanzar equilibrio de largo plazo"
+                ],
+                answer: 0,
+                explanation: "Cuando el producto es inferior al potencial, si la demanda se incrementa bajo ciertas circunstancias, la economía en su conjunto incrementa la producción prácticamente al nivel de precios vigentes."
+            },
+            {
+                question: "¿Qué componentes integran los costos de producción en la inflación de costos?",
+                options: [
+                    "Los costos se dividen entre laborales (salarios) y no laborales (capital, insumos)",
+                    "Los costos incluyen únicamente los salarios directos de trabajadores de planta",
+                    "Los costos abarcan solo los impuestos indirectos que paga el sector productivo",
+                    "Los costos comprenden exclusivamente los gastos de publicidad y marketing empresarial"
+                ],
+                answer: 0,
+                explanation: "El costo de producción está dividido entre los costos laborales (salarios) y no laborales (capital, insumos, etc.)."
+            },
+            {
+                question: "Según la explicación de costos, ¿de qué depende el precio de un bien?",
+                options: [
+                    "Depende del salario monetario, la productividad del trabajo y el margen sobre costos",
+                    "Depende únicamente de la cantidad de dinero que circula en la economía actualmente",
+                    "Depende solo de las expectativas inflacionarias de los agentes económicos privados",
+                    "Depende exclusivamente del nivel de demanda agregada de bienes y servicios finales"
+                ],
+                answer: 0,
+                explanation: "El precio de un bien depende de tres factores: del salario monetario, de la productividad del trabajo y del margen establecido para cubrir los costos de capital (mark up)."
+            },
+            {
+                question: "¿Cuándo aumenta el precio según la teoría de inflación de costos?",
+                options: [
+                    "Cuando aumenta el salario monetario, cae la productividad o sube el mark up",
+                    "Cuando se reduce la cantidad de dinero en circulación emitida por autoridades",
+                    "Cuando disminuyen las expectativas inflacionarias de los consumidores finales",
+                    "Cuando se incrementa la competencia entre empresas en mercados internacionales"
+                ],
+                answer: 0,
+                explanation: "El precio será mayor cuando: sea mayor la cantidad de trabajo necesaria (menor productividad), sea mayor el salario monetario, o sea más alto el margen (mark up) sobre costos laborales."
+            },
+            {
+                question: "¿Qué papel tienen los sindicatos en la inflación de costos según esta teoría?",
+                options: [
+                    "Consiguen aumentos salariales superiores a los de la productividad del trabajo",
+                    "Reducen siempre los salarios reales para favorecer la estabilidad de precios",
+                    "Negocian exclusivamente aumentos de productividad sin incrementos salariales nominales",
+                    "Bloquean toda posibilidad de que los salarios nominales se ajusten a la inflación"
+                ],
+                answer: 0,
+                explanation: "Los sindicatos pueden conseguir aumentos salariales superiores a los de la productividad del trabajo, iniciando el proceso inflacionario por un empujón de los costos laborales."
+            },
+            {
+                question: "¿Qué es la espiral salarios-salarios en la propagación de la inflación?",
+                options: [
+                    "Los incrementos salariales de sectores dinámicos se transmiten al resto del mercado laboral",
+                    "Los salarios se reducen en todos los sectores simultáneamente por presión empresarial",
+                    "Los sindicatos acuerdan congelar salarios nominales para controlar la inflación efectiva",
+                    "Los trabajadores aceptan reducir salarios reales a cambio de mayor estabilidad en empleo"
+                ],
+                answer: 0,
+                explanation: "Los incrementos salariales conseguidos en sectores más dinámicos o de mayor poder sindical se transmiten al resto del mercado laboral en un movimiento ascendente del nivel total de salarios."
+            },
+            {
+                question: "¿Qué papel pueden tener las empresas en la inflación de costos?",
+                options: [
+                    "En mercados concentrados, pueden aumentar beneficios incrementando precios más rápido que salarios",
+                    "Siempre reducen los precios para aumentar la competitividad en mercados internacionales",
+                    "Únicamente ajustan cantidades producidas sin modificar nunca sus estructuras de precios",
+                    "Congelan precios permanentemente para evitar pérdida de participación en el mercado"
+                ],
+                answer: 0,
+                explanation: "En economía no competitiva con alta concentración de oferta, las empresas pueden presionar precios al alza más rápido que salarios. Los sindicatos actúan como poder compensador protegiendo salarios reales."
+            },
+            {
+                question: "¿Qué otro componente de costos puede generar inflación además de los salarios?",
+                options: [
+                    "Los costos del capital como los intereses que cobra el sistema financiero",
+                    "Los subsidios que otorga el Estado a los sectores productivos estratégicos",
+                    "Las reducciones impositivas que favorecen la inversión en nuevas tecnologías",
+                    "Los programas de capacitación laboral que aumentan la productividad de trabajadores"
+                ],
+                answer: 0,
+                explanation: "Los precios también se incrementarán cuando se eleven los costos del capital. Cuando el sistema financiero aumenta intereses, las empresas trasladarán ese incremento vía aumento de precios."
+            },
+            {
+                question: "¿Con qué tipo de economías se identifica la inflación estructuralista?",
+                options: [
+                    "Con países en vías de desarrollo o subdesarrollados con rigideces estructurales",
+                    "Con países desarrollados que tienen mercados perfectamente competitivos y flexibles",
+                    "Con economías centralmente planificadas que fijan administrativamente todos los precios",
+                    "Con naciones industrializadas que exportan principalmente productos de alta tecnología"
+                ],
+                answer: 0,
+                explanation: "La inflación estructuralista suele identificarse como la inflación típica de los países en vías de desarrollo o subdesarrollados."
+            },
+            {
+                question: "Según estructuralistas, ¿cuál es el papel de los factores monetarios en la inflación?",
+                options: [
+                    "Solo tienen importancia como elementos propagadores pero no originan la inflación",
+                    "Son la única causa fundamental y verdadera de todos los procesos inflacionarios",
+                    "No tienen ningún efecto ni influencia sobre el nivel general de precios",
+                    "Determinan exclusivamente la tasa de inflación en el largo plazo solamente"
+                ],
+                answer: 0,
+                explanation: "Los estructuralistas mantienen que las bases de la inflación descansan en el sistema productivo y social, y que los factores monetarios solo son elementos propagadores, no originan la inflación."
+            },
+            {
+                question: "¿Qué son los 'cuellos de botella' en la teoría estructuralista?",
+                options: [
+                    "Estrangulamientos en determinados sectores que repercuten sobre los demás generando presiones",
+                    "Políticas monetarias restrictivas que limitan el crecimiento de la economía nacional",
+                    "Regulaciones laborales que impiden la libre contratación de trabajadores calificados",
+                    "Barreras arancelarias que protegen a la industria local de la competencia externa"
+                ],
+                answer: 0,
+                explanation: "Las presiones inflacionarias básicas surgen de cuellos de botella o estrangulamientos en determinados sectores que repercuten sobre los demás según los estructuralistas."
+            },
+            {
+                question: "¿Qué característica tiene la demanda en sectores con estrangulamiento estructural?",
+                options: [
+                    "La demanda es muy inelástica y el insuficiente desarrollo impide satisfacerla internamente",
+                    "La demanda es perfectamente elástica y responde inmediatamente a cambios de precios",
+                    "La demanda puede satisfacerse fácilmente con la producción nacional sin importaciones",
+                    "La demanda se reduce automáticamente cuando aumentan los precios de productos importados"
+                ],
+                answer: 0,
+                explanation: "En algunos sectores la demanda es muy inelástica y el insuficiente desarrollo y tamaño de economías impide que esa demanda sea satisfecha internamente, apareciendo fuerte dependencia del exterior."
+            },
+            {
+                question: "¿Qué caracteriza al estrangulamiento del sector agrario según estructuralistas?",
+                options: [
+                    "La producción agrícola es muy inelástica respecto a los precios por rigidez de oferta",
+                    "La oferta agrícola responde perfectamente a los cambios de precios del mercado internacional",
+                    "La agricultura se expande rápidamente cuando aumenta la demanda de alimentos urbanos",
+                    "Los productores agrícolas ajustan inmediatamente la producción según señales de precios"
+                ],
+                answer: 0,
+                explanation: "El estrangulamiento del sector agrario se debe a la rigidez de la oferta. La producción agrícola es muy inelástica respecto a los precios; el aumento de demanda no se traduce en aumentos de producción sino en aumentos de precios."
+            },
+            {
+                question: "¿Cómo se verifican los cambios de precios relativos según estructuralistas?",
+                options: [
+                    "Solo a través del alza del precio monetario de bienes que se han apreciado relativamente",
+                    "Únicamente mediante la reducción de precios monetarios de todos los bienes restantes",
+                    "A través de ajustes automáticos del tipo de cambio nominal de la moneda nacional",
+                    "Por medio de controles administrativos de precios impuestos por la autoridad central"
+                ],
+                answer: 0,
+                explanation: "Si los precios monetarios son inflexibles en sentido descendente, todo cambio de precios relativos puede verificarse solamente a través del alza del precio monetario de los bienes que se han apreciado."
+            },
+            {
+                question: "¿Qué postura tienen los estructuralistas sobre desarrollo versus estabilidad de precios?",
+                options: [
+                    "Se inclinan por desarrollo continuado incluso a costa de estabilidad de precios",
+                    "Priorizan absolutamente la estabilidad de precios por encima del crecimiento económico",
+                    "Proponen congelar toda actividad económica hasta eliminar completamente la inflación",
+                    "Consideran que desarrollo y estabilidad son perfectamente compatibles en corto plazo"
+                ],
+                answer: 0,
+                explanation: "Los estructuralistas se inclinan por un desarrollo continuado, aun a costa de la estabilidad de precios, argumentando que el desarrollo corregirá las deficiencias estructurales básicas."
+            },
+            {
+                question: "¿Cómo interpretan los estructuralistas las devaluaciones monetarias?",
+                options: [
+                    "Como transferencias de riqueza entre sectores debido a diferencias en poder político relativo",
+                    "Como instrumentos neutrales que no afectan la distribución del ingreso entre sectores",
+                    "Como políticas que benefician equitativamente a todos los sectores de la economía",
+                    "Como medidas técnicas sin ningún efecto redistributivo entre clases sociales diferentes"
+                ],
+                answer: 0,
+                explanation: "Las devaluaciones son interpretables como transferencias de riqueza de importadores a exportadores debido a diferencias relativas en el poder político de estos sectores."
+            },
+            {
+                question: "¿Qué son las expectativas estáticas sobre inflación?",
+                options: [
+                    "Sindicatos y empresas esperan que la inflación sea igual a una tasa determinada año tras año",
+                    "Agentes predicen perfectamente la inflación futura usando toda la información disponible",
+                    "Los negociadores ajustan expectativas como promedio de inflación pasada y esperada",
+                    "Todos los agentes tienen modelos exactos que predicen sin error la inflación futura"
+                ],
+                answer: 0,
+                explanation: "En expectativas estáticas, sindicatos y empresas esperan que la inflación sea igual a una tasa determinada año tras año, sin ajustar sus creencias aunque la inflación real sea diferente."
+            },
+            {
+                question: "¿Qué son las expectativas adaptativas sobre inflación?",
+                options: [
+                    "Se forman como promedio ponderado entre inflación efectiva del año y la esperada anteriormente",
+                    "Se mantienen constantes e iguales a cero sin importar la historia inflacionaria pasada",
+                    "Se basan en modelos perfectos que predicen la inflación sin cometer errores sistemáticos",
+                    "Se determinan únicamente por la última observación de inflación del mes inmediato anterior"
+                ],
+                answer: 0,
+                explanation: "En expectativas adaptativas, sindicatos y empresas forman sus expectativas como el promedio ponderado entre la inflación efectiva de ese año y la inflación que esperaban un año atrás."
+            },
+            {
+                question: "¿Qué caracteriza a las expectativas racionales sobre inflación?",
+                options: [
+                    "Agentes cuentan con buen modelo de variables importantes y predicen sin errores sistemáticos",
+                    "Todos los agentes ignoran completamente la información disponible sobre la economía actual",
+                    "Las expectativas se forman exclusivamente observando la inflación del año pasado únicamente",
+                    "Los agentes esperan siempre inflación cero sin importar la evidencia histórica disponible"
+                ],
+                answer: 0,
+                explanation: "En expectativas racionales, sindicatos y empresas cuentan con un buen modelo de variables importantes, pueden predecir con precisión y sin errores sistemáticos. Supone información perfecta."
+            },
+            {
+                question: "¿Qué efecto redistributivo tiene la inflación sobre el valor real de la moneda?",
+                options: [
+                    "Disminuye el valor real de la moneda a través del tiempo por pérdida de poder adquisitivo",
+                    "Aumenta sistemáticamente el valor real del dinero respecto de bienes y servicios disponibles",
+                    "Mantiene constante el valor real sin afectar la capacidad de compra de los ingresos",
+                    "Incrementa el poder de compra de quienes reciben ingresos fijos como salarios o jubilaciones"
+                ],
+                answer: 0,
+                explanation: "Los efectos de la inflación incluyen la disminución del valor real de la moneda a través del tiempo, el desaliento del ahorro y de la inversión debido a incertidumbre sobre el valor futuro del dinero."
+            },
+            {
+                question: "¿Qué consecuencia tiene que los precios varíen a tasas diferentes durante la inflación?",
+                options: [
+                    "Cambian los precios relativos redistribuyendo renta y distorsionando producción de diferentes bienes",
+                    "Todos los precios se mantienen perfectamente sincronizados sin alterar estructuras relativas",
+                    "La inflación no afecta decisiones de producción ni asignación de recursos entre sectores",
+                    "Los precios relativos permanecen constantes independientemente de la tasa de inflación general"
+                ],
+                answer: 0,
+                explanation: "Durante inflación no todos los precios varían a la misma tasa, cambian precios relativos. Esto redistribuye renta y riqueza entre grupos y distorsiona precios relativos y producción de diferentes bienes."
+            },
+            {
+                question: "¿Cómo afecta la inflación a quienes reciben ingresos fijos nominales?",
+                options: [
+                    "Pierden poder adquisitivo porque sus ingresos nominales no se ajustan a precios crecientes",
+                    "Ganan poder de compra porque sus ingresos se mantienen constantes en términos nominales",
+                    "No se ven afectados ya que la inflación solo afecta a quienes tienen ingresos variables",
+                    "Mejoran su situación relativa frente a quienes tienen ingresos que varían con inflación"
+                ],
+                answer: 0,
+                explanation: "Los que pierden con la inflación son los que reciben ingresos fijos: acreedores, los que viven de rentas o intereses, y trabajadores o jubilados que viven de salarios, porque no pueden ajustar ingresos cuando precios suben."
+            },
+            {
+                question: "¿Qué efecto tiene la inflación imprevista sobre la redistribución de riqueza?",
+                options: [
+                    "Redistribuye riqueza de acreedores a favor de deudores que pidieron dinero prestado",
+                    "Transfiere sistemáticamente riqueza de deudores hacia los acreedores que prestaron dinero",
+                    "No tiene ningún efecto redistributivo entre acreedores y deudores en la economía",
+                    "Beneficia por igual a todos los agentes económicos sin importar su posición financiera"
+                ],
+                answer: 0,
+                explanation: "La inflación imprevista redistribuye la riqueza de los acreedores a favor de los deudores, ayudando a quienes han pedido dinero prestado y perjudicando a quienes han prestado."
+            },
+            {
+                question: "¿Cómo se adaptan las tasas de interés a la inflación crónica?",
+                options: [
+                    "La tasa de interés de mercado comienza a incorporar gradualmente la inflación esperada",
+                    "Las tasas de interés se mantienen siempre constantes sin importar la inflación pasada",
+                    "Los intereses se reducen sistemáticamente para compensar la pérdida de poder adquisitivo",
+                    "El mercado financiero ignora completamente la inflación en la fijación de tasas"
+                ],
+                answer: 0,
+                explanation: "Si la inflación persiste mucho tiempo, la gente comienza a preverla y los mercados se adaptan. La tasa de interés de mercado comienza a tener en cuenta gradualmente la inflación."
+            },
+            {
+                question: "¿Qué muestra la Curva de Phillips de corto plazo?",
+                options: [
+                    "Una relación negativa entre la tasa de inflación y la tasa de desempleo",
+                    "Una relación positiva perfecta entre crecimiento del PIB y nivel de precios",
+                    "La independencia total entre inflación y desempleo en cualquier periodo",
+                    "La equivalencia exacta entre salarios nominales y productividad del trabajo"
+                ],
+                answer: 0,
+                explanation: "La Curva de Phillips muestra una relación negativa entre inflación (π) y desempleo (U): si queremos bajas tasas de desempleo será a costa de inflación, y viceversa."
+            },
+            {
+                question: "¿Quién fue el economista que dio nombre a la Curva de Phillips?",
+                options: [
+                    "A. W. Phillips quien estudió la relación entre desempleo y salarios en Reino Unido",
+                    "Irving Fisher quien primero analizó la ecuación cuantitativa del dinero monetarista",
+                    "John Maynard Keynes quien desarrolló la teoría de la demanda agregada efectiva",
+                    "Milton Friedman quien estableció que la inflación es siempre un fenómeno monetario"
+                ],
+                answer: 0,
+                explanation: "La curva debe su nombre a los estudios realizados por A. W. Phillips, quien llevó a cabo el estudio intentando relacionar el desempleo con la evolución de los salarios nominales en el Reino Unido."
+            },
+            {
+                question: "¿Qué es el 'trade off' que describe la Curva de Phillips?",
+                options: [
+                    "Un intercambio inevitable entre dos grandes problemas: inflación y desempleo en corto plazo",
+                    "La perfecta compatibilidad entre crecimiento económico y estabilidad de precios siempre",
+                    "La posibilidad de reducir simultáneamente inflación y desempleo sin ningún costo",
+                    "La independencia total entre política monetaria y nivel de empleo en la economía"
+                ],
+                answer: 0,
+                explanation: "La curva de Phillips muestra que en el corto plazo existe un trade off o intercambio entre dos grandes problemas macroeconómicos: inflación y desempleo. No se pueden minimizar ambos simultáneamente."
+            },
+            {
+                question: "¿Qué ocurre con la Curva de Phillips en el largo plazo?",
+                options: [
+                    "La relación se torna inestable y poco sistemática entre inflación y desempleo",
+                    "La relación negativa se fortalece y se hace más predecible que en corto plazo",
+                    "Desaparece completamente cualquier relación observable entre las dos variables",
+                    "La curva se vuelve perfectamente horizontal indicando inflación constante siempre"
+                ],
+                answer: 0,
+                explanation: "Aunque a corto plazo se puede mantener una relación estable y negativa entre inflación y desempleo, a largo plazo esa relación se torna inestable y poco sistemática."
+            },
+            {
+                question: "¿Qué explica la inestabilidad de la Curva de Phillips en el largo plazo?",
+                options: [
+                    "La inflación imprevista puede aumentar producción y empleo en corto plazo pero no en largo plazo",
+                    "La relación negativa se mantiene perfectamente estable sin importar las expectativas de agentes",
+                    "Los salarios nominales nunca se ajustan a la inflación en ningún horizonte temporal",
+                    "El desempleo siempre aumenta cuando hay inflación sin importar el periodo considerado"
+                ],
+                answer: 0,
+                explanation: "La teoría relacionada con funcionamiento de expectativas justifica la inestabilidad: la inflación imprevista puede provocar a corto plazo aumento de producción y empleo, pero a largo plazo cuando desaparece la ilusión monetaria, no existe intercambio entre inflación y desempleo."
+            },
+            {
+                question: "¿Qué es la función de producción en teoría económica?",
+                options: [
+                    "La relación que especifica la máxima producción obtenible con cantidades determinadas de insumos",
+                    "La cantidad total de bienes que una empresa puede vender en el mercado anualmente",
+                    "El conjunto de costos fijos y variables que enfrenta una empresa en el corto plazo",
+                    "La demanda agregada de bienes y servicios que existe en una economía nacional"
+                ],
+                answer: 0,
+                explanation: "La función de producción especifica la máxima producción que se puede producir con una cantidad determinada de insumos, dado el estado del conocimiento técnico y de ingeniería."
+            },
+            {
+                question: "¿Qué es el producto marginal de un insumo?",
+                options: [
+                    "La producción adicional que produce una unidad adicional de ese insumo manteniendo otros constantes",
+                    "La producción total dividida entre el número total de unidades de todos los insumos",
+                    "El costo adicional que se incurre al producir una unidad extra del bien final",
+                    "El precio de mercado que se paga por cada unidad adicional del factor productivo"
+                ],
+                answer: 0,
+                explanation: "El producto marginal de un insumo es la producción adicional que produce una unidad adicional de ese insumo mientras que los otros insumos permanecen constantes."
+            },
+            {
+                question: "¿Qué establece la ley de los rendimientos decrecientes?",
+                options: [
+                    "Se obtiene menos producción adicional al añadir dosis de un insumo manteniendo otros constantes",
+                    "La producción total disminuye sistemáticamente cuando se aumentan todos los insumos proporcionalmente",
+                    "El producto marginal de todos los insumos aumenta continuamente sin ningún límite superior",
+                    "La producción se mantiene constante sin importar la cantidad de insumos que se utilice"
+                ],
+                answer: 0,
+                explanation: "La ley de rendimientos decrecientes afirma que se obtendrá menos y menos producción adicional cuando se añaden dosis adicionales de un insumo mientras los demás insumos se mantengan constantes."
+            },
+            {
+                question: "¿Por qué se produce la ley de rendimientos decrecientes?",
+                options: [
+                    "Porque al añadir más de un insumo a factores fijos, cada unidad tiene menos de otros factores disponibles",
+                    "Porque la tecnología se deteriora automáticamente cuando aumenta la escala de producción total",
+                    "Porque los trabajadores se vuelven menos productivos deliberadamente con el paso del tiempo",
+                    "Porque los precios de los insumos aumentan proporcionalmente con las cantidades utilizadas"
+                ],
+                answer: 0,
+                explanation: "A medida que se añade más de un insumo como la mano de obra a una cantidad fija de tierra y maquinaria, la mano de obra tiene cada vez menos de otros factores con qué trabajar, reduciendo el producto marginal."
+            },
+            {
+                question: "¿Qué son los rendimientos constantes de escala?",
+                options: [
+                    "Cuando la modificación de todos los insumos conduce a aumento proporcional en la producción",
+                    "Cuando solo algunos insumos variables pueden ajustarse manteniendo fijos los demás",
+                    "Cuando duplicar todos los insumos genera menos del doble de la producción total",
+                    "Cuando aumentar todos los insumos produce más del doble de la producción original"
+                ],
+                answer: 0,
+                explanation: "Rendimientos constantes de escala denotan un caso en el que la modificación en todos los insumos conduce a un aumento proporcional en la producción (ej: duplicar insumos duplica producción)."
+            },
+            {
+                question: "¿Qué son los rendimientos crecientes de escala o economías de escala?",
+                options: [
+                    "Cuando aumentar todos los insumos conduce a aumento más que proporcional en la producción",
+                    "Cuando disminuir la escala de producción genera incrementos en la producción por unidad",
+                    "Cuando mantener constantes todos los insumos produce aumentos continuos en la producción",
+                    "Cuando reducir la cantidad de insumos utilizados incrementa la producción total obtenida"
+                ],
+                answer: 0,
+                explanation: "Rendimientos crecientes de escala se presentan cuando un aumento en todos los insumos conduce a un aumento más que proporcional en el nivel de producción (ej: aumentar insumos 10% aumenta producción más de 10%)."
+            },
+            {
+                question: "¿Qué son los rendimientos decrecientes de escala?",
+                options: [
+                    "Cuando aumento balanceado de todos los insumos conduce a incremento menos que proporcional en producción",
+                    "Cuando aumentar todos los insumos proporcionalmente genera incremento exactamente proporcional en producción",
+                    "Cuando disminuir la escala de todos los factores productivos aumenta la producción total",
+                    "Cuando mantener fijos algunos insumos genera incrementos más que proporcionales en el producto"
+                ],
+                answer: 0,
+                explanation: "Rendimientos decrecientes de escala se dan cuando un aumento balanceado en todos los insumos conduce a un incremento menos que proporcional en la producción total (pueden surgir ineficiencias de gestión)."
+            },
+            {
+                question: "¿Cómo se define el corto plazo en teoría de la producción?",
+                options: [
+                    "Periodo en que empresas ajustan producción modificando factores variables pero no factores fijos",
+                    "Periodo suficientemente largo para que todos los factores incluyendo capital puedan ajustarse",
+                    "Momento exacto en que la producción alcanza su nivel máximo posible de eficiencia",
+                    "Intervalo de tiempo menor a un año calendario independientemente de la industria considerada"
+                ],
+                answer: 0,
+                explanation: "El corto plazo es un periodo en el que las empresas ajustan la producción al modificar factores variables (materiales, mano de obra) pero no pueden modificar factores fijos como el capital."
+            },
+            {
+                question: "¿Cómo se define el largo plazo en teoría de la producción?",
+                options: [
+                    "Periodo suficientemente largo en que pueden ajustarse todos los factores incluyendo el capital",
+                    "Momento breve en que solo algunos insumos variables pueden modificarse sin restricciones",
+                    "Intervalo fijo de exactamente diez años independientemente del sector industrial específico",
+                    "Periodo en que ningún factor productivo puede ser modificado por restricciones legales"
+                ],
+                answer: 0,
+                explanation: "El largo plazo es un periodo suficientemente largo en el que se pueden ajustar todos los factores, incluso el capital (nueva maquinaria, plantas, tecnología, etc.)."
+            },
+            {
+                question: "¿Qué es el cambio tecnológico en la producción?",
+                options: [
+                    "Mejora la productividad aumentando el nivel de vida por innovaciones en procesos o productos",
+                    "Reduce sistemáticamente la cantidad de producción obtenible con los mismos insumos utilizados",
+                    "Mantiene constante la relación entre insumos y productos a lo largo del tiempo",
+                    "Incrementa los costos de producción sin generar ningún beneficio para los consumidores"
+                ],
+                answer: 0,
+                explanation: "El cambio tecnológico mejora la productividad y aumenta el nivel de vida a través de innovaciones que permiten producir más con los mismos insumos o lo mismo con menos insumos."
+            },
+            {
+                question: "¿Qué es una innovación de procesos en cambio tecnológico?",
+                options: [
+                    "Cuando nuevo conocimiento de ingeniería mejora técnicas de producción para productos existentes",
+                    "Cuando se introducen productos completamente nuevos o mejorados al mercado de consumo",
+                    "Cuando se incrementan los precios de venta sin modificar ningún aspecto de la producción",
+                    "Cuando se reducen deliberadamente las cantidades producidas para aumentar precios de venta"
+                ],
+                answer: 0,
+                explanation: "Una innovación de procesos se presenta cuando el nuevo conocimiento de ingeniería mejora las técnicas de producción para los productos existentes, permitiendo mayor eficiencia productiva."
+            },
+            {
+                question: "¿Qué es una innovación de productos en cambio tecnológico?",
+                options: [
+                    "Cuando se introducen productos nuevos o mejorados al mercado para los consumidores",
+                    "Cuando se mejoran únicamente los procesos de fabricación de bienes ya existentes",
+                    "Cuando se reducen los costos de producción sin alterar las características del producto",
+                    "Cuando se incrementan los precios de venta manteniendo constante la calidad ofrecida"
+                ],
+                answer: 0,
+                explanation: "La innovación de productos implica productos nuevos o mejorados introducidos al mercado. Pueden haber sido más importantes que las de proceso para elevar el nivel de vida."
+            },
+            {
+                question: "¿Cómo afecta una innovación de procesos a la función de producción?",
+                options: [
+                    "Desplaza la curva de producto total hacia arriba permitiendo mayor producción con mismos insumos",
+                    "Desplaza la función de producción hacia abajo reduciendo producción para cualquier nivel de insumos",
+                    "Mantiene la función de producción exactamente en la misma posición sin ningún cambio",
+                    "Elimina completamente la necesidad de utilizar cualquier tipo de insumo en la producción"
+                ],
+                answer: 0,
+                explanation: "Una innovación de procesos permite lograr mayor producción con los mismos insumos, lo cual es equivalente a un desplazamiento hacia arriba de la curva de producto total (función de producción)."
+            },
+            {
+                question: "¿Qué papel juega la especialización en economías de escala?",
+                options: [
+                    "Al incrementar producción, empresas pueden dividir el trabajo en pasos más pequeños especializados",
+                    "La especialización reduce siempre la productividad total de todos los trabajadores involucrados",
+                    "No existe ninguna relación entre especialización del trabajo y economías de escala productivas",
+                    "La división del trabajo solo es posible en empresas muy pequeñas de producción artesanal"
+                ],
+                answer: 0,
+                explanation: "A medida que se incrementa la producción, las empresas pueden dividirla en pasos más pequeños, aprovechando la especialización y división de la mano de obra, generando economías de escala."
+            },
+            {
+                question: "¿Qué caracteriza a las tecnologías de información respecto a economías de escala?",
+                options: [
+                    "Exhiben sólidas economías de escala con altos costos fijos y costos marginales cercanos a cero",
+                    "Presentan rendimientos decrecientes de escala en todos los rangos de producción posibles",
+                    "Tienen costos fijos muy bajos y costos marginales extremadamente altos por unidad adicional",
+                    "Muestran costos constantes sin importar el nivel de producción o escala de operación"
+                ],
+                answer: 0,
+                explanation: "Las tecnologías de información exhiben sólidas economías de escala: desarrollo de software como Windows Vista requirió miles de millones, pero añadir el programa a una computadora nueva cuesta casi cero."
+            },
+            {
+                question: "¿Qué problema pueden plantear las economías de escala sólidas?",
+                options: [
+                    "Conducen a empresas con importante poder de mercado y plantean problemas de política pública",
+                    "Generan mercados perfectamente competitivos con muchas empresas pequeñas idénticas",
+                    "Eliminan completamente toda posibilidad de que existan monopolios en la economía",
+                    "Reducen sistemáticamente los precios de todos los bienes sin generar ninguna distorsión"
+                ],
+                answer: 0,
+                explanation: "Las economías de escala sólidas a menudo conducen a las empresas con un poder de mercado importante y en ocasiones plantean problemas fundamentales de política pública (concentración, monopolios)."
+            },
+            {
+                question: "¿Por qué no hay regresión tecnológica en economías de mercado que funcionan bien?",
+                options: [
+                    "Las tecnologías inferiores se descartan porque no incrementan utilidades de las empresas innovadoras",
+                    "El gobierno siempre prohíbe por ley la introducción de cualquier tecnología menos productiva",
+                    "Los consumidores están obligados legalmente a comprar siempre los productos más avanzados",
+                    "Las empresas no tienen ningún incentivo para innovar en tecnologías más productivas nunca"
+                ],
+                answer: 0,
+                explanation: "Las tecnologías inferiores se desechan en economía de mercado mientras se introducen más productivas porque incrementarán utilidades. Si alguien inventa trampa para ratones que no atrapa ratones, nadie la produciría ni compraría."
+            },
+            {
+                question: "¿Cuándo pueden darse regresiones tecnológicas incluso en economía de mercado?",
+                options: [
+                    "Cuando hay fallas de mercado y procesos con daños sociales son más baratos para la empresa privada",
+                    "Cuando existe competencia perfecta y todos los costos sociales se internalizan correctamente",
+                    "Cuando el gobierno regula estrictamente todas las externalidades ambientales negativas",
+                    "Cuando los precios reflejan perfectamente todos los costos privados y sociales de producción"
+                ],
+                answer: 0,
+                explanation: "Con fallas de mercado, pueden darse regresiones. Una empresa no regulada podría introducir proceso con daños sociales (contaminación) porque es más barato, ya que los costos sociales no se incluyen en sus cálculos de costos."
+            },
+            {
+                question: "¿Qué efecto tiene incluir costos de contaminación en decisiones de empresas?",
+                options: [
+                    "Los procesos regresivos ya no serían redituables eliminando ventaja económica de tecnologías inferiores",
+                    "Las empresas siempre elegirían las tecnologías más contaminantes sin importar los costos",
+                    "No tiene ningún efecto sobre las decisiones de producción de las empresas privadas",
+                    "Aumenta automáticamente la rentabilidad de los procesos productivos más contaminantes"
+                ],
+                answer: 0,
+                explanation: "Si se incluyeran los costos de contaminación en las decisiones de empresa (por reglas de responsabilidad o impuestos), el proceso regresivo ya no sería redituable. En mercados competitivos, productos inferiores se extinguen."
+            },
+            {
+                question: "¿Qué patrón general muestran los experimentos agrícolas sobre fertilizantes?",
+                options: [
+                    "Los rendimientos decrecientes entran en juego rápidamente a partir de cierta dosis de fertilizante",
+                    "El producto marginal de los fertilizantes aumenta continuamente sin ningún límite superior",
+                    "La producción se mantiene perfectamente constante sin importar la dosis de fertilizante aplicada",
+                    "Los rendimientos crecientes persisten indefinidamente para cualquier cantidad de fertilizante utilizado"
+                ],
+                answer: 0,
+                explanation: "En experimentos agrícolas con fertilizantes manteniendo otros factores constantes, los rendimientos decrecientes entran en juego rápidamente. A partir de cierta dosis, el producto marginal puede incluso volverse negativo."
+            },
+            {
+                question: "¿Qué explica la pobreza de países asiáticos densamente poblados según rendimientos decrecientes?",
+                options: [
+                    "Hay tantos trabajadores por hectárea de tierra que el producto marginal del trabajo es muy bajo",
+                    "Los agricultores son ignorantes y no responden a ningún incentivo económico de mercado",
+                    "La tecnología agrícola disponible es inferior a la que existía hace cien años atrás",
+                    "El clima tropical impide absolutamente cualquier tipo de actividad agrícola productiva rentable"
+                ],
+                answer: 0,
+                explanation: "El nivel de vida en la poblada India o Bangladesh se pierde porque hay tantos trabajadores por hectárea de tierra (producto marginal del trabajo muy bajo), no porque los granjeros sean ignorantes o no respondan a incentivos."
+            },
+            {
+                question: "¿Qué sugiere la ley de rendimientos decrecientes sobre distribución de horas de estudio?",
+                options: [
+                    "Las horas de estudio deberían distribuirse en lugar de amontonarse el día anterior a exámenes",
+                    "Todas las horas de estudio deberían concentrarse exclusivamente en un solo día intensivo",
+                    "El producto marginal de las horas de estudio aumenta continuamente sin límite alguno",
+                    "No existe ninguna relación entre distribución de horas de estudio y el aprendizaje efectivo"
+                ],
+                answer: 0,
+                explanation: "La ley de rendimientos decrecientes sugiere por qué las horas que se dedican al estudio deberían distribuirse en lugar de amontonarse en el día anterior a los exámenes (cada hora adicional es menos productiva)."
+            },
+            {
+                question: "¿Es la ley de rendimientos decrecientes una verdad universal como la gravedad?",
+                options: [
+                    "No, es una regularidad empírica observada ampliamente pero se han encontrado excepciones numerosas",
+                    "Sí, es una ley física que se cumple sin ninguna excepción en todas las situaciones",
+                    "No tiene ningún respaldo empírico y es solo una especulación teórica sin evidencia",
+                    "Solo se aplica a la agricultura y no tiene relevancia en ningún otro sector económico"
+                ],
+                answer: 0,
+                explanation: "La ley de los rendimientos decrecientes constituye una regularidad empírica observada ampliamente y no una verdad universal como la ley de la gravedad. Se le ha encontrado en numerosos estudios, pero también se han descubierto numerosas excepciones."
+            },
+            {
+                question: "¿Pueden los primeros insumos de un factor mostrar productos marginales en aumento?",
+                options: [
+                    "Sí, puede necesitarse cantidad mínima de mano de obra para simplemente empezar la tarea productiva",
+                    "No, el producto marginal es siempre decreciente desde la primera unidad de insumo añadida",
+                    "El producto marginal es siempre exactamente constante para todas las unidades de insumo",
+                    "Los rendimientos son siempre crecientes en todos los niveles de producción posibles"
+                ],
+                answer: 0,
+                explanation: "Los primeros insumos de mano de obra pueden mostrar productos marginales en aumento, dado que se puede necesitar una cantidad mínima para sencillamente caminar hacia el campo y recoger una pala antes de empezar."
+            },
+            {
+                question: "¿Qué diferencia hay entre rendimientos decrecientes y rendimientos de escala?",
+                options: [
+                    "Rendimientos decrecientes se refieren a un insumo variando, rendimientos de escala a todos los insumos",
+                    "Rendimientos decrecientes implican aumentar todos los insumos proporcionalmente siempre",
+                    "Rendimientos de escala solo se aplican cuando un único insumo se modifica aisladamente",
+                    "Ambos conceptos son exactamente idénticos y pueden usarse de manera intercambiable"
+                ],
+                answer: 0,
+                explanation: "Los rendimientos decrecientes se refieren a la respuesta de la producción al incremento en un solo insumo manteniendo todos los demás constantes. Los rendimientos de escala se refieren al efecto de aumentar todos los insumos proporcionalmente."
+            },
+            {
+                question: "¿Qué representa 'M' en la ecuación cuantitativa del dinero M × v = P × T?",
+                options: [
+                    "La cantidad u oferta de dinero determinada exógenamente por las autoridades monetarias",
+                    "El margen sobre costos laborales que aplican las empresas en mercados concentrados",
+                    "El multiplicador keynesiano que amplifica efectos del gasto autónomo sobre el producto",
+                    "La masa salarial total pagada a todos los trabajadores del sector formal de la economía"
+                ],
+                answer: 0,
+                explanation: "En la ecuación de Fisher M × v = P × T, la 'M' representa la cantidad u oferta de dinero, determinada exógenamente por decisión de las autoridades monetarias."
+            },
+            {
+                question: "¿Qué representa 'T' en la ecuación cuantitativa del dinero M × v = P × T?",
+                options: [
+                    "El volumen de las transacciones que depende de las cantidades producidas o del producto",
+                    "La tasa de interés nominal que cobran los bancos comerciales por préstamos al sector privado",
+                    "El tiempo promedio que tarda en circular el dinero en la economía durante un año",
+                    "Los impuestos totales recaudados por el gobierno en todos los niveles de administración"
+                ],
+                answer: 0,
+                explanation: "La 'T' representa el volumen de las transacciones, que a su vez depende de las cantidades producidas o del producto de la economía, determinado exógenamente por nivel del producto."
+            },
+            {
+                question: "¿Qué frase célebre resume la posición monetarista sobre la inflación?",
+                options: [
+                    "Milton Friedman afirmó: 'La inflación es siempre un fenómeno monetario únicamente'",
+                    "Keynes sostuvo: 'La inflación resulta siempre de la demanda agregada insuficiente'",
+                    "Marx declaró: 'La inflación es una contradicción inherente del modo de producción capitalista'",
+                    "Smith argumentó: 'La inflación proviene de la mano invisible del mercado libre de intervención'"
+                ],
+                answer: 0,
+                explanation: "Milton Friedman, famoso economista monetarista, hizo famosa la frase: 'La inflación es siempre un fenómeno monetario', expresando la visión monetarista sobre las causas de la inflación."
+            },
+            {
+                question: "¿Qué rol cumple la política fiscal según los monetaristas para controlar la inflación?",
+                options: [
+                    "La política fiscal es ineficiente para lograr controlar el fenómeno inflacionario efectivamente",
+                    "La política fiscal es el único instrumento efectivo para combatir la inflación persistente",
+                    "El gasto público debe aumentarse siempre para reducir las presiones inflacionarias de demanda",
+                    "Los impuestos deben reducirse continuamente para estimular la oferta y controlar los precios"
+                ],
+                answer: 0,
+                explanation: "Desde el punto de vista monetarista, la política fiscal es ineficiente para lograr controlar la inflación. El principal factor causal es el aumento en la cantidad de dinero que emite el banco central."
+            },
+            {
+                question: "¿Por qué países latinoamericanos experimentan estrangulamientos según estructuralistas?",
+                options: [
+                    "Por insuficiente desarrollo y tamaño que impide satisfacer internamente demanda muy inelástica",
+                    "Por exceso de desarrollo industrial que genera sobreproducción crónica de bienes manufacturados",
+                    "Por perfecta flexibilidad de todos los mercados que ajustan instantáneamente a shocks externos",
+                    "Por total ausencia de dependencia del exterior en todos los sectores económicos estratégicos"
+                ],
+                answer: 0,
+                explanation: "En algunos sectores económicos la demanda es muy inelástica y el insuficiente desarrollo y tamaño de algunas economías impide que esa demanda sea satisfecha internamente, apareciendo fuerte dependencia del exterior."
+            },
+            {
+                question: "¿Qué implica que los precios monetarios sean inflexibles en sentido descendente?",
+                options: [
+                    "Todo cambio de precios relativos se verifica solo por alza de precios de bienes apreciados",
+                    "Los precios pueden reducirse fácilmente en respuesta a disminuciones de la demanda agregada",
+                    "No existe ninguna posibilidad de que se produzcan cambios en precios relativos entre sectores",
+                    "Los precios se ajustan perfectamente tanto hacia arriba como hacia abajo según condiciones"
+                ],
+                answer: 0,
+                explanation: "Si los precios monetarios son inflexibles en sentido descendente, todo cambio de precios relativos puede verificarse solamente a través del alza del precio monetario de los bienes que se han apreciado, generando presiones inflacionarias."
+            },
+            {
+                question: "¿Cómo interpretan los estructuralistas los mecanismos de propagación de la inflación?",
+                options: [
+                    "Como manifestaciones de la lucha de clases donde propietarios y asalariados disputan distribución de rentas",
+                    "Como procesos técnicos neutrales sin ningún contenido de conflicto distributivo entre clases sociales",
+                    "Como resultado exclusivo de errores de política monetaria de las autoridades del banco central",
+                    "Como fenómenos puramente monetarios sin relación con estructuras productivas y sociales subyacentes"
+                ],
+                answer: 0,
+                explanation: "Los mecanismos de propagación son considerados por el enfoque estructuralista como manifestaciones concretas de la lucha de clases en la que propietarios y asalariados tratan de conseguir mayor porcentaje en la distribución funcional de las rentas."
+            },
+            {
+                question: "¿Qué efecto tiene la inflación cuando los trabajadores tienen organizaciones fuertes?",
+                options: [
+                    "La inflación crece mucho en términos monetarios porque los trabajadores pueden defenderse organizadamente",
+                    "La inflación desaparece completamente porque los sindicatos aceptan congelar los salarios nominales",
+                    "Los precios se mantienen estables porque las empresas no pueden aumentarlos frente a sindicatos",
+                    "El nivel general de precios disminuye sistemáticamente por presión de organizaciones laborales fuertes"
+                ],
+                answer: 0,
+                explanation: "En países donde los trabajadores disponen de organizaciones que les permiten defenderse, la inflación crece mucho en términos monetarios. En otros países, la presión se manifiesta en desplazamiento de capacidad adquisitiva entre sectores."
+            },
+            {
+                question: "¿Qué dilema enfrentan las autoridades según la Curva de Phillips de corto plazo?",
+                options: [
+                    "Deben elegir entre ajustar política para evitar alto desempleo o tomar posición dura contra inflación",
+                    "Pueden reducir simultáneamente desempleo e inflación sin ningún costo ni trade-off entre ambos",
+                    "El desempleo y la inflación se mueven siempre en la misma dirección sin ninguna disyuntiva",
+                    "No existe ninguna relación entre las políticas macroeconómicas y los niveles de desempleo o inflación"
+                ],
+                answer: 0,
+                explanation: "Las autoridades enfrentan el problema: ¿deberán ajustar su política en función de la inflación para evitar que el desempleo alcance una tasa alta, o tomar posición dura contra la inflación, incluso a costa de que aumente el desempleo?"
+            },
+            {
+                question: "¿Qué demostró la Curva de Phillips hasta fines de la década del sesenta?",
+                options: [
+                    "Una notable estabilidad de la relación negativa entre inflación y desempleo en ciertos países",
+                    "Una relación positiva perfecta entre inflación y desempleo en todos los países desarrollados",
+                    "La total independencia entre inflación y desempleo sin ninguna correlación observable",
+                    "Una relación que cambiaba constantemente de signo sin ningún patrón predecible estable"
+                ],
+                answer: 0,
+                explanation: "La relación negativa entre inflación y desempleo que describe la Curva de Phillips demostró una notable estabilidad en algunos países durante ciertos períodos hasta fines de la década del sesenta."
+            }
+        ];
 
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
