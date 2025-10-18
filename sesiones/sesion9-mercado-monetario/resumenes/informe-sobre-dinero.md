@@ -1,6 +1,9 @@
-# Informe sobre el Dinero, el Sistema Financiero y la Política Monetaria
+# 📊 Informe sobre el Dinero, el Sistema Financiero y la Política Monetaria
 
-## 📋 Resumen Ejecutivo
+
+---
+
+## 📌 📋 Resumen Ejecutivo
 
 Este informe sintetiza los conceptos fundamentales del dinero, el funcionamiento del sistema financiero y la aplicación de la política monetaria. El dinero se define no como un objeto, sino como un **acuerdo social** aceptado para facilitar el intercambio, cumpliendo tres funciones esenciales: medio de cambio, unidad de cuenta y reserva de valor. La estabilidad de este sistema depende críticamente de la **confianza** de los agentes económicos.
 
@@ -10,7 +13,10 @@ La **Oferta Monetaria** total es, por tanto, un múltiplo de la Base Monetaria. 
 
 ---
 
-## I. Naturaleza y Funciones del Dinero
+
+---
+
+## 📌 I. Naturaleza y Funciones del Dinero
 
 ### A. Definición y Origen
 
@@ -36,7 +42,10 @@ El dinero permite transferir poder adquisitivo del presente al futuro. Idealment
 
 ---
 
-## II. La Estructura del Sistema Financiero
+
+---
+
+## 📌 II. La Estructura del Sistema Financiero
 
 El sistema financiero simplificado se compone de tres tipos de agentes cuya interacción es fundamental para la circulación y creación de dinero.
 
@@ -230,3 +239,8 @@ El mercado monetario está **conectado** con el mercado de bienes y servicios:
 ## 🎓 Conclusión
 
 El sistema financiero moderno se sustenta en la interacción coordinada de tres actores principales (Banco Central, bancos comerciales y público), dos mecanismos de creación de dinero (primaria y secundaria), y un conjunto de instrumentos de política monetaria que permiten al Banco Central influir en objetivos macroeconómicos clave. La comprensión de estos mecanismos es fundamental para entender cómo las decisiones de política monetaria afectan la economía real.
+
+
+---
+
+**Fin del Documento** 📖

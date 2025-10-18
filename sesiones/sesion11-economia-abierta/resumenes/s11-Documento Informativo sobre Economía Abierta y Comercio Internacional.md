@@ -198,3 +198,8 @@ Arancel Óptimo	Un país grande puede influir en los precios mundiales. Al impon
 D. Negociaciones Comerciales
 
 Para contrarrestar las presiones proteccionistas, los países han participado en negociaciones comerciales multilaterales. El Acuerdo General sobre Aranceles Aduaneros y Comercio (GATT) y su sucesora, la Organización Mundial del Comercio (OMC), han sido fundamentales para reducir sustancialmente los aranceles a nivel global desde la Segunda Guerra Mundial. Adicionalmente, se han formado acuerdos comerciales regionales como el Tratado de Libre Comercio de América del Norte (TLCAN) y la Unión Europea (UE), que buscan eliminar las barreras comerciales entre sus miembros.
+
+
+---
+
+**Fin del Documento** 📖

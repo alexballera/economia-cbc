@@ -75,3 +75,8 @@ Poder Adquisitivo	Cantidad de bienes y servicios que pueden ser comprados con un
 Precios Relativos	Relación entre el precio de un bien o servicio y el de otros. La inflación distorsiona los precios relativos porque no todos los precios aumentan en la misma proporción.
 Tasa de Desempleo	Indicador que se calcula como el porcentaje de personas desocupadas respecto al total de la Población Económicamente Activa (PEA).
 Teoría Cuantitativa del Dinero	Teoría económica, base de la explicación monetarista, que establece una relación directa entre la cantidad de dinero en una economía y el nivel general de precios, a través de la ecuación M × v = P × T.
+
+
+---
+
+**Fin del Documento** 📖

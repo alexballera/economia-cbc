@@ -1,10 +1,13 @@
-# Guía de Estudio: El Dinero y el Sistema Financiero
+# 💰 Guía de Estudio: El Dinero y el Sistema Financiero
 
 Esta guía está diseñada para repasar y profundizar la comprensión de los conceptos clave relacionados con el dinero, su creación, el sistema financiero y la política monetaria.
 
 ---
 
-## 📝 Cuestionario de Repaso
+
+---
+
+## 📌 📝 Cuestionario de Repaso
 
 Responda las siguientes preguntas en dos o tres oraciones cada una, basándose exclusivamente en el contexto proporcionado.
 
@@ -32,7 +35,10 @@ Responda las siguientes preguntas en dos o tres oraciones cada una, basándose e
 
 ---
 
-## ✅ Clave de Respuestas
+
+---
+
+## 📌 ✅ Clave de Respuestas
 
 ### 1. ¿Cuáles son las tres propiedades o funciones fundamentales que debe cumplir el dinero?
 
@@ -76,7 +82,10 @@ Un aumento en la renta de los individuos eleva su demanda de dinero para realiza
 
 ---
 
-## 📚 Preguntas de Desarrollo (Formato Ensayo)
+
+---
+
+## 📌 📚 Preguntas de Desarrollo (Formato Ensayo)
 
 1. **Explique en detalle el proceso de creación secundaria de dinero.** ¿Qué rol juegan los bancos comerciales, los depósitos del público y la tasa de encaje en este mecanismo de multiplicación?
 
@@ -119,3 +128,8 @@ Un aumento en la renta de los individuos eleva su demanda de dinero para realiza
 | **Tasa de Interés** | El precio que se paga por la utilización del dinero. Es el costo de oportunidad de mantener dinero en efectivo en lugar de un activo que genere rendimiento. |
 | **Tasa de Redescuento** | Tasa de interés que el Banco Central cobra a los bancos comerciales por los préstamos (redescuentos) que les concede. |
 | **Trueque** | Sistema de intercambio donde bienes y servicios se intercambian directamente por otros bienes y servicios, sin la intermediación del dinero. Requiere una doble coincidencia de deseos. |
+
+
+---
+
+**Fin del Documento** 📖

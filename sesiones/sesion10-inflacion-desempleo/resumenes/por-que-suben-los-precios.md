@@ -97,3 +97,8 @@ Conclusión: Un Fenómeno, Múltiples Explicaciones
 Como hemos visto, la inflación es un fenómeno complejo sin una causa única y universal. La validez de cada una de estas teorías puede depender del contexto histórico, la estructura económica y la situación particular de un país en un momento determinado. En la realidad, los procesos inflacionarios suelen ser el resultado de una combinación de varios de estos factores.
 
 Comprender estas diferentes perspectivas no es solo un ejercicio académico; es el primer paso fundamental para poder analizar de manera crítica las causas de la inflación y evaluar las políticas económicas diseñadas para combatirla, uno de los desafíos más persistentes de la macroeconomía moderna.
+
+
+---
+
+**Fin del Documento** 📖

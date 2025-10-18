@@ -118,3 +118,8 @@ Estudios posteriores y la experiencia de los años 70 (estanflación) demostraro
 * A largo plazo, la Curva de Phillips se vuelve vertical.
 * Esto se explica por el papel de las expectativas. Una inflación imprevista puede reducir el desempleo temporalmente (debido a la "ilusión monetaria"), pero una vez que los agentes económicos ajustan sus expectativas a la nueva tasa de inflación, el desempleo vuelve a su "tasa natural".
 * En consecuencia, en el largo plazo no existe un intercambio entre inflación y desempleo; políticas monetarias o fiscales expansivas solo generan una mayor inflación sin reducir el desempleo de forma permanente.
+
+
+---
+
+**Fin del Documento** 📖

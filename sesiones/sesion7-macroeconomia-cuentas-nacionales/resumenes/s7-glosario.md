@@ -96,3 +96,8 @@ Para medir la inflación, los economistas utilizan índices de precios, que son 
 * Deflactor del PBI (o Índice de Precios Implícitos): Se calcula como el cociente entre el PBI nominal y el PBI real (PBI Nominal / PBI Real). A diferencia del IPC, que se basa en una canasta fija de bienes de consumo, el deflactor mide la variación de precios de todos los bienes y servicios finales producidos en una economía.
 
 Estos conceptos —el PIB, sus distintas formas de medición y la inflación— son las herramientas fundamentales que permiten a los economistas y a los gobiernos diagnosticar la salud de una economía, comprender sus fluctuaciones y tomar decisiones informadas para promover el crecimiento y la estabilidad.
+
+
+---
+
+**Fin del Documento** 📖

@@ -75,3 +75,8 @@ Tipo de Cambio Nominal (TCN)	El precio de una moneda en términos de otra. Infor
 Tipo de Cambio Real (TCR)	El precio relativo de los bienes producidos en el extranjero expresado en términos de bienes nacionales. Se calcula como TCR = (TCN × P*) / P, donde P* es el nivel de precios extranjero y P es el nivel de precios local.
 Ventaja Absoluta	La capacidad de un país para producir un bien utilizando menos insumos (con mayor eficiencia) que otro país.
 Ventaja Comparativa	La capacidad de un país para producir un bien a un costo de oportunidad relativamente más bajo que otro país. Es la base del comercio internacional.
+
+
+---
+
+**Fin del Documento** 📖

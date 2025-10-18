@@ -103,3 +103,8 @@ Entender los conceptos básicos de la macroeconomía es más que un ejercicio ac
 * Herramientas para la acción: Los gobiernos disponen de herramientas, como la política fiscal y monetaria, para influir en la economía y perseguir objetivos que beneficien a la sociedad.
 
 Comprender la macroeconomía te permitirá entender mejor las noticias, tomar decisiones financieras más informadas y participar de manera más consciente en los debates públicos sobre el futuro económico y social de tu país.
+
+
+---
+
+**Fin del Documento** 📖

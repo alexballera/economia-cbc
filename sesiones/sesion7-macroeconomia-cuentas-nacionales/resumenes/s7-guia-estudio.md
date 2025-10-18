@@ -83,3 +83,8 @@ Población Económicamente Activa (PEA)	Conjunto de personas que tienen una ocup
 Tasa de Desocupación	Se calcula como el porcentaje que representa la población desocupada dentro de la Población Económicamente Activa (PEA).
 Valor Agregado (VA)	La diferencia entre las ventas de una empresa y sus compras de materiales y servicios a otras empresas. El PIB puede calcularse como la suma de los valores agregados de todas las empresas de una economía.
 Valor Bruto de la Producción (VBP)	El valor de venta de la producción total de las empresas a sus precios de facturación. Incluye tanto bienes finales como intermedios, por lo que su suma total genera una doble contabilización.
+
+
+---
+
+**Fin del Documento** 📖

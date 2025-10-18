@@ -90,3 +90,8 @@ La teoría de la ventaja comparativa nos deja tres lecciones fundamentales sobre
 3. El comercio eleva el nivel de vida. Al permitir que los países consuman más de lo que producen por sí mismos, el comercio internacional mejora el bienestar económico y el poder adquisitivo de los ciudadanos en todos los países participantes.
 
 El principio de la ventaja comparativa es, sin duda, una de las ideas más poderosas y fundamentales de la economía, demostrando que la cooperación a través del comercio puede hacer que todos los países sean más prósperos.
+
+
+---
+
+**Fin del Documento** 📖

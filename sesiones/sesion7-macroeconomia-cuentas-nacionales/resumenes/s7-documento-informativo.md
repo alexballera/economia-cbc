@@ -199,3 +199,8 @@ El PIB a menudo ignora los efectos dañinos de la actividad económica, como la 
 En última instancia, el PIB mide la producción, no el bienestar ni la calidad de vida. No distingue entre gastos que aumentan el bienestar (educación, salud) y gastos "defensivos" que responden a problemas sociales (alarmas por aumento de la delincuencia). Como expresó elocuentemente Robert Kennedy:
 
 "El producto interno bruto no refleja la salud de nuestros hijos, ni la calidad de su educación ni el placer con el que juegan. No incluye la belleza de nuestra poesía ni la fortaleza de nuestros matrimonios; ni la inteligencia de nuestros debates ni la integridad de nuestros funcionarios públicos. Tampoco mide nuestro ingenio ni nuestro valor; tampoco nuestra sabiduría ni nuestro aprendizaje; no mide nuestra compasión ni nuestra devoción a nuestro país".
+
+
+---
+
+**Fin del Documento** 📖
