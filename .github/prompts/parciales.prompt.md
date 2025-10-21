@@ -9,4 +9,4 @@ action: |
 
   Como referencia de estructura y estilos te puedes guiar por el archivo 1erParcial.html que se encuentra en /sesiones/parciales/1erparcial.html.
 
-    Debes generar el archivo 2doParcial.html con las preguntas y respuestas de las pruebas del 2do parcial de las fuentes, generando una base de 100 preguntas y 10 pruebas de 20 preguntas cada una tomadas de manera aleatoria.
+  El archivo html generado debe guardarse en la ruta /sesiones/parciales/index.html. el cual te anexo para que lo edites, elimina las preguntas allí y agrega las correspondiente al 2do Parcial
